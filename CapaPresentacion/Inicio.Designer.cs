@@ -43,17 +43,19 @@
             // 
             // Menu2
             // 
+            Menu2.ImageScalingSize = new Size(20, 20);
             Menu2.Items.AddRange(new ToolStripItem[] { MenuVendedor, MenuGerente, MenuVentas, MenuReponedor, iconMenuItem1 });
-            Menu2.Location = new Point(0, 57);
+            Menu2.Location = new Point(0, 76);
             Menu2.Name = "Menu2";
-            Menu2.Size = new Size(800, 73);
+            Menu2.Padding = new Padding(7, 3, 0, 3);
+            Menu2.Size = new Size(914, 75);
             Menu2.TabIndex = 0;
             Menu2.Text = "menuStrip1";
             // 
             // MenuVendedor
             // 
             MenuVendedor.AutoSize = false;
-            MenuVendedor.IconChar = FontAwesome.Sharp.IconChar.Compass;
+            MenuVendedor.IconChar = FontAwesome.Sharp.IconChar.Computer;
             MenuVendedor.IconColor = Color.Black;
             MenuVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuVendedor.IconSize = 50;
@@ -118,51 +120,57 @@
             // MenuTitulo
             // 
             MenuTitulo.AutoSize = false;
-            MenuTitulo.BackColor = Color.BurlyWood;
+            MenuTitulo.BackColor = Color.Green;
+            MenuTitulo.ImageScalingSize = new Size(20, 20);
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
+            MenuTitulo.Padding = new Padding(7, 3, 0, 3);
             MenuTitulo.RightToLeft = RightToLeft.Yes;
-            MenuTitulo.Size = new Size(800, 57);
+            MenuTitulo.Size = new Size(914, 76);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.OliveDrab;
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(45, 20);
+            label1.BackColor = Color.Green;
+            label1.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Transparent;
+            label1.Location = new Point(51, 27);
             label1.Name = "label1";
-            label1.Size = new Size(101, 15);
+            label1.Size = new Size(260, 38);
             label1.TabIndex = 2;
             label1.Text = "Sistema de Ventas";
             // 
             // panel1
             // 
-            panel1.Location = new Point(231, 194);
+            panel1.Location = new Point(264, 259);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(209, 29);
+            panel1.Size = new Size(239, 39);
             panel1.TabIndex = 3;
             // 
             // Contenedor
             // 
             Contenedor.Dock = DockStyle.Fill;
-            Contenedor.Location = new Point(0, 130);
+            Contenedor.Location = new Point(0, 151);
+            Contenedor.Margin = new Padding(3, 4, 3, 4);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(800, 320);
+            Contenedor.Size = new Size(914, 449);
             Contenedor.TabIndex = 4;
             // 
             // Inicio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(Menu2);
             Controls.Add(MenuTitulo);
             MainMenuStrip = Menu2;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Inicio";
             Text = "Form1";
             Menu2.ResumeLayout(false);

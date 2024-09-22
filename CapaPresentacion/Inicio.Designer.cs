@@ -68,7 +68,7 @@
             // MenuGerente
             // 
             MenuGerente.AutoSize = false;
-            MenuGerente.IconChar = FontAwesome.Sharp.IconChar.Compass;
+            MenuGerente.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
             MenuGerente.IconColor = Color.Black;
             MenuGerente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuGerente.IconSize = 50;
@@ -81,7 +81,7 @@
             // MenuVentas
             // 
             MenuVentas.AutoSize = false;
-            MenuVentas.IconChar = FontAwesome.Sharp.IconChar.Compass;
+            MenuVentas.IconChar = FontAwesome.Sharp.IconChar.Shopify;
             MenuVentas.IconColor = Color.Black;
             MenuVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuVentas.IconSize = 50;
@@ -94,7 +94,7 @@
             // MenuReponedor
             // 
             MenuReponedor.AutoSize = false;
-            MenuReponedor.IconChar = FontAwesome.Sharp.IconChar.Compass;
+            MenuReponedor.IconChar = FontAwesome.Sharp.IconChar.UserGear;
             MenuReponedor.IconColor = Color.Black;
             MenuReponedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuReponedor.IconSize = 50;
@@ -107,7 +107,7 @@
             // iconMenuItem1
             // 
             iconMenuItem1.AutoSize = false;
-            iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.Compass;
+            iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
             iconMenuItem1.IconColor = Color.Black;
             iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMenuItem1.IconSize = 50;

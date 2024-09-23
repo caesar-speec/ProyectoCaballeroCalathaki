@@ -6,5 +6,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void MenuTitulo_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

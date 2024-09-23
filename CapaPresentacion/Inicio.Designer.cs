@@ -38,11 +38,15 @@
             label1 = new Label();
             panel1 = new Panel();
             Contenedor = new Panel();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             Menu2.SuspendLayout();
+            Contenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Menu2
             // 
+            Menu2.BackColor = SystemColors.GrayText;
             Menu2.ImageScalingSize = new Size(20, 20);
             Menu2.Items.AddRange(new ToolStripItem[] { MenuVendedor, MenuGerente, MenuVentas, MenuReponedor, iconMenuItem1 });
             Menu2.Location = new Point(0, 76);
@@ -55,8 +59,9 @@
             // MenuVendedor
             // 
             MenuVendedor.AutoSize = false;
+            MenuVendedor.ForeColor = SystemColors.ButtonHighlight;
             MenuVendedor.IconChar = FontAwesome.Sharp.IconChar.Computer;
-            MenuVendedor.IconColor = Color.Black;
+            MenuVendedor.IconColor = Color.WhiteSmoke;
             MenuVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuVendedor.IconSize = 50;
             MenuVendedor.ImageScaling = ToolStripItemImageScaling.None;
@@ -68,8 +73,9 @@
             // MenuGerente
             // 
             MenuGerente.AutoSize = false;
+            MenuGerente.ForeColor = SystemColors.ButtonHighlight;
             MenuGerente.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
-            MenuGerente.IconColor = Color.Black;
+            MenuGerente.IconColor = Color.WhiteSmoke;
             MenuGerente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuGerente.IconSize = 50;
             MenuGerente.ImageScaling = ToolStripItemImageScaling.None;
@@ -81,8 +87,9 @@
             // MenuVentas
             // 
             MenuVentas.AutoSize = false;
+            MenuVentas.ForeColor = SystemColors.ButtonHighlight;
             MenuVentas.IconChar = FontAwesome.Sharp.IconChar.Shopify;
-            MenuVentas.IconColor = Color.Black;
+            MenuVentas.IconColor = Color.WhiteSmoke;
             MenuVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuVentas.IconSize = 50;
             MenuVentas.ImageScaling = ToolStripItemImageScaling.None;
@@ -94,8 +101,9 @@
             // MenuReponedor
             // 
             MenuReponedor.AutoSize = false;
+            MenuReponedor.ForeColor = SystemColors.ButtonHighlight;
             MenuReponedor.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            MenuReponedor.IconColor = Color.Black;
+            MenuReponedor.IconColor = Color.WhiteSmoke;
             MenuReponedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuReponedor.IconSize = 50;
             MenuReponedor.ImageScaling = ToolStripItemImageScaling.None;
@@ -107,8 +115,9 @@
             // iconMenuItem1
             // 
             iconMenuItem1.AutoSize = false;
+            iconMenuItem1.ForeColor = SystemColors.ButtonHighlight;
             iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
-            iconMenuItem1.IconColor = Color.Black;
+            iconMenuItem1.IconColor = Color.WhiteSmoke;
             iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMenuItem1.IconSize = 50;
             iconMenuItem1.ImageScaling = ToolStripItemImageScaling.None;
@@ -129,6 +138,7 @@
             MenuTitulo.Size = new Size(914, 76);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
+            MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
             // 
             // label1
             // 
@@ -136,7 +146,7 @@
             label1.BackColor = Color.Green;
             label1.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(51, 27);
+            label1.Location = new Point(80, 27);
             label1.Name = "label1";
             label1.Size = new Size(260, 38);
             label1.TabIndex = 2;
@@ -152,12 +162,29 @@
             // 
             // Contenedor
             // 
+            Contenedor.BackColor = SystemColors.ScrollBar;
+            Contenedor.Controls.Add(iconPictureBox1);
             Contenedor.Dock = DockStyle.Fill;
+            Contenedor.ForeColor = SystemColors.ButtonHighlight;
             Contenedor.Location = new Point(0, 151);
             Contenedor.Margin = new Padding(3, 4, 3, 4);
             Contenedor.Name = "Contenedor";
             Contenedor.Size = new Size(914, 449);
             Contenedor.TabIndex = 4;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = SystemColors.ScrollBar;
+            iconPictureBox1.ForeColor = SystemColors.ButtonHighlight;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconPictureBox1.IconColor = SystemColors.ButtonHighlight;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 8;
+            iconPictureBox1.Location = new Point(263, 71);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(8, 8);
+            iconPictureBox1.TabIndex = 0;
+            iconPictureBox1.TabStop = false;
             // 
             // Inicio
             // 
@@ -175,6 +202,8 @@
             Text = "Form1";
             Menu2.ResumeLayout(false);
             Menu2.PerformLayout();
+            Contenedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,5 +220,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuReponedor;
         private Panel panel1;
         private Panel Contenedor;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

@@ -114,7 +114,7 @@
             // 
             // btn_ingresar
             // 
-            btn_ingresar.BackColor = Color.Gray;
+            btn_ingresar.BackColor = Color.SeaGreen;
             btn_ingresar.FlatStyle = FlatStyle.Flat;
             btn_ingresar.ForeColor = Color.WhiteSmoke;
             btn_ingresar.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
@@ -152,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.LightGray;
             ClientSize = new Size(486, 283);
             Controls.Add(btn_cancelar);
             Controls.Add(btn_ingresar);
@@ -163,10 +163,11 @@
             Controls.Add(iconPictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            ForeColor = Color.DimGray;
+            ForeColor = Color.LightGray;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

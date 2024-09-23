@@ -24,6 +24,11 @@ namespace CapaPresentacion
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

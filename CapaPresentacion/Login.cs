@@ -44,6 +44,21 @@ namespace CapaPresentacion
 
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
+// List<usuario> TEST = new CN_Usuario().Listar();
+  //          Usuario ousuario = new CN_Usuario().Listar().Where(uint => uint.Documento == txtdocumento.Text && uint - Clave == textclave.Text).FirstDefault();
+
+   //         if (ousuario != null)
+            {
+       //         Inicio form = new Inicio();
+     //           form.Show();
+      //          this.Hide();
+       //         form.FormClosing += frm_closing;
+            }
+            else
+            {
+                MessageBox.Show ("no se encontro el usuairo", "mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation )
+            }
+
             // Verifica si Tdni está vacío
             if (string.IsNullOrWhiteSpace(Tdni.Text))
             {

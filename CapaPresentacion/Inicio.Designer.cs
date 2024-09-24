@@ -34,11 +34,16 @@
             MenuVentas = new FontAwesome.Sharp.IconMenuItem();
             MenuReponedor = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            menumantenedor = new FontAwesome.Sharp.IconMenuItem();
+            submenucategoria = new ToolStripMenuItem();
+            submenuproducto = new ToolStripMenuItem();
             MenuTitulo = new MenuStrip();
             label1 = new Label();
             panel1 = new Panel();
             Contenedor = new Panel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            submenuregistrarventa = new ToolStripMenuItem();
+            submenuverdetalleventa = new ToolStripMenuItem();
             Menu2.SuspendLayout();
             Contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -48,11 +53,10 @@
             // 
             Menu2.BackColor = SystemColors.GrayText;
             Menu2.ImageScalingSize = new Size(20, 20);
-            Menu2.Items.AddRange(new ToolStripItem[] { MenuVendedor, MenuGerente, MenuVentas, MenuReponedor, iconMenuItem1 });
-            Menu2.Location = new Point(0, 76);
+            Menu2.Items.AddRange(new ToolStripItem[] { MenuVendedor, MenuGerente, MenuVentas, MenuReponedor, iconMenuItem1, menumantenedor });
+            Menu2.Location = new Point(0, 57);
             Menu2.Name = "Menu2";
-            Menu2.Padding = new Padding(7, 3, 0, 3);
-            Menu2.Size = new Size(914, 75);
+            Menu2.Size = new Size(800, 73);
             Menu2.TabIndex = 0;
             Menu2.Text = "menuStrip1";
             // 
@@ -87,6 +91,7 @@
             // MenuVentas
             // 
             MenuVentas.AutoSize = false;
+            MenuVentas.DropDownItems.AddRange(new ToolStripItem[] { submenuregistrarventa, submenuverdetalleventa });
             MenuVentas.ForeColor = SystemColors.ButtonHighlight;
             MenuVentas.IconChar = FontAwesome.Sharp.IconChar.Shopify;
             MenuVentas.IconColor = Color.WhiteSmoke;
@@ -126,6 +131,34 @@
             iconMenuItem1.Text = "Clientes";
             iconMenuItem1.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
+            // menumantenedor
+            // 
+            menumantenedor.AutoSize = false;
+            menumantenedor.DropDownItems.AddRange(new ToolStripItem[] { submenucategoria, submenuproducto });
+            menumantenedor.ForeColor = SystemColors.ButtonHighlight;
+            menumantenedor.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
+            menumantenedor.IconColor = Color.WhiteSmoke;
+            menumantenedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            menumantenedor.IconSize = 50;
+            menumantenedor.ImageScaling = ToolStripItemImageScaling.None;
+            menumantenedor.Name = "menumantenedor";
+            menumantenedor.Size = new Size(80, 69);
+            menumantenedor.Text = "Mantenedor";
+            menumantenedor.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // submenucategoria
+            // 
+            submenucategoria.Name = "submenucategoria";
+            submenucategoria.Size = new Size(125, 22);
+            submenucategoria.Text = "Categoria";
+            // 
+            // submenuproducto
+            // 
+            submenuproducto.Name = "submenuproducto";
+            submenuproducto.Size = new Size(125, 22);
+            submenuproducto.Text = "Producto";
+            submenuproducto.Click += submenuproducto_Click;
+            // 
             // MenuTitulo
             // 
             MenuTitulo.AutoSize = false;
@@ -133,9 +166,8 @@
             MenuTitulo.ImageScalingSize = new Size(20, 20);
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
-            MenuTitulo.Padding = new Padding(7, 3, 0, 3);
             MenuTitulo.RightToLeft = RightToLeft.Yes;
-            MenuTitulo.Size = new Size(914, 76);
+            MenuTitulo.Size = new Size(800, 57);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
@@ -146,18 +178,17 @@
             label1.BackColor = Color.Green;
             label1.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(80, 27);
+            label1.Location = new Point(70, 20);
             label1.Name = "label1";
-            label1.Size = new Size(260, 38);
+            label1.Size = new Size(209, 29);
             label1.TabIndex = 2;
             label1.Text = "Sistema de Ventas";
             // 
             // panel1
             // 
-            panel1.Location = new Point(264, 259);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(231, 194);
             panel1.Name = "panel1";
-            panel1.Size = new Size(239, 39);
+            panel1.Size = new Size(209, 29);
             panel1.TabIndex = 3;
             // 
             // Contenedor
@@ -166,10 +197,9 @@
             Contenedor.Controls.Add(iconPictureBox1);
             Contenedor.Dock = DockStyle.Fill;
             Contenedor.ForeColor = SystemColors.ButtonHighlight;
-            Contenedor.Location = new Point(0, 151);
-            Contenedor.Margin = new Padding(3, 4, 3, 4);
+            Contenedor.Location = new Point(0, 130);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(914, 449);
+            Contenedor.Size = new Size(800, 320);
             Contenedor.TabIndex = 4;
             // 
             // iconPictureBox1
@@ -179,27 +209,40 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
             iconPictureBox1.IconColor = SystemColors.ButtonHighlight;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 8;
-            iconPictureBox1.Location = new Point(263, 71);
+            iconPictureBox1.IconSize = 6;
+            iconPictureBox1.Location = new Point(230, 53);
+            iconPictureBox1.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(8, 8);
+            iconPictureBox1.Size = new Size(7, 6);
             iconPictureBox1.TabIndex = 0;
             iconPictureBox1.TabStop = false;
             // 
+            // submenuregistrarventa
+            // 
+            submenuregistrarventa.Name = "submenuregistrarventa";
+            submenuregistrarventa.Size = new Size(180, 22);
+            submenuregistrarventa.Text = "Registrar";
+            // 
+            // submenuverdetalleventa
+            // 
+            submenuverdetalleventa.Name = "submenuverdetalleventa";
+            submenuverdetalleventa.Size = new Size(180, 22);
+            submenuverdetalleventa.Text = "Ver Detalle";
+            // 
             // Inicio
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(Menu2);
             Controls.Add(MenuTitulo);
             MainMenuStrip = Menu2;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Inicio";
             Text = "Form1";
+            Load += Inicio_Load;
             Menu2.ResumeLayout(false);
             Menu2.PerformLayout();
             Contenedor.ResumeLayout(false);
@@ -221,5 +264,10 @@
         private Panel panel1;
         private Panel Contenedor;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconMenuItem menumantenedor;
+        private ToolStripMenuItem submenucategoria;
+        private ToolStripMenuItem submenuproducto;
+        private ToolStripMenuItem submenuregistrarventa;
+        private ToolStripMenuItem submenuverdetalleventa;
     }
 }

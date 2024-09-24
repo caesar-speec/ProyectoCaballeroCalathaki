@@ -42,6 +42,8 @@
             panel1 = new Panel();
             Contenedor = new Panel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            submenuregistrarventa = new ToolStripMenuItem();
+            submenuverdetalleventa = new ToolStripMenuItem();
             Menu2.SuspendLayout();
             Contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -89,6 +91,7 @@
             // MenuVentas
             // 
             MenuVentas.AutoSize = false;
+            MenuVentas.DropDownItems.AddRange(new ToolStripItem[] { submenuregistrarventa, submenuverdetalleventa });
             MenuVentas.ForeColor = SystemColors.ButtonHighlight;
             MenuVentas.IconChar = FontAwesome.Sharp.IconChar.Shopify;
             MenuVentas.IconColor = Color.WhiteSmoke;
@@ -146,13 +149,13 @@
             // submenucategoria
             // 
             submenucategoria.Name = "submenucategoria";
-            submenucategoria.Size = new Size(180, 22);
+            submenucategoria.Size = new Size(125, 22);
             submenucategoria.Text = "Categoria";
             // 
             // submenuproducto
             // 
             submenuproducto.Name = "submenuproducto";
-            submenuproducto.Size = new Size(180, 22);
+            submenuproducto.Size = new Size(125, 22);
             submenuproducto.Text = "Producto";
             submenuproducto.Click += submenuproducto_Click;
             // 
@@ -214,6 +217,18 @@
             iconPictureBox1.TabIndex = 0;
             iconPictureBox1.TabStop = false;
             // 
+            // submenuregistrarventa
+            // 
+            submenuregistrarventa.Name = "submenuregistrarventa";
+            submenuregistrarventa.Size = new Size(180, 22);
+            submenuregistrarventa.Text = "Registrar";
+            // 
+            // submenuverdetalleventa
+            // 
+            submenuverdetalleventa.Name = "submenuverdetalleventa";
+            submenuverdetalleventa.Size = new Size(180, 22);
+            submenuverdetalleventa.Text = "Ver Detalle";
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -252,5 +267,7 @@
         private FontAwesome.Sharp.IconMenuItem menumantenedor;
         private ToolStripMenuItem submenucategoria;
         private ToolStripMenuItem submenuproducto;
+        private ToolStripMenuItem submenuregistrarventa;
+        private ToolStripMenuItem submenuverdetalleventa;
     }
 }

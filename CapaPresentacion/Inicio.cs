@@ -1,6 +1,5 @@
 using FontAwesome.Sharp;
 using CapaEntidad;
-using FontAwesome.Sharp;
 namespace CapaPresentacion
 {
     public partial class Inicio : Form
@@ -50,13 +49,22 @@ namespace CapaPresentacion
             AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
         }
 
-        private void submenuproducto_Click(object sender, EventArgs e)
+        private void submenucategoria_Click(object sender, EventArgs e)
         {
             AbrirFormulario((menumantenedor, new frmCategoria());
         }
-    }
-    private void submenuproducto_Click(object sender, EventArgs e)
-    {
-        AbrirFormulario((menumantenedor, new frmproducto());
+        private void submenuproducto_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menumantenedor, new frmproducto());
+        }
+        private void submenuregistrarventa_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuVentas, new frmventas());
+        }
+        private void submenuregistrarventa_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuVentas, new frmDetalleVentas());
+        }
+
     }
 }

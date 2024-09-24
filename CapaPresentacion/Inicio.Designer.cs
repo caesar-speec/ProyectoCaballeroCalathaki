@@ -34,6 +34,9 @@
             MenuVentas = new FontAwesome.Sharp.IconMenuItem();
             MenuReponedor = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            menumantenedor = new FontAwesome.Sharp.IconMenuItem();
+            submenucategoria = new ToolStripMenuItem();
+            submenuproducto = new ToolStripMenuItem();
             MenuTitulo = new MenuStrip();
             label1 = new Label();
             panel1 = new Panel();
@@ -48,7 +51,7 @@
             // 
             Menu2.BackColor = SystemColors.GrayText;
             Menu2.ImageScalingSize = new Size(20, 20);
-            Menu2.Items.AddRange(new ToolStripItem[] { MenuVendedor, MenuGerente, MenuVentas, MenuReponedor, iconMenuItem1 });
+            Menu2.Items.AddRange(new ToolStripItem[] { MenuVendedor, MenuGerente, MenuVentas, MenuReponedor, iconMenuItem1, menumantenedor });
             Menu2.Location = new Point(0, 57);
             Menu2.Name = "Menu2";
             Menu2.Size = new Size(800, 73);
@@ -124,6 +127,34 @@
             iconMenuItem1.Size = new Size(80, 69);
             iconMenuItem1.Text = "Clientes";
             iconMenuItem1.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // menumantenedor
+            // 
+            menumantenedor.AutoSize = false;
+            menumantenedor.DropDownItems.AddRange(new ToolStripItem[] { submenucategoria, submenuproducto });
+            menumantenedor.ForeColor = SystemColors.ButtonHighlight;
+            menumantenedor.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
+            menumantenedor.IconColor = Color.WhiteSmoke;
+            menumantenedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            menumantenedor.IconSize = 50;
+            menumantenedor.ImageScaling = ToolStripItemImageScaling.None;
+            menumantenedor.Name = "menumantenedor";
+            menumantenedor.Size = new Size(80, 69);
+            menumantenedor.Text = "Mantenedor";
+            menumantenedor.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // submenucategoria
+            // 
+            submenucategoria.Name = "submenucategoria";
+            submenucategoria.Size = new Size(180, 22);
+            submenucategoria.Text = "Categoria";
+            // 
+            // submenuproducto
+            // 
+            submenuproducto.Name = "submenuproducto";
+            submenuproducto.Size = new Size(180, 22);
+            submenuproducto.Text = "Producto";
+            submenuproducto.Click += submenuproducto_Click;
             // 
             // MenuTitulo
             // 
@@ -218,5 +249,8 @@
         private Panel panel1;
         private Panel Contenedor;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconMenuItem menumantenedor;
+        private ToolStripMenuItem submenucategoria;
+        private ToolStripMenuItem submenuproducto;
     }
 }

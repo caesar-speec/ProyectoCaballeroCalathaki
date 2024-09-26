@@ -45,9 +45,9 @@ namespace CapaPresentacion
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
             // List<usuario> TEST = new CN_Usuario().Listar();
-            //          Usuario ousuario = new CN_Usuario().Listar().Where(uint => uint.Documento == txtdocumento.Text && uint - Clave == textclave.Text).FirstDefault();
+            //          Usuario oUsuario = new CN_Usuario().Listar().Where(uint => uint.Documento == txtdocumento.Text && uint - Clave == textclave.Text).FirstDefault();
 
-            //         if (ousuario != null)
+            //         if (oUsuario != null)
             {
                 //         Inicio form = new Inicio();
                 //           form.Show();

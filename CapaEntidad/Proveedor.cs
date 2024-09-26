@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class Cliente
+    public class Proveedor
     {
-        public int ID_cliente { get; set; }
-        public long dni_cliente { get; set; }
+        public int ID_proveedor {  get; set; }
+        public string razon_social { get; set; }
         public string nombre { get; set; }
-        public string correo_cliente { get; set; }
+        public string correo { get; set; }
         public string telefono { get; set; }
         public bool estado { get; set; }
         public string fecha_creacion { get; set; }

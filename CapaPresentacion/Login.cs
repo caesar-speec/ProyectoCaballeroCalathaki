@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -44,46 +46,10 @@ namespace CapaPresentacion
 
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
-            // List<usuario> TEST = new CN_Usuario().Listar();
-            //          Usuario oUsuario = new CN_Usuario().Listar().Where(uint => uint.Documento == txtdocumento.Text && uint - Clave == textclave.Text).FirstDefault();
-
-            //         if (oUsuario != null)
-            {
-                //         Inicio form = new Inicio();
-                //           form.Show();
-                //          this.Hide();
-                //         form.FormClosing += frm_closing;
-            }
-            else
-            {
-                MessageBox.Show("no se encontro el usuairo", "mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            }
-
-            // Verifica si Tdni está vacío
-            if (string.IsNullOrWhiteSpace(Tdni.Text))
-            {
-                MessageBox.Show("El campo DNI no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Verifica si Tdni contiene solo números
-            if (!long.TryParse(Tdni.Text, out _)) // Intenta convertir a número
-            {
-                MessageBox.Show("El campo DNI solo debe contener números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Verifica si Tpassword está vacío
-            if (string.IsNullOrWhiteSpace(Tpassword.Text))
-            {
-                MessageBox.Show("El campo Contraseña no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            Inicio form = new Inicio();
-            form.Show();
+            Usuario ousuario =new CN_Usuario().Listar().Where (u => u.Documento == txtdocumento.Text && u.Clave == txtclave.Text).FirstOrDefault();
+                Inicio form = new Inicio();
+                form.Show();
             this.Hide();
-
             form.FormClosing += frm_closing;
         }
 

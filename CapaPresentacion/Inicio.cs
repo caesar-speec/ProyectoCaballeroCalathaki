@@ -61,6 +61,12 @@ namespace CapaPresentacion
         {
             AbrirFormulario(MenuVentas, new frmventas());
         }
+
+        private void MenuReponedor_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void submenuregistrarventa_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuVentas, new frmDetalleVentas());

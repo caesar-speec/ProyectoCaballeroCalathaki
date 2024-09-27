@@ -107,13 +107,13 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(224, 26);
+            submenuregistrarventa.Size = new Size(165, 26);
             submenuregistrarventa.Text = "Registrar";
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(224, 26);
+            submenuverdetalleventa.Size = new Size(165, 26);
             submenuverdetalleventa.Text = "Ver Detalle";
             // 
             // MenuReponedor
@@ -129,6 +129,7 @@
             MenuReponedor.Size = new Size(80, 69);
             MenuReponedor.Text = "Usuarios";
             MenuReponedor.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuReponedor.Click += MenuReponedor_Click;
             // 
             // iconMenuItem1
             // 

@@ -44,22 +44,30 @@ namespace CapaPresentacion
             Contenedor.Controls.Add(formulario);
             formulario.Show();
         }
+
+
+        
         private void menuusuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
+            //AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
         }
 
         private void submenucategoria_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((menumantenedor, new frmCategoria());
+            //AbrirFormulario((menumantenedor, new frmCategoria());
         }
         private void submenuproducto_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menumantenedor, new frmproducto());
+            //AbrirFormulario(menumantenedor, new frmproducto());
         }
         private void submenuregistrarventa_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(MenuVentas, new frmventas());
+            //AbrirFormulario(MenuVentas, new frmventas());
+        }
+
+        private void menumantenedor_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void MenuReponedor_Click(object sender, EventArgs e)
@@ -67,10 +75,10 @@ namespace CapaPresentacion
 
         }
 
-        private void submenuregistrarventa_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(MenuVentas, new frmDetalleVentas());
-        }
+    
 
+
+
+        
     }
 }

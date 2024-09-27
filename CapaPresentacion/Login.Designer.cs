@@ -47,7 +47,7 @@
             label1.Dock = DockStyle.Top;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(332, 166);
+            label1.Size = new Size(379, 221);
             label1.TabIndex = 0;
             label1.TextAlign = ContentAlignment.BottomLeft;
             label1.Click += label1_Click_1;
@@ -56,11 +56,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.ForestGreen;
-            label2.Font = new Font("游ゴシック", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Yu Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(126, 110);
+            label2.Location = new Point(144, 147);
             label2.Name = "label2";
-            label2.Size = new Size(61, 25);
+            label2.Size = new Size(74, 30);
             label2.TabIndex = 1;
             label2.Text = "P && A";
             // 
@@ -71,26 +71,30 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PlantWilt;
             iconPictureBox1.IconColor = SystemColors.ButtonFace;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 91;
-            iconPictureBox1.Location = new Point(115, 10);
+            iconPictureBox1.IconSize = 104;
+            iconPictureBox1.Location = new Point(131, 13);
+            iconPictureBox1.Margin = new Padding(3, 4, 3, 4);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(91, 97);
+            iconPictureBox1.Size = new Size(104, 129);
             iconPictureBox1.TabIndex = 2;
             iconPictureBox1.TabStop = false;
             // 
             // Tdni
             // 
-            Tdni.Location = new Point(80, 192);
+            Tdni.Location = new Point(91, 256);
+            Tdni.Margin = new Padding(3, 4, 3, 4);
             Tdni.Name = "Tdni";
-            Tdni.Size = new Size(171, 23);
+            Tdni.Size = new Size(195, 27);
             Tdni.TabIndex = 3;
+            Tdni.TextChanged += Tdni_TextChanged;
             // 
             // Tpassword
             // 
-            Tpassword.Location = new Point(80, 248);
+            Tpassword.Location = new Point(91, 331);
+            Tpassword.Margin = new Padding(3, 4, 3, 4);
             Tpassword.Name = "Tpassword";
             Tpassword.PasswordChar = '*';
-            Tpassword.Size = new Size(171, 23);
+            Tpassword.Size = new Size(195, 27);
             Tpassword.TabIndex = 4;
             Tpassword.TextChanged += textBox2_TextChanged;
             // 
@@ -98,9 +102,9 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(80, 174);
+            label3.Location = new Point(91, 232);
             label3.Name = "label3";
-            label3.Size = new Size(27, 15);
+            label3.Size = new Size(35, 20);
             label3.TabIndex = 5;
             label3.Text = "DNI";
             // 
@@ -108,9 +112,9 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(80, 230);
+            label4.Location = new Point(91, 307);
             label4.Name = "label4";
-            label4.Size = new Size(67, 15);
+            label4.Size = new Size(83, 20);
             label4.TabIndex = 6;
             label4.Text = "Contraseña";
             // 
@@ -122,9 +126,10 @@
             btn_ingresar.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             btn_ingresar.IconColor = Color.WhiteSmoke;
             btn_ingresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_ingresar.Location = new Point(43, 278);
+            btn_ingresar.Location = new Point(49, 371);
+            btn_ingresar.Margin = new Padding(3, 4, 3, 4);
             btn_ingresar.Name = "btn_ingresar";
-            btn_ingresar.Size = new Size(117, 38);
+            btn_ingresar.Size = new Size(134, 51);
             btn_ingresar.TabIndex = 7;
             btn_ingresar.Text = "Ingresar";
             btn_ingresar.TextAlign = ContentAlignment.MiddleRight;
@@ -140,9 +145,10 @@
             btn_cancelar.IconChar = FontAwesome.Sharp.IconChar.Close;
             btn_cancelar.IconColor = Color.WhiteSmoke;
             btn_cancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_cancelar.Location = new Point(167, 278);
+            btn_cancelar.Location = new Point(191, 371);
+            btn_cancelar.Margin = new Padding(3, 4, 3, 4);
             btn_cancelar.Name = "btn_cancelar";
-            btn_cancelar.Size = new Size(115, 38);
+            btn_cancelar.Size = new Size(131, 51);
             btn_cancelar.TabIndex = 8;
             btn_cancelar.Text = "Cancelar";
             btn_cancelar.TextAlign = ContentAlignment.MiddleRight;
@@ -153,21 +159,21 @@
             // label5
             // 
             label5.BackColor = Color.ForestGreen;
-            label5.Font = new Font("游ゴシック", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Yu Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Transparent;
-            label5.Location = new Point(126, 132);
+            label5.Location = new Point(144, 176);
             label5.Name = "label5";
-            label5.Size = new Size(94, 20);
+            label5.Size = new Size(107, 27);
             label5.TabIndex = 9;
             label5.Text = "Plantas";
             label5.Click += label5_Click;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            ClientSize = new Size(332, 339);
+            ClientSize = new Size(379, 452);
             Controls.Add(label5);
             Controls.Add(btn_cancelar);
             Controls.Add(btn_ingresar);
@@ -180,6 +186,7 @@
             Controls.Add(label1);
             ForeColor = Color.LightGray;
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

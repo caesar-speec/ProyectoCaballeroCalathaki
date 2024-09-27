@@ -46,9 +46,9 @@ namespace CapaPresentacion
 
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
-            Usuario ousuario =new CN_Usuario().Listar().Where (u => u.Documento == txtdocumento.Text && u.Clave == txtclave.Text).FirstOrDefault();
-                Inicio form = new Inicio();
-                form.Show();
+            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == Tdni.Text && u.Clave == Tpassword.Text).FirstOrDefault();
+            Inicio form = new Inicio(ousuario);
+            form.Show();
             this.Hide();
             form.FormClosing += frm_closing;
         }
@@ -62,6 +62,11 @@ namespace CapaPresentacion
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tdni_TextChanged(object sender, EventArgs e)
         {
 
         }

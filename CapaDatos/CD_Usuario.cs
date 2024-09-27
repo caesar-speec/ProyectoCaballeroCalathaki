@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using CapaEntidad;
+using System.Linq.Expressions;
+using Microsoft.VisualBasic;
 
 
 
@@ -23,6 +25,8 @@ namespace CapaDatos
                     string query = "SELECT IdUsuario, Documento, NombreCompleto, Correo, Clave, Estado FROM usuario";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
+                    
+       
                     oconexion.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -43,6 +47,9 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
+                   Console.WriteLine(ex.Message);
+ 
+              
                     lista = new List<Usuario>();
                 }
             }

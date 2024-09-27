@@ -36,6 +36,8 @@
             submenuverdetalleventa = new ToolStripMenuItem();
             MenuReponedor = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            agregarClienteToolStripMenuItem = new ToolStripMenuItem();
+            modificarClientesToolStripMenuItem = new ToolStripMenuItem();
             menumantenedor = new FontAwesome.Sharp.IconMenuItem();
             submenucategoria = new ToolStripMenuItem();
             submenuproducto = new ToolStripMenuItem();
@@ -43,10 +45,9 @@
             label1 = new Label();
             panel1 = new Panel();
             Contenedor = new Panel();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            lblusuario = new Label();
             Menu2.SuspendLayout();
             Contenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Menu2
@@ -57,7 +58,7 @@
             Menu2.Location = new Point(0, 76);
             Menu2.Name = "Menu2";
             Menu2.Padding = new Padding(7, 3, 0, 3);
-            Menu2.Size = new Size(914, 75);
+            Menu2.Size = new Size(874, 75);
             Menu2.TabIndex = 0;
             Menu2.Text = "menuStrip1";
             // 
@@ -79,14 +80,14 @@
             // 
             MenuGerente.AutoSize = false;
             MenuGerente.ForeColor = SystemColors.ButtonHighlight;
-            MenuGerente.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
+            MenuGerente.IconChar = FontAwesome.Sharp.IconChar.ArrowTrendUp;
             MenuGerente.IconColor = Color.WhiteSmoke;
             MenuGerente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuGerente.IconSize = 50;
             MenuGerente.ImageScaling = ToolStripItemImageScaling.None;
             MenuGerente.Name = "MenuGerente";
             MenuGerente.Size = new Size(80, 69);
-            MenuGerente.Text = "Gerente";
+            MenuGerente.Text = "Reportes";
             MenuGerente.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // MenuVentas
@@ -134,6 +135,7 @@
             // iconMenuItem1
             // 
             iconMenuItem1.AutoSize = false;
+            iconMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { agregarClienteToolStripMenuItem, modificarClientesToolStripMenuItem });
             iconMenuItem1.ForeColor = SystemColors.ButtonHighlight;
             iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
             iconMenuItem1.IconColor = Color.WhiteSmoke;
@@ -144,6 +146,18 @@
             iconMenuItem1.Size = new Size(80, 69);
             iconMenuItem1.Text = "Clientes";
             iconMenuItem1.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // agregarClienteToolStripMenuItem
+            // 
+            agregarClienteToolStripMenuItem.Name = "agregarClienteToolStripMenuItem";
+            agregarClienteToolStripMenuItem.Size = new Size(212, 26);
+            agregarClienteToolStripMenuItem.Text = "Agregar Cliente";
+            // 
+            // modificarClientesToolStripMenuItem
+            // 
+            modificarClientesToolStripMenuItem.Name = "modificarClientesToolStripMenuItem";
+            modificarClientesToolStripMenuItem.Size = new Size(212, 26);
+            modificarClientesToolStripMenuItem.Text = "Modificar Clientes";
             // 
             // menumantenedor
             // 
@@ -159,6 +173,7 @@
             menumantenedor.Size = new Size(80, 69);
             menumantenedor.Text = "Productos";
             menumantenedor.TextImageRelation = TextImageRelation.ImageAboveText;
+            menumantenedor.Click += menumantenedor_Click;
             // 
             // submenucategoria
             // 
@@ -182,7 +197,7 @@
             MenuTitulo.Name = "MenuTitulo";
             MenuTitulo.Padding = new Padding(7, 3, 0, 3);
             MenuTitulo.RightToLeft = RightToLeft.Yes;
-            MenuTitulo.Size = new Size(914, 76);
+            MenuTitulo.Size = new Size(874, 76);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
@@ -210,34 +225,30 @@
             // Contenedor
             // 
             Contenedor.BackColor = SystemColors.ScrollBar;
-            Contenedor.Controls.Add(iconPictureBox1);
+            Contenedor.Controls.Add(lblusuario);
             Contenedor.Dock = DockStyle.Fill;
             Contenedor.ForeColor = SystemColors.ButtonHighlight;
             Contenedor.Location = new Point(0, 151);
             Contenedor.Margin = new Padding(3, 4, 3, 4);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(914, 449);
+            Contenedor.Size = new Size(874, 330);
             Contenedor.TabIndex = 4;
             // 
-            // iconPictureBox1
+            // lblusuario
             // 
-            iconPictureBox1.BackColor = SystemColors.ScrollBar;
-            iconPictureBox1.ForeColor = SystemColors.ButtonHighlight;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconPictureBox1.IconColor = SystemColors.ButtonHighlight;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 8;
-            iconPictureBox1.Location = new Point(263, 71);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(8, 8);
-            iconPictureBox1.TabIndex = 0;
-            iconPictureBox1.TabStop = false;
+            lblusuario.AutoSize = true;
+            lblusuario.ForeColor = SystemColors.ActiveCaptionText;
+            lblusuario.Location = new Point(709, 21);
+            lblusuario.Name = "lblusuario";
+            lblusuario.Size = new Size(33, 20);
+            lblusuario.TabIndex = 0;
+            lblusuario.Text = "aaa";
             // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(874, 481);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -246,12 +257,12 @@
             MainMenuStrip = Menu2;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Inicio";
-            Text = "Form1";
+            Text = "4";
             Load += Inicio_Load;
             Menu2.ResumeLayout(false);
             Menu2.PerformLayout();
             Contenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            Contenedor.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,11 +279,13 @@
         private FontAwesome.Sharp.IconMenuItem MenuReponedor;
         private Panel panel1;
         private Panel Contenedor;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconMenuItem menumantenedor;
         private ToolStripMenuItem submenucategoria;
         private ToolStripMenuItem submenuproducto;
         private ToolStripMenuItem submenuregistrarventa;
         private ToolStripMenuItem submenuverdetalleventa;
+        private ToolStripMenuItem agregarClienteToolStripMenuItem;
+        private ToolStripMenuItem modificarClientesToolStripMenuItem;
+        private Label lblusuario;
     }
 }

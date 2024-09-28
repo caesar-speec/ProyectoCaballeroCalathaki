@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FrmUsuario
+    partial class frmProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             SuspendLayout();
             // 
-            // label1
+            // frmProductos
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(137, 79);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
-            // 
-            // FrmUsuario
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(364, 264);
-            Controls.Add(label1);
-            Name = "FrmUsuario";
-            Text = "FrmUsuario";
+            ClientSize = new Size(800, 450);
+            Name = "frmProductos";
+            Text = "Productos";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
     }
 }

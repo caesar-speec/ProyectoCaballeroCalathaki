@@ -1,5 +1,6 @@
 using FontAwesome.Sharp;
 using CapaEntidad;
+using CapaNegocio;
 namespace CapaPresentacion
 {
     public partial class Inicio : Form
@@ -21,6 +22,7 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.IdUsuario);
             lblusuario.Text = usuarioActual.NombreCompleto;
         }
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
@@ -46,7 +48,7 @@ namespace CapaPresentacion
         }
 
 
-        
+
         private void menuusuarios_Click(object sender, EventArgs e)
         {
             //AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
@@ -75,10 +77,9 @@ namespace CapaPresentacion
 
         }
 
-    
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-
-
-        
+        }
     }
 }

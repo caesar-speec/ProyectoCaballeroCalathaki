@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             Menu2 = new MenuStrip();
-            MenuVendedor = new FontAwesome.Sharp.IconMenuItem();
-            MenuGerente = new FontAwesome.Sharp.IconMenuItem();
+            MenuProvedores = new FontAwesome.Sharp.IconMenuItem();
+            menureportes = new FontAwesome.Sharp.IconMenuItem();
             MenuVentas = new FontAwesome.Sharp.IconMenuItem();
             submenuregistrarventa = new ToolStripMenuItem();
             submenuverdetalleventa = new ToolStripMenuItem();
-            MenuReponedor = new FontAwesome.Sharp.IconMenuItem();
-            iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            menuusuarios = new FontAwesome.Sharp.IconMenuItem();
+            MenuClientes = new FontAwesome.Sharp.IconMenuItem();
             agregarClienteToolStripMenuItem = new ToolStripMenuItem();
             modificarClientesToolStripMenuItem = new ToolStripMenuItem();
             menumantenedor = new FontAwesome.Sharp.IconMenuItem();
@@ -54,41 +54,40 @@
             // 
             Menu2.BackColor = SystemColors.GrayText;
             Menu2.ImageScalingSize = new Size(20, 20);
-            Menu2.Items.AddRange(new ToolStripItem[] { MenuVendedor, MenuGerente, MenuVentas, MenuReponedor, iconMenuItem1, menumantenedor });
-            Menu2.Location = new Point(0, 76);
+            Menu2.Items.AddRange(new ToolStripItem[] { MenuProvedores, menureportes, MenuVentas, menuusuarios, MenuClientes, menumantenedor });
+            Menu2.Location = new Point(0, 57);
             Menu2.Name = "Menu2";
-            Menu2.Padding = new Padding(7, 3, 0, 3);
-            Menu2.Size = new Size(874, 75);
+            Menu2.Size = new Size(765, 73);
             Menu2.TabIndex = 0;
             Menu2.Text = "menuStrip1";
             // 
-            // MenuVendedor
+            // MenuProvedores
             // 
-            MenuVendedor.AutoSize = false;
-            MenuVendedor.ForeColor = SystemColors.ButtonHighlight;
-            MenuVendedor.IconChar = FontAwesome.Sharp.IconChar.Computer;
-            MenuVendedor.IconColor = Color.WhiteSmoke;
-            MenuVendedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuVendedor.IconSize = 50;
-            MenuVendedor.ImageScaling = ToolStripItemImageScaling.None;
-            MenuVendedor.Name = "MenuVendedor";
-            MenuVendedor.Size = new Size(80, 69);
-            MenuVendedor.Text = "Vendedor";
-            MenuVendedor.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuProvedores.AutoSize = false;
+            MenuProvedores.ForeColor = SystemColors.ButtonHighlight;
+            MenuProvedores.IconChar = FontAwesome.Sharp.IconChar.Computer;
+            MenuProvedores.IconColor = Color.WhiteSmoke;
+            MenuProvedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuProvedores.IconSize = 50;
+            MenuProvedores.ImageScaling = ToolStripItemImageScaling.None;
+            MenuProvedores.Name = "MenuProvedores";
+            MenuProvedores.Size = new Size(80, 69);
+            MenuProvedores.Text = "Provedores";
+            MenuProvedores.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
-            // MenuGerente
+            // menureportes
             // 
-            MenuGerente.AutoSize = false;
-            MenuGerente.ForeColor = SystemColors.ButtonHighlight;
-            MenuGerente.IconChar = FontAwesome.Sharp.IconChar.ArrowTrendUp;
-            MenuGerente.IconColor = Color.WhiteSmoke;
-            MenuGerente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuGerente.IconSize = 50;
-            MenuGerente.ImageScaling = ToolStripItemImageScaling.None;
-            MenuGerente.Name = "MenuGerente";
-            MenuGerente.Size = new Size(80, 69);
-            MenuGerente.Text = "Reportes";
-            MenuGerente.TextImageRelation = TextImageRelation.ImageAboveText;
+            menureportes.AutoSize = false;
+            menureportes.ForeColor = SystemColors.ButtonHighlight;
+            menureportes.IconChar = FontAwesome.Sharp.IconChar.ArrowTrendUp;
+            menureportes.IconColor = Color.WhiteSmoke;
+            menureportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            menureportes.IconSize = 50;
+            menureportes.ImageScaling = ToolStripItemImageScaling.None;
+            menureportes.Name = "menureportes";
+            menureportes.Size = new Size(80, 69);
+            menureportes.Text = "Reportes";
+            menureportes.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // MenuVentas
             // 
@@ -108,55 +107,55 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(165, 26);
+            submenuregistrarventa.Size = new Size(129, 22);
             submenuregistrarventa.Text = "Registrar";
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(165, 26);
+            submenuverdetalleventa.Size = new Size(129, 22);
             submenuverdetalleventa.Text = "Ver Detalle";
             // 
-            // MenuReponedor
+            // menuusuarios
             // 
-            MenuReponedor.AutoSize = false;
-            MenuReponedor.ForeColor = SystemColors.ButtonHighlight;
-            MenuReponedor.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            MenuReponedor.IconColor = Color.WhiteSmoke;
-            MenuReponedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuReponedor.IconSize = 50;
-            MenuReponedor.ImageScaling = ToolStripItemImageScaling.None;
-            MenuReponedor.Name = "MenuReponedor";
-            MenuReponedor.Size = new Size(80, 69);
-            MenuReponedor.Text = "Usuarios";
-            MenuReponedor.TextImageRelation = TextImageRelation.ImageAboveText;
-            MenuReponedor.Click += MenuReponedor_Click;
+            menuusuarios.AutoSize = false;
+            menuusuarios.ForeColor = SystemColors.ButtonHighlight;
+            menuusuarios.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            menuusuarios.IconColor = Color.WhiteSmoke;
+            menuusuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            menuusuarios.IconSize = 50;
+            menuusuarios.ImageScaling = ToolStripItemImageScaling.None;
+            menuusuarios.Name = "menuusuarios";
+            menuusuarios.Size = new Size(80, 69);
+            menuusuarios.Text = "Usuarios";
+            menuusuarios.TextImageRelation = TextImageRelation.ImageAboveText;
+            menuusuarios.Click += MenuReponedor_Click;
             // 
-            // iconMenuItem1
+            // MenuClientes
             // 
-            iconMenuItem1.AutoSize = false;
-            iconMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { agregarClienteToolStripMenuItem, modificarClientesToolStripMenuItem });
-            iconMenuItem1.ForeColor = SystemColors.ButtonHighlight;
-            iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
-            iconMenuItem1.IconColor = Color.WhiteSmoke;
-            iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconMenuItem1.IconSize = 50;
-            iconMenuItem1.ImageScaling = ToolStripItemImageScaling.None;
-            iconMenuItem1.Name = "iconMenuItem1";
-            iconMenuItem1.Size = new Size(80, 69);
-            iconMenuItem1.Text = "Clientes";
-            iconMenuItem1.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuClientes.AutoSize = false;
+            MenuClientes.DropDownItems.AddRange(new ToolStripItem[] { agregarClienteToolStripMenuItem, modificarClientesToolStripMenuItem });
+            MenuClientes.ForeColor = SystemColors.ButtonHighlight;
+            MenuClientes.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
+            MenuClientes.IconColor = Color.WhiteSmoke;
+            MenuClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuClientes.IconSize = 50;
+            MenuClientes.ImageScaling = ToolStripItemImageScaling.None;
+            MenuClientes.Name = "MenuClientes";
+            MenuClientes.Size = new Size(80, 69);
+            MenuClientes.Text = "Clientes";
+            MenuClientes.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // agregarClienteToolStripMenuItem
             // 
             agregarClienteToolStripMenuItem.Name = "agregarClienteToolStripMenuItem";
-            agregarClienteToolStripMenuItem.Size = new Size(212, 26);
+            agregarClienteToolStripMenuItem.Size = new Size(170, 22);
             agregarClienteToolStripMenuItem.Text = "Agregar Cliente";
             // 
             // modificarClientesToolStripMenuItem
             // 
             modificarClientesToolStripMenuItem.Name = "modificarClientesToolStripMenuItem";
-            modificarClientesToolStripMenuItem.Size = new Size(212, 26);
+            modificarClientesToolStripMenuItem.Size = new Size(170, 22);
             modificarClientesToolStripMenuItem.Text = "Modificar Clientes";
             // 
             // menumantenedor
@@ -178,13 +177,13 @@
             // submenucategoria
             // 
             submenucategoria.Name = "submenucategoria";
-            submenucategoria.Size = new Size(255, 26);
+            submenucategoria.Size = new Size(204, 22);
             submenucategoria.Text = "Agregar nuevo producto";
             // 
             // submenuproducto
             // 
             submenuproducto.Name = "submenuproducto";
-            submenuproducto.Size = new Size(255, 26);
+            submenuproducto.Size = new Size(204, 22);
             submenuproducto.Text = "Modificar Productos";
             submenuproducto.Click += submenuproducto_Click;
             // 
@@ -195,9 +194,8 @@
             MenuTitulo.ImageScalingSize = new Size(20, 20);
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
-            MenuTitulo.Padding = new Padding(7, 3, 0, 3);
             MenuTitulo.RightToLeft = RightToLeft.Yes;
-            MenuTitulo.Size = new Size(874, 76);
+            MenuTitulo.Size = new Size(765, 57);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
@@ -208,18 +206,18 @@
             label1.BackColor = Color.Green;
             label1.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(80, 27);
+            label1.Location = new Point(70, 20);
             label1.Name = "label1";
-            label1.Size = new Size(260, 38);
+            label1.Size = new Size(209, 29);
             label1.TabIndex = 2;
             label1.Text = "Sistema de Ventas";
+            label1.Click += label1_Click;
             // 
             // panel1
             // 
-            panel1.Location = new Point(264, 259);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(231, 194);
             panel1.Name = "panel1";
-            panel1.Size = new Size(239, 39);
+            panel1.Size = new Size(209, 29);
             panel1.TabIndex = 3;
             // 
             // Contenedor
@@ -228,34 +226,32 @@
             Contenedor.Controls.Add(lblusuario);
             Contenedor.Dock = DockStyle.Fill;
             Contenedor.ForeColor = SystemColors.ButtonHighlight;
-            Contenedor.Location = new Point(0, 151);
-            Contenedor.Margin = new Padding(3, 4, 3, 4);
+            Contenedor.Location = new Point(0, 130);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(874, 330);
+            Contenedor.Size = new Size(765, 231);
             Contenedor.TabIndex = 4;
             // 
             // lblusuario
             // 
             lblusuario.AutoSize = true;
             lblusuario.ForeColor = SystemColors.ActiveCaptionText;
-            lblusuario.Location = new Point(709, 21);
+            lblusuario.Location = new Point(620, 16);
             lblusuario.Name = "lblusuario";
-            lblusuario.Size = new Size(33, 20);
+            lblusuario.Size = new Size(25, 15);
             lblusuario.TabIndex = 0;
             lblusuario.Text = "aaa";
             // 
             // Inicio
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 481);
+            ClientSize = new Size(765, 361);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(Menu2);
             Controls.Add(MenuTitulo);
             MainMenuStrip = Menu2;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Inicio";
             Text = "4";
             Load += Inicio_Load;
@@ -272,11 +268,11 @@
         private MenuStrip Menu2;
         private MenuStrip MenuTitulo;
         private Label label1;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
-        private FontAwesome.Sharp.IconMenuItem MenuVendedor;
-        private FontAwesome.Sharp.IconMenuItem MenuGerente;
+        private FontAwesome.Sharp.IconMenuItem MenuClientes;
+        private FontAwesome.Sharp.IconMenuItem MenuProvedores;
+        private FontAwesome.Sharp.IconMenuItem menureportes;
         private FontAwesome.Sharp.IconMenuItem MenuVentas;
-        private FontAwesome.Sharp.IconMenuItem MenuReponedor;
+        private FontAwesome.Sharp.IconMenuItem menuusuarios;
         private Panel panel1;
         private Panel Contenedor;
         private FontAwesome.Sharp.IconMenuItem menumantenedor;
@@ -287,5 +283,6 @@
         private ToolStripMenuItem agregarClienteToolStripMenuItem;
         private ToolStripMenuItem modificarClientesToolStripMenuItem;
         private Label lblusuario;
+        private ToolStripMenuItem comprasToolStripMenuItem;
     }
 }

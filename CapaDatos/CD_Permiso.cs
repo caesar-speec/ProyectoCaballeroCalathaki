@@ -37,7 +37,7 @@ namespace CapaDatos
                         {
                             lista.Add(new Permiso()
                             {
-                                oRol = new Rol() { ID_rol = Convert.ToInt32(dr["IdRol"]) },
+                                oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]) },
                                 NombreMenu = dr["NombreMenu"].ToString()
                             });
                         }

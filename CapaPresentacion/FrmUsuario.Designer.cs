@@ -41,7 +41,7 @@
             textBox5 = new TextBox();
             label6 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            cborol = new ComboBox();
             cboestado = new ComboBox();
             label7 = new Label();
             btnGuardar = new FontAwesome.Sharp.IconButton();
@@ -169,14 +169,14 @@
             label2.TabIndex = 12;
             label2.Text = "Rol:";
             // 
-            // comboBox1
+            // cborol
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 285);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(149, 23);
-            comboBox1.TabIndex = 13;
+            cborol.DropDownStyle = ComboBoxStyle.DropDownList;
+            cborol.FormattingEnabled = true;
+            cborol.Location = new Point(12, 285);
+            cborol.Name = "cborol";
+            cborol.Size = new Size(149, 23);
+            cborol.TabIndex = 13;
             // 
             // cboestado
             // 
@@ -385,7 +385,7 @@
             Controls.Add(btnGuardar);
             Controls.Add(cboestado);
             Controls.Add(label7);
-            Controls.Add(comboBox1);
+            Controls.Add(cborol);
             Controls.Add(label2);
             Controls.Add(textBox5);
             Controls.Add(label6);
@@ -420,7 +420,7 @@
         private TextBox textBox5;
         private Label label6;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox cborol;
         private ComboBox cboestado;
         private Label label7;
         private FontAwesome.Sharp.IconButton btnGuardar;

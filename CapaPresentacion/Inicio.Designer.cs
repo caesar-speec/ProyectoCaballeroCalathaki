@@ -55,9 +55,10 @@
             Menu2.BackColor = SystemColors.GrayText;
             Menu2.ImageScalingSize = new Size(20, 20);
             Menu2.Items.AddRange(new ToolStripItem[] { MenuProvedores, menureportes, MenuVentas, menuusuarios, MenuClientes, menumantenedor });
-            Menu2.Location = new Point(0, 57);
+            Menu2.Location = new Point(0, 76);
             Menu2.Name = "Menu2";
-            Menu2.Size = new Size(765, 73);
+            Menu2.Padding = new Padding(7, 3, 0, 3);
+            Menu2.Size = new Size(874, 75);
             Menu2.TabIndex = 0;
             Menu2.Text = "menuStrip1";
             // 
@@ -107,13 +108,13 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(129, 22);
+            submenuregistrarventa.Size = new Size(165, 26);
             submenuregistrarventa.Text = "Registrar";
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(129, 22);
+            submenuverdetalleventa.Size = new Size(165, 26);
             submenuverdetalleventa.Text = "Ver Detalle";
             // 
             // menuusuarios
@@ -149,13 +150,13 @@
             // agregarClienteToolStripMenuItem
             // 
             agregarClienteToolStripMenuItem.Name = "agregarClienteToolStripMenuItem";
-            agregarClienteToolStripMenuItem.Size = new Size(170, 22);
+            agregarClienteToolStripMenuItem.Size = new Size(212, 26);
             agregarClienteToolStripMenuItem.Text = "Agregar Cliente";
             // 
             // modificarClientesToolStripMenuItem
             // 
             modificarClientesToolStripMenuItem.Name = "modificarClientesToolStripMenuItem";
-            modificarClientesToolStripMenuItem.Size = new Size(170, 22);
+            modificarClientesToolStripMenuItem.Size = new Size(212, 26);
             modificarClientesToolStripMenuItem.Text = "Modificar Clientes";
             // 
             // menumantenedor
@@ -177,13 +178,14 @@
             // submenucategoria
             // 
             submenucategoria.Name = "submenucategoria";
-            submenucategoria.Size = new Size(204, 22);
+            submenucategoria.Size = new Size(255, 26);
             submenucategoria.Text = "Agregar nuevo producto";
+            submenucategoria.Click += submenucategoria_Click_1;
             // 
             // submenuproducto
             // 
             submenuproducto.Name = "submenuproducto";
-            submenuproducto.Size = new Size(204, 22);
+            submenuproducto.Size = new Size(255, 26);
             submenuproducto.Text = "Modificar Productos";
             submenuproducto.Click += submenuproducto_Click;
             // 
@@ -194,8 +196,9 @@
             MenuTitulo.ImageScalingSize = new Size(20, 20);
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
+            MenuTitulo.Padding = new Padding(7, 3, 0, 3);
             MenuTitulo.RightToLeft = RightToLeft.Yes;
-            MenuTitulo.Size = new Size(765, 57);
+            MenuTitulo.Size = new Size(874, 76);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
@@ -206,18 +209,19 @@
             label1.BackColor = Color.Green;
             label1.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(70, 20);
+            label1.Location = new Point(80, 27);
             label1.Name = "label1";
-            label1.Size = new Size(209, 29);
+            label1.Size = new Size(260, 38);
             label1.TabIndex = 2;
             label1.Text = "Sistema de Ventas";
             label1.Click += label1_Click;
             // 
             // panel1
             // 
-            panel1.Location = new Point(231, 194);
+            panel1.Location = new Point(264, 259);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(209, 29);
+            panel1.Size = new Size(239, 39);
             panel1.TabIndex = 3;
             // 
             // Contenedor
@@ -226,32 +230,34 @@
             Contenedor.Controls.Add(lblusuario);
             Contenedor.Dock = DockStyle.Fill;
             Contenedor.ForeColor = SystemColors.ButtonHighlight;
-            Contenedor.Location = new Point(0, 130);
+            Contenedor.Location = new Point(0, 151);
+            Contenedor.Margin = new Padding(3, 4, 3, 4);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(765, 231);
+            Contenedor.Size = new Size(874, 330);
             Contenedor.TabIndex = 4;
             // 
             // lblusuario
             // 
             lblusuario.AutoSize = true;
             lblusuario.ForeColor = SystemColors.ActiveCaptionText;
-            lblusuario.Location = new Point(620, 16);
+            lblusuario.Location = new Point(709, 21);
             lblusuario.Name = "lblusuario";
-            lblusuario.Size = new Size(25, 15);
+            lblusuario.Size = new Size(33, 20);
             lblusuario.TabIndex = 0;
             lblusuario.Text = "aaa";
             // 
             // Inicio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(765, 361);
+            ClientSize = new Size(874, 481);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(Menu2);
             Controls.Add(MenuTitulo);
             MainMenuStrip = Menu2;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Inicio";
             Text = "4";
             Load += Inicio_Load;

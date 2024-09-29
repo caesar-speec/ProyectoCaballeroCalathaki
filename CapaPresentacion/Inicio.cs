@@ -39,9 +39,9 @@ namespace CapaPresentacion
         {
             if (MenuActivo != null)
             {
-                MenuActivo.BackColor = Color.White;
+                MenuActivo.BackColor = Color.DeepSkyBlue;
             }
-            menu.BackColor = Color.Silver;
+            menu.BackColor = Color.Blue;
             MenuActivo = menu;
 
             if (formularioActivo != null)
@@ -66,15 +66,15 @@ namespace CapaPresentacion
 
         private void submenucategoria_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario((menumantenedor, new frmCategoria());
+            //AbrirFormulario((menumantenedor, new frmCategorias());
         }
         private void submenuproducto_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario(menumantenedor, new frmproducto());
+            //AbrirFormulario(menumantenedor, new frmProductos());
         }
         private void submenuregistrarventa_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario(MenuVentas, new frmventas());
+            //AbrirFormulario(MenuVentas, new frmVentas());
         }
 
         private void menumantenedor_Click(object sender, EventArgs e)
@@ -88,6 +88,11 @@ namespace CapaPresentacion
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void submenucategoria_Click_1(object sender, EventArgs e)
         {
 
         }

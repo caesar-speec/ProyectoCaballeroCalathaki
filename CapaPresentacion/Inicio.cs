@@ -39,21 +39,25 @@ namespace CapaPresentacion
         {
             if (MenuActivo != null)
             {
-                MenuActivo.BackColor = Color.DeepSkyBlue;
+                MenuActivo.BackColor = Color.White;
             }
-            menu.BackColor = Color.Blue;
+            menu.BackColor = Color.Silver;
             MenuActivo = menu;
 
             if (formularioActivo != null)
             {
                 formularioActivo.Close();
             }
+
             formularioActivo = formulario;
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-            formulario.BackColor = Color.SteelBlue;
+
+            // Limpia el contenedor y agrega el formulario
+            Contenedor.Controls.Clear();
             Contenedor.Controls.Add(formulario);
+            formulario.BringToFront();
             formulario.Show();
         }
 
@@ -88,7 +92,8 @@ namespace CapaPresentacion
 
         private void MenuReponedor_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario((menumantenedor, new frmCategorias());
+            AbrirFormulario((IconMenuItem)sender, new FrmUsuario());
+
         }
 
 

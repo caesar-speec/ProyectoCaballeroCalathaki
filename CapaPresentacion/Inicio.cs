@@ -59,42 +59,74 @@ namespace CapaPresentacion
 
 
 
-        private void menuusuarios_Click(object sender, EventArgs e)
+       
+
+        private void MenuProvedores_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new FrmUsuario());
+
         }
 
-        private void submenucategoria_Click(object sender, EventArgs e)
+
+
+        private void MenuReportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void submenuregistrarventa_Click_1(object sender, EventArgs e)
+        {
+            //AbrirFormulario(MenuVentas, new frmVentas());
+        }
+        private void submenuverdetalleventa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void MenuReponedor_Click(object sender, EventArgs e)
         {
             //AbrirFormulario((menumantenedor, new frmCategorias());
+        }
+
+
+
+        private void submenuAgregarClientes_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void SubmenuModificarClientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void submenucategoria_Click_1(object sender, EventArgs e)
+        {
+
         }
         private void submenuproducto_Click(object sender, EventArgs e)
         {
             //AbrirFormulario(menumantenedor, new frmProductos());
         }
-        private void submenuregistrarventa_Click(object sender, EventArgs e)
-        {
-            //AbrirFormulario(MenuVentas, new frmVentas());
-        }
+
+
 
         private void menumantenedor_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void MenuReponedor_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void submenucategoria_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

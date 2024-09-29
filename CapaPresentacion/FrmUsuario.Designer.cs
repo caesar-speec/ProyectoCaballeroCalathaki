@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             DNI = new Label();
             textBox1 = new TextBox();
@@ -42,7 +42,7 @@
             label6 = new Label();
             label2 = new Label();
             comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            cboestado = new ComboBox();
             label7 = new Label();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             btnEditar = new FontAwesome.Sharp.IconButton();
@@ -178,14 +178,15 @@
             comboBox1.Size = new Size(149, 23);
             comboBox1.TabIndex = 13;
             // 
-            // comboBox2
+            // cboestado
             // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(12, 329);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(149, 23);
-            comboBox2.TabIndex = 15;
+            cboestado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboestado.FormattingEnabled = true;
+            cboestado.Location = new Point(12, 329);
+            cboestado.Name = "cboestado";
+            cboestado.Size = new Size(149, 23);
+            cboestado.TabIndex = 15;
+            cboestado.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label7
             // 
@@ -261,19 +262,20 @@
             label8.Size = new Size(146, 28);
             label8.TabIndex = 19;
             label8.Text = "Nuevo Usuario:";
+            label8.Click += label8_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, IdUsuario, Documento, NombreCompleto, Correo, Clave, IdRol, EstadoValor, Rol, Estado });
             dataGridView1.Location = new Point(188, 91);
@@ -381,7 +383,7 @@
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(btnGuardar);
-            Controls.Add(comboBox2);
+            Controls.Add(cboestado);
             Controls.Add(label7);
             Controls.Add(comboBox1);
             Controls.Add(label2);
@@ -398,6 +400,7 @@
             Controls.Add(label1);
             Name = "FrmUsuario";
             Text = "Usuario";
+            Load += FrmUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -418,7 +421,7 @@
         private Label label6;
         private Label label2;
         private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox cboestado;
         private Label label7;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnEditar;

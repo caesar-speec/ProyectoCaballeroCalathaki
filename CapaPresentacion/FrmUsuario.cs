@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using CapaEntidad;
 using CapaNegocio;
 
@@ -68,7 +67,12 @@ namespace CapaPresentacion
             List<Usuario> listaUsuario = new CN_Usuario().Listar();
             foreach (Usuario item in listaUsuario)
             {
-                cborol.Items.Add(new OpcionCombo() { Valor = item.IdRol, Texto = item.Descripcion });
+                dgvdata.Rows.Add(new object[] {"",item.IdUsuario,item.Documento, item.NombreCompleto, item.Correo, item.Clave,
+                 item.oRol.IdRol,
+                 item.oRol.Descripcion,
+                 item.Estado == true ? 1 : 0,
+                 item.Estado == true ? "Activo" : "Inactivo"
+             });
             }
             cborol.DisplayMember = "Texto";
             cborol.ValueMember = "Valor";
@@ -85,22 +89,33 @@ namespace CapaPresentacion
             });
             //limpiar();
         }
-    }
-    
-    /*
-    private void limpiar()
+
+        private void Clear()
         {
             txtid.Text = "0";
-            txtdocumento.Text = "0";
-            txtnombrecompleto.Text = "0";
-            txtcorreo.Text = "0";
-            txtclave.Text = "0";
-            txtclave2.Text = "0";
+            txtdocumento.Text = "";
+            txtnombrecompleto.Text = "";
+            txtcorreo.Text = "";
+            txtclave.Text = "";
+            txtclave2.Text = "";
             cborol.SelectedIndex = 0;
             cboestado.SelectedIndex = 0;
-
         }
-    */
 
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            if(e.ColumnIndex == 0)
+            {
+                Image checkImage = Properties.Resources.check;
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.check.width;
+                var h = Properties.Resources.check.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(Propierties.)
+            }
+        }
+    }
 }
-

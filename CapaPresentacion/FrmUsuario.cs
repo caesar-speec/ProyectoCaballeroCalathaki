@@ -1,15 +1,12 @@
-﻿using CapaPresentacion.Utilidades;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CapaEntidad;
+﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Utilidades;
+using CapaPresentacion;
+using System.Drawing;
+using System.IO;
+using System.Reflection;
+
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace CapaPresentacion
 {
@@ -101,21 +98,39 @@ namespace CapaPresentacion
             cborol.SelectedIndex = 0;
             cboestado.SelectedIndex = 0;
         }
-
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
-            if(e.ColumnIndex == 0)
+
+            if (e.ColumnIndex == 0)
             {
-                Image checkImage = Properties.Resources.check;
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var w = Properties.Resources.check.width;
-                var h = Properties.Resources.check.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.top + (e.CellBounds.Height - h) / 2;
-                e.Graphics.DrawImage(Propierties.)
+
+                // Obtener el ensamblado actual
+                var assembly = Assembly.GetExecutingAssembly();
+
+                // Reemplaza el string con el nombre correcto del recurso
+                using (Stream stream = assembly.GetManifestResourceStream("CapaPresentacion.Resources.check.png"))
+                {
+                    if (stream != null)
+                    {
+                        // Cargar la imagen desde el stream
+                        var checkImage = Image.FromStream(stream);
+
+                        // Dimensiones de la celda
+                        int cellWidth = e.CellBounds.Width;
+                        int cellHeight = e.CellBounds.Height;
+
+                        // Dibujar la imagen en la celda ajustada completamente al tamaño de la celda
+                        e.Graphics.DrawImage(checkImage, new Rectangle(e.CellBounds.Left, e.CellBounds.Top, cellWidth, cellHeight));
+                    }
+                }
+
+                // Marcar el evento como manejado
+                e.Handled = true;
             }
         }
     }
 }
+

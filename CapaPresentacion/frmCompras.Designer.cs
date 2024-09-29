@@ -31,30 +31,30 @@
             label1 = new Label();
             label2 = new Label();
             groupBox1 = new GroupBox();
-            label3 = new Label();
-            label4 = new Label();
-            txtfecha = new TextBox();
             cbotipodocumento = new ComboBox();
+            txtfecha = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
             groupBox2 = new GroupBox();
+            txtidproveedor = new TextBox();
+            btnbuscarproveedor = new FontAwesome.Sharp.IconButton();
+            txtnombreproveedor = new TextBox();
             txtdocproveedor = new TextBox();
             label5 = new Label();
             label6 = new Label();
-            txtnombreproveedor = new TextBox();
-            btnbuscarproveedor = new FontAwesome.Sharp.IconButton();
-            txtidproveedor = new TextBox();
             groupBox3 = new GroupBox();
+            txtidproducto = new TextBox();
+            txtcantidad = new NumericUpDown();
+            label10 = new Label();
+            label11 = new Label();
+            label9 = new Label();
+            txtprecioventa = new TextBox();
             txpreciocompra = new TextBox();
             btnbuscarproducto = new FontAwesome.Sharp.IconButton();
             txtproducto = new TextBox();
             textBox3 = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            txtprecioventa = new TextBox();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            txtcantidad = new NumericUpDown();
-            txtidproducto = new TextBox();
             dataGridView1 = new DataGridView();
             idProducto = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
@@ -110,14 +110,20 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion Compra";
             // 
-            // label3
+            // cbotipodocumento
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(7, 26);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Fecha:";
+            cbotipodocumento.FormattingEnabled = true;
+            cbotipodocumento.Location = new Point(186, 49);
+            cbotipodocumento.Name = "cbotipodocumento";
+            cbotipodocumento.Size = new Size(192, 28);
+            cbotipodocumento.TabIndex = 3;
+            // 
+            // txtfecha
+            // 
+            txtfecha.Location = new Point(7, 49);
+            txtfecha.Name = "txtfecha";
+            txtfecha.Size = new Size(158, 27);
+            txtfecha.TabIndex = 2;
             // 
             // label4
             // 
@@ -128,20 +134,14 @@
             label4.TabIndex = 1;
             label4.Text = "Tipo Documento:";
             // 
-            // txtfecha
+            // label3
             // 
-            txtfecha.Location = new Point(7, 49);
-            txtfecha.Name = "txtfecha";
-            txtfecha.Size = new Size(158, 27);
-            txtfecha.TabIndex = 2;
-            // 
-            // cbotipodocumento
-            // 
-            cbotipodocumento.FormattingEnabled = true;
-            cbotipodocumento.Location = new Point(186, 49);
-            cbotipodocumento.Name = "cbotipodocumento";
-            cbotipodocumento.Size = new Size(192, 28);
-            cbotipodocumento.TabIndex = 3;
+            label3.AutoSize = true;
+            label3.Location = new Point(7, 26);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 20);
+            label3.TabIndex = 0;
+            label3.Text = "Fecha:";
             // 
             // groupBox2
             // 
@@ -158,6 +158,33 @@
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Informacion Proveedor";
+            // 
+            // txtidproveedor
+            // 
+            txtidproveedor.Location = new Point(388, 17);
+            txtidproveedor.Name = "txtidproveedor";
+            txtidproveedor.Size = new Size(34, 27);
+            txtidproveedor.TabIndex = 4;
+            txtidproveedor.Visible = false;
+            // 
+            // btnbuscarproveedor
+            // 
+            btnbuscarproveedor.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btnbuscarproveedor.IconColor = Color.Black;
+            btnbuscarproveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnbuscarproveedor.IconSize = 26;
+            btnbuscarproveedor.Location = new Point(171, 49);
+            btnbuscarproveedor.Name = "btnbuscarproveedor";
+            btnbuscarproveedor.Size = new Size(52, 28);
+            btnbuscarproveedor.TabIndex = 4;
+            btnbuscarproveedor.UseVisualStyleBackColor = true;
+            // 
+            // txtnombreproveedor
+            // 
+            txtnombreproveedor.Location = new Point(239, 50);
+            txtnombreproveedor.Name = "txtnombreproveedor";
+            txtnombreproveedor.Size = new Size(183, 27);
+            txtnombreproveedor.TabIndex = 3;
             // 
             // txtdocproveedor
             // 
@@ -184,33 +211,6 @@
             label6.TabIndex = 0;
             label6.Text = "Numero Documento:";
             // 
-            // txtnombreproveedor
-            // 
-            txtnombreproveedor.Location = new Point(239, 50);
-            txtnombreproveedor.Name = "txtnombreproveedor";
-            txtnombreproveedor.Size = new Size(183, 27);
-            txtnombreproveedor.TabIndex = 3;
-            // 
-            // btnbuscarproveedor
-            // 
-            btnbuscarproveedor.IconChar = FontAwesome.Sharp.IconChar.Search;
-            btnbuscarproveedor.IconColor = Color.Black;
-            btnbuscarproveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnbuscarproveedor.IconSize = 26;
-            btnbuscarproveedor.Location = new Point(171, 49);
-            btnbuscarproveedor.Name = "btnbuscarproveedor";
-            btnbuscarproveedor.Size = new Size(52, 28);
-            btnbuscarproveedor.TabIndex = 4;
-            btnbuscarproveedor.UseVisualStyleBackColor = true;
-            // 
-            // txtidproveedor
-            // 
-            txtidproveedor.Location = new Point(388, 17);
-            txtidproveedor.Name = "txtidproveedor";
-            txtidproveedor.Size = new Size(34, 27);
-            txtidproveedor.TabIndex = 4;
-            txtidproveedor.Visible = false;
-            // 
             // groupBox3
             // 
             groupBox3.BackColor = SystemColors.ControlLightLight;
@@ -232,6 +232,56 @@
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             groupBox3.Text = "Informacion Proveedor";
+            // 
+            // txtidproducto
+            // 
+            txtidproducto.Location = new Point(169, 15);
+            txtidproducto.Name = "txtidproducto";
+            txtidproducto.Size = new Size(34, 27);
+            txtidproducto.TabIndex = 10;
+            txtidproducto.Visible = false;
+            // 
+            // txtcantidad
+            // 
+            txtcantidad.Location = new Point(786, 49);
+            txtcantidad.Name = "txtcantidad";
+            txtcantidad.Size = new Size(85, 27);
+            txtcantidad.TabIndex = 9;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(639, 23);
+            label10.Name = "label10";
+            label10.Size = new Size(94, 20);
+            label10.TabIndex = 7;
+            label10.Text = "Precio Venta:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(786, 24);
+            label11.Name = "label11";
+            label11.Size = new Size(72, 20);
+            label11.TabIndex = 8;
+            label11.Text = "Cantidad:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(501, 22);
+            label9.Name = "label9";
+            label9.Size = new Size(108, 20);
+            label9.TabIndex = 6;
+            label9.Text = "Precio compra:";
+            // 
+            // txtprecioventa
+            // 
+            txtprecioventa.Location = new Point(639, 49);
+            txtprecioventa.Name = "txtprecioventa";
+            txtprecioventa.Size = new Size(116, 27);
+            txtprecioventa.TabIndex = 5;
+            txtprecioventa.TextChanged += textBox4_TextChanged;
             // 
             // txpreciocompra
             // 
@@ -284,56 +334,6 @@
             label8.TabIndex = 0;
             label8.Text = "Numero Documento:";
             // 
-            // txtprecioventa
-            // 
-            txtprecioventa.Location = new Point(639, 49);
-            txtprecioventa.Name = "txtprecioventa";
-            txtprecioventa.Size = new Size(116, 27);
-            txtprecioventa.TabIndex = 5;
-            txtprecioventa.TextChanged += textBox4_TextChanged;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(501, 22);
-            label9.Name = "label9";
-            label9.Size = new Size(108, 20);
-            label9.TabIndex = 6;
-            label9.Text = "Precio compra:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(639, 23);
-            label10.Name = "label10";
-            label10.Size = new Size(94, 20);
-            label10.TabIndex = 7;
-            label10.Text = "Precio Venta:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(786, 24);
-            label11.Name = "label11";
-            label11.Size = new Size(72, 20);
-            label11.TabIndex = 8;
-            label11.Text = "Cantidad:";
-            // 
-            // txtcantidad
-            // 
-            txtcantidad.Location = new Point(786, 49);
-            txtcantidad.Name = "txtcantidad";
-            txtcantidad.Size = new Size(85, 27);
-            txtcantidad.TabIndex = 9;
-            // 
-            // txtidproducto
-            // 
-            txtidproducto.Location = new Point(169, 15);
-            txtidproducto.Name = "txtidproducto";
-            txtidproducto.Size = new Size(34, 27);
-            txtidproducto.TabIndex = 10;
-            txtidproducto.Visible = false;
-            // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
@@ -348,6 +348,7 @@
             // idProducto
             // 
             idProducto.HeaderText = "id_Producto";
+            idProducto.MinimumWidth = 6;
             idProducto.Name = "idProducto";
             idProducto.Visible = false;
             idProducto.Width = 35;
@@ -456,7 +457,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmCompras";
-            Text = "frmCompras";
+            Text = "Registro de Compra";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

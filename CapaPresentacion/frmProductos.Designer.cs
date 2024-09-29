@@ -32,14 +32,6 @@
             txtid = new TextBox();
             label9 = new Label();
             dgvdata = new DataGridView();
-            btnseleccionar = new DataGridViewButtonColumn();
-            Id = new DataGridViewTextBoxColumn();
-            Codigo = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            IdCaegoria = new DataGridViewTextBoxColumn();
-            Caegoria = new DataGridViewTextBoxColumn();
-            EstadoValor = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
             label8 = new Label();
             btnEliminar = new FontAwesome.Sharp.IconButton();
             btnEditar = new FontAwesome.Sharp.IconButton();
@@ -55,6 +47,16 @@
             txtcodigo = new TextBox();
             DNI = new Label();
             label1 = new Label();
+            btnseleccionar = new DataGridViewButtonColumn();
+            Id = new DataGridViewTextBoxColumn();
+            Codigo = new DataGridViewTextBoxColumn();
+            Descripcion = new DataGridViewTextBoxColumn();
+            IdCaegoria = new DataGridViewTextBoxColumn();
+            Caegoria = new DataGridViewTextBoxColumn();
+            PrecioCompra = new DataGridViewTextBoxColumn();
+            PrecioVenta = new DataGridViewTextBoxColumn();
+            EstadoValor = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             label9.Font = new Font("Segoe UI", 15F);
             label9.Location = new Point(226, 53);
             label9.Name = "label9";
-            label9.Size = new Size(1040, 61);
+            label9.Size = new Size(1081, 61);
             label9.TabIndex = 43;
             label9.Text = "Lista de Productos:";
             label9.TextAlign = ContentAlignment.MiddleLeft;
@@ -91,82 +93,15 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Codigo, Descripcion, IdCaegoria, Caegoria, EstadoValor, Estado });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Codigo, Descripcion, IdCaegoria, Caegoria, PrecioCompra, PrecioVenta, EstadoValor, Estado });
             dgvdata.Location = new Point(226, 135);
             dgvdata.Margin = new Padding(3, 4, 3, 4);
             dgvdata.MultiSelect = false;
             dgvdata.Name = "dgvdata";
             dgvdata.ReadOnly = true;
             dgvdata.RowHeadersWidth = 51;
-            dgvdata.Size = new Size(1040, 431);
+            dgvdata.Size = new Size(1081, 431);
             dgvdata.TabIndex = 42;
-            // 
-            // btnseleccionar
-            // 
-            btnseleccionar.HeaderText = "";
-            btnseleccionar.MinimumWidth = 6;
-            btnseleccionar.Name = "btnseleccionar";
-            btnseleccionar.ReadOnly = true;
-            btnseleccionar.Width = 30;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Visible = false;
-            Id.Width = 125;
-            // 
-            // Codigo
-            // 
-            Codigo.HeaderText = "Codigo";
-            Codigo.MinimumWidth = 6;
-            Codigo.Name = "Codigo";
-            Codigo.ReadOnly = true;
-            Codigo.Width = 150;
-            // 
-            // Descripcion
-            // 
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.MinimumWidth = 6;
-            Descripcion.Name = "Descripcion";
-            Descripcion.ReadOnly = true;
-            Descripcion.Width = 180;
-            // 
-            // IdCaegoria
-            // 
-            IdCaegoria.HeaderText = "IdCaegoria";
-            IdCaegoria.MinimumWidth = 6;
-            IdCaegoria.Name = "IdCaegoria";
-            IdCaegoria.ReadOnly = true;
-            IdCaegoria.Visible = false;
-            IdCaegoria.Width = 125;
-            // 
-            // Caegoria
-            // 
-            Caegoria.HeaderText = "Caegoria";
-            Caegoria.MinimumWidth = 6;
-            Caegoria.Name = "Caegoria";
-            Caegoria.ReadOnly = true;
-            Caegoria.Width = 125;
-            // 
-            // EstadoValor
-            // 
-            EstadoValor.HeaderText = "EstadoValor";
-            EstadoValor.MinimumWidth = 6;
-            EstadoValor.Name = "EstadoValor";
-            EstadoValor.ReadOnly = true;
-            EstadoValor.Visible = false;
-            EstadoValor.Width = 125;
-            // 
-            // Estado
-            // 
-            Estado.HeaderText = "Estado";
-            Estado.MinimumWidth = 6;
-            Estado.Name = "Estado";
-            Estado.ReadOnly = true;
-            Estado.Width = 125;
             // 
             // label8
             // 
@@ -346,12 +281,95 @@
             label1.Size = new Size(208, 620);
             label1.TabIndex = 23;
             // 
+            // btnseleccionar
+            // 
+            btnseleccionar.HeaderText = "";
+            btnseleccionar.MinimumWidth = 6;
+            btnseleccionar.Name = "btnseleccionar";
+            btnseleccionar.ReadOnly = true;
+            btnseleccionar.Width = 30;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            Id.Width = 125;
+            // 
+            // Codigo
+            // 
+            Codigo.HeaderText = "Codigo";
+            Codigo.MinimumWidth = 6;
+            Codigo.Name = "Codigo";
+            Codigo.ReadOnly = true;
+            Codigo.Width = 150;
+            // 
+            // Descripcion
+            // 
+            Descripcion.HeaderText = "Descripcion";
+            Descripcion.MinimumWidth = 6;
+            Descripcion.Name = "Descripcion";
+            Descripcion.ReadOnly = true;
+            Descripcion.Width = 180;
+            // 
+            // IdCaegoria
+            // 
+            IdCaegoria.HeaderText = "IdCaegoria";
+            IdCaegoria.MinimumWidth = 6;
+            IdCaegoria.Name = "IdCaegoria";
+            IdCaegoria.ReadOnly = true;
+            IdCaegoria.Visible = false;
+            IdCaegoria.Width = 125;
+            // 
+            // Caegoria
+            // 
+            Caegoria.HeaderText = "Caegoria";
+            Caegoria.MinimumWidth = 6;
+            Caegoria.Name = "Caegoria";
+            Caegoria.ReadOnly = true;
+            Caegoria.Width = 125;
+            // 
+            // PrecioCompra
+            // 
+            PrecioCompra.HeaderText = "Precio Compra";
+            PrecioCompra.MinimumWidth = 6;
+            PrecioCompra.Name = "PrecioCompra";
+            PrecioCompra.ReadOnly = true;
+            PrecioCompra.Width = 125;
+            // 
+            // PrecioVenta
+            // 
+            PrecioVenta.HeaderText = "Precio Venta";
+            PrecioVenta.MinimumWidth = 6;
+            PrecioVenta.Name = "PrecioVenta";
+            PrecioVenta.ReadOnly = true;
+            PrecioVenta.Width = 125;
+            // 
+            // EstadoValor
+            // 
+            EstadoValor.HeaderText = "EstadoValor";
+            EstadoValor.MinimumWidth = 6;
+            EstadoValor.Name = "EstadoValor";
+            EstadoValor.ReadOnly = true;
+            EstadoValor.Visible = false;
+            EstadoValor.Width = 125;
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 6;
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            Estado.Width = 125;
+            // 
             // frmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1278, 620);
+            ClientSize = new Size(1319, 620);
             Controls.Add(txtid);
             Controls.Add(label9);
             Controls.Add(dgvdata);
@@ -403,6 +421,8 @@
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn IdCaegoria;
         private DataGridViewTextBoxColumn Caegoria;
+        private DataGridViewTextBoxColumn PrecioCompra;
+        private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
     }

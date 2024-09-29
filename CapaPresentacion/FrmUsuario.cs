@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmCompras : Form
+    public partial class FrmUsuario : Form
     {
-        public frmCompras()
+        public FrmUsuario()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

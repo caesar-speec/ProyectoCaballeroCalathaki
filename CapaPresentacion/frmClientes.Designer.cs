@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmProductos
+    partial class frmClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtid = new TextBox();
             label9 = new Label();
             dgvdata = new DataGridView();
@@ -38,24 +38,21 @@
             btnGuardar = new FontAwesome.Sharp.IconButton();
             cboestado = new ComboBox();
             label7 = new Label();
-            cbocategoria = new ComboBox();
-            label2 = new Label();
-            txtdescripcion = new TextBox();
+            txttelefono = new TextBox();
+            label5 = new Label();
+            txtcorreo = new TextBox();
             label4 = new Label();
-            txtnombre = new TextBox();
+            txtnombrecompleto = new TextBox();
             label3 = new Label();
-            txtcodigo = new TextBox();
+            txtdocumento = new TextBox();
             DNI = new Label();
             label1 = new Label();
             btnseleccionar = new DataGridViewButtonColumn();
             Id = new DataGridViewTextBoxColumn();
-            Codigo = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            IdCaegoria = new DataGridViewTextBoxColumn();
-            Caegoria = new DataGridViewTextBoxColumn();
-            Stock = new DataGridViewTextBoxColumn();
-            PrecioCompra = new DataGridViewTextBoxColumn();
-            PrecioVenta = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            NombreCompleto = new DataGridViewTextBoxColumn();
+            Correo = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
             EstadoValor = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
@@ -76,32 +73,33 @@
             label9.Font = new Font("Segoe UI", 15F);
             label9.Location = new Point(226, 53);
             label9.Name = "label9";
-            label9.Size = new Size(1081, 61);
+            label9.Size = new Size(1040, 61);
             label9.TabIndex = 43;
-            label9.Text = "Lista de Productos:";
+            label9.Text = "Lista Clientes:";
             label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dgvdata
             // 
             dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Codigo, Descripcion, IdCaegoria, Caegoria, Stock, PrecioCompra, PrecioVenta, EstadoValor, Estado });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, NombreCompleto, Correo, Telefono, EstadoValor, Estado });
             dgvdata.Location = new Point(226, 135);
             dgvdata.Margin = new Padding(3, 4, 3, 4);
             dgvdata.MultiSelect = false;
             dgvdata.Name = "dgvdata";
             dgvdata.ReadOnly = true;
             dgvdata.RowHeadersWidth = 51;
-            dgvdata.Size = new Size(1081, 431);
+            dgvdata.Size = new Size(1040, 431);
             dgvdata.TabIndex = 42;
             // 
             // label8
@@ -110,11 +108,11 @@
             label8.BackColor = Color.ForestGreen;
             label8.Font = new Font("Segoe UI", 15F);
             label8.ForeColor = SystemColors.ControlLightLight;
-            label8.Location = new Point(0, 13);
+            label8.Location = new Point(12, 13);
             label8.Name = "label8";
-            label8.Size = new Size(206, 35);
+            label8.Size = new Size(179, 35);
             label8.TabIndex = 41;
-            label8.Text = "Detalle Producto:";
+            label8.Text = "Detalle Cliente:";
             // 
             // btnEliminar
             // 
@@ -125,7 +123,7 @@
             btnEliminar.IconColor = Color.White;
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminar.IconSize = 16;
-            btnEliminar.Location = new Point(26, 468);
+            btnEliminar.Location = new Point(26, 474);
             btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(170, 31);
@@ -144,7 +142,7 @@
             btnEditar.IconColor = Color.White;
             btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditar.IconSize = 16;
-            btnEditar.Location = new Point(26, 430);
+            btnEditar.Location = new Point(26, 436);
             btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(170, 31);
@@ -163,7 +161,7 @@
             btnGuardar.IconColor = Color.LightYellow;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.IconSize = 16;
-            btnGuardar.Location = new Point(26, 391);
+            btnGuardar.Location = new Point(26, 397);
             btnGuardar.Margin = new Padding(3, 4, 3, 4);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(170, 31);
@@ -177,7 +175,7 @@
             // 
             cboestado.DropDownStyle = ComboBoxStyle.DropDownList;
             cboestado.FormattingEnabled = true;
-            cboestado.Location = new Point(26, 334);
+            cboestado.Location = new Point(26, 340);
             cboestado.Margin = new Padding(3, 4, 3, 4);
             cboestado.Name = "cboestado";
             cboestado.Size = new Size(170, 28);
@@ -188,40 +186,39 @@
             label7.AutoSize = true;
             label7.BackColor = Color.ForestGreen;
             label7.ForeColor = SystemColors.ControlLightLight;
-            label7.Location = new Point(26, 310);
+            label7.Location = new Point(26, 316);
             label7.Name = "label7";
             label7.Size = new Size(57, 20);
             label7.TabIndex = 36;
             label7.Text = "Estado:";
             // 
-            // cbocategoria
+            // txttelefono
             // 
-            cbocategoria.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbocategoria.FormattingEnabled = true;
-            cbocategoria.Location = new Point(26, 275);
-            cbocategoria.Margin = new Padding(3, 4, 3, 4);
-            cbocategoria.Name = "cbocategoria";
-            cbocategoria.Size = new Size(170, 28);
-            cbocategoria.TabIndex = 35;
+            txttelefono.Location = new Point(26, 263);
+            txttelefono.Margin = new Padding(3, 4, 3, 4);
+            txttelefono.Name = "txttelefono";
+            txttelefono.PasswordChar = '*';
+            txttelefono.Size = new Size(170, 27);
+            txttelefono.TabIndex = 31;
             // 
-            // label2
+            // label5
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.ForestGreen;
-            label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(26, 251);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 20);
-            label2.TabIndex = 34;
-            label2.Text = "Categoria:";
+            label5.AutoSize = true;
+            label5.BackColor = Color.ForestGreen;
+            label5.ForeColor = SystemColors.ControlLightLight;
+            label5.Location = new Point(26, 239);
+            label5.Name = "label5";
+            label5.Size = new Size(70, 20);
+            label5.TabIndex = 30;
+            label5.Text = "Telefono:";
             // 
-            // txtdescripcion
+            // txtcorreo
             // 
-            txtdescripcion.Location = new Point(26, 204);
-            txtdescripcion.Margin = new Padding(3, 4, 3, 4);
-            txtdescripcion.Name = "txtdescripcion";
-            txtdescripcion.Size = new Size(170, 27);
-            txtdescripcion.TabIndex = 29;
+            txtcorreo.Location = new Point(26, 204);
+            txtcorreo.Margin = new Padding(3, 4, 3, 4);
+            txtcorreo.Name = "txtcorreo";
+            txtcorreo.Size = new Size(170, 27);
+            txtcorreo.TabIndex = 29;
             // 
             // label4
             // 
@@ -230,17 +227,17 @@
             label4.ForeColor = SystemColors.ControlLightLight;
             label4.Location = new Point(26, 180);
             label4.Name = "label4";
-            label4.Size = new Size(90, 20);
+            label4.Size = new Size(57, 20);
             label4.TabIndex = 28;
-            label4.Text = "Descripcion:";
+            label4.Text = "Correo:";
             // 
-            // txtnombre
+            // txtnombrecompleto
             // 
-            txtnombre.Location = new Point(26, 145);
-            txtnombre.Margin = new Padding(3, 4, 3, 4);
-            txtnombre.Name = "txtnombre";
-            txtnombre.Size = new Size(170, 27);
-            txtnombre.TabIndex = 27;
+            txtnombrecompleto.Location = new Point(26, 145);
+            txtnombrecompleto.Margin = new Padding(3, 4, 3, 4);
+            txtnombrecompleto.Name = "txtnombrecompleto";
+            txtnombrecompleto.Size = new Size(170, 27);
+            txtnombrecompleto.TabIndex = 27;
             // 
             // label3
             // 
@@ -249,17 +246,17 @@
             label3.ForeColor = SystemColors.ControlLightLight;
             label3.Location = new Point(26, 121);
             label3.Name = "label3";
-            label3.Size = new Size(67, 20);
+            label3.Size = new Size(137, 20);
             label3.TabIndex = 26;
-            label3.Text = "Nombre:";
+            label3.Text = "Nombre Completo:";
             // 
-            // txtcodigo
+            // txtdocumento
             // 
-            txtcodigo.Location = new Point(26, 87);
-            txtcodigo.Margin = new Padding(3, 4, 3, 4);
-            txtcodigo.Name = "txtcodigo";
-            txtcodigo.Size = new Size(170, 27);
-            txtcodigo.TabIndex = 25;
+            txtdocumento.Location = new Point(26, 87);
+            txtdocumento.Margin = new Padding(3, 4, 3, 4);
+            txtdocumento.Name = "txtdocumento";
+            txtdocumento.Size = new Size(170, 27);
+            txtdocumento.TabIndex = 25;
             // 
             // DNI
             // 
@@ -268,9 +265,9 @@
             DNI.ForeColor = SystemColors.ControlLightLight;
             DNI.Location = new Point(26, 63);
             DNI.Name = "DNI";
-            DNI.Size = new Size(61, 20);
+            DNI.Size = new Size(38, 20);
             DNI.TabIndex = 24;
-            DNI.Text = "Codigo:";
+            DNI.Text = "DNI:";
             // 
             // label1
             // 
@@ -299,62 +296,38 @@
             Id.Visible = false;
             Id.Width = 125;
             // 
-            // Codigo
+            // Documento
             // 
-            Codigo.HeaderText = "Codigo";
-            Codigo.MinimumWidth = 6;
-            Codigo.Name = "Codigo";
-            Codigo.ReadOnly = true;
-            Codigo.Width = 150;
+            Documento.HeaderText = "Nro Documento";
+            Documento.MinimumWidth = 6;
+            Documento.Name = "Documento";
+            Documento.ReadOnly = true;
+            Documento.Width = 150;
             // 
-            // Descripcion
+            // NombreCompleto
             // 
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.MinimumWidth = 6;
-            Descripcion.Name = "Descripcion";
-            Descripcion.ReadOnly = true;
-            Descripcion.Width = 180;
+            NombreCompleto.HeaderText = "Nombre Completo";
+            NombreCompleto.MinimumWidth = 6;
+            NombreCompleto.Name = "NombreCompleto";
+            NombreCompleto.ReadOnly = true;
+            NombreCompleto.Width = 180;
             // 
-            // IdCaegoria
+            // Correo
             // 
-            IdCaegoria.HeaderText = "IdCaegoria";
-            IdCaegoria.MinimumWidth = 6;
-            IdCaegoria.Name = "IdCaegoria";
-            IdCaegoria.ReadOnly = true;
-            IdCaegoria.Visible = false;
-            IdCaegoria.Width = 125;
+            Correo.HeaderText = "Correo";
+            Correo.MinimumWidth = 6;
+            Correo.Name = "Correo";
+            Correo.ReadOnly = true;
+            Correo.Width = 125;
             // 
-            // Caegoria
+            // Telefono
             // 
-            Caegoria.HeaderText = "Caegoria";
-            Caegoria.MinimumWidth = 6;
-            Caegoria.Name = "Caegoria";
-            Caegoria.ReadOnly = true;
-            Caegoria.Width = 125;
-            // 
-            // Stock
-            // 
-            Stock.HeaderText = "Stock";
-            Stock.MinimumWidth = 6;
-            Stock.Name = "Stock";
-            Stock.ReadOnly = true;
-            Stock.Width = 125;
-            // 
-            // PrecioCompra
-            // 
-            PrecioCompra.HeaderText = "Precio Compra";
-            PrecioCompra.MinimumWidth = 6;
-            PrecioCompra.Name = "PrecioCompra";
-            PrecioCompra.ReadOnly = true;
-            PrecioCompra.Width = 125;
-            // 
-            // PrecioVenta
-            // 
-            PrecioVenta.HeaderText = "Precio Venta";
-            PrecioVenta.MinimumWidth = 6;
-            PrecioVenta.Name = "PrecioVenta";
-            PrecioVenta.ReadOnly = true;
-            PrecioVenta.Width = 125;
+            Telefono.HeaderText = "Telefono";
+            Telefono.MinimumWidth = 6;
+            Telefono.Name = "Telefono";
+            Telefono.ReadOnly = true;
+            Telefono.Visible = false;
+            Telefono.Width = 125;
             // 
             // EstadoValor
             // 
@@ -373,12 +346,12 @@
             Estado.ReadOnly = true;
             Estado.Width = 125;
             // 
-            // frmProductos
+            // frmClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1319, 620);
+            ClientSize = new Size(1278, 620);
             Controls.Add(txtid);
             Controls.Add(label9);
             Controls.Add(dgvdata);
@@ -388,17 +361,17 @@
             Controls.Add(btnGuardar);
             Controls.Add(cboestado);
             Controls.Add(label7);
-            Controls.Add(cbocategoria);
-            Controls.Add(label2);
-            Controls.Add(txtdescripcion);
+            Controls.Add(txttelefono);
+            Controls.Add(label5);
+            Controls.Add(txtcorreo);
             Controls.Add(label4);
-            Controls.Add(txtnombre);
+            Controls.Add(txtnombrecompleto);
             Controls.Add(label3);
-            Controls.Add(txtcodigo);
+            Controls.Add(txtdocumento);
             Controls.Add(DNI);
             Controls.Add(label1);
-            Name = "frmProductos";
-            Text = "Productos";
+            Name = "frmClientes";
+            Text = "frmClientes";
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -409,31 +382,28 @@
         private TextBox txtid;
         private Label label9;
         private DataGridView dgvdata;
+        private DataGridViewButtonColumn btnseleccionar;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn NombreCompleto;
+        private DataGridViewTextBoxColumn Correo;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn EstadoValor;
+        private DataGridViewTextBoxColumn Estado;
         private Label label8;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private ComboBox cboestado;
         private Label label7;
-        private ComboBox cbocategoria;
-        private Label label2;
-        private TextBox txtdescripcion;
+        private TextBox txttelefono;
+        private Label label5;
+        private TextBox txtcorreo;
         private Label label4;
-        private TextBox txtnombre;
+        private TextBox txtnombrecompleto;
         private Label label3;
-        private TextBox txtcodigo;
+        private TextBox txtdocumento;
         private Label DNI;
         private Label label1;
-        private DataGridViewButtonColumn btnseleccionar;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Codigo;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn IdCaegoria;
-        private DataGridViewTextBoxColumn Caegoria;
-        private DataGridViewTextBoxColumn Stock;
-        private DataGridViewTextBoxColumn PrecioCompra;
-        private DataGridViewTextBoxColumn PrecioVenta;
-        private DataGridViewTextBoxColumn EstadoValor;
-        private DataGridViewTextBoxColumn Estado;
     }
 }

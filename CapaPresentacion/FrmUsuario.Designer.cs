@@ -31,14 +31,14 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             DNI = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtdocumento = new TextBox();
+            txtnombrecompleto = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtcorreo = new TextBox();
             label4 = new Label();
-            textBox4 = new TextBox();
+            txtclave = new TextBox();
             label5 = new Label();
-            textBox5 = new TextBox();
+            txtclave2 = new TextBox();
             label6 = new Label();
             label2 = new Label();
             cborol = new ComboBox();
@@ -48,7 +48,7 @@
             btnEditar = new FontAwesome.Sharp.IconButton();
             btnEliminar = new FontAwesome.Sharp.IconButton();
             label8 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvdata = new DataGridView();
             btnseleccionar = new DataGridViewButtonColumn();
             IdUsuario = new DataGridViewTextBoxColumn();
             Documento = new DataGridViewTextBoxColumn();
@@ -56,12 +56,12 @@
             Correo = new DataGridViewTextBoxColumn();
             Clave = new DataGridViewTextBoxColumn();
             IdRol = new DataGridViewTextBoxColumn();
-            EstadoValor = new DataGridViewTextBoxColumn();
             Rol = new DataGridViewTextBoxColumn();
+            EstadoValor = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
             label9 = new Label();
             txtid = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -84,19 +84,19 @@
             DNI.TabIndex = 1;
             DNI.Text = "DNI:";
             // 
-            // textBox1
+            // txtdocumento
             // 
-            textBox1.Location = new Point(12, 65);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(149, 23);
-            textBox1.TabIndex = 3;
+            txtdocumento.Location = new Point(12, 65);
+            txtdocumento.Name = "txtdocumento";
+            txtdocumento.Size = new Size(149, 23);
+            txtdocumento.TabIndex = 3;
             // 
-            // textBox2
+            // txtnombrecompleto
             // 
-            textBox2.Location = new Point(12, 109);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(149, 23);
-            textBox2.TabIndex = 5;
+            txtnombrecompleto.Location = new Point(12, 109);
+            txtnombrecompleto.Name = "txtnombrecompleto";
+            txtnombrecompleto.Size = new Size(149, 23);
+            txtnombrecompleto.TabIndex = 5;
             // 
             // label3
             // 
@@ -108,12 +108,12 @@
             label3.TabIndex = 4;
             label3.Text = "Nombre Completo:";
             // 
-            // textBox3
+            // txtcorreo
             // 
-            textBox3.Location = new Point(12, 153);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(149, 23);
-            textBox3.TabIndex = 7;
+            txtcorreo.Location = new Point(12, 153);
+            txtcorreo.Name = "txtcorreo";
+            txtcorreo.Size = new Size(149, 23);
+            txtcorreo.TabIndex = 7;
             // 
             // label4
             // 
@@ -125,12 +125,13 @@
             label4.TabIndex = 6;
             label4.Text = "Correo:";
             // 
-            // textBox4
+            // txtclave
             // 
-            textBox4.Location = new Point(12, 197);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(149, 23);
-            textBox4.TabIndex = 9;
+            txtclave.Location = new Point(12, 197);
+            txtclave.Name = "txtclave";
+            txtclave.PasswordChar = '*';
+            txtclave.Size = new Size(149, 23);
+            txtclave.TabIndex = 9;
             // 
             // label5
             // 
@@ -142,12 +143,13 @@
             label5.TabIndex = 8;
             label5.Text = "Contraseña:";
             // 
-            // textBox5
+            // txtclave2
             // 
-            textBox5.Location = new Point(12, 241);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(149, 23);
-            textBox5.TabIndex = 11;
+            txtclave2.Location = new Point(12, 241);
+            txtclave2.Name = "txtclave2";
+            txtclave2.PasswordChar = '*';
+            txtclave2.Size = new Size(149, 23);
+            txtclave2.TabIndex = 11;
             // 
             // label6
             // 
@@ -215,6 +217,7 @@
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEditar
             // 
@@ -264,9 +267,9 @@
             label8.Text = "Nuevo Usuario:";
             label8.Click += label8_Click;
             // 
-            // dataGridView1
+            // dgvdata
             // 
-            dataGridView1.AllowUserToAddRows = false;
+            dgvdata.AllowUserToAddRows = false;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -275,15 +278,15 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, IdUsuario, Documento, NombreCompleto, Correo, Clave, IdRol, EstadoValor, Rol, Estado });
-            dataGridView1.Location = new Point(188, 91);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(705, 323);
-            dataGridView1.TabIndex = 20;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, IdUsuario, Documento, NombreCompleto, Correo, Clave, IdRol, Rol, EstadoValor, Estado });
+            dgvdata.Location = new Point(188, 91);
+            dgvdata.MultiSelect = false;
+            dgvdata.Name = "dgvdata";
+            dgvdata.ReadOnly = true;
+            dgvdata.Size = new Size(705, 323);
+            dgvdata.TabIndex = 20;
             // 
             // btnseleccionar
             // 
@@ -333,18 +336,18 @@
             IdRol.ReadOnly = true;
             IdRol.Visible = false;
             // 
+            // Rol
+            // 
+            Rol.HeaderText = "Rol";
+            Rol.Name = "Rol";
+            Rol.ReadOnly = true;
+            // 
             // EstadoValor
             // 
             EstadoValor.HeaderText = "EstadoValor";
             EstadoValor.Name = "EstadoValor";
             EstadoValor.ReadOnly = true;
             EstadoValor.Visible = false;
-            // 
-            // Rol
-            // 
-            Rol.HeaderText = "Rol";
-            Rol.Name = "Rol";
-            Rol.ReadOnly = true;
             // 
             // Estado
             // 
@@ -369,7 +372,7 @@
             txtid.Name = "txtid";
             txtid.Size = new Size(18, 23);
             txtid.TabIndex = 22;
-            txtid.Visible = false;
+            txtid.Text = "0";
             // 
             // FrmUsuario
             // 
@@ -378,7 +381,7 @@
             ClientSize = new Size(895, 465);
             Controls.Add(txtid);
             Controls.Add(label9);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvdata);
             Controls.Add(label8);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
@@ -387,21 +390,21 @@
             Controls.Add(label7);
             Controls.Add(cborol);
             Controls.Add(label2);
-            Controls.Add(textBox5);
+            Controls.Add(txtclave2);
             Controls.Add(label6);
-            Controls.Add(textBox4);
+            Controls.Add(txtclave);
             Controls.Add(label5);
-            Controls.Add(textBox3);
+            Controls.Add(txtcorreo);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtnombrecompleto);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtdocumento);
             Controls.Add(DNI);
             Controls.Add(label1);
             Name = "FrmUsuario";
             Text = "Usuario";
             Load += FrmUsuario_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -410,14 +413,14 @@
 
         private Label label1;
         private Label DNI;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtdocumento;
+        private TextBox txtnombrecompleto;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtcorreo;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtclave;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox txtclave2;
         private Label label6;
         private Label label2;
         private ComboBox cborol;
@@ -427,8 +430,9 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private Label label8;
-        private DataGridView dataGridView1;
+        private DataGridView dgvdata;
         private Label label9;
+        private TextBox txtid;
         private DataGridViewButtonColumn btnseleccionar;
         private DataGridViewTextBoxColumn IdUsuario;
         private DataGridViewTextBoxColumn Documento;
@@ -436,9 +440,8 @@
         private DataGridViewTextBoxColumn Correo;
         private DataGridViewTextBoxColumn Clave;
         private DataGridViewTextBoxColumn IdRol;
-        private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Rol;
+        private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
-        private TextBox txtid;
     }
 }

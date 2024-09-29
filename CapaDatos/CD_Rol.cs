@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    internal class CD_Rol
+    public class CD_Rol
     {
         public List<Rol> Listar()
         {

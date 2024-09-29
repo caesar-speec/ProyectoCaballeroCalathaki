@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             DNI = new Label();
             textBox1 = new TextBox();
@@ -41,17 +42,32 @@
             label6 = new Label();
             label2 = new Label();
             comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            cboestado = new ComboBox();
             label7 = new Label();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             btnEditar = new FontAwesome.Sharp.IconButton();
             btnEliminar = new FontAwesome.Sharp.IconButton();
             label8 = new Label();
+            dataGridView1 = new DataGridView();
+            btnseleccionar = new DataGridViewButtonColumn();
+            IdUsuario = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            NombreCompleto = new DataGridViewTextBoxColumn();
+            Correo = new DataGridViewTextBoxColumn();
+            Clave = new DataGridViewTextBoxColumn();
+            IdRol = new DataGridViewTextBoxColumn();
+            EstadoValor = new DataGridViewTextBoxColumn();
+            Rol = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
+            label9 = new Label();
+            txtid = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.BackColor = SystemColors.ControlLightLight;
+            label1.BackColor = Color.Peru;
+            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Dock = DockStyle.Left;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
@@ -61,13 +77,12 @@
             // DNI
             // 
             DNI.AutoSize = true;
-            DNI.BackColor = Color.White;
+            DNI.BackColor = Color.LightGray;
             DNI.Location = new Point(12, 47);
             DNI.Name = "DNI";
             DNI.Size = new Size(30, 15);
             DNI.TabIndex = 1;
             DNI.Text = "DNI:";
-            DNI.Click += label2_Click;
             // 
             // textBox1
             // 
@@ -86,7 +101,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.White;
+            label3.BackColor = Color.LightGray;
             label3.Location = new Point(12, 91);
             label3.Name = "label3";
             label3.Size = new Size(110, 15);
@@ -103,7 +118,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.White;
+            label4.BackColor = Color.LightGray;
             label4.Location = new Point(12, 135);
             label4.Name = "label4";
             label4.Size = new Size(46, 15);
@@ -120,7 +135,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.White;
+            label5.BackColor = Color.LightGray;
             label5.Location = new Point(12, 179);
             label5.Name = "label5";
             label5.Size = new Size(70, 15);
@@ -137,7 +152,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = Color.White;
+            label6.BackColor = Color.LightGray;
             label6.Location = new Point(12, 223);
             label6.Name = "label6";
             label6.Size = new Size(127, 15);
@@ -147,7 +162,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.White;
+            label2.BackColor = Color.LightGray;
             label2.Location = new Point(12, 267);
             label2.Name = "label2";
             label2.Size = new Size(27, 15);
@@ -163,19 +178,20 @@
             comboBox1.Size = new Size(149, 23);
             comboBox1.TabIndex = 13;
             // 
-            // comboBox2
+            // cboestado
             // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(12, 329);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(149, 23);
-            comboBox2.TabIndex = 15;
+            cboestado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboestado.FormattingEnabled = true;
+            cboestado.Location = new Point(12, 329);
+            cboestado.Name = "cboestado";
+            cboestado.Size = new Size(149, 23);
+            cboestado.TabIndex = 15;
+            cboestado.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.White;
+            label7.BackColor = Color.LightGray;
             label7.Location = new Point(12, 311);
             label7.Name = "label7";
             label7.Size = new Size(45, 15);
@@ -239,25 +255,135 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.White;
+            label8.BackColor = Color.LightGray;
             label8.Font = new Font("Segoe UI", 15F);
             label8.Location = new Point(12, 9);
             label8.Name = "label8";
-            label8.Size = new Size(147, 28);
+            label8.Size = new Size(146, 28);
             label8.TabIndex = 19;
-            label8.Text = "Datos Usuarios:";
+            label8.Text = "Nuevo Usuario:";
+            label8.Click += label8_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, IdUsuario, Documento, NombreCompleto, Correo, Clave, IdRol, EstadoValor, Rol, Estado });
+            dataGridView1.Location = new Point(188, 91);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(705, 323);
+            dataGridView1.TabIndex = 20;
+            // 
+            // btnseleccionar
+            // 
+            btnseleccionar.HeaderText = "";
+            btnseleccionar.Name = "btnseleccionar";
+            btnseleccionar.ReadOnly = true;
+            btnseleccionar.Width = 30;
+            // 
+            // IdUsuario
+            // 
+            IdUsuario.HeaderText = "IdUsuario";
+            IdUsuario.Name = "IdUsuario";
+            IdUsuario.ReadOnly = true;
+            IdUsuario.Visible = false;
+            // 
+            // Documento
+            // 
+            Documento.HeaderText = "Nro Documento";
+            Documento.Name = "Documento";
+            Documento.ReadOnly = true;
+            Documento.Width = 150;
+            // 
+            // NombreCompleto
+            // 
+            NombreCompleto.HeaderText = "Nombre Completo";
+            NombreCompleto.Name = "NombreCompleto";
+            NombreCompleto.ReadOnly = true;
+            NombreCompleto.Width = 180;
+            // 
+            // Correo
+            // 
+            Correo.HeaderText = "Correo";
+            Correo.Name = "Correo";
+            Correo.ReadOnly = true;
+            // 
+            // Clave
+            // 
+            Clave.HeaderText = "Clave";
+            Clave.Name = "Clave";
+            Clave.ReadOnly = true;
+            Clave.Visible = false;
+            // 
+            // IdRol
+            // 
+            IdRol.HeaderText = "IdRol";
+            IdRol.Name = "IdRol";
+            IdRol.ReadOnly = true;
+            IdRol.Visible = false;
+            // 
+            // EstadoValor
+            // 
+            EstadoValor.HeaderText = "EstadoValor";
+            EstadoValor.Name = "EstadoValor";
+            EstadoValor.ReadOnly = true;
+            EstadoValor.Visible = false;
+            // 
+            // Rol
+            // 
+            Rol.HeaderText = "Rol";
+            Rol.Name = "Rol";
+            Rol.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            // 
+            // label9
+            // 
+            label9.BackColor = Color.LightGray;
+            label9.Font = new Font("Segoe UI", 15F);
+            label9.Location = new Point(188, 42);
+            label9.Name = "label9";
+            label9.Size = new Size(705, 46);
+            label9.TabIndex = 21;
+            label9.Text = "Lista Usuarios:";
+            label9.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtid
+            // 
+            txtid.Location = new Point(121, 39);
+            txtid.Name = "txtid";
+            txtid.Size = new Size(18, 23);
+            txtid.TabIndex = 22;
+            txtid.Visible = false;
             // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(682, 465);
+            ClientSize = new Size(895, 465);
+            Controls.Add(txtid);
+            Controls.Add(label9);
+            Controls.Add(dataGridView1);
             Controls.Add(label8);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(btnGuardar);
-            Controls.Add(comboBox2);
+            Controls.Add(cboestado);
             Controls.Add(label7);
             Controls.Add(comboBox1);
             Controls.Add(label2);
@@ -273,7 +399,9 @@
             Controls.Add(DNI);
             Controls.Add(label1);
             Name = "FrmUsuario";
-            Text = "FrmUsuario";
+            Text = "Usuario";
+            Load += FrmUsuario_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -293,11 +421,24 @@
         private Label label6;
         private Label label2;
         private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox cboestado;
         private Label label7;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private Label label8;
+        private DataGridView dataGridView1;
+        private Label label9;
+        private DataGridViewButtonColumn btnseleccionar;
+        private DataGridViewTextBoxColumn IdUsuario;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn NombreCompleto;
+        private DataGridViewTextBoxColumn Correo;
+        private DataGridViewTextBoxColumn Clave;
+        private DataGridViewTextBoxColumn IdRol;
+        private DataGridViewTextBoxColumn EstadoValor;
+        private DataGridViewTextBoxColumn Rol;
+        private DataGridViewTextBoxColumn Estado;
+        private TextBox txtid;
     }
 }

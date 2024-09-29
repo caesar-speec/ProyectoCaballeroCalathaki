@@ -62,7 +62,19 @@ namespace CapaPresentacion
             cborol.DisplayMember = "Texto";
             cborol.ValueMember = "Valor";
             cborol.SelectedIndex = 0;
+
+
+            //Mostrar usuarios
+            List<Usuario> listaUsuario = new CN_Usuario().Listar();
+            foreach (Usuario item in listaUsuario)
+            {
+                cborol.Items.Add(new OpcionCombo() { Valor = item.IdRol, Texto = item.Descripcion });
+            }
+            cborol.DisplayMember = "Texto";
+            cborol.ValueMember = "Valor";
+            cborol.SelectedIndex = 0;
         }
+    }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {

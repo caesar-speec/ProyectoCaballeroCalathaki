@@ -129,7 +129,7 @@
             btn_ingresar.Location = new Point(49, 371);
             btn_ingresar.Margin = new Padding(3, 4, 3, 4);
             btn_ingresar.Name = "btn_ingresar";
-            btn_ingresar.Size = new Size(134, 51);
+            btn_ingresar.Size = new Size(134, 68);
             btn_ingresar.TabIndex = 7;
             btn_ingresar.Text = "Ingresar";
             btn_ingresar.TextAlign = ContentAlignment.MiddleRight;
@@ -148,7 +148,7 @@
             btn_cancelar.Location = new Point(191, 371);
             btn_cancelar.Margin = new Padding(3, 4, 3, 4);
             btn_cancelar.Name = "btn_cancelar";
-            btn_cancelar.Size = new Size(131, 51);
+            btn_cancelar.Size = new Size(131, 68);
             btn_cancelar.TabIndex = 8;
             btn_cancelar.Text = "Cancelar";
             btn_cancelar.TextAlign = ContentAlignment.MiddleRight;
@@ -173,7 +173,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            ClientSize = new Size(379, 452);
+            ClientSize = new Size(379, 467);
             Controls.Add(label5);
             Controls.Add(btn_cancelar);
             Controls.Add(btn_ingresar);

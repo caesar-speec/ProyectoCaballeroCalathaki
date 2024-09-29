@@ -51,7 +51,8 @@
             // 
             // label1
             // 
-            label1.BackColor = SystemColors.ControlLightLight;
+            label1.BackColor = Color.Peru;
+            label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Dock = DockStyle.Left;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
@@ -61,13 +62,12 @@
             // DNI
             // 
             DNI.AutoSize = true;
-            DNI.BackColor = Color.White;
+            DNI.BackColor = Color.LightGray;
             DNI.Location = new Point(12, 47);
             DNI.Name = "DNI";
             DNI.Size = new Size(30, 15);
             DNI.TabIndex = 1;
             DNI.Text = "DNI:";
-            DNI.Click += label2_Click;
             // 
             // textBox1
             // 
@@ -86,7 +86,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.White;
+            label3.BackColor = Color.LightGray;
             label3.Location = new Point(12, 91);
             label3.Name = "label3";
             label3.Size = new Size(110, 15);
@@ -103,7 +103,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.White;
+            label4.BackColor = Color.LightGray;
             label4.Location = new Point(12, 135);
             label4.Name = "label4";
             label4.Size = new Size(46, 15);
@@ -120,7 +120,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.White;
+            label5.BackColor = Color.LightGray;
             label5.Location = new Point(12, 179);
             label5.Name = "label5";
             label5.Size = new Size(70, 15);
@@ -137,7 +137,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = Color.White;
+            label6.BackColor = Color.LightGray;
             label6.Location = new Point(12, 223);
             label6.Name = "label6";
             label6.Size = new Size(127, 15);
@@ -147,7 +147,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.White;
+            label2.BackColor = Color.LightGray;
             label2.Location = new Point(12, 267);
             label2.Name = "label2";
             label2.Size = new Size(27, 15);
@@ -175,7 +175,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.White;
+            label7.BackColor = Color.LightGray;
             label7.Location = new Point(12, 311);
             label7.Name = "label7";
             label7.Size = new Size(45, 15);
@@ -239,20 +239,19 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.White;
+            label8.BackColor = Color.LightGray;
             label8.Font = new Font("Segoe UI", 15F);
             label8.Location = new Point(12, 9);
             label8.Name = "label8";
-            label8.Size = new Size(147, 28);
+            label8.Size = new Size(146, 28);
             label8.TabIndex = 19;
-            label8.Text = "Datos Usuarios:";
+            label8.Text = "Nuevo Usuario:";
             // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(682, 465);
+            ClientSize = new Size(800, 465);
             Controls.Add(label8);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
@@ -273,7 +272,7 @@
             Controls.Add(DNI);
             Controls.Add(label1);
             Name = "FrmUsuario";
-            Text = "FrmUsuario";
+            Text = "Usuario";
             ResumeLayout(false);
             PerformLayout();
         }

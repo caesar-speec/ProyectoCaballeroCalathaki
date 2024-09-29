@@ -21,5 +21,15 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DNI_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

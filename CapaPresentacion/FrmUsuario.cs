@@ -2,6 +2,7 @@
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
@@ -76,15 +77,15 @@ namespace CapaPresentacion
             string mensaje = string.Empty;
             Usuario objusuario = new Usuario()
             {
-                IdUsuario = Convert.ToInt32( txtid.Text),
+                IdUsuario = Convert.ToInt32(txtid.Text),
                 Documento = txtdocumento.Text,
                 NombreCompleto = txtnombrecompleto.Text,
                 Correo = txtcorreo.Text,
                 Clave = txtclave.Text,
-                oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo) cborol.SelectedItem).Valor)  },
+                oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) },
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
-            if(objusuario.IdUsuario == 0)
+            if (objusuario.IdUsuario == 0)
             {
                 int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
                 if (idusuariogenerado != 0)
@@ -106,7 +107,7 @@ namespace CapaPresentacion
             }
             else
             {
-               bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
+                bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
                 if (resultado)
                 {
                     DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
@@ -210,6 +211,31 @@ namespace CapaPresentacion
                             break;
                         }
                     }
+                }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtid.Text) != 0)
+            {
+                if (MessageBox.Show("¿Quiere eliminar el usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Usuario objusuario = new Usuario()
+                    {
+                        IdUsuario = Convert.ToInt32(txtid.Text)
+                    };
+                    bool respuesta = new CN_Usuario().Eliminar(objusuario, out mensaje);
+                    if (respuesta)
+                    {
+                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+
+                    } else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
                 }
             }
         }

@@ -262,6 +262,7 @@
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // label8
             // 
@@ -405,6 +406,7 @@
             txtid.Size = new Size(18, 23);
             txtid.TabIndex = 22;
             txtid.Text = "0";
+            txtid.Visible = false;
             // 
             // txtindice
             // 
@@ -413,6 +415,7 @@
             txtindice.Size = new Size(18, 23);
             txtindice.TabIndex = 23;
             txtindice.Text = "-1";
+            txtindice.Visible = false;
             // 
             // FrmUsuario
             // 

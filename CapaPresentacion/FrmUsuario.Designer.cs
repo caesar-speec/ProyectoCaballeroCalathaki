@@ -62,6 +62,11 @@
             label9 = new Label();
             txtid = new TextBox();
             txtindice = new TextBox();
+            label10 = new Label();
+            cbobusqueda = new ComboBox();
+            txtbusqueda = new TextBox();
+            btnlimpiar = new FontAwesome.Sharp.IconButton();
+            btnbuscar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -232,7 +237,7 @@
             btnEditar.BackColor = Color.RoyalBlue;
             btnEditar.Cursor = Cursors.Hand;
             btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Broom;
             btnEditar.IconColor = Color.White;
             btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditar.IconSize = 16;
@@ -240,10 +245,11 @@
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(149, 23);
             btnEditar.TabIndex = 17;
-            btnEditar.Text = "Editar";
+            btnEditar.Text = "Limpiar";
             btnEditar.TextAlign = ContentAlignment.MiddleRight;
             btnEditar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -391,10 +397,12 @@
             // label9
             // 
             label9.BackColor = SystemColors.ControlLight;
+            label9.BorderStyle = BorderStyle.FixedSingle;
             label9.Font = new Font("Segoe UI", 15F);
-            label9.Location = new Point(187, 40);
+            label9.Location = new Point(188, 29);
             label9.Name = "label9";
-            label9.Size = new Size(910, 46);
+            label9.Padding = new Padding(0, 2, 2, 0);
+            label9.Size = new Size(910, 69);
             label9.TabIndex = 21;
             label9.Text = "Lista Usuarios:";
             label9.TextAlign = ContentAlignment.MiddleLeft;
@@ -417,12 +425,76 @@
             txtindice.Text = "-1";
             txtindice.Visible = false;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Silver;
+            label10.ForeColor = SystemColors.ControlLightLight;
+            label10.Location = new Point(490, 57);
+            label10.Name = "label10";
+            label10.Size = new Size(66, 15);
+            label10.TabIndex = 24;
+            label10.Text = "Buscar Por:";
+            // 
+            // cbobusqueda
+            // 
+            cbobusqueda.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbobusqueda.FormattingEnabled = true;
+            cbobusqueda.Location = new Point(562, 57);
+            cbobusqueda.Name = "cbobusqueda";
+            cbobusqueda.Size = new Size(149, 23);
+            cbobusqueda.TabIndex = 25;
+            // 
+            // txtbusqueda
+            // 
+            txtbusqueda.Location = new Point(717, 57);
+            txtbusqueda.Name = "txtbusqueda";
+            txtbusqueda.Size = new Size(149, 23);
+            txtbusqueda.TabIndex = 26;
+            // 
+            // btnlimpiar
+            // 
+            btnlimpiar.BackColor = Color.RoyalBlue;
+            btnlimpiar.Cursor = Cursors.Hand;
+            btnlimpiar.FlatStyle = FlatStyle.Flat;
+            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            btnlimpiar.IconColor = Color.White;
+            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnlimpiar.IconSize = 18;
+            btnlimpiar.Location = new Point(914, 56);
+            btnlimpiar.Name = "btnlimpiar";
+            btnlimpiar.Size = new Size(35, 33);
+            btnlimpiar.TabIndex = 28;
+            btnlimpiar.UseVisualStyleBackColor = false;
+            btnlimpiar.Click += btnlimpiar_Click;
+            // 
+            // btnbuscar
+            // 
+            btnbuscar.BackColor = Color.YellowGreen;
+            btnbuscar.Cursor = Cursors.Hand;
+            btnbuscar.FlatStyle = FlatStyle.Flat;
+            btnbuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btnbuscar.IconColor = Color.LightYellow;
+            btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnbuscar.IconSize = 18;
+            btnbuscar.Location = new Point(872, 56);
+            btnbuscar.Name = "btnbuscar";
+            btnbuscar.Size = new Size(35, 33);
+            btnbuscar.TabIndex = 27;
+            btnbuscar.UseVisualStyleBackColor = false;
+            btnbuscar.Click += btnbuscar_Click;
+            // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1118, 465);
+            Controls.Add(btnlimpiar);
+            Controls.Add(btnbuscar);
+            Controls.Add(txtbusqueda);
+            Controls.Add(cbobusqueda);
+            Controls.Add(label10);
             Controls.Add(txtindice);
             Controls.Add(txtid);
             Controls.Add(label9);
@@ -490,5 +562,10 @@
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
         private TextBox txtindice;
+        private Label label10;
+        private ComboBox cbobusqueda;
+        private TextBox txtbusqueda;
+        private FontAwesome.Sharp.IconButton btnlimpiar;
+        private FontAwesome.Sharp.IconButton btnbuscar;
     }
 }

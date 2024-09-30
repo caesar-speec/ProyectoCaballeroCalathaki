@@ -70,6 +70,18 @@ namespace CapaPresentacion
             cborol.DisplayMember = "Texto";
             cborol.ValueMember = "Valor";
             cborol.SelectedIndex = 0;
+
+            foreach (DataGridViewColumn columna in dgvdata.Columns)
+            {
+                if (columna.Visible == true && columna.Name != "btnseleccionar")
+                {
+                    cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+            cbobusqueda.DisplayMember = "Texto";
+            cbobusqueda.ValueMember = "Valor";
+            cbobusqueda.SelectedIndex = 0;
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -231,13 +243,43 @@ namespace CapaPresentacion
                     {
                         dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
 
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
 
                 }
             }
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            if (dgvdata.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtbusqueda.Text = "";
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.Visible = true;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

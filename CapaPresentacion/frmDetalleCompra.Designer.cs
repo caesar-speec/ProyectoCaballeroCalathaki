@@ -37,23 +37,43 @@
             txtusuario = new TextBox();
             label5 = new Label();
             txttipodocumento = new TextBox();
+            btnbuscarproveedor = new FontAwesome.Sharp.IconButton();
+            txtbusqueda = new TextBox();
+            label6 = new Label();
+            btnlimpiar = new FontAwesome.Sharp.IconButton();
+            groupBox2 = new GroupBox();
+            txtnombreproveedor = new TextBox();
+            txtdocproveedor = new TextBox();
+            label8 = new Label();
+            label10 = new Label();
+            txtnumerodocumento = new TextBox();
+            dataGridView1 = new DataGridView();
+            Producto = new DataGridViewTextBoxColumn();
+            PrecioCompra = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
+            SubTotal = new DataGridViewTextBoxColumn();
+            label12 = new Label();
+            txtmontototal = new TextBox();
+            btndescargar = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.BackColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(63, 43);
+            label1.BackColor = SystemColors.ControlLight;
+            label1.Location = new Point(65, 20);
             label1.Name = "label1";
-            label1.Size = new Size(811, 495);
+            label1.Size = new Size(759, 601);
             label1.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLightLight;
+            label2.BackColor = SystemColors.ControlLight;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(75, 54);
+            label2.Location = new Point(79, 30);
             label2.Name = "label2";
             label2.Size = new Size(237, 31);
             label2.TabIndex = 1;
@@ -61,16 +81,16 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.ControlLightLight;
+            groupBox1.BackColor = SystemColors.ControlLight;
             groupBox1.Controls.Add(txttipodocumento);
             groupBox1.Controls.Add(txtusuario);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(txtfecha);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(75, 115);
+            groupBox1.Location = new Point(79, 91);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(701, 93);
+            groupBox1.Size = new Size(721, 117);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion Compra";
@@ -123,11 +143,191 @@
             txttipodocumento.Size = new Size(190, 27);
             txttipodocumento.TabIndex = 6;
             // 
+            // btnbuscarproveedor
+            // 
+            btnbuscarproveedor.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btnbuscarproveedor.IconColor = Color.Black;
+            btnbuscarproveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnbuscarproveedor.IconSize = 26;
+            btnbuscarproveedor.Location = new Point(606, 57);
+            btnbuscarproveedor.Name = "btnbuscarproveedor";
+            btnbuscarproveedor.Size = new Size(64, 28);
+            btnbuscarproveedor.TabIndex = 7;
+            btnbuscarproveedor.UseVisualStyleBackColor = true;
+            // 
+            // txtbusqueda
+            // 
+            txtbusqueda.Location = new Point(442, 58);
+            txtbusqueda.Name = "txtbusqueda";
+            txtbusqueda.Size = new Size(158, 27);
+            txtbusqueda.TabIndex = 6;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = SystemColors.ControlLight;
+            label6.Location = new Point(442, 35);
+            label6.Name = "label6";
+            label6.Size = new Size(148, 20);
+            label6.TabIndex = 5;
+            label6.Text = "Numero Documento:";
+            // 
+            // btnlimpiar
+            // 
+            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            btnlimpiar.IconColor = Color.Black;
+            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnlimpiar.IconSize = 26;
+            btnlimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnlimpiar.Location = new Point(676, 57);
+            btnlimpiar.Name = "btnlimpiar";
+            btnlimpiar.Size = new Size(91, 28);
+            btnlimpiar.TabIndex = 8;
+            btnlimpiar.Text = "Limpiar";
+            btnlimpiar.TextAlign = ContentAlignment.MiddleRight;
+            btnlimpiar.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = SystemColors.ControlLight;
+            groupBox2.Controls.Add(txtnumerodocumento);
+            groupBox2.Controls.Add(label10);
+            groupBox2.Controls.Add(txtnombreproveedor);
+            groupBox2.Controls.Add(txtdocproveedor);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Location = new Point(79, 213);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(721, 117);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Informacion Proveedor";
+            // 
+            // txtnombreproveedor
+            // 
+            txtnombreproveedor.Location = new Point(210, 50);
+            txtnombreproveedor.Name = "txtnombreproveedor";
+            txtnombreproveedor.Size = new Size(190, 27);
+            txtnombreproveedor.TabIndex = 6;
+            // 
+            // txtdocproveedor
+            // 
+            txtdocproveedor.Location = new Point(7, 49);
+            txtdocproveedor.Name = "txtdocproveedor";
+            txtdocproveedor.Size = new Size(158, 27);
+            txtdocproveedor.TabIndex = 2;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(210, 26);
+            label8.Name = "label8";
+            label8.Size = new Size(97, 20);
+            label8.TabIndex = 1;
+            label8.Text = "Razon Social:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = SystemColors.ControlLight;
+            label10.Location = new Point(7, 26);
+            label10.Name = "label10";
+            label10.Size = new Size(148, 20);
+            label10.TabIndex = 7;
+            label10.Text = "Numero Documento:";
+            // 
+            // txtnumerodocumento
+            // 
+            txtnumerodocumento.Location = new Point(590, 50);
+            txtnumerodocumento.Name = "txtnumerodocumento";
+            txtnumerodocumento.Size = new Size(98, 27);
+            txtnumerodocumento.TabIndex = 10;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Producto, PrecioCompra, Cantidad, SubTotal });
+            dataGridView1.Location = new Point(86, 336);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(714, 241);
+            dataGridView1.TabIndex = 10;
+            // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.MinimumWidth = 6;
+            Producto.Name = "Producto";
+            Producto.Width = 125;
+            // 
+            // PrecioCompra
+            // 
+            PrecioCompra.HeaderText = "Precio Compra:";
+            PrecioCompra.MinimumWidth = 6;
+            PrecioCompra.Name = "PrecioCompra";
+            PrecioCompra.Width = 125;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad:";
+            Cantidad.MinimumWidth = 6;
+            Cantidad.Name = "Cantidad";
+            Cantidad.Width = 125;
+            // 
+            // SubTotal
+            // 
+            SubTotal.HeaderText = "Sub-Total:";
+            SubTotal.MinimumWidth = 6;
+            SubTotal.Name = "SubTotal";
+            SubTotal.Width = 125;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = SystemColors.ControlLight;
+            label12.Location = new Point(86, 585);
+            label12.Name = "label12";
+            label12.Size = new Size(93, 20);
+            label12.TabIndex = 12;
+            label12.Text = "Monto Total:";
+            // 
+            // txtmontototal
+            // 
+            txtmontototal.Location = new Point(200, 585);
+            txtmontototal.Name = "txtmontototal";
+            txtmontototal.Size = new Size(116, 27);
+            txtmontototal.TabIndex = 11;
+            // 
+            // btndescargar
+            // 
+            btndescargar.IconChar = FontAwesome.Sharp.IconChar.FileArrowDown;
+            btndescargar.IconColor = Color.Black;
+            btndescargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btndescargar.IconSize = 26;
+            btndescargar.ImageAlign = ContentAlignment.MiddleLeft;
+            btndescargar.Location = new Point(606, 585);
+            btndescargar.Name = "btndescargar";
+            btndescargar.Size = new Size(161, 28);
+            btndescargar.TabIndex = 13;
+            btndescargar.Text = "Descargar en PDF";
+            btndescargar.TextAlign = ContentAlignment.MiddleRight;
+            btndescargar.UseVisualStyleBackColor = true;
+            // 
             // frmDetalleCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(963, 586);
+            BackColor = Color.DarkSeaGreen;
+            ClientSize = new Size(894, 630);
+            Controls.Add(btndescargar);
+            Controls.Add(label12);
+            Controls.Add(txtmontototal);
+            Controls.Add(dataGridView1);
+            Controls.Add(groupBox2);
+            Controls.Add(btnlimpiar);
+            Controls.Add(btnbuscarproveedor);
+            Controls.Add(txtbusqueda);
+            Controls.Add(label6);
             Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -135,6 +335,9 @@
             Text = "Detalle de Compra";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -150,5 +353,23 @@
         private TextBox txtfecha;
         private Label label4;
         private Label label3;
+        private FontAwesome.Sharp.IconButton btnbuscarproveedor;
+        private TextBox txtbusqueda;
+        private Label label6;
+        private FontAwesome.Sharp.IconButton btnlimpiar;
+        private GroupBox groupBox2;
+        private Label label10;
+        private TextBox txtnombreproveedor;
+        private TextBox txtdocproveedor;
+        private Label label8;
+        private TextBox txtnumerodocumento;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn PrecioCompra;
+        private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn SubTotal;
+        private Label label12;
+        private TextBox txtmontototal;
+        private FontAwesome.Sharp.IconButton btndescargar;
     }
 }

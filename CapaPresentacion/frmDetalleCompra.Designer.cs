@@ -31,22 +31,22 @@
             label1 = new Label();
             label2 = new Label();
             groupBox1 = new GroupBox();
+            txttipodocumento = new TextBox();
+            txtusuario = new TextBox();
+            label5 = new Label();
             txtfecha = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            txtusuario = new TextBox();
-            label5 = new Label();
-            txttipodocumento = new TextBox();
             btnbuscarproveedor = new FontAwesome.Sharp.IconButton();
             txtbusqueda = new TextBox();
             label6 = new Label();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             groupBox2 = new GroupBox();
+            txtnumerodocumento = new TextBox();
+            label10 = new Label();
             txtnombreproveedor = new TextBox();
             txtdocproveedor = new TextBox();
             label8 = new Label();
-            label10 = new Label();
-            txtnumerodocumento = new TextBox();
             dataGridView1 = new DataGridView();
             Producto = new DataGridViewTextBoxColumn();
             PrecioCompra = new DataGridViewTextBoxColumn();
@@ -95,6 +95,29 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion Compra";
             // 
+            // txttipodocumento
+            // 
+            txttipodocumento.Location = new Point(210, 50);
+            txttipodocumento.Name = "txttipodocumento";
+            txttipodocumento.Size = new Size(190, 27);
+            txttipodocumento.TabIndex = 6;
+            // 
+            // txtusuario
+            // 
+            txtusuario.Location = new Point(446, 50);
+            txtusuario.Name = "txtusuario";
+            txtusuario.Size = new Size(205, 27);
+            txtusuario.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(446, 27);
+            label5.Name = "label5";
+            label5.Size = new Size(62, 20);
+            label5.TabIndex = 4;
+            label5.Text = "Usuario:";
+            // 
             // txtfecha
             // 
             txtfecha.Location = new Point(7, 49);
@@ -119,29 +142,6 @@
             label3.Size = new Size(50, 20);
             label3.TabIndex = 0;
             label3.Text = "Fecha:";
-            // 
-            // txtusuario
-            // 
-            txtusuario.Location = new Point(446, 50);
-            txtusuario.Name = "txtusuario";
-            txtusuario.Size = new Size(205, 27);
-            txtusuario.TabIndex = 5;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(446, 27);
-            label5.Name = "label5";
-            label5.Size = new Size(62, 20);
-            label5.TabIndex = 4;
-            label5.Text = "Usuario:";
-            // 
-            // txttipodocumento
-            // 
-            txttipodocumento.Location = new Point(210, 50);
-            txttipodocumento.Name = "txttipodocumento";
-            txttipodocumento.Size = new Size(190, 27);
-            txttipodocumento.TabIndex = 6;
             // 
             // btnbuscarproveedor
             // 
@@ -202,6 +202,23 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Informacion Proveedor";
             // 
+            // txtnumerodocumento
+            // 
+            txtnumerodocumento.Location = new Point(590, 50);
+            txtnumerodocumento.Name = "txtnumerodocumento";
+            txtnumerodocumento.Size = new Size(98, 27);
+            txtnumerodocumento.TabIndex = 10;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = SystemColors.ControlLight;
+            label10.Location = new Point(7, 26);
+            label10.Name = "label10";
+            label10.Size = new Size(148, 20);
+            label10.TabIndex = 7;
+            label10.Text = "Numero Documento:";
+            // 
             // txtnombreproveedor
             // 
             txtnombreproveedor.Location = new Point(210, 50);
@@ -224,23 +241,6 @@
             label8.Size = new Size(97, 20);
             label8.TabIndex = 1;
             label8.Text = "Razon Social:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = SystemColors.ControlLight;
-            label10.Location = new Point(7, 26);
-            label10.Name = "label10";
-            label10.Size = new Size(148, 20);
-            label10.TabIndex = 7;
-            label10.Text = "Numero Documento:";
-            // 
-            // txtnumerodocumento
-            // 
-            txtnumerodocumento.Location = new Point(590, 50);
-            txtnumerodocumento.Name = "txtnumerodocumento";
-            txtnumerodocumento.Size = new Size(98, 27);
-            txtnumerodocumento.TabIndex = 10;
             // 
             // dataGridView1
             // 
@@ -293,13 +293,14 @@
             // 
             // txtmontototal
             // 
-            txtmontototal.Location = new Point(200, 585);
+            txtmontototal.Location = new Point(185, 582);
             txtmontototal.Name = "txtmontototal";
             txtmontototal.Size = new Size(116, 27);
             txtmontototal.TabIndex = 11;
             // 
             // btndescargar
             // 
+            btndescargar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btndescargar.IconChar = FontAwesome.Sharp.IconChar.FileArrowDown;
             btndescargar.IconColor = Color.Black;
             btndescargar.IconFont = FontAwesome.Sharp.IconFont.Auto;

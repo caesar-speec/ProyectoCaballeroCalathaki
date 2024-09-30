@@ -473,6 +473,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1141, 581);
             Controls.Add(btnregistrar);
             Controls.Add(txtcambio);

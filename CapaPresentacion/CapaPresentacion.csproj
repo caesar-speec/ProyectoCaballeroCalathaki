@@ -9,6 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="frmCategorias.cs" />
+    <Compile Remove="frmCategorias.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="frmCategorias.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\check.jpg" />
     <None Remove="Resources\check.png" />
     <None Remove="Utilidades\check.jpg" />

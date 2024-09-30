@@ -277,7 +277,7 @@
             btnexportar.ImageAlign = ContentAlignment.MiddleLeft;
             btnexportar.Location = new Point(21, 150);
             btnexportar.Name = "btnexportar";
-            btnexportar.Size = new Size(146, 28);
+            btnexportar.Size = new Size(146, 43);
             btnexportar.TabIndex = 20;
             btnexportar.Text = "Descargar Excel";
             btnexportar.TextAlign = ContentAlignment.MiddleRight;

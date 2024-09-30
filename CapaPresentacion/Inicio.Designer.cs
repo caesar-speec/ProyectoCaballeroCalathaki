@@ -55,10 +55,9 @@
             Menu2.BackColor = SystemColors.GrayText;
             Menu2.ImageScalingSize = new Size(20, 20);
             Menu2.Items.AddRange(new ToolStripItem[] { MenuProvedores, MenuReportes, MenuVentas, MenuUsuarios, MenuClientes, MenuProductos });
-            Menu2.Location = new Point(0, 76);
+            Menu2.Location = new Point(0, 57);
             Menu2.Name = "Menu2";
-            Menu2.Padding = new Padding(7, 3, 0, 3);
-            Menu2.Size = new Size(874, 75);
+            Menu2.Size = new Size(765, 73);
             Menu2.TabIndex = 0;
             Menu2.Text = "menuStrip1";
             // 
@@ -110,14 +109,14 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(165, 26);
+            submenuregistrarventa.Size = new Size(129, 22);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click_1;
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(165, 26);
+            submenuverdetalleventa.Size = new Size(129, 22);
             submenuverdetalleventa.Text = "Ver Detalle";
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
@@ -154,14 +153,14 @@
             // submenuAgregarClientes
             // 
             submenuAgregarClientes.Name = "submenuAgregarClientes";
-            submenuAgregarClientes.Size = new Size(212, 26);
+            submenuAgregarClientes.Size = new Size(170, 22);
             submenuAgregarClientes.Text = "Agregar Cliente";
             submenuAgregarClientes.Click += submenuAgregarClientes_Click;
             // 
             // SubmenuModificarClientes
             // 
             SubmenuModificarClientes.Name = "SubmenuModificarClientes";
-            SubmenuModificarClientes.Size = new Size(212, 26);
+            SubmenuModificarClientes.Size = new Size(170, 22);
             SubmenuModificarClientes.Text = "Modificar Clientes";
             SubmenuModificarClientes.Click += SubmenuModificarClientes_Click;
             // 
@@ -184,14 +183,14 @@
             // submenuCategoria
             // 
             submenuCategoria.Name = "submenuCategoria";
-            submenuCategoria.Size = new Size(226, 26);
+            submenuCategoria.Size = new Size(182, 22);
             submenuCategoria.Text = "Categorias";
             submenuCategoria.Click += submenucategoria_Click_1;
             // 
             // submenuProductos
             // 
             submenuProductos.Name = "submenuProductos";
-            submenuProductos.Size = new Size(226, 26);
+            submenuProductos.Size = new Size(182, 22);
             submenuProductos.Text = "Modificar Productos";
             submenuProductos.Click += submenuproducto_Click;
             // 
@@ -202,9 +201,8 @@
             MenuTitulo.ImageScalingSize = new Size(20, 20);
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
-            MenuTitulo.Padding = new Padding(7, 3, 0, 3);
             MenuTitulo.RightToLeft = RightToLeft.Yes;
-            MenuTitulo.Size = new Size(874, 76);
+            MenuTitulo.Size = new Size(765, 57);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
@@ -215,19 +213,18 @@
             label1.BackColor = Color.Green;
             label1.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(80, 27);
+            label1.Location = new Point(70, 20);
             label1.Name = "label1";
-            label1.Size = new Size(260, 38);
+            label1.Size = new Size(209, 29);
             label1.TabIndex = 2;
             label1.Text = "Sistema de Ventas";
             label1.Click += label1_Click;
             // 
             // panel1
             // 
-            panel1.Location = new Point(264, 259);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(231, 194);
             panel1.Name = "panel1";
-            panel1.Size = new Size(239, 39);
+            panel1.Size = new Size(209, 29);
             panel1.TabIndex = 3;
             // 
             // Contenedor
@@ -236,34 +233,32 @@
             Contenedor.Controls.Add(lblusuario);
             Contenedor.Dock = DockStyle.Fill;
             Contenedor.ForeColor = SystemColors.ButtonHighlight;
-            Contenedor.Location = new Point(0, 151);
-            Contenedor.Margin = new Padding(3, 4, 3, 4);
+            Contenedor.Location = new Point(0, 130);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(874, 330);
+            Contenedor.Size = new Size(765, 231);
             Contenedor.TabIndex = 4;
             // 
             // lblusuario
             // 
             lblusuario.AutoSize = true;
             lblusuario.ForeColor = SystemColors.ActiveCaptionText;
-            lblusuario.Location = new Point(709, 21);
+            lblusuario.Location = new Point(661, 23);
             lblusuario.Name = "lblusuario";
-            lblusuario.Size = new Size(33, 20);
+            lblusuario.Size = new Size(25, 15);
             lblusuario.TabIndex = 0;
             lblusuario.Text = "aaa";
             // 
             // Inicio
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 481);
+            ClientSize = new Size(765, 361);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(Menu2);
             Controls.Add(MenuTitulo);
             MainMenuStrip = Menu2;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Inicio";
             Text = "4";
             Load += Inicio_Load;

@@ -94,8 +94,12 @@ namespace CapaPresentacion
             ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
             ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
             });
+                Clear();
             }
-            Clear();
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
         }
 
         private void Clear()

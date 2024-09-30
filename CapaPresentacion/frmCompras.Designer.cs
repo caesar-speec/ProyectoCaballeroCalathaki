@@ -79,7 +79,7 @@
             label1.BackColor = SystemColors.ControlLightLight;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(82, 43);
+            label1.Location = new Point(45, 18);
             label1.Name = "label1";
             label1.Size = new Size(1060, 585);
             label1.TabIndex = 0;
@@ -90,7 +90,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.White;
             label2.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(109, 70);
+            label2.Location = new Point(73, 63);
             label2.Name = "label2";
             label2.Size = new Size(196, 28);
             label2.TabIndex = 1;
@@ -103,7 +103,7 @@
             groupBox1.Controls.Add(txtfecha);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(109, 101);
+            groupBox1.Location = new Point(73, 94);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(435, 93);
             groupBox1.TabIndex = 2;
@@ -152,7 +152,7 @@
             groupBox2.Controls.Add(txtdocproveedor);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(599, 101);
+            groupBox2.Location = new Point(563, 94);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(514, 93);
             groupBox2.TabIndex = 3;
@@ -178,6 +178,7 @@
             btnbuscarproveedor.Size = new Size(52, 28);
             btnbuscarproveedor.TabIndex = 4;
             btnbuscarproveedor.UseVisualStyleBackColor = true;
+            btnbuscarproveedor.Click += btnbuscarproveedor_Click;
             // 
             // txtnombreproveedor
             // 
@@ -226,7 +227,7 @@
             groupBox3.Controls.Add(textBox3);
             groupBox3.Controls.Add(label7);
             groupBox3.Controls.Add(label8);
-            groupBox3.Location = new Point(109, 214);
+            groupBox3.Location = new Point(73, 207);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(897, 93);
             groupBox3.TabIndex = 4;
@@ -339,7 +340,7 @@
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idProducto, Producto, PrecioCompra, PrecioVenta, Cantidad, SubTotal, btneliminar });
-            dataGridView1.Location = new Point(109, 351);
+            dataGridView1.Location = new Point(73, 317);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(897, 259);
@@ -401,7 +402,7 @@
             btnagregarproducto.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             btnagregarproducto.IconColor = Color.Green;
             btnagregarproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnagregarproducto.Location = new Point(1019, 229);
+            btnagregarproducto.Location = new Point(983, 222);
             btnagregarproducto.Name = "btnagregarproducto";
             btnagregarproducto.Size = new Size(94, 75);
             btnagregarproducto.TabIndex = 6;
@@ -413,7 +414,7 @@
             // 
             label12.AutoSize = true;
             label12.BackColor = Color.Ivory;
-            label12.Location = new Point(1019, 501);
+            label12.Location = new Point(990, 467);
             label12.Name = "label12";
             label12.Size = new Size(98, 20);
             label12.TabIndex = 9;
@@ -421,7 +422,7 @@
             // 
             // txttotalpagar
             // 
-            txttotalpagar.Location = new Point(1012, 524);
+            txttotalpagar.Location = new Point(983, 490);
             txttotalpagar.Name = "txttotalpagar";
             txttotalpagar.Size = new Size(116, 27);
             txttotalpagar.TabIndex = 8;
@@ -432,7 +433,7 @@
             btnregistrar.IconColor = Color.ForestGreen;
             btnregistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnregistrar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnregistrar.Location = new Point(1012, 557);
+            btnregistrar.Location = new Point(983, 523);
             btnregistrar.Name = "btnregistrar";
             btnregistrar.Size = new Size(116, 53);
             btnregistrar.TabIndex = 10;
@@ -445,7 +446,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.ForestGreen;
-            ClientSize = new Size(1242, 660);
+            ClientSize = new Size(1152, 623);
             Controls.Add(btnregistrar);
             Controls.Add(label12);
             Controls.Add(txttotalpagar);

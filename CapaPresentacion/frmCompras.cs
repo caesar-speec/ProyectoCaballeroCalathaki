@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.Modales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,14 @@ namespace CapaPresentacion
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnbuscarproveedor_Click(object sender, EventArgs e)
+        {
+            using var modal = new mdProveedor();
+            var result = modal.ShowDialog();
+
 
         }
     }

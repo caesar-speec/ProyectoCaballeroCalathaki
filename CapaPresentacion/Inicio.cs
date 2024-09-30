@@ -1,7 +1,6 @@
-using FontAwesome.Sharp;
 using CapaEntidad;
 using CapaNegocio;
-using System.Text;
+using FontAwesome.Sharp;
 namespace CapaPresentacion
 {
     public partial class Inicio : Form
@@ -63,7 +62,7 @@ namespace CapaPresentacion
 
 
 
-       
+
 
         private void MenuProvedores_Click(object sender, EventArgs e)
         {
@@ -132,6 +131,6 @@ namespace CapaPresentacion
 
         }
 
-       
+
     }
 }

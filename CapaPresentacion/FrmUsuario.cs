@@ -1,12 +1,7 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
-using CapaPresentacion;
-using System.Drawing;
-using System.IO;
 using System.Reflection;
-
-using Microsoft.VisualBasic.ApplicationServices;
 
 namespace CapaPresentacion
 {

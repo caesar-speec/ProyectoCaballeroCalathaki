@@ -16,5 +16,10 @@
         {
 
         }
+
+        private void btnbuscarproveedor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

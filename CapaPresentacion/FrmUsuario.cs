@@ -89,6 +89,7 @@ namespace CapaPresentacion
 
         private void Clear()
         {
+            txtindice.Text = "-1";
             txtid.Text = "0";
             txtdocumento.Text = "";
             txtnombrecompleto.Text = "";
@@ -131,6 +132,41 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
+            {
+                int indice = e.RowIndex;
+                if (indice >= 0)
+                {
+                    txtindice.Text = indice.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["idUsuario"].Value.ToString();
+                    txtdocumento.Text = dgvdata.Rows[indice].Cells["Documento"].Value.ToString();
+                    txtnombrecompleto.Text = dgvdata.Rows[indice].Cells["NombreCompleto"].Value.ToString();
+                    txtcorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
+                    txtclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+                    txtclave2.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+                    foreach (OpcionCombo oc in cborol.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
+                        {
+                            int indice_combo = cborol.Items.IndexOf(oc);
+                            cborol.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+                    foreach (OpcionCombo oc in cboestado.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
+                        {
+                            int indice_combo = cboestado.Items.IndexOf(oc);
+                            cboestado.SelectedIndex = indice_combo;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-

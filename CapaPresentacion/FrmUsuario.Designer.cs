@@ -61,6 +61,7 @@
             Estado = new DataGridViewTextBoxColumn();
             label9 = new Label();
             txtid = new TextBox();
+            txtindice = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -299,6 +300,7 @@
             dgvdata.RowHeadersWidth = 51;
             dgvdata.Size = new Size(910, 323);
             dgvdata.TabIndex = 20;
+            dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
             // 
             // btnseleccionar
@@ -404,12 +406,21 @@
             txtid.TabIndex = 22;
             txtid.Text = "0";
             // 
+            // txtindice
+            // 
+            txtindice.Location = new Point(97, 39);
+            txtindice.Name = "txtindice";
+            txtindice.Size = new Size(18, 23);
+            txtindice.TabIndex = 23;
+            txtindice.Text = "-1";
+            // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1118, 465);
+            Controls.Add(txtindice);
             Controls.Add(txtid);
             Controls.Add(label9);
             Controls.Add(dgvdata);
@@ -475,5 +486,6 @@
         private DataGridViewTextBoxColumn Rol;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
+        private TextBox txtindice;
     }
 }

@@ -84,22 +84,52 @@ namespace CapaPresentacion
                 oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo) cborol.SelectedItem).Valor)  },
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
+            if(objusuario.IdUsuario == 0)
+            {
+                int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+                if (idusuariogenerado != 0)
+                {
 
-            int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
-            if (idusuariogenerado !=  0) {
-
-                dgvdata.Rows.Add(new object[] {"",idusuariogenerado,txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
+                    dgvdata.Rows.Add(new object[] {"",idusuariogenerado,txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
             ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
             ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
             ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
             ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
             });
-                Clear();
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+
             }
             else
             {
-                MessageBox.Show(mensaje);
+               bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
+                if (resultado)
+                {
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
+                    row.Cells["IdUsuario"].Value = txtid.Text;
+                    row.Cells["Documento"].Value = txtdocumento.Text;
+                    row.Cells["NombreCompleto"].Value = txtnombrecompleto.Text;
+                    row.Cells["Correo"].Value = txtcorreo.Text;
+                    row.Cells["Clave"].Value = txtclave.Text;
+                    row.Cells["IdRol"].Value = ((OpcionCombo)cborol.SelectedItem).Valor.ToString();
+                    row.Cells["Rol"].Value = ((OpcionCombo)cborol.SelectedItem).Texto.ToString();
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
+
+                    Clear();
+
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
             }
+
+
         }
 
         private void Clear()

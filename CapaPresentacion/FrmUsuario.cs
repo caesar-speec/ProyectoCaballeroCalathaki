@@ -86,6 +86,19 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            // Llamar al método de validaciones
+            if (!validacionesCampos())
+            {
+                return; 
+            }
+
+            
+            MessageBox.Show("Usuario guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+
             string mensaje = string.Empty;
             Usuario objusuario = new Usuario()
             {
@@ -227,6 +240,97 @@ namespace CapaPresentacion
             }
         }
 
+
+
+
+
+        private bool validacionesCampos()
+        {
+            
+            if (string.IsNullOrWhiteSpace(txtdocumento.Text) || !txtdocumento.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("El documento debe contener solo números y no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtdocumento.Focus();
+                return false;
+            }
+
+            
+            if (string.IsNullOrWhiteSpace(txtnombrecompleto.Text) || !txtnombrecompleto.Text.All(char.IsLetter))
+            {
+                MessageBox.Show("El nombre completo debe contener solo letras y no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtnombrecompleto.Focus();
+                return false;
+            }
+
+            
+            if (string.IsNullOrWhiteSpace(txtcorreo.Text) || !IsValidEmail(txtcorreo.Text))
+            {
+                MessageBox.Show("Por favor, ingresa un correo válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtcorreo.Focus();
+                return false;
+            }
+
+            
+            if (string.IsNullOrWhiteSpace(txtclave.Text) || txtclave.Text.Length < 8)
+            {
+                MessageBox.Show("La clave debe tener al menos 8 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtclave.Focus();
+                return false;
+            }
+
+            
+            if (txtclave2.Text != txtclave.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtclave2.Focus();
+                return false;
+            }
+
+            
+            if (cborol.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, selecciona un rol.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cborol.Focus();
+                return false;
+            }
+
+            
+            if (cboestado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, selecciona un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboestado.Focus();
+                return false;
+            }
+
+            // Si todas las validaciones pasan
+            return true;
+        }
+
+       
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) != 0)
@@ -280,6 +384,11 @@ namespace CapaPresentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

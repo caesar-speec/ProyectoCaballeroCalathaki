@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             txtid = new TextBox();
             label9 = new Label();
             dgvdata = new DataGridView();
@@ -42,7 +42,6 @@
             Estado = new DataGridViewTextBoxColumn();
             label8 = new Label();
             btnEliminar = new FontAwesome.Sharp.IconButton();
-            btnEditar = new FontAwesome.Sharp.IconButton();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             cboestado = new ComboBox();
             label7 = new Label();
@@ -55,6 +54,12 @@
             txtdocumento = new TextBox();
             DNI = new Label();
             label1 = new Label();
+            btnlimpiar = new FontAwesome.Sharp.IconButton();
+            btnbuscar = new FontAwesome.Sharp.IconButton();
+            txtbusqueda = new TextBox();
+            cbobusqueda = new ComboBox();
+            label10 = new Label();
+            btnEditar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -66,6 +71,7 @@
             txtid.Size = new Size(20, 27);
             txtid.TabIndex = 62;
             txtid.Text = "0";
+            txtid.Visible = false;
             // 
             // label9
             // 
@@ -82,15 +88,15 @@
             // 
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, RazonSocial, Correo, Telefono, EstadoValor, Estado });
             dgvdata.Location = new Point(232, 135);
@@ -199,25 +205,6 @@
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.RoyalBlue;
-            btnEditar.Cursor = Cursors.Hand;
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btnEditar.IconColor = Color.White;
-            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditar.IconSize = 16;
-            btnEditar.Location = new Point(18, 435);
-            btnEditar.Margin = new Padding(3, 4, 3, 4);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(170, 31);
-            btnEditar.TabIndex = 57;
-            btnEditar.Text = "Editar";
-            btnEditar.TextAlign = ContentAlignment.MiddleRight;
-            btnEditar.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEditar.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
@@ -347,18 +334,103 @@
             label1.Size = new Size(219, 620);
             label1.TabIndex = 45;
             // 
+            // btnlimpiar
+            // 
+            btnlimpiar.BackColor = Color.RoyalBlue;
+            btnlimpiar.Cursor = Cursors.Hand;
+            btnlimpiar.FlatStyle = FlatStyle.Flat;
+            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            btnlimpiar.IconColor = Color.White;
+            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnlimpiar.IconSize = 18;
+            btnlimpiar.Location = new Point(1214, 61);
+            btnlimpiar.Margin = new Padding(3, 4, 3, 4);
+            btnlimpiar.Name = "btnlimpiar";
+            btnlimpiar.Size = new Size(40, 44);
+            btnlimpiar.TabIndex = 67;
+            btnlimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnbuscar
+            // 
+            btnbuscar.BackColor = Color.YellowGreen;
+            btnbuscar.Cursor = Cursors.Hand;
+            btnbuscar.FlatStyle = FlatStyle.Flat;
+            btnbuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btnbuscar.IconColor = Color.LightYellow;
+            btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnbuscar.IconSize = 18;
+            btnbuscar.Location = new Point(1166, 61);
+            btnbuscar.Margin = new Padding(3, 4, 3, 4);
+            btnbuscar.Name = "btnbuscar";
+            btnbuscar.Size = new Size(40, 44);
+            btnbuscar.TabIndex = 66;
+            btnbuscar.UseVisualStyleBackColor = false;
+            // 
+            // txtbusqueda
+            // 
+            txtbusqueda.Location = new Point(988, 62);
+            txtbusqueda.Margin = new Padding(3, 4, 3, 4);
+            txtbusqueda.Name = "txtbusqueda";
+            txtbusqueda.Size = new Size(170, 27);
+            txtbusqueda.TabIndex = 65;
+            // 
+            // cbobusqueda
+            // 
+            cbobusqueda.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbobusqueda.FormattingEnabled = true;
+            cbobusqueda.Location = new Point(811, 62);
+            cbobusqueda.Margin = new Padding(3, 4, 3, 4);
+            cbobusqueda.Name = "cbobusqueda";
+            cbobusqueda.Size = new Size(170, 28);
+            cbobusqueda.TabIndex = 64;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = SystemColors.ControlLight;
+            label10.ForeColor = SystemColors.ActiveCaptionText;
+            label10.Location = new Point(716, 65);
+            label10.Name = "label10";
+            label10.Size = new Size(80, 20);
+            label10.TabIndex = 63;
+            label10.Text = "Buscar Por:";
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.RoyalBlue;
+            btnEditar.Cursor = Cursors.Hand;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            btnEditar.IconColor = Color.White;
+            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditar.IconSize = 16;
+            btnEditar.Location = new Point(18, 435);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(170, 31);
+            btnEditar.TabIndex = 68;
+            btnEditar.Text = "Limpiar";
+            btnEditar.TextAlign = ContentAlignment.MiddleRight;
+            btnEditar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEditar.UseVisualStyleBackColor = false;
+            // 
             // frmProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1278, 620);
+            Controls.Add(btnEditar);
+            Controls.Add(btnlimpiar);
+            Controls.Add(btnbuscar);
+            Controls.Add(txtbusqueda);
+            Controls.Add(cbobusqueda);
+            Controls.Add(label10);
             Controls.Add(txtid);
             Controls.Add(label9);
             Controls.Add(dgvdata);
             Controls.Add(label8);
             Controls.Add(btnEliminar);
-            Controls.Add(btnEditar);
             Controls.Add(btnGuardar);
             Controls.Add(cboestado);
             Controls.Add(label7);
@@ -384,7 +456,6 @@
         private DataGridView dgvdata;
         private Label label8;
         private FontAwesome.Sharp.IconButton btnEliminar;
-        private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private ComboBox cboestado;
         private Label label7;
@@ -405,5 +476,11 @@
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
+        private FontAwesome.Sharp.IconButton btnlimpiar;
+        private FontAwesome.Sharp.IconButton btnbuscar;
+        private TextBox txtbusqueda;
+        private ComboBox cbobusqueda;
+        private Label label10;
+        private FontAwesome.Sharp.IconButton btnEditar;
     }
 }

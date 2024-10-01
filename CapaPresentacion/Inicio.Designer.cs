@@ -207,7 +207,7 @@
             // MenuTitulo
             // 
             MenuTitulo.AutoSize = false;
-            MenuTitulo.BackColor = Color.Green;
+            MenuTitulo.BackColor = Color.DarkOliveGreen;
             MenuTitulo.ImageScalingSize = new Size(20, 20);
             MenuTitulo.Location = new Point(0, 0);
             MenuTitulo.Name = "MenuTitulo";
@@ -220,7 +220,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Green;
+            label1.BackColor = Color.DarkOliveGreen;
             label1.Font = new Font("Trebuchet MS", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
             label1.Location = new Point(70, 20);
@@ -252,7 +252,7 @@
             // 
             lblusuario.AutoSize = true;
             lblusuario.ForeColor = SystemColors.ActiveCaptionText;
-            lblusuario.Location = new Point(650, 23);
+            lblusuario.Location = new Point(650, 28);
             lblusuario.Name = "lblusuario";
             lblusuario.Size = new Size(25, 15);
             lblusuario.TabIndex = 0;

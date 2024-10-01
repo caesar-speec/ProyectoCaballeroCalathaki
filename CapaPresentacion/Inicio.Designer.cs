@@ -188,18 +188,19 @@
             menucompras.Size = new Size(122, 69);
             menucompras.Text = "Compras";
             menucompras.TextImageRelation = TextImageRelation.ImageAboveText;
+            menucompras.Click += menucompras_Click;
             // 
             // registrarCompraToolStripMenuItem
             // 
             registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
-            registrarCompraToolStripMenuItem.Size = new Size(180, 22);
+            registrarCompraToolStripMenuItem.Size = new Size(166, 22);
             registrarCompraToolStripMenuItem.Text = "Registrar Compra";
             registrarCompraToolStripMenuItem.Click += registrarCompraToolStripMenuItem_Click;
             // 
             // verDetalleToolStripMenuItem
             // 
             verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
-            verDetalleToolStripMenuItem.Size = new Size(180, 22);
+            verDetalleToolStripMenuItem.Size = new Size(166, 22);
             verDetalleToolStripMenuItem.Text = "Ver Detalle";
             verDetalleToolStripMenuItem.Click += verDetalleToolStripMenuItem_Click;
             // 
@@ -251,7 +252,7 @@
             // 
             lblusuario.AutoSize = true;
             lblusuario.ForeColor = SystemColors.ActiveCaptionText;
-            lblusuario.Location = new Point(661, 23);
+            lblusuario.Location = new Point(650, 23);
             lblusuario.Name = "lblusuario";
             lblusuario.Size = new Size(25, 15);
             lblusuario.TabIndex = 0;

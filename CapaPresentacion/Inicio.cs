@@ -1,4 +1,4 @@
-using CapaEntidad;
+﻿using CapaEntidad;
 using CapaNegocio;
 using FontAwesome.Sharp;
 namespace CapaPresentacion
@@ -155,5 +155,16 @@ namespace CapaPresentacion
         {
             AbrirFormulario(menucompras, new frmDetalleCompra());
         }
+
+        private void menucompras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuReportes_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

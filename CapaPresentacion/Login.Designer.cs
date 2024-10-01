@@ -30,7 +30,6 @@
         {
             label1 = new Label();
             label2 = new Label();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             Tdni = new TextBox();
             Tpassword = new TextBox();
             label3 = new Label();
@@ -38,98 +37,87 @@
             btn_ingresar = new FontAwesome.Sharp.IconButton();
             btn_cancelar = new FontAwesome.Sharp.IconButton();
             label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            logo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.BackColor = Color.ForestGreen;
+            label1.BackColor = Color.FromArgb(85, 107, 47);
             label1.Dock = DockStyle.Top;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(379, 221);
+            label1.Size = new Size(332, 166);
             label1.TabIndex = 0;
             label1.TextAlign = ContentAlignment.BottomLeft;
-            label1.Click += label1_Click_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.ForestGreen;
-            label2.Font = new Font("Yu Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(144, 147);
+            label2.BackColor = Color.FromArgb(85, 107, 47);
+            label2.Font = new Font("Segoe Print", 16F, FontStyle.Bold);
+            label2.ForeColor = Color.WhiteSmoke;
+            label2.Location = new Point(125, 102);
             label2.Name = "label2";
-            label2.Size = new Size(74, 30);
+            label2.Size = new Size(69, 38);
             label2.TabIndex = 1;
-            label2.Text = "P && A";
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.ForestGreen;
-            iconPictureBox1.ForeColor = SystemColors.ButtonFace;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PlantWilt;
-            iconPictureBox1.IconColor = SystemColors.ButtonFace;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 104;
-            iconPictureBox1.Location = new Point(131, 13);
-            iconPictureBox1.Margin = new Padding(3, 4, 3, 4);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(104, 129);
-            iconPictureBox1.TabIndex = 2;
-            iconPictureBox1.TabStop = false;
+            label2.Text = "P&&A";
+            label2.Click += label2_Click;
             // 
             // Tdni
             // 
-            Tdni.Location = new Point(91, 256);
-            Tdni.Margin = new Padding(3, 4, 3, 4);
+            Tdni.BackColor = Color.FromArgb(240, 255, 240);
+            Tdni.BorderStyle = BorderStyle.FixedSingle;
+            Tdni.ForeColor = Color.DarkOliveGreen;
+            Tdni.Location = new Point(80, 192);
             Tdni.Name = "Tdni";
-            Tdni.Size = new Size(195, 27);
+            Tdni.Size = new Size(171, 23);
             Tdni.TabIndex = 3;
-            Tdni.TextChanged += Tdni_TextChanged;
             // 
             // Tpassword
             // 
-            Tpassword.Location = new Point(91, 331);
-            Tpassword.Margin = new Padding(3, 4, 3, 4);
+            Tpassword.BackColor = Color.FromArgb(240, 255, 240);
+            Tpassword.BorderStyle = BorderStyle.FixedSingle;
+            Tpassword.ForeColor = Color.DarkOliveGreen;
+            Tpassword.Location = new Point(80, 248);
             Tpassword.Name = "Tpassword";
             Tpassword.PasswordChar = '*';
-            Tpassword.Size = new Size(195, 27);
+            Tpassword.Size = new Size(171, 23);
             Tpassword.TabIndex = 4;
-            Tpassword.TextChanged += textBox2_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(91, 232);
+            label3.ForeColor = Color.DarkOliveGreen;
+            label3.Location = new Point(80, 174);
             label3.Name = "label3";
-            label3.Size = new Size(35, 20);
+            label3.Size = new Size(27, 15);
             label3.TabIndex = 5;
             label3.Text = "DNI";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(91, 307);
+            label4.ForeColor = Color.DarkOliveGreen;
+            label4.Location = new Point(80, 230);
             label4.Name = "label4";
-            label4.Size = new Size(83, 20);
+            label4.Size = new Size(67, 15);
             label4.TabIndex = 6;
             label4.Text = "Contraseña";
             // 
             // btn_ingresar
             // 
-            btn_ingresar.BackColor = Color.SeaGreen;
+            btn_ingresar.BackColor = Color.FromArgb(60, 179, 113);
+            btn_ingresar.FlatAppearance.BorderSize = 0;
+            btn_ingresar.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 139, 34);
             btn_ingresar.FlatStyle = FlatStyle.Flat;
-            btn_ingresar.ForeColor = Color.WhiteSmoke;
+            btn_ingresar.ForeColor = Color.White;
             btn_ingresar.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             btn_ingresar.IconColor = Color.WhiteSmoke;
             btn_ingresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_ingresar.Location = new Point(49, 371);
-            btn_ingresar.Margin = new Padding(3, 4, 3, 4);
+            btn_ingresar.Location = new Point(43, 278);
             btn_ingresar.Name = "btn_ingresar";
-            btn_ingresar.Size = new Size(134, 68);
+            btn_ingresar.Size = new Size(117, 51);
             btn_ingresar.TabIndex = 7;
             btn_ingresar.Text = "Ingresar";
             btn_ingresar.TextAlign = ContentAlignment.MiddleRight;
@@ -139,16 +127,16 @@
             // 
             // btn_cancelar
             // 
-            btn_cancelar.BackColor = Color.Firebrick;
+            btn_cancelar.BackColor = Color.FromArgb(178, 34, 34);
+            btn_cancelar.FlatAppearance.BorderSize = 0;
             btn_cancelar.FlatStyle = FlatStyle.Flat;
-            btn_cancelar.ForeColor = Color.WhiteSmoke;
+            btn_cancelar.ForeColor = Color.White;
             btn_cancelar.IconChar = FontAwesome.Sharp.IconChar.Close;
             btn_cancelar.IconColor = Color.WhiteSmoke;
             btn_cancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_cancelar.Location = new Point(191, 371);
-            btn_cancelar.Margin = new Padding(3, 4, 3, 4);
+            btn_cancelar.Location = new Point(167, 278);
             btn_cancelar.Name = "btn_cancelar";
-            btn_cancelar.Size = new Size(131, 68);
+            btn_cancelar.Size = new Size(115, 51);
             btn_cancelar.TabIndex = 8;
             btn_cancelar.Text = "Cancelar";
             btn_cancelar.TextAlign = ContentAlignment.MiddleRight;
@@ -158,22 +146,34 @@
             // 
             // label5
             // 
-            label5.BackColor = Color.ForestGreen;
-            label5.Font = new Font("Yu Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.BackColor = Color.FromArgb(85, 107, 47);
+            label5.Font = new Font("Segoe Print", 12F);
             label5.ForeColor = Color.Transparent;
-            label5.Location = new Point(144, 176);
+            label5.Location = new Point(123, 129);
             label5.Name = "label5";
-            label5.Size = new Size(107, 27);
+            label5.Size = new Size(94, 20);
             label5.TabIndex = 9;
             label5.Text = "Plantas";
-            label5.Click += label5_Click;
+            // 
+            // logo
+            // 
+            logo.BackColor = Color.FromArgb(85, 107, 47);
+            logo.Image = Resource1.iconoplantita;
+            logo.Location = new Point(111, 12);
+            logo.Margin = new Padding(4, 3, 4, 3);
+            logo.Name = "logo";
+            logo.Size = new Size(94, 87);
+            logo.SizeMode = PictureBoxSizeMode.StretchImage;
+            logo.TabIndex = 10;
+            logo.TabStop = false;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGray;
-            ClientSize = new Size(379, 467);
+            BackColor = Color.FromArgb(245, 245, 245);
+            ClientSize = new Size(332, 350);
+            Controls.Add(logo);
             Controls.Add(label5);
             Controls.Add(btn_cancelar);
             Controls.Add(btn_ingresar);
@@ -181,17 +181,15 @@
             Controls.Add(label3);
             Controls.Add(Tpassword);
             Controls.Add(Tdni);
-            Controls.Add(iconPictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            ForeColor = Color.LightGray;
+            ForeColor = Color.DarkOliveGreen;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,7 +198,6 @@
 
         private Label label1;
         private Label label2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private TextBox Tdni;
         private TextBox Tpassword;
         private Label label3;
@@ -208,5 +205,8 @@
         private FontAwesome.Sharp.IconButton btn_ingresar;
         private FontAwesome.Sharp.IconButton btn_cancelar;
         private Label label5;
+        private PictureBox logo;
     }
+
+
 }

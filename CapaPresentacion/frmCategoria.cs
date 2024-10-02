@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmReporteCompras : Form
+    public partial class frmCategoria : Form
     {
-        public frmReporteCompras()
+        public frmCategoria()
         {
             InitializeComponent();
         }
 
-        private void frmReporteCompras_Load(object sender, EventArgs e)
+        private void txtnombrecompleto_TextChanged(object sender, EventArgs e)
         {
 
         }

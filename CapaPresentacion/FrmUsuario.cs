@@ -87,14 +87,12 @@ namespace CapaPresentacion
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            // Llamar al método de validaciones
-            if (!validacionesCampos())
+            // Llamar al método de validaciones antes de continuar
+            if (!Validaciones())
             {
                 return; 
             }
-
-            
-            MessageBox.Show("Usuario guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Datos guardados correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
@@ -244,91 +242,63 @@ namespace CapaPresentacion
 
 
 
-        private bool validacionesCampos()
+        private bool Validaciones()
         {
-            
+          
             if (string.IsNullOrWhiteSpace(txtdocumento.Text) || !txtdocumento.Text.All(char.IsDigit))
             {
-                MessageBox.Show("El documento debe contener solo números y no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtdocumento.Focus();
+                MessageBox.Show("El campo Documento es obligatorio y solo debe contener números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            
-            if (string.IsNullOrWhiteSpace(txtnombrecompleto.Text) || !txtnombrecompleto.Text.All(char.IsLetter))
+           
+            if (string.IsNullOrWhiteSpace(txtnombrecompleto.Text))
             {
-                MessageBox.Show("El nombre completo debe contener solo letras y no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtnombrecompleto.Focus();
+                MessageBox.Show("El campo Nombre Completo es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             
-            if (string.IsNullOrWhiteSpace(txtcorreo.Text) || !IsValidEmail(txtcorreo.Text))
+            if (string.IsNullOrWhiteSpace(txtcorreo.Text) || !txtcorreo.Text.Contains("@"))
             {
-                MessageBox.Show("Por favor, ingresa un correo válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtcorreo.Focus();
+                MessageBox.Show("El campo Correo es obligatorio y debe tener un formato válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            
-            if (string.IsNullOrWhiteSpace(txtclave.Text) || txtclave.Text.Length < 8)
+           
+            if (string.IsNullOrWhiteSpace(txtclave.Text) || txtclave.Text.Length < 6)
             {
-                MessageBox.Show("La clave debe tener al menos 8 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtclave.Focus();
+                MessageBox.Show("El campo Clave es obligatorio y debe tener al menos 6 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             
-            if (txtclave2.Text != txtclave.Text)
+            if (txtclave.Text != txtclave2.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtclave2.Focus();
                 return false;
             }
 
-            
+         
             if (cborol.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor, selecciona un rol.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cborol.Focus();
+                MessageBox.Show("Debe seleccionar un rol.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+
+            if (cboestado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             
-            if (cboestado.SelectedIndex == -1)
-            {
-                MessageBox.Show("Por favor, selecciona un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboestado.Focus();
-                return false;
-            }
-
-            // Si todas las validaciones pasan
             return true;
         }
 
-       
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
 
-
-
-
-
-
-
-
-
-
+   
 
 
         private void btnEliminar_Click(object sender, EventArgs e)

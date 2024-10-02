@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmReporteCompras : Form
+    public partial class frmReporteVentas : Form
     {
-        public frmReporteCompras()
+        public frmReporteVentas()
         {
             InitializeComponent();
         }
 
-        private void frmReporteCompras_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtfin_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click_2(object sender, EventArgs e)
         {
 
         }

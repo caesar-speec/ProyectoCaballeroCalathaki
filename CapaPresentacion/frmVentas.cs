@@ -31,5 +31,45 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnbuscarcliente_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtdocumentocliente.Text) || !txtdocumentocliente.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("El campo Documento Cliente es obligatorio y solo debe contener números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void btnbuscarproducto_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtcodproducto.Text) || !txtcodproducto.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("El campo Código de Producto es obligatorio y solo debe contener números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

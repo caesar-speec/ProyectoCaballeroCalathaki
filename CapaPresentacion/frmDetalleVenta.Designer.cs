@@ -222,6 +222,7 @@
             txtnumerodocumento.Name = "txtnumerodocumento";
             txtnumerodocumento.Size = new Size(86, 23);
             txtnumerodocumento.TabIndex = 10;
+            txtnumerodocumento.Visible = false;
             // 
             // label10
             // 

@@ -43,7 +43,6 @@
             label3 = new Label();
             label2 = new Label();
             groupBox3 = new GroupBox();
-            txtidproducto = new TextBox();
             txtcantidad = new NumericUpDown();
             label10 = new Label();
             label11 = new Label();
@@ -70,6 +69,7 @@
             txtpagacon = new TextBox();
             txtcambio = new TextBox();
             btnregistrar = new FontAwesome.Sharp.IconButton();
+            txtidproducto = new TextBox();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -246,15 +246,6 @@
             groupBox3.TabIndex = 7;
             groupBox3.TabStop = false;
             groupBox3.Text = "Informacion del Producto";
-            // 
-            // txtidproducto
-            // 
-            txtidproducto.Location = new Point(148, 16);
-            txtidproducto.Margin = new Padding(3, 2, 3, 2);
-            txtidproducto.Name = "txtidproducto";
-            txtidproducto.Size = new Size(30, 23);
-            txtidproducto.TabIndex = 10;
-            txtidproducto.Visible = false;
             // 
             // txtcantidad
             // 
@@ -484,6 +475,7 @@
             btnregistrar.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
             btnregistrar.IconColor = Color.ForestGreen;
             btnregistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnregistrar.IconSize = 40;
             btnregistrar.ImageAlign = ContentAlignment.MiddleLeft;
             btnregistrar.Location = new Point(834, 380);
             btnregistrar.Margin = new Padding(3, 2, 3, 2);
@@ -494,6 +486,15 @@
             btnregistrar.TextAlign = ContentAlignment.MiddleRight;
             btnregistrar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnregistrar.UseVisualStyleBackColor = true;
+            // 
+            // txtidproducto
+            // 
+            txtidproducto.Location = new Point(148, 16);
+            txtidproducto.Margin = new Padding(3, 2, 3, 2);
+            txtidproducto.Name = "txtidproducto";
+            txtidproducto.Size = new Size(30, 23);
+            txtidproducto.TabIndex = 10;
+            txtidproducto.Visible = false;
             // 
             // frmVentas
             // 

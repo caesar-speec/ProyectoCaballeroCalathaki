@@ -422,6 +422,7 @@
             btnagregarproducto.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             btnagregarproducto.IconColor = Color.Green;
             btnagregarproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnagregarproducto.IconSize = 40;
             btnagregarproducto.Location = new Point(860, 166);
             btnagregarproducto.Margin = new Padding(3, 2, 3, 2);
             btnagregarproducto.Name = "btnagregarproducto";

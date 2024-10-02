@@ -21,5 +21,14 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtdescripcion.Text))
+            {
+                MessageBox.Show("El campo Descripcion es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }

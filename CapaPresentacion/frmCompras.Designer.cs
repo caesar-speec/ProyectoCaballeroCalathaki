@@ -76,7 +76,7 @@
             // 
             // label1
             // 
-            label1.BackColor = SystemColors.ControlDark;
+            label1.BackColor = SystemColors.ControlLight;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(18, 11);
@@ -88,8 +88,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlDark;
+            label2.BackColor = SystemColors.ControlLight;
             label2.Font = new Font("Trebuchet MS", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(73, 63);
             label2.Name = "label2";
             label2.Size = new Size(196, 28);
@@ -98,7 +99,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.ControlDark;
+            groupBox1.BackColor = SystemColors.ControlLight;
             groupBox1.Controls.Add(cbotipodocumento);
             groupBox1.Controls.Add(txtfecha);
             groupBox1.Controls.Add(label4);
@@ -128,6 +129,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(186, 27);
             label4.Name = "label4";
             label4.Size = new Size(124, 20);
@@ -137,6 +139,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(7, 27);
             label3.Name = "label3";
             label3.Size = new Size(50, 20);
@@ -145,7 +148,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = SystemColors.ControlDark;
+            groupBox2.BackColor = SystemColors.ControlLight;
             groupBox2.Controls.Add(txtidproveedor);
             groupBox2.Controls.Add(btnbuscarproveedor);
             groupBox2.Controls.Add(txtnombreproveedor);
@@ -197,6 +200,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(239, 27);
             label5.Name = "label5";
             label5.Size = new Size(97, 20);
@@ -206,6 +210,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(7, 27);
             label6.Name = "label6";
             label6.Size = new Size(148, 20);
@@ -214,7 +219,7 @@
             // 
             // groupBox3
             // 
-            groupBox3.BackColor = SystemColors.ControlDark;
+            groupBox3.BackColor = SystemColors.ControlLight;
             groupBox3.Controls.Add(txtidproducto);
             groupBox3.Controls.Add(txtcantidad);
             groupBox3.Controls.Add(label10);
@@ -252,6 +257,7 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.ForeColor = Color.Black;
             label10.Location = new Point(639, 23);
             label10.Name = "label10";
             label10.Size = new Size(94, 20);
@@ -261,6 +267,7 @@
             // label11
             // 
             label11.AutoSize = true;
+            label11.ForeColor = Color.Black;
             label11.Location = new Point(786, 24);
             label11.Name = "label11";
             label11.Size = new Size(72, 20);
@@ -270,6 +277,7 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.ForeColor = Color.Black;
             label9.Location = new Point(501, 21);
             label9.Name = "label9";
             label9.Size = new Size(108, 20);
@@ -321,6 +329,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.ForeColor = Color.Black;
             label7.Location = new Point(293, 24);
             label7.Name = "label7";
             label7.Size = new Size(72, 20);
@@ -330,6 +339,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.ForeColor = Color.Black;
             label8.Location = new Point(7, 27);
             label8.Name = "label8";
             label8.Size = new Size(103, 20);
@@ -415,7 +425,8 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.BackColor = SystemColors.ControlDark;
+            label12.BackColor = SystemColors.ControlLight;
+            label12.ForeColor = Color.Black;
             label12.Location = new Point(992, 432);
             label12.Name = "label12";
             label12.Size = new Size(98, 20);

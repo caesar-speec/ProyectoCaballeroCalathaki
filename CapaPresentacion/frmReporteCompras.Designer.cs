@@ -62,7 +62,7 @@
             // 
             // label1
             // 
-            label1.BackColor = SystemColors.ControlDark;
+            label1.BackColor = SystemColors.ControlLight;
             label1.Location = new Point(11, 9);
             label1.Name = "label1";
             label1.Size = new Size(1161, 97);
@@ -71,7 +71,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = SystemColors.ControlDark;
+            label3.BackColor = SystemColors.ControlLight;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(29, 65);
             label3.Name = "label3";
             label3.Size = new Size(90, 20);
@@ -81,8 +82,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlDark;
+            label2.BackColor = SystemColors.ControlLight;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(21, 19);
             label2.Name = "label2";
             label2.Size = new Size(266, 31);
@@ -110,7 +112,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = SystemColors.ControlDark;
+            label4.BackColor = SystemColors.ControlLight;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(250, 67);
             label4.Name = "label4";
             label4.Size = new Size(71, 20);
@@ -128,7 +131,8 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = SystemColors.ControlDark;
+            label5.BackColor = SystemColors.ControlLight;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(491, 68);
             label5.Name = "label5";
             label5.Size = new Size(80, 20);
@@ -149,7 +153,7 @@
             // 
             // label6
             // 
-            label6.BackColor = SystemColors.ControlDark;
+            label6.BackColor = SystemColors.ControlLight;
             label6.BorderStyle = BorderStyle.FixedSingle;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(11, 128);
@@ -269,7 +273,8 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = SystemColors.ControlDark;
+            label7.BackColor = SystemColors.ControlLight;
+            label7.ForeColor = Color.Black;
             label7.Location = new Point(457, 153);
             label7.Name = "label7";
             label7.Size = new Size(82, 20);

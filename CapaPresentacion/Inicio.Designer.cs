@@ -32,22 +32,25 @@
             MenuProvedores = new FontAwesome.Sharp.IconMenuItem();
             MenuReportes = new FontAwesome.Sharp.IconMenuItem();
             ReportesCompras = new ToolStripMenuItem();
+            reportesVentasToolStripMenuItem = new ToolStripMenuItem();
             MenuVentas = new FontAwesome.Sharp.IconMenuItem();
             submenuregistrarventa = new ToolStripMenuItem();
             submenuverdetalleventa = new ToolStripMenuItem();
             MenuUsuarios = new FontAwesome.Sharp.IconMenuItem();
             MenuClientes = new FontAwesome.Sharp.IconMenuItem();
             MenuProductos = new FontAwesome.Sharp.IconMenuItem();
+            productosToolStripMenuItem = new ToolStripMenuItem();
+            agregarCategoriaToolStripMenuItem = new ToolStripMenuItem();
             menucompras = new FontAwesome.Sharp.IconMenuItem();
             registrarCompraToolStripMenuItem = new ToolStripMenuItem();
             verDetalleToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             panel1 = new Panel();
             Contenedor = new Panel();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
             lblusuario = new Label();
             MenuTitulo = new MenuStrip();
-            label2 = new Label();
-            pictureBox1 = new PictureBox();
             Menu2.SuspendLayout();
             Contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -83,7 +86,7 @@
             // MenuReportes
             // 
             MenuReportes.AutoSize = false;
-            MenuReportes.DropDownItems.AddRange(new ToolStripItem[] { ReportesCompras });
+            MenuReportes.DropDownItems.AddRange(new ToolStripItem[] { ReportesCompras, reportesVentasToolStripMenuItem });
             MenuReportes.ForeColor = SystemColors.ButtonHighlight;
             MenuReportes.IconChar = FontAwesome.Sharp.IconChar.ArrowTrendUp;
             MenuReportes.IconColor = Color.WhiteSmoke;
@@ -102,6 +105,13 @@
             ReportesCompras.Size = new Size(214, 26);
             ReportesCompras.Text = "Reportes Compras";
             ReportesCompras.Click += ReportesCompras_Click;
+            // 
+            // reportesVentasToolStripMenuItem
+            // 
+            reportesVentasToolStripMenuItem.Name = "reportesVentasToolStripMenuItem";
+            reportesVentasToolStripMenuItem.Size = new Size(214, 26);
+            reportesVentasToolStripMenuItem.Text = "Reportes Ventas";
+            reportesVentasToolStripMenuItem.Click += reportesVentasToolStripMenuItem_Click;
             // 
             // MenuVentas
             // 
@@ -166,6 +176,7 @@
             // MenuProductos
             // 
             MenuProductos.AutoSize = false;
+            MenuProductos.DropDownItems.AddRange(new ToolStripItem[] { productosToolStripMenuItem, agregarCategoriaToolStripMenuItem });
             MenuProductos.ForeColor = SystemColors.ButtonHighlight;
             MenuProductos.IconChar = FontAwesome.Sharp.IconChar.ProductHunt;
             MenuProductos.IconColor = Color.WhiteSmoke;
@@ -173,10 +184,24 @@
             MenuProductos.IconSize = 50;
             MenuProductos.ImageScaling = ToolStripItemImageScaling.None;
             MenuProductos.Name = "MenuProductos";
-            MenuProductos.Size = new Size(122, 69);
+            MenuProductos.Size = new Size(152, 69);
             MenuProductos.Text = "Productos";
             MenuProductos.TextImageRelation = TextImageRelation.ImageAboveText;
             MenuProductos.Click += menumantenedor_Click;
+            // 
+            // productosToolStripMenuItem
+            // 
+            productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            productosToolStripMenuItem.Size = new Size(224, 26);
+            productosToolStripMenuItem.Text = "Productos";
+            productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
+            // 
+            // agregarCategoriaToolStripMenuItem
+            // 
+            agregarCategoriaToolStripMenuItem.Name = "agregarCategoriaToolStripMenuItem";
+            agregarCategoriaToolStripMenuItem.Size = new Size(224, 26);
+            agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
+            agregarCategoriaToolStripMenuItem.Click += agregarCategoriaToolStripMenuItem_Click;
             // 
             // menucompras
             // 
@@ -197,14 +222,14 @@
             // registrarCompraToolStripMenuItem
             // 
             registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
-            registrarCompraToolStripMenuItem.Size = new Size(224, 26);
+            registrarCompraToolStripMenuItem.Size = new Size(208, 26);
             registrarCompraToolStripMenuItem.Text = "Registrar Compra";
             registrarCompraToolStripMenuItem.Click += registrarCompraToolStripMenuItem_Click;
             // 
             // verDetalleToolStripMenuItem
             // 
             verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
-            verDetalleToolStripMenuItem.Size = new Size(224, 26);
+            verDetalleToolStripMenuItem.Size = new Size(208, 26);
             verDetalleToolStripMenuItem.Text = "Ver Detalle";
             verDetalleToolStripMenuItem.Click += verDetalleToolStripMenuItem_Click;
             // 
@@ -244,6 +269,27 @@
             Contenedor.TabIndex = 4;
             Contenedor.Paint += Contenedor_Paint;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Resource1.iconoplantita;
+            pictureBox1.Location = new Point(348, 108);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(206, 180);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(378, 25);
+            label2.Name = "label2";
+            label2.Size = new Size(141, 32);
+            label2.TabIndex = 1;
+            label2.Text = "Bienvenido!";
+            // 
             // lblusuario
             // 
             lblusuario.AutoSize = true;
@@ -268,27 +314,6 @@
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14F);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(378, 25);
-            label2.Name = "label2";
-            label2.Size = new Size(141, 32);
-            label2.TabIndex = 1;
-            label2.Text = "Bienvenido!";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Resource1.iconoplantita;
-            pictureBox1.Location = new Point(348, 108);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(206, 180);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
             // 
             // Inicio
             // 
@@ -338,5 +363,8 @@
         private MenuStrip MenuTitulo;
         private PictureBox pictureBox1;
         private Label label2;
+        private ToolStripMenuItem reportesVentasToolStripMenuItem;
+        private ToolStripMenuItem productosToolStripMenuItem;
+        private ToolStripMenuItem agregarCategoriaToolStripMenuItem;
     }
 }

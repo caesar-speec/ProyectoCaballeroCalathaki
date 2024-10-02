@@ -121,7 +121,7 @@ namespace CapaPresentacion
 
         private void menumantenedor_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new frmProductos());
+
         }
 
 
@@ -169,6 +169,21 @@ namespace CapaPresentacion
         private void Contenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void reportesVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menucompras, new frmReporteVentas());
+        }
+
+        private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menucompras, new frmCategoria());
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menucompras, new frmProductos());
         }
     }
 }

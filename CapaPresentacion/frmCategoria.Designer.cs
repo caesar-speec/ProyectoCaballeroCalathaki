@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             btnEditar = new FontAwesome.Sharp.IconButton();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnbuscar = new FontAwesome.Sharp.IconButton();
@@ -46,10 +46,11 @@
             btnGuardar = new FontAwesome.Sharp.IconButton();
             cboestado = new ComboBox();
             label7 = new Label();
-            txtnombrecompleto = new TextBox();
+            txtdescripcion = new TextBox();
             DNI = new Label();
             label1 = new Label();
             label3 = new Label();
+            label20 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -115,7 +116,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = SystemColors.ActiveBorder;
+            label10.BackColor = SystemColors.ControlLight;
             label10.ForeColor = SystemColors.ActiveCaptionText;
             label10.Location = new Point(725, 66);
             label10.Name = "label10";
@@ -135,29 +136,28 @@
             // 
             // label9
             // 
-            label9.BackColor = SystemColors.ActiveBorder;
+            label9.BackColor = SystemColors.ControlLight;
             label9.Font = new Font("Segoe UI", 15F);
             label9.ForeColor = Color.Black;
             label9.Location = new Point(219, 53);
             label9.Name = "label9";
             label9.Size = new Size(842, 61);
             label9.TabIndex = 66;
-            label9.Text = "Lista de Categorias:";
             label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dgvdata
             // 
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, Descripcion, EstadoValor, Estado });
             dgvdata.Location = new Point(219, 134);
@@ -252,6 +252,7 @@
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // cboestado
             // 
@@ -274,14 +275,14 @@
             label7.TabIndex = 60;
             label7.Text = "Estado:";
             // 
-            // txtnombrecompleto
+            // txtdescripcion
             // 
-            txtnombrecompleto.Location = new Point(12, 90);
-            txtnombrecompleto.Margin = new Padding(3, 4, 3, 4);
-            txtnombrecompleto.Name = "txtnombrecompleto";
-            txtnombrecompleto.Size = new Size(170, 27);
-            txtnombrecompleto.TabIndex = 55;
-            txtnombrecompleto.TextChanged += txtnombrecompleto_TextChanged;
+            txtdescripcion.Location = new Point(12, 90);
+            txtdescripcion.Margin = new Padding(3, 4, 3, 4);
+            txtdescripcion.Name = "txtdescripcion";
+            txtdescripcion.Size = new Size(170, 27);
+            txtdescripcion.TabIndex = 55;
+            txtdescripcion.TextChanged += txtnombrecompleto_TextChanged;
             // 
             // DNI
             // 
@@ -315,12 +316,25 @@
             label3.TabIndex = 54;
             label3.Text = "Nombre Completo:";
             // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.BackColor = SystemColors.ControlLight;
+            label20.Font = new Font("Segoe UI", 15F);
+            label20.ForeColor = SystemColors.ActiveCaptionText;
+            label20.Location = new Point(229, 66);
+            label20.Name = "label20";
+            label20.Size = new Size(230, 35);
+            label20.TabIndex = 74;
+            label20.Text = "Lista de Categorias:";
+            // 
             // frmCategoria
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1080, 620);
+            Controls.Add(label20);
             Controls.Add(btnEditar);
             Controls.Add(btnlimpiar);
             Controls.Add(btnbuscar);
@@ -334,7 +348,7 @@
             Controls.Add(btnGuardar);
             Controls.Add(cboestado);
             Controls.Add(label7);
-            Controls.Add(txtnombrecompleto);
+            Controls.Add(txtdescripcion);
             Controls.Add(DNI);
             Controls.Add(label1);
             Controls.Add(label3);
@@ -360,7 +374,7 @@
         private FontAwesome.Sharp.IconButton btnGuardar;
         private ComboBox cboestado;
         private Label label7;
-        private TextBox txtnombrecompleto;
+        private TextBox txtdescripcion;
         private Label DNI;
         private Label label1;
         private Label label3;
@@ -368,5 +382,6 @@
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
+        private Label label20;
     }
 }

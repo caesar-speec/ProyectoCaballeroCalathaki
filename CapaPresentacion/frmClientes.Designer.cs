@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtid = new TextBox();
             label9 = new Label();
             dgvdata = new DataGridView();
@@ -60,6 +60,7 @@
             cbobusqueda = new ComboBox();
             label10 = new Label();
             btnEditar = new FontAwesome.Sharp.IconButton();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -75,29 +76,28 @@
             // 
             // label9
             // 
-            label9.BackColor = SystemColors.ActiveBorder;
+            label9.BackColor = SystemColors.ControlLight;
             label9.Font = new Font("Segoe UI", 15F);
             label9.ForeColor = Color.Black;
             label9.Location = new Point(226, 53);
             label9.Name = "label9";
             label9.Size = new Size(1040, 61);
             label9.TabIndex = 43;
-            label9.Text = "Lista Clientes:";
             label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dgvdata
             // 
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, NombreCompleto, Correo, Telefono, EstadoValor, Estado });
             dgvdata.Location = new Point(213, 134);
@@ -387,7 +387,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = SystemColors.ActiveBorder;
+            label10.BackColor = SystemColors.ControlLight;
             label10.ForeColor = SystemColors.ActiveCaptionText;
             label10.Location = new Point(715, 67);
             label10.Name = "label10";
@@ -414,12 +414,25 @@
             btnEditar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEditar.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.ControlLight;
+            label2.Font = new Font("Segoe UI", 15F);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(241, 66);
+            label2.Name = "label2";
+            label2.Size = new Size(198, 35);
+            label2.TabIndex = 70;
+            label2.Text = "Lista de Clientes:";
+            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1278, 620);
+            Controls.Add(label2);
             Controls.Add(btnEditar);
             Controls.Add(btnlimpiar);
             Controls.Add(btnbuscar);
@@ -483,5 +496,6 @@
         private ComboBox cbobusqueda;
         private Label label10;
         private FontAwesome.Sharp.IconButton btnEditar;
+        private Label label2;
     }
 }

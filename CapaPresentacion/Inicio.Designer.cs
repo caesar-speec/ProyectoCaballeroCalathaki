@@ -46,8 +46,11 @@
             Contenedor = new Panel();
             lblusuario = new Label();
             MenuTitulo = new MenuStrip();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
             Menu2.SuspendLayout();
             Contenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Menu2
@@ -119,14 +122,14 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(224, 26);
+            submenuregistrarventa.Size = new Size(165, 26);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click_1;
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(224, 26);
+            submenuverdetalleventa.Size = new Size(165, 26);
             submenuverdetalleventa.Text = "Ver Detalle";
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
@@ -194,14 +197,14 @@
             // registrarCompraToolStripMenuItem
             // 
             registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
-            registrarCompraToolStripMenuItem.Size = new Size(208, 26);
+            registrarCompraToolStripMenuItem.Size = new Size(224, 26);
             registrarCompraToolStripMenuItem.Text = "Registrar Compra";
             registrarCompraToolStripMenuItem.Click += registrarCompraToolStripMenuItem_Click;
             // 
             // verDetalleToolStripMenuItem
             // 
             verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
-            verDetalleToolStripMenuItem.Size = new Size(208, 26);
+            verDetalleToolStripMenuItem.Size = new Size(224, 26);
             verDetalleToolStripMenuItem.Text = "Ver Detalle";
             verDetalleToolStripMenuItem.Click += verDetalleToolStripMenuItem_Click;
             // 
@@ -213,9 +216,9 @@
             label1.ForeColor = Color.Transparent;
             label1.Location = new Point(80, 27);
             label1.Name = "label1";
-            label1.Size = new Size(217, 38);
+            label1.Size = new Size(178, 38);
             label1.TabIndex = 2;
-            label1.Text = "P&&A Jardineria";
+            label1.Text = "P&&A Plantas";
             label1.Click += label1_Click;
             // 
             // panel1
@@ -228,25 +231,29 @@
             // 
             // Contenedor
             // 
-            Contenedor.BackColor = SystemColors.ScrollBar;
+            Contenedor.BackColor = Color.DarkSeaGreen;
+            Contenedor.Controls.Add(pictureBox1);
+            Contenedor.Controls.Add(label2);
             Contenedor.Controls.Add(lblusuario);
             Contenedor.Dock = DockStyle.Fill;
-            Contenedor.ForeColor = SystemColors.ButtonHighlight;
+            Contenedor.ForeColor = Color.DarkSeaGreen;
             Contenedor.Location = new Point(0, 151);
             Contenedor.Margin = new Padding(3, 4, 3, 4);
             Contenedor.Name = "Contenedor";
             Contenedor.Size = new Size(960, 427);
             Contenedor.TabIndex = 4;
+            Contenedor.Paint += Contenedor_Paint;
             // 
             // lblusuario
             // 
             lblusuario.AutoSize = true;
+            lblusuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblusuario.ForeColor = SystemColors.ActiveCaptionText;
-            lblusuario.Location = new Point(780, 32);
+            lblusuario.Location = new Point(406, 66);
             lblusuario.Name = "lblusuario";
-            lblusuario.Size = new Size(33, 20);
+            lblusuario.Size = new Size(79, 28);
             lblusuario.TabIndex = 0;
-            lblusuario.Text = "aaa";
+            lblusuario.Text = "Usuario";
             // 
             // MenuTitulo
             // 
@@ -262,10 +269,32 @@
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(378, 25);
+            label2.Name = "label2";
+            label2.Size = new Size(141, 32);
+            label2.TabIndex = 1;
+            label2.Text = "Bienvenido!";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Resource1.iconoplantita;
+            pictureBox1.Location = new Point(348, 108);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(206, 180);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(960, 578);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
@@ -281,6 +310,7 @@
             Menu2.PerformLayout();
             Contenedor.ResumeLayout(false);
             Contenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -306,5 +336,7 @@
         private ToolStripMenuItem registrarCompraToolStripMenuItem;
         private ToolStripMenuItem verDetalleToolStripMenuItem;
         private MenuStrip MenuTitulo;
+        private PictureBox pictureBox1;
+        private Label label2;
     }
 }

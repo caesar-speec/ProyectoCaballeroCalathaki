@@ -21,5 +21,23 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnbuscarproveedor_Click(object sender, EventArgs e)
+        {
+            if (cboproveedor.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un Proveedor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            if (cbobusqueda.SelectedIndex == -1 && string.IsNullOrWhiteSpace(txtbusqueda.Text))
+            {
+                MessageBox.Show("Debe porpocionar un termino de busqueda.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }

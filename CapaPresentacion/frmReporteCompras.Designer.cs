@@ -150,6 +150,7 @@
             btnbuscarproveedor.Size = new Size(53, 28);
             btnbuscarproveedor.TabIndex = 16;
             btnbuscarproveedor.UseVisualStyleBackColor = true;
+            btnbuscarproveedor.Click += btnbuscarproveedor_Click;
             // 
             // label6
             // 
@@ -307,6 +308,7 @@
             btnbuscar.Size = new Size(53, 28);
             btnbuscar.TabIndex = 24;
             btnbuscar.UseVisualStyleBackColor = true;
+            btnbuscar.Click += btnbuscar_Click;
             // 
             // frmReporteCompras
             // 

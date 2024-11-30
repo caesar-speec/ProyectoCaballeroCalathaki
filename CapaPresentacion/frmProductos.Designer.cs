@@ -64,6 +64,7 @@
             label10 = new Label();
             btnEditar = new FontAwesome.Sharp.IconButton();
             label5 = new Label();
+            txtindice = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -110,6 +111,8 @@
             dgvdata.RowHeadersWidth = 51;
             dgvdata.Size = new Size(1081, 431);
             dgvdata.TabIndex = 42;
+            dgvdata.CellContentClick += dgvdata_CellContentClick;
+            dgvdata.CellPainting += dgvdata_CellPainting;
             // 
             // btnseleccionar
             // 
@@ -232,6 +235,7 @@
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
@@ -361,6 +365,7 @@
             label1.Name = "label1";
             label1.Size = new Size(208, 620);
             label1.TabIndex = 23;
+            label1.Visible = false;
             // 
             // btnlimpiar
             // 
@@ -377,6 +382,7 @@
             btnlimpiar.Size = new Size(40, 44);
             btnlimpiar.TabIndex = 49;
             btnlimpiar.UseVisualStyleBackColor = false;
+            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btnbuscar
             // 
@@ -393,6 +399,7 @@
             btnbuscar.Size = new Size(40, 44);
             btnbuscar.TabIndex = 48;
             btnbuscar.UseVisualStyleBackColor = false;
+            btnbuscar.Click += btnbuscar_Click;
             // 
             // txtbusqueda
             // 
@@ -441,6 +448,7 @@
             btnEditar.TextAlign = ContentAlignment.MiddleRight;
             btnEditar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // label5
             // 
@@ -454,12 +462,21 @@
             label5.TabIndex = 70;
             label5.Text = "Lista de Productos:";
             // 
+            // txtindice
+            // 
+            txtindice.Location = new Point(176, 51);
+            txtindice.Name = "txtindice";
+            txtindice.Size = new Size(26, 27);
+            txtindice.TabIndex = 71;
+            txtindice.Text = "-1";
+            // 
             // frmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1319, 620);
+            Controls.Add(txtindice);
             Controls.Add(label5);
             Controls.Add(btnEditar);
             Controls.Add(btnlimpiar);
@@ -486,6 +503,7 @@
             Controls.Add(label1);
             Name = "frmProductos";
             Text = "Productos";
+            Load += frmProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -528,5 +546,6 @@
         private Label label10;
         private FontAwesome.Sharp.IconButton btnEditar;
         private Label label5;
+        private TextBox txtindice;
     }
 }

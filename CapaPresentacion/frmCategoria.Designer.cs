@@ -33,14 +33,8 @@
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnbuscar = new FontAwesome.Sharp.IconButton();
             txtbusqueda = new TextBox();
-            label10 = new Label();
             txtid = new TextBox();
             label9 = new Label();
-            dgvdata = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            EstadoValor = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
             label8 = new Label();
             btnEliminar = new FontAwesome.Sharp.IconButton();
             btnGuardar = new FontAwesome.Sharp.IconButton();
@@ -52,6 +46,14 @@
             label3 = new Label();
             label20 = new Label();
             txtindice = new TextBox();
+            label2 = new Label();
+            cbobusqueda = new ComboBox();
+            dgvdata = new DataGridView();
+            btnseleccionar = new DataGridViewButtonColumn();
+            Id = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            EstadoValor = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -88,6 +90,7 @@
             btnlimpiar.Size = new Size(35, 33);
             btnlimpiar.TabIndex = 72;
             btnlimpiar.UseVisualStyleBackColor = false;
+            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btnbuscar
             // 
@@ -103,6 +106,7 @@
             btnbuscar.Size = new Size(35, 33);
             btnbuscar.TabIndex = 71;
             btnbuscar.UseVisualStyleBackColor = false;
+            btnbuscar.Click += btnbuscar_Click;
             // 
             // txtbusqueda
             // 
@@ -110,17 +114,6 @@
             txtbusqueda.Name = "txtbusqueda";
             txtbusqueda.Size = new Size(149, 23);
             txtbusqueda.TabIndex = 70;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = SystemColors.ControlLight;
-            label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(634, 50);
-            label10.Name = "label10";
-            label10.Size = new Size(45, 15);
-            label10.TabIndex = 68;
-            label10.Text = "Buscar:";
             // 
             // txtid
             // 
@@ -141,63 +134,6 @@
             label9.Size = new Size(737, 46);
             label9.TabIndex = 66;
             label9.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // dgvdata
-            // 
-            dgvdata.AllowUserToAddRows = false;
-            dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, Descripcion, EstadoValor, Estado });
-            dgvdata.Location = new Point(192, 100);
-            dgvdata.MultiSelect = false;
-            dgvdata.Name = "dgvdata";
-            dgvdata.ReadOnly = true;
-            dgvdata.RowHeadersWidth = 51;
-            dgvdata.Size = new Size(737, 355);
-            dgvdata.TabIndex = 65;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Visible = false;
-            Id.Width = 125;
-            // 
-            // Descripcion
-            // 
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.MinimumWidth = 6;
-            Descripcion.Name = "Descripcion";
-            Descripcion.ReadOnly = true;
-            Descripcion.Width = 125;
-            // 
-            // EstadoValor
-            // 
-            EstadoValor.HeaderText = "EstadoValor";
-            EstadoValor.MinimumWidth = 6;
-            EstadoValor.Name = "EstadoValor";
-            EstadoValor.ReadOnly = true;
-            EstadoValor.Visible = false;
-            EstadoValor.Width = 125;
-            // 
-            // Estado
-            // 
-            Estado.HeaderText = "Estado";
-            Estado.MinimumWidth = 6;
-            Estado.Name = "Estado";
-            Estado.ReadOnly = true;
-            Estado.Width = 125;
             // 
             // label8
             // 
@@ -228,6 +164,7 @@
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
@@ -329,22 +266,111 @@
             txtindice.Text = "-1";
             txtindice.Visible = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.ControlLight;
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(482, 50);
+            label2.Name = "label2";
+            label2.Size = new Size(45, 15);
+            label2.TabIndex = 68;
+            label2.Text = "Buscar:";
+            // 
+            // cbobusqueda
+            // 
+            cbobusqueda.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbobusqueda.FormattingEnabled = true;
+            cbobusqueda.Location = new Point(533, 46);
+            cbobusqueda.Name = "cbobusqueda";
+            cbobusqueda.Size = new Size(149, 23);
+            cbobusqueda.TabIndex = 76;
+            // 
+            // dgvdata
+            // 
+            dgvdata.AllowUserToAddRows = false;
+            dgvdata.AllowUserToDeleteRows = false;
+            dgvdata.AllowUserToResizeColumns = false;
+            dgvdata.AllowUserToResizeRows = false;
+            dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, EstadoValor, Estado });
+            dgvdata.Location = new Point(200, 89);
+            dgvdata.MultiSelect = false;
+            dgvdata.Name = "dgvdata";
+            dgvdata.ReadOnly = true;
+            dgvdata.RowHeadersWidth = 51;
+            dgvdata.Size = new Size(675, 308);
+            dgvdata.TabIndex = 77;
+            // 
+            // btnseleccionar
+            // 
+            btnseleccionar.HeaderText = "";
+            btnseleccionar.MinimumWidth = 6;
+            btnseleccionar.Name = "btnseleccionar";
+            btnseleccionar.ReadOnly = true;
+            btnseleccionar.Width = 30;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            Id.Width = 125;
+            // 
+            // Documento
+            // 
+            Documento.HeaderText = "Descripcion";
+            Documento.MinimumWidth = 6;
+            Documento.Name = "Documento";
+            Documento.ReadOnly = true;
+            Documento.Width = 150;
+            // 
+            // EstadoValor
+            // 
+            EstadoValor.HeaderText = "EstadoValor";
+            EstadoValor.MinimumWidth = 6;
+            EstadoValor.Name = "EstadoValor";
+            EstadoValor.ReadOnly = true;
+            EstadoValor.Visible = false;
+            EstadoValor.Width = 125;
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 6;
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            Estado.Width = 125;
+            // 
             // frmCategoria
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(945, 465);
+            Controls.Add(dgvdata);
+            Controls.Add(cbobusqueda);
             Controls.Add(txtindice);
             Controls.Add(label20);
             Controls.Add(btnEditar);
             Controls.Add(btnlimpiar);
             Controls.Add(btnbuscar);
             Controls.Add(txtbusqueda);
-            Controls.Add(label10);
+            Controls.Add(label2);
             Controls.Add(txtid);
             Controls.Add(label9);
-            Controls.Add(dgvdata);
             Controls.Add(label8);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
@@ -357,6 +383,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmCategoria";
             Text = "frmCategoria";
+            Load += frmCategoria_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -368,10 +395,8 @@
         private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btnbuscar;
         private TextBox txtbusqueda;
-        private Label label10;
         private TextBox txtid;
         private Label label9;
-        private DataGridView dgvdata;
         private Label label8;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnGuardar;
@@ -381,11 +406,15 @@
         private Label DNI;
         private Label label1;
         private Label label3;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn EstadoValor;
-        private DataGridViewTextBoxColumn Estado;
         private Label label20;
         private TextBox txtindice;
+        private Label label2;
+        private ComboBox cbobusqueda;
+        private DataGridView dgvdata;
+        private DataGridViewButtonColumn btnseleccionar;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn EstadoValor;
+        private DataGridViewTextBoxColumn Estado;
     }
 }

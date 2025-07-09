@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtid = new TextBox();
             label9 = new Label();
             dgvdata = new DataGridView();
@@ -90,15 +90,15 @@
             // 
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, NombreCompleto, Correo, Telefono, EstadoValor, Estado });
             dgvdata.Location = new Point(213, 134);
@@ -109,6 +109,8 @@
             dgvdata.RowHeadersWidth = 51;
             dgvdata.Size = new Size(1040, 431);
             dgvdata.TabIndex = 42;
+            dgvdata.CellContentClick += dgvdata_CellContentClick;
+            dgvdata.CellPainting += dgvdata_CellPainting;
             // 
             // btnseleccionar
             // 
@@ -157,7 +159,6 @@
             Telefono.MinimumWidth = 6;
             Telefono.Name = "Telefono";
             Telefono.ReadOnly = true;
-            Telefono.Visible = false;
             Telefono.Width = 125;
             // 
             // EstadoValor
@@ -207,6 +208,7 @@
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
@@ -232,7 +234,7 @@
             // 
             cboestado.DropDownStyle = ComboBoxStyle.DropDownList;
             cboestado.FormattingEnabled = true;
-            cboestado.Location = new Point(26, 340);
+            cboestado.Location = new Point(26, 318);
             cboestado.Margin = new Padding(3, 4, 3, 4);
             cboestado.Name = "cboestado";
             cboestado.Size = new Size(170, 28);
@@ -243,7 +245,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.DarkOliveGreen;
             label7.ForeColor = SystemColors.ControlLightLight;
-            label7.Location = new Point(26, 316);
+            label7.Location = new Point(26, 294);
             label7.Name = "label7";
             label7.Size = new Size(57, 20);
             label7.TabIndex = 36;
@@ -350,6 +352,7 @@
             btnlimpiar.Size = new Size(40, 44);
             btnlimpiar.TabIndex = 49;
             btnlimpiar.UseVisualStyleBackColor = false;
+            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btnbuscar
             // 
@@ -366,6 +369,7 @@
             btnbuscar.Size = new Size(40, 44);
             btnbuscar.TabIndex = 48;
             btnbuscar.UseVisualStyleBackColor = false;
+            btnbuscar.Click += btnbuscar_Click;
             // 
             // txtbusqueda
             // 
@@ -481,14 +485,6 @@
         private TextBox txtid;
         private Label label9;
         private DataGridView dgvdata;
-        private DataGridViewButtonColumn btnseleccionar;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Documento;
-        private DataGridViewTextBoxColumn NombreCompleto;
-        private DataGridViewTextBoxColumn Correo;
-        private DataGridViewTextBoxColumn Telefono;
-        private DataGridViewTextBoxColumn EstadoValor;
-        private DataGridViewTextBoxColumn Estado;
         private Label label8;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnGuardar;
@@ -511,5 +507,13 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private Label label2;
         private TextBox txtindice;
+        private DataGridViewButtonColumn btnseleccionar;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn NombreCompleto;
+        private DataGridViewTextBoxColumn Correo;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn EstadoValor;
+        private DataGridViewTextBoxColumn Estado;
     }
 }

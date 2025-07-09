@@ -2,12 +2,12 @@
 {
     public class Cliente
     {
-        public int ID_cliente { get; set; }
-        public long dni_cliente { get; set; }
-        public string nombre { get; set; }
-        public string correo_cliente { get; set; }
-        public string telefono { get; set; }
-        public bool estado { get; set; }
-        public string fecha_creacion { get; set; }
+        public int IdCliente { get; set; }
+        public String Documento { get; set; }
+        public string NombreCompleto { get; set; }
+        public string Correo { get; set; }
+        public string Telefono { get; set; }
+        public bool Estado { get; set; }
+        public string FechaRegistro { get; set; }
     }
 }

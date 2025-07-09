@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             txtid = new TextBox();
             label9 = new Label();
             dgvdata = new DataGridView();
             btnseleccionar = new DataGridViewButtonColumn();
             Id = new DataGridViewTextBoxColumn();
             Codigo = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
-            IdCaegoria = new DataGridViewTextBoxColumn();
-            Caegoria = new DataGridViewTextBoxColumn();
+            IdCategoria = new DataGridViewTextBoxColumn();
+            Categoria = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
             PrecioCompra = new DataGridViewTextBoxColumn();
             PrecioVenta = new DataGridViewTextBoxColumn();
@@ -65,6 +66,7 @@
             btnEditar = new FontAwesome.Sharp.IconButton();
             label5 = new Label();
             txtindice = new TextBox();
+            btnexportar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -92,17 +94,17 @@
             // dgvdata
             // 
             dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Codigo, Descripcion, IdCaegoria, Caegoria, Stock, PrecioCompra, PrecioVenta, EstadoValor, Estado });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Codigo, Nombre, Descripcion, IdCategoria, Categoria, Stock, PrecioCompra, PrecioVenta, EstadoValor, Estado });
             dgvdata.Location = new Point(226, 135);
             dgvdata.Margin = new Padding(3, 4, 3, 4);
             dgvdata.MultiSelect = false;
@@ -139,6 +141,14 @@
             Codigo.ReadOnly = true;
             Codigo.Width = 150;
             // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            Nombre.Width = 125;
+            // 
             // Descripcion
             // 
             Descripcion.HeaderText = "Descripcion";
@@ -147,22 +157,22 @@
             Descripcion.ReadOnly = true;
             Descripcion.Width = 180;
             // 
-            // IdCaegoria
+            // IdCategoria
             // 
-            IdCaegoria.HeaderText = "IdCaegoria";
-            IdCaegoria.MinimumWidth = 6;
-            IdCaegoria.Name = "IdCaegoria";
-            IdCaegoria.ReadOnly = true;
-            IdCaegoria.Visible = false;
-            IdCaegoria.Width = 125;
+            IdCategoria.HeaderText = "IdCategoria";
+            IdCategoria.MinimumWidth = 6;
+            IdCategoria.Name = "IdCategoria";
+            IdCategoria.ReadOnly = true;
+            IdCategoria.Visible = false;
+            IdCategoria.Width = 125;
             // 
-            // Caegoria
+            // Categoria
             // 
-            Caegoria.HeaderText = "Caegoria";
-            Caegoria.MinimumWidth = 6;
-            Caegoria.Name = "Caegoria";
-            Caegoria.ReadOnly = true;
-            Caegoria.Width = 125;
+            Categoria.HeaderText = "Categoria";
+            Categoria.MinimumWidth = 6;
+            Categoria.Name = "Categoria";
+            Categoria.ReadOnly = true;
+            Categoria.Width = 125;
             // 
             // Stock
             // 
@@ -470,12 +480,31 @@
             txtindice.TabIndex = 71;
             txtindice.Text = "-1";
             // 
+            // btnexportar
+            // 
+            btnexportar.BackColor = Color.YellowGreen;
+            btnexportar.Cursor = Cursors.Hand;
+            btnexportar.FlatStyle = FlatStyle.Flat;
+            btnexportar.IconChar = FontAwesome.Sharp.IconChar.ExternalLinkAlt;
+            btnexportar.IconColor = Color.LightYellow;
+            btnexportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnexportar.IconSize = 18;
+            btnexportar.Location = new Point(481, 63);
+            btnexportar.Margin = new Padding(3, 4, 3, 4);
+            btnexportar.Name = "btnexportar";
+            btnexportar.Size = new Size(165, 44);
+            btnexportar.TabIndex = 72;
+            btnexportar.Text = "Descargar Excel";
+            btnexportar.UseVisualStyleBackColor = false;
+            btnexportar.Click += btnexportar_Click;
+            // 
             // frmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1319, 620);
+            Controls.Add(btnexportar);
             Controls.Add(txtindice);
             Controls.Add(label5);
             Controls.Add(btnEditar);
@@ -528,17 +557,6 @@
         private TextBox txtcodigo;
         private Label DNI;
         private Label label1;
-        private DataGridViewButtonColumn btnseleccionar;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Codigo;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn IdCaegoria;
-        private DataGridViewTextBoxColumn Caegoria;
-        private DataGridViewTextBoxColumn Stock;
-        private DataGridViewTextBoxColumn PrecioCompra;
-        private DataGridViewTextBoxColumn PrecioVenta;
-        private DataGridViewTextBoxColumn EstadoValor;
-        private DataGridViewTextBoxColumn Estado;
         private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btnbuscar;
         private TextBox txtbusqueda;
@@ -547,5 +565,18 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private Label label5;
         private TextBox txtindice;
+        private DataGridViewButtonColumn btnseleccionar;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Codigo;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Descripcion;
+        private DataGridViewTextBoxColumn IdCategoria;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn Stock;
+        private DataGridViewTextBoxColumn PrecioCompra;
+        private DataGridViewTextBoxColumn PrecioVenta;
+        private DataGridViewTextBoxColumn EstadoValor;
+        private DataGridViewTextBoxColumn Estado;
+        private FontAwesome.Sharp.IconButton btnexportar;
     }
 }

@@ -2,6 +2,8 @@
 using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
+using ClosedXML.Excel;
+using System.Data;
 using System.Reflection;
 using System.Windows.Controls;
 
@@ -255,7 +257,7 @@ namespace CapaPresentacion
                 if (indice >= 0)
                 {
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgvdata.Rows[indice].Cells["idUsuario"].Value.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();
 
                     txtcodigo.Text = dgvdata.Rows[indice].Cells["Codigo"].Value.ToString();
                     txtnombre.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
@@ -337,5 +339,74 @@ namespace CapaPresentacion
         {
             Clear();
         }
+
+        private void btnexportar_Click(object sender, EventArgs e)
+        {
+            if (dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay datos para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // Crear y definir las columnas del DataTable manualmente
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id", typeof(string));
+            dt.Columns.Add("Nombre", typeof(string));
+            dt.Columns.Add("Descripcion", typeof(string));
+            dt.Columns.Add("IdCategoria", typeof(string));
+            dt.Columns.Add("Categoria", typeof(string));
+            dt.Columns.Add("Stock", typeof(string));
+            dt.Columns.Add("PrecioCompra", typeof(string));
+            dt.Columns.Add("PrecioVenta", typeof(string));
+            dt.Columns.Add("EstadoValor", typeof(string));
+            dt.Columns.Add("Estado", typeof(string));
+
+            // Agregar filas
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                if (row.Visible)
+                {
+                    dt.Rows.Add(new object[]
+                    {
+                row.Cells["Id"].Value?.ToString() ?? "",
+                row.Cells["Nombre"].Value?.ToString() ?? "",
+                row.Cells["Descripcion"].Value?.ToString() ?? "",
+                row.Cells["IdCategoria"].Value?.ToString() ?? "",
+                row.Cells["Categoria"].Value?.ToString() ?? "",
+                row.Cells["Stock"].Value?.ToString() ?? "",
+                row.Cells["PrecioCompra"].Value?.ToString() ?? "",
+                row.Cells["PrecioVenta"].Value?.ToString() ?? "",
+                row.Cells["EstadoValor"].Value?.ToString() ?? "",
+                row.Cells["Estado"].Value?.ToString() ?? ""
+                    });
+                }
+            }
+
+            // Guardar el archivo
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = string.Format("ReporteProducto_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+            savefile.Filter = "Excel Files | *.xlsx";
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    XLWorkbook wb = new XLWorkbook();
+                    var hoja = wb.Worksheets.Add(dt, "Informe");
+                    hoja.ColumnsUsed().AdjustToContents();
+                    wb.SaveAs(savefile.FileName);
+                    MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+
+
+
+
     }
 }

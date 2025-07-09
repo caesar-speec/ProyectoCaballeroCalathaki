@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtid = new TextBox();
             label9 = new Label();
             dgvdata = new DataGridView();
@@ -61,6 +61,7 @@
             label10 = new Label();
             btnEditar = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
+            txtindice = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -89,15 +90,15 @@
             // 
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, NombreCompleto, Correo, Telefono, EstadoValor, Estado });
             dgvdata.Location = new Point(213, 134);
@@ -426,12 +427,23 @@
             label2.TabIndex = 70;
             label2.Text = "Lista de Clientes:";
             // 
+            // txtindice
+            // 
+            txtindice.Location = new Point(115, 53);
+            txtindice.Margin = new Padding(3, 4, 3, 4);
+            txtindice.Name = "txtindice";
+            txtindice.Size = new Size(20, 27);
+            txtindice.TabIndex = 71;
+            txtindice.Text = "-1";
+            txtindice.Visible = false;
+            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1278, 620);
+            Controls.Add(txtindice);
             Controls.Add(label2);
             Controls.Add(btnEditar);
             Controls.Add(btnlimpiar);
@@ -458,6 +470,7 @@
             Controls.Add(label1);
             Name = "frmClientes";
             Text = "frmClientes";
+            Load += frmClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -497,5 +510,6 @@
         private Label label10;
         private FontAwesome.Sharp.IconButton btnEditar;
         private Label label2;
+        private TextBox txtindice;
     }
 }

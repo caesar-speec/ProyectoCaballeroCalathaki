@@ -162,14 +162,14 @@ namespace CapaPresentacion
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvdata.Columns[e.ColumnIndex].Name == "btnnseleccionar")
+            if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
             {
                 int indice = e.RowIndex;
                 if (indice >= 0)
                 {
                     txtindice.Text = indice.ToString();
-                    txtid.Text = dgvdata.Rows[indice].Cells["id"].Value.ToString();
-                    txtdescripcion.Text = dgvdata.Rows[indice].Cells["descripcion"].Value.ToString();
+                    txtid.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();
+                    txtdescripcion.Text = dgvdata.Rows[indice].Cells["Descripcion"].Value.ToString();
                     foreach (OpcionCombo oc in cboestado.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))

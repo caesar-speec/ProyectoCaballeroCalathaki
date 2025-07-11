@@ -163,8 +163,6 @@ namespace CapaPresentacion
             cboestado.ValueMember = "Valor";
             cboestado.SelectedIndex = 0;
 
-            List<Rol> listaRol = new CN_Rol().Listar();
-
 
             //Mostrar usuarios
             List<Cliente> lista = new CN_Cliente().Listar();

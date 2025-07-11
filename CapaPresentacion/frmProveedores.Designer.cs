@@ -31,15 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtid = new TextBox();
             label9 = new Label();
-            dgvdata = new DataGridView();
-            btnseleccionar = new DataGridViewButtonColumn();
-            Id = new DataGridViewTextBoxColumn();
-            Documento = new DataGridViewTextBoxColumn();
-            RazonSocial = new DataGridViewTextBoxColumn();
-            Correo = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            EstadoValor = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
             label8 = new Label();
             btnEliminar = new FontAwesome.Sharp.IconButton();
             btnGuardar = new FontAwesome.Sharp.IconButton();
@@ -61,6 +52,16 @@
             label10 = new Label();
             btnEditar = new FontAwesome.Sharp.IconButton();
             label2 = new Label();
+            txtindice = new TextBox();
+            dgvdata = new DataGridView();
+            btnseleccionar = new DataGridViewButtonColumn();
+            Id = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            RazonSocial = new DataGridViewTextBoxColumn();
+            Correo = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            EstadoValor = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -83,97 +84,6 @@
             label9.Size = new Size(1040, 61);
             label9.TabIndex = 61;
             label9.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // dgvdata
-            // 
-            dgvdata.AllowUserToAddRows = false;
-            dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, RazonSocial, Correo, Telefono, EstadoValor, Estado });
-            dgvdata.Location = new Point(232, 135);
-            dgvdata.Margin = new Padding(3, 4, 3, 4);
-            dgvdata.MultiSelect = false;
-            dgvdata.Name = "dgvdata";
-            dgvdata.ReadOnly = true;
-            dgvdata.RowHeadersWidth = 51;
-            dgvdata.Size = new Size(1040, 431);
-            dgvdata.TabIndex = 60;
-            // 
-            // btnseleccionar
-            // 
-            btnseleccionar.HeaderText = "";
-            btnseleccionar.MinimumWidth = 6;
-            btnseleccionar.Name = "btnseleccionar";
-            btnseleccionar.ReadOnly = true;
-            btnseleccionar.Width = 30;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Visible = false;
-            Id.Width = 125;
-            // 
-            // Documento
-            // 
-            Documento.HeaderText = "Nro Documento";
-            Documento.MinimumWidth = 6;
-            Documento.Name = "Documento";
-            Documento.ReadOnly = true;
-            Documento.Width = 150;
-            // 
-            // RazonSocial
-            // 
-            RazonSocial.HeaderText = "RazonSocial";
-            RazonSocial.MinimumWidth = 6;
-            RazonSocial.Name = "RazonSocial";
-            RazonSocial.ReadOnly = true;
-            RazonSocial.Width = 180;
-            // 
-            // Correo
-            // 
-            Correo.HeaderText = "Correo";
-            Correo.MinimumWidth = 6;
-            Correo.Name = "Correo";
-            Correo.ReadOnly = true;
-            Correo.Width = 125;
-            // 
-            // Telefono
-            // 
-            Telefono.HeaderText = "Telefono";
-            Telefono.MinimumWidth = 6;
-            Telefono.Name = "Telefono";
-            Telefono.ReadOnly = true;
-            Telefono.Visible = false;
-            Telefono.Width = 125;
-            // 
-            // EstadoValor
-            // 
-            EstadoValor.HeaderText = "EstadoValor";
-            EstadoValor.MinimumWidth = 6;
-            EstadoValor.Name = "EstadoValor";
-            EstadoValor.ReadOnly = true;
-            EstadoValor.Visible = false;
-            EstadoValor.Width = 125;
-            // 
-            // Estado
-            // 
-            Estado.HeaderText = "Estado";
-            Estado.MinimumWidth = 6;
-            Estado.Name = "Estado";
-            Estado.ReadOnly = true;
-            Estado.Width = 125;
             // 
             // label8
             // 
@@ -205,6 +115,7 @@
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
@@ -249,6 +160,7 @@
             // 
             // txttelefono
             // 
+            txttelefono.HideSelection = false;
             txttelefono.Location = new Point(18, 261);
             txttelefono.Margin = new Padding(3, 4, 3, 4);
             txttelefono.Name = "txttelefono";
@@ -349,6 +261,7 @@
             btnlimpiar.Size = new Size(40, 44);
             btnlimpiar.TabIndex = 67;
             btnlimpiar.UseVisualStyleBackColor = false;
+            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btnbuscar
             // 
@@ -365,6 +278,7 @@
             btnbuscar.Size = new Size(40, 44);
             btnbuscar.TabIndex = 66;
             btnbuscar.UseVisualStyleBackColor = false;
+            btnbuscar.Click += btnbuscar_Click;
             // 
             // txtbusqueda
             // 
@@ -426,12 +340,116 @@
             label2.TabIndex = 69;
             label2.Text = "Lista de Proveedores:";
             // 
+            // txtindice
+            // 
+            txtindice.Location = new Point(168, 50);
+            txtindice.Margin = new Padding(3, 4, 3, 4);
+            txtindice.Name = "txtindice";
+            txtindice.Size = new Size(20, 27);
+            txtindice.TabIndex = 72;
+            txtindice.Text = "-1";
+            txtindice.Visible = false;
+            // 
+            // dgvdata
+            // 
+            dgvdata.AllowUserToAddRows = false;
+            dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, RazonSocial, Correo, Telefono, EstadoValor, Estado });
+            dgvdata.Location = new Point(232, 120);
+            dgvdata.Margin = new Padding(3, 4, 3, 4);
+            dgvdata.MultiSelect = false;
+            dgvdata.Name = "dgvdata";
+            dgvdata.ReadOnly = true;
+            dgvdata.RowHeadersWidth = 51;
+            dgvdata.Size = new Size(1040, 431);
+            dgvdata.TabIndex = 73;
+            dgvdata.CellContentClick += dgvdata_CellContentClick;
+            dgvdata.CellPainting += dgvdata_CellPainting_1;
+            // 
+            // btnseleccionar
+            // 
+            btnseleccionar.HeaderText = "";
+            btnseleccionar.MinimumWidth = 6;
+            btnseleccionar.Name = "btnseleccionar";
+            btnseleccionar.ReadOnly = true;
+            btnseleccionar.Width = 30;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            Id.Width = 125;
+            // 
+            // Documento
+            // 
+            Documento.HeaderText = "Nro Documento";
+            Documento.MinimumWidth = 6;
+            Documento.Name = "Documento";
+            Documento.ReadOnly = true;
+            Documento.Width = 150;
+            // 
+            // RazonSocial
+            // 
+            RazonSocial.HeaderText = "Razon Social";
+            RazonSocial.MinimumWidth = 6;
+            RazonSocial.Name = "RazonSocial";
+            RazonSocial.ReadOnly = true;
+            RazonSocial.Width = 180;
+            // 
+            // Correo
+            // 
+            Correo.HeaderText = "Correo";
+            Correo.MinimumWidth = 6;
+            Correo.Name = "Correo";
+            Correo.ReadOnly = true;
+            Correo.Width = 125;
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Telefono";
+            Telefono.MinimumWidth = 6;
+            Telefono.Name = "Telefono";
+            Telefono.ReadOnly = true;
+            Telefono.Width = 125;
+            // 
+            // EstadoValor
+            // 
+            EstadoValor.HeaderText = "EstadoValor";
+            EstadoValor.MinimumWidth = 6;
+            EstadoValor.Name = "EstadoValor";
+            EstadoValor.ReadOnly = true;
+            EstadoValor.Visible = false;
+            EstadoValor.Width = 125;
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 6;
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            Estado.Width = 125;
+            // 
             // frmProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1278, 620);
+            Controls.Add(dgvdata);
+            Controls.Add(txtindice);
             Controls.Add(label2);
             Controls.Add(btnEditar);
             Controls.Add(btnlimpiar);
@@ -441,7 +459,6 @@
             Controls.Add(label10);
             Controls.Add(txtid);
             Controls.Add(label9);
-            Controls.Add(dgvdata);
             Controls.Add(label8);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
@@ -458,6 +475,7 @@
             Controls.Add(label1);
             Name = "frmProveedores";
             Text = "frmProveedores";
+            Load += frmProveedores_Load;
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -466,7 +484,6 @@
         #endregion
         private TextBox txtid;
         private Label label9;
-        private DataGridView dgvdata;
         private Label label8;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnGuardar;
@@ -481,6 +498,15 @@
         private TextBox txtdocumento;
         private Label DNI;
         private Label label1;
+        private FontAwesome.Sharp.IconButton btnlimpiar;
+        private FontAwesome.Sharp.IconButton btnbuscar;
+        private TextBox txtbusqueda;
+        private ComboBox cbobusqueda;
+        private Label label10;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private Label label2;
+        private TextBox txtindice;
+        private DataGridView dgvdata;
         private DataGridViewButtonColumn btnseleccionar;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Documento;
@@ -489,12 +515,5 @@
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
-        private FontAwesome.Sharp.IconButton btnlimpiar;
-        private FontAwesome.Sharp.IconButton btnbuscar;
-        private TextBox txtbusqueda;
-        private ComboBox cbobusqueda;
-        private Label label10;
-        private FontAwesome.Sharp.IconButton btnEditar;
-        private Label label2;
     }
 }

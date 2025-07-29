@@ -148,7 +148,7 @@ namespace CapaPresentacion
 
         private void registrarCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menucompras, new frmCompras());
+            AbrirFormulario(menucompras, new frmCompras(usuarioActual));
         }
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)

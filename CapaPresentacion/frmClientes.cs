@@ -200,7 +200,7 @@ namespace CapaPresentacion
                     var assembly = Assembly.GetExecutingAssembly();
 
                     // Reemplaza el string con el nombre correcto del recurso
-                    using (Stream stream = assembly.GetManifestResourceStream("CapaPresentacion.Resources.check.png"))
+                    using (Stream stream = assembly.GetManifestResourceStream("CapaPresentacion.Resources.checkicon.png"))
                     {
                         if (stream != null)
                         {

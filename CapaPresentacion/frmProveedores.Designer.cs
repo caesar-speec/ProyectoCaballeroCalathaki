@@ -164,9 +164,9 @@
             txttelefono.Location = new Point(18, 261);
             txttelefono.Margin = new Padding(3, 4, 3, 4);
             txttelefono.Name = "txttelefono";
-            txttelefono.PasswordChar = '*';
             txttelefono.Size = new Size(170, 27);
             txttelefono.TabIndex = 53;
+            txttelefono.TextChanged += txttelefono_TextChanged;
             // 
             // label5
             // 

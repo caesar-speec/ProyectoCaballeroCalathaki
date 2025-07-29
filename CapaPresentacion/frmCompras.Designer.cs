@@ -168,7 +168,6 @@
             txtidproveedor.Name = "txtidproveedor";
             txtidproveedor.Size = new Size(34, 27);
             txtidproveedor.TabIndex = 4;
-            txtidproveedor.Visible = false;
             // 
             // btnbuscarproveedor
             // 
@@ -245,7 +244,6 @@
             txtidproducto.Name = "txtidproducto";
             txtidproducto.Size = new Size(34, 27);
             txtidproducto.TabIndex = 10;
-            txtidproducto.Visible = false;
             // 
             // txtcantidad
             // 
@@ -291,6 +289,7 @@
             txtprecioventa.Size = new Size(116, 27);
             txtprecioventa.TabIndex = 5;
             txtprecioventa.TextChanged += textBox4_TextChanged;
+            txtprecioventa.KeyPress += txtprecioventa_KeyPress;
             // 
             // txtpreciocompra
             // 
@@ -298,6 +297,7 @@
             txtpreciocompra.Name = "txtpreciocompra";
             txtpreciocompra.Size = new Size(122, 27);
             txtpreciocompra.TabIndex = 4;
+            txtpreciocompra.KeyPress += txtpreciocompra_KeyPress;
             // 
             // btnbuscarproducto
             // 
@@ -325,6 +325,7 @@
             txtcodproducto.Name = "txtcodproducto";
             txtcodproducto.Size = new Size(196, 27);
             txtcodproducto.TabIndex = 2;
+            txtcodproducto.KeyDown += txtcodproducto_KeyDown;
             // 
             // label7
             // 
@@ -356,13 +357,14 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(897, 259);
             dataGridView1.TabIndex = 5;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellPainting += dataGridView1_CellPainting;
             // 
             // idProducto
             // 
             idProducto.HeaderText = "id_Producto";
             idProducto.MinimumWidth = 6;
             idProducto.Name = "idProducto";
-            idProducto.Visible = false;
             idProducto.Width = 35;
             // 
             // Producto
@@ -421,6 +423,7 @@
             btnagregarproducto.Text = "Agregar";
             btnagregarproducto.TextImageRelation = TextImageRelation.ImageAboveText;
             btnagregarproducto.UseVisualStyleBackColor = true;
+            btnagregarproducto.Click += btnagregarproducto_Click;
             // 
             // label12
             // 
@@ -473,6 +476,7 @@
             Controls.Add(label1);
             Name = "frmCompras";
             Text = "Registro de Compra";
+            Load += frmCompras_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -515,6 +519,10 @@
         private NumericUpDown txtcantidad;
         private TextBox txtidproducto;
         private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton btnagregarproducto;
+        private Label label12;
+        private TextBox txttotalpagar;
+        private FontAwesome.Sharp.IconButton btnregistrar;
         private DataGridViewTextBoxColumn idProducto;
         private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn PrecioCompra;
@@ -522,9 +530,5 @@
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn SubTotal;
         private DataGridViewButtonColumn btneliminar;
-        private FontAwesome.Sharp.IconButton btnagregarproducto;
-        private Label label12;
-        private TextBox txttotalpagar;
-        private FontAwesome.Sharp.IconButton btnregistrar;
     }
 }

@@ -3,7 +3,9 @@ using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
-using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System.Data;
+using System.Linq.Expressions;
 using System.Reflection;
 
 namespace CapaPresentacion
@@ -78,6 +80,7 @@ namespace CapaPresentacion
 
         private void frmCompras_Load(object sender, EventArgs e)
         {
+            dataGridView1.AllowUserToAddRows = false;
             cbotipodocumento.Items.Add(new OpcionCombo() { Valor = "Boleta", Texto = "Boleta" });
             cbotipodocumento.Items.Add(new OpcionCombo() { Valor = "Factura", Texto = "Factura" });
             cbotipodocumento.DisplayMember = "Texto";
@@ -98,14 +101,14 @@ namespace CapaPresentacion
 
                 if (oProducto != null)
                 {
-                    txtcodproducto.BackColor = Color.Honeydew;
+                    txtcodproducto.BackColor = System.Drawing.Color.Honeydew;
                     txtidproducto.Text = oProducto.IdProducto.ToString();
                     txtproducto.Text = oProducto.Nombre;
                     txtpreciocompra.Select();
                 }
                 else
                 {
-                    txtcodproducto.BackColor = Color.MistyRose;
+                    txtcodproducto.BackColor = System.Drawing.Color.MistyRose;
                     txtidproducto.Text = "0";
                     txtproducto.Text = "";
                 }
@@ -189,7 +192,7 @@ namespace CapaPresentacion
         {
             txtidproducto.Text = "0";
             txtcodproducto.Text = "";
-            txtcodproducto.BackColor = Color.White;
+            txtcodproducto.BackColor = System.Drawing.Color.White;
             txtproducto.Text = "";
             txtpreciocompra.Text = "";
             txtprecioventa.Text = "";
@@ -198,13 +201,20 @@ namespace CapaPresentacion
         private void calcularTotal()
         {
             decimal total = 0;
+
             if (dataGridView1.Rows.Count > 0)
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
+                    // Verificar que no sea la fila nueva y que la celda no sea null ni vacía
+                    if (!row.IsNewRow && row.Cells["SubTotal"].Value != null &&
+                    decimal.TryParse(row.Cells["SubTotal"].Value.ToString(), out decimal subtotal))
+                    {
+                        total += subtotal;
+                    }
                 }
             }
+
             txttotalpagar.Text = total.ToString("0.00");
         }
 
@@ -295,5 +305,94 @@ namespace CapaPresentacion
             }
 
         }
+
+        private void btnregistrar_Click(object sender, EventArgs e)
+        {
+            // Validación inicial (esto estaba bien)
+            if (Convert.ToInt32(txtidproveedor.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (dataGridView1.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingresar productos en la compra", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // 1. Crear el DataTable para el detalle de la compra.
+            
+            DataTable detalle_compra = new DataTable();
+            detalle_compra.Columns.Add("IdProducto", typeof(int));
+            detalle_compra.Columns.Add("PrecioCompra", typeof(decimal));
+            detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
+            detalle_compra.Columns.Add("Cantidad", typeof(int));
+            detalle_compra.Columns.Add("SubTotal", typeof(decimal));
+
+            // 2. Llenar el DataTable recorriendo el DataGridView.
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+
+
+                try
+                {
+                    detalle_compra.Rows.Add(
+                    Convert.ToInt32(row.Cells["IdProducto"].Value),
+                    Convert.ToDecimal(row.Cells["PrecioCompra"].Value),
+                    Convert.ToDecimal(row.Cells["PrecioVenta"].Value), // El valor ya está validado
+                    Convert.ToInt32(row.Cells["Cantidad"].Value),
+                    Convert.ToDecimal(row.Cells["SubTotal"].Value)
+                );
+                }
+                catch (Exception ex)
+                {
+                    // Código para manejar la excepción
+                    // Puedes mostrar un mensaje de error, registrar la excepción, etc.
+                    // Por ejemplo:
+                    Console.WriteLine($"Ocurrió un error: {ex.Message}");
+                }
+
+
+
+                
+            }
+
+            // 3. Obtener el número de documento correlativo.
+            // La capa de negocio nos dará el siguiente número.
+            int idcorrelativo = new CN_Compra().ObtenerCorrelativo();
+            string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
+
+            // 4. Crear y llenar el objeto Compra (el encabezado).
+            Compra oCompra = new Compra()
+            {
+                // IMPORTANTE: Debes obtener el usuario logueado. Aquí pongo un ejemplo.
+                oUsuario = new Usuario() { IdUsuario = 1 }, // Reemplazar con el ID del usuario real.
+                oProveedor = new Proveedor() { IdProveedor = Convert.ToInt32(txtidproveedor.Text) },
+                TipoDocumento = cbotipodocumento.SelectedItem.ToString(), // Asumiendo que tienes un ComboBox.
+                NumeroDocumento = numeroDocumento,
+                MontoTotal = Convert.ToDecimal(txttotalpagar.Text) // Asumiendo que tienes un TextBox para el total.
+            };
+
+            // 5. Llamar a la capa de negocio para registrar TODO.
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Compra().Registrar(oCompra, detalle_compra, out mensaje);
+
+            if (respuesta)
+            {
+                // Si todo sale bien, limpiamos el formulario.
+                var result = MessageBox.Show("Número de compra generado:\n" + numeroDocumento, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtidproveedor.Text = "0";
+                // Limpiar otros campos...
+                dataGridView1.Rows.Clear();
+                // Calcular y mostrar el nuevo total...
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
     }
-}
+   }
+

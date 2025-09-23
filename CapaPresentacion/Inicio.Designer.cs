@@ -64,7 +64,7 @@
             Menu2.Location = new Point(0, 76);
             Menu2.Name = "Menu2";
             Menu2.Padding = new Padding(7, 3, 0, 3);
-            Menu2.Size = new Size(960, 75);
+            Menu2.Size = new Size(888, 75);
             Menu2.TabIndex = 0;
             Menu2.Text = "menuStrip1";
             // 
@@ -192,14 +192,14 @@
             // productosToolStripMenuItem
             // 
             productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            productosToolStripMenuItem.Size = new Size(224, 26);
+            productosToolStripMenuItem.Size = new Size(215, 26);
             productosToolStripMenuItem.Text = "Productos";
             productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
             // 
             // agregarCategoriaToolStripMenuItem
             // 
             agregarCategoriaToolStripMenuItem.Name = "agregarCategoriaToolStripMenuItem";
-            agregarCategoriaToolStripMenuItem.Size = new Size(224, 26);
+            agregarCategoriaToolStripMenuItem.Size = new Size(215, 26);
             agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
             agregarCategoriaToolStripMenuItem.Click += agregarCategoriaToolStripMenuItem_Click;
             // 
@@ -265,7 +265,7 @@
             Contenedor.Location = new Point(0, 151);
             Contenedor.Margin = new Padding(3, 4, 3, 4);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(960, 427);
+            Contenedor.Size = new Size(888, 522);
             Contenedor.TabIndex = 4;
             Contenedor.Paint += Contenedor_Paint;
             // 
@@ -310,7 +310,7 @@
             MenuTitulo.Name = "MenuTitulo";
             MenuTitulo.Padding = new Padding(7, 3, 0, 3);
             MenuTitulo.RightToLeft = RightToLeft.Yes;
-            MenuTitulo.Size = new Size(960, 76);
+            MenuTitulo.Size = new Size(888, 76);
             MenuTitulo.TabIndex = 1;
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
@@ -320,7 +320,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(960, 578);
+            ClientSize = new Size(888, 673);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
             Controls.Add(label1);

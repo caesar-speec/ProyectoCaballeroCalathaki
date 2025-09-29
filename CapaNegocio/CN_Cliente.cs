@@ -14,6 +14,7 @@ namespace CapaNegocio
         public List<Cliente> Listar()
         {
 
+
             return objcd_Cliente.Listar();
         }
         public int Registrar(Cliente obj, out string Mensaje)

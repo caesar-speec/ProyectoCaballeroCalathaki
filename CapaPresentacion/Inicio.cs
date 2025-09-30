@@ -173,7 +173,7 @@ namespace CapaPresentacion
 
         private void reportesVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menucompras, new frmReporteVentas());
+            AbrirFormulario(menucompras, new frmListarVentas());
         }
 
         private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)

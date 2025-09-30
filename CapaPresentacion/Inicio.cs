@@ -33,7 +33,11 @@ namespace CapaPresentacion
                 }
                 lblusuario.Text = usuarioActual.NombreCompleto;
             }
+
+            menuBackup.Visible = (usuarioActual.IdUsuario == 1);
         }
+
+
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             if (MenuActivo != null)
@@ -184,6 +188,16 @@ namespace CapaPresentacion
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menucompras, new frmProductos());
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+           // AbrirFormulario(null, new frmBackup());
+        }
+
+        private void menuBackup_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmBackup());
         }
     }
 }

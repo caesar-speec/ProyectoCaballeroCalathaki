@@ -38,12 +38,13 @@
             submenuverdetalleventa = new ToolStripMenuItem();
             MenuUsuarios = new FontAwesome.Sharp.IconMenuItem();
             MenuClientes = new FontAwesome.Sharp.IconMenuItem();
-            MenuProductos = new FontAwesome.Sharp.IconMenuItem();
-            productosToolStripMenuItem = new ToolStripMenuItem();
-            agregarCategoriaToolStripMenuItem = new ToolStripMenuItem();
             menucompras = new FontAwesome.Sharp.IconMenuItem();
             registrarCompraToolStripMenuItem = new ToolStripMenuItem();
             verDetalleToolStripMenuItem = new ToolStripMenuItem();
+            MenuProductos = new FontAwesome.Sharp.IconMenuItem();
+            productosToolStripMenuItem = new ToolStripMenuItem();
+            agregarCategoriaToolStripMenuItem = new ToolStripMenuItem();
+            menuBackup = new FontAwesome.Sharp.IconMenuItem();
             label1 = new Label();
             panel1 = new Panel();
             Contenedor = new Panel();
@@ -60,7 +61,7 @@
             // 
             Menu2.BackColor = SystemColors.GrayText;
             Menu2.ImageScalingSize = new Size(20, 20);
-            Menu2.Items.AddRange(new ToolStripItem[] { MenuProvedores, MenuReportes, MenuVentas, MenuUsuarios, MenuClientes, MenuProductos, menucompras });
+            Menu2.Items.AddRange(new ToolStripItem[] { MenuProvedores, MenuReportes, MenuVentas, MenuUsuarios, MenuClientes, menucompras, MenuProductos, menuBackup });
             Menu2.Location = new Point(0, 76);
             Menu2.Name = "Menu2";
             Menu2.Padding = new Padding(7, 3, 0, 3);
@@ -132,14 +133,14 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(165, 26);
+            submenuregistrarventa.Size = new Size(224, 26);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click_1;
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(165, 26);
+            submenuverdetalleventa.Size = new Size(224, 26);
             submenuverdetalleventa.Text = "Ver Detalle";
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
@@ -173,36 +174,6 @@
             MenuClientes.TextImageRelation = TextImageRelation.ImageAboveText;
             MenuClientes.Click += MenuClientes_Click;
             // 
-            // MenuProductos
-            // 
-            MenuProductos.AutoSize = false;
-            MenuProductos.DropDownItems.AddRange(new ToolStripItem[] { productosToolStripMenuItem, agregarCategoriaToolStripMenuItem });
-            MenuProductos.ForeColor = SystemColors.ButtonHighlight;
-            MenuProductos.IconChar = FontAwesome.Sharp.IconChar.ProductHunt;
-            MenuProductos.IconColor = Color.WhiteSmoke;
-            MenuProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuProductos.IconSize = 50;
-            MenuProductos.ImageScaling = ToolStripItemImageScaling.None;
-            MenuProductos.Name = "MenuProductos";
-            MenuProductos.Size = new Size(152, 69);
-            MenuProductos.Text = "Productos";
-            MenuProductos.TextImageRelation = TextImageRelation.ImageAboveText;
-            MenuProductos.Click += menumantenedor_Click;
-            // 
-            // productosToolStripMenuItem
-            // 
-            productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            productosToolStripMenuItem.Size = new Size(215, 26);
-            productosToolStripMenuItem.Text = "Productos";
-            productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
-            // 
-            // agregarCategoriaToolStripMenuItem
-            // 
-            agregarCategoriaToolStripMenuItem.Name = "agregarCategoriaToolStripMenuItem";
-            agregarCategoriaToolStripMenuItem.Size = new Size(215, 26);
-            agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
-            agregarCategoriaToolStripMenuItem.Click += agregarCategoriaToolStripMenuItem_Click;
-            // 
             // menucompras
             // 
             menucompras.AutoSize = false;
@@ -232,6 +203,51 @@
             verDetalleToolStripMenuItem.Size = new Size(208, 26);
             verDetalleToolStripMenuItem.Text = "Ver Detalle";
             verDetalleToolStripMenuItem.Click += verDetalleToolStripMenuItem_Click;
+            // 
+            // MenuProductos
+            // 
+            MenuProductos.AutoSize = false;
+            MenuProductos.DropDownItems.AddRange(new ToolStripItem[] { productosToolStripMenuItem, agregarCategoriaToolStripMenuItem });
+            MenuProductos.ForeColor = SystemColors.ButtonHighlight;
+            MenuProductos.IconChar = FontAwesome.Sharp.IconChar.ProductHunt;
+            MenuProductos.IconColor = Color.WhiteSmoke;
+            MenuProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuProductos.IconSize = 50;
+            MenuProductos.ImageScaling = ToolStripItemImageScaling.None;
+            MenuProductos.Name = "MenuProductos";
+            MenuProductos.Size = new Size(152, 69);
+            MenuProductos.Text = "Productos";
+            MenuProductos.TextImageRelation = TextImageRelation.ImageAboveText;
+            MenuProductos.Click += menumantenedor_Click;
+            // 
+            // productosToolStripMenuItem
+            // 
+            productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            productosToolStripMenuItem.Size = new Size(224, 26);
+            productosToolStripMenuItem.Text = "Productos";
+            productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
+            // 
+            // agregarCategoriaToolStripMenuItem
+            // 
+            agregarCategoriaToolStripMenuItem.Name = "agregarCategoriaToolStripMenuItem";
+            agregarCategoriaToolStripMenuItem.Size = new Size(224, 26);
+            agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
+            agregarCategoriaToolStripMenuItem.Click += agregarCategoriaToolStripMenuItem_Click;
+            // 
+            // menuBackup
+            // 
+            menuBackup.AutoSize = false;
+            menuBackup.ForeColor = SystemColors.ButtonHighlight;
+            menuBackup.IconChar = FontAwesome.Sharp.IconChar.Database;
+            menuBackup.IconColor = Color.WhiteSmoke;
+            menuBackup.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            menuBackup.IconSize = 50;
+            menuBackup.ImageScaling = ToolStripItemImageScaling.None;
+            menuBackup.Name = "menuBackup";
+            menuBackup.Size = new Size(152, 69);
+            menuBackup.Text = "Back-Up";
+            menuBackup.TextImageRelation = TextImageRelation.ImageAboveText;
+            menuBackup.Click += menuBackup_Click;
             // 
             // label1
             // 
@@ -366,5 +382,6 @@
         private ToolStripMenuItem reportesVentasToolStripMenuItem;
         private ToolStripMenuItem productosToolStripMenuItem;
         private ToolStripMenuItem agregarCategoriaToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem menuBackup;
     }
 }

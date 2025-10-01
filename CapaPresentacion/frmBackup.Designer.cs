@@ -33,6 +33,7 @@
             txtbusqueda = new TextBox();
             label6 = new Label();
             groupBox1 = new GroupBox();
+            button1 = new Button();
             comboBox1 = new ComboBox();
             label2 = new Label();
             label1 = new Label();
@@ -89,6 +90,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ControlLight;
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(comboBox1);
             groupBox1.FlatStyle = FlatStyle.Popup;
             groupBox1.Location = new Point(42, 180);
@@ -97,6 +99,16 @@
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             groupBox1.Text = "Seleccion de BDD";
+            // 
+            // button1
+            // 
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(369, 39);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 34);
+            button1.TabIndex = 2;
+            button1.Text = "Realizar Back-up";
+            button1.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -185,5 +197,6 @@
         private Label label7;
         private ComboBox comboBox1;
         private TextBox textBox1;
+        private Button button1;
     }
 }

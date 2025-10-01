@@ -192,12 +192,17 @@ namespace CapaPresentacion
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
-           // AbrirFormulario(null, new frmBackup());
+            // AbrirFormulario(null, new frmBackup());
         }
 
         private void menuBackup_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmBackup());
+        }
+
+        private void ReporteEstadistico_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReportes, new FrmReportesEstadisticos());
         }
     }
 }

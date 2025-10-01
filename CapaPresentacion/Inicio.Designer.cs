@@ -52,6 +52,7 @@
             label2 = new Label();
             lblusuario = new Label();
             MenuTitulo = new MenuStrip();
+            ReporteEstadistico = new ToolStripMenuItem();
             Menu2.SuspendLayout();
             Contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -87,7 +88,7 @@
             // MenuReportes
             // 
             MenuReportes.AutoSize = false;
-            MenuReportes.DropDownItems.AddRange(new ToolStripItem[] { ReportesCompras, reportesVentasToolStripMenuItem });
+            MenuReportes.DropDownItems.AddRange(new ToolStripItem[] { ReportesCompras, reportesVentasToolStripMenuItem, ReporteEstadistico });
             MenuReportes.ForeColor = SystemColors.ButtonHighlight;
             MenuReportes.IconChar = FontAwesome.Sharp.IconChar.ArrowTrendUp;
             MenuReportes.IconColor = Color.WhiteSmoke;
@@ -103,14 +104,14 @@
             // ReportesCompras
             // 
             ReportesCompras.Name = "ReportesCompras";
-            ReportesCompras.Size = new Size(214, 26);
+            ReportesCompras.Size = new Size(224, 26);
             ReportesCompras.Text = "Reportes Compras";
             ReportesCompras.Click += ReportesCompras_Click;
             // 
             // reportesVentasToolStripMenuItem
             // 
             reportesVentasToolStripMenuItem.Name = "reportesVentasToolStripMenuItem";
-            reportesVentasToolStripMenuItem.Size = new Size(214, 26);
+            reportesVentasToolStripMenuItem.Size = new Size(224, 26);
             reportesVentasToolStripMenuItem.Text = "Reportes Ventas";
             reportesVentasToolStripMenuItem.Click += reportesVentasToolStripMenuItem_Click;
             // 
@@ -133,14 +134,14 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(224, 26);
+            submenuregistrarventa.Size = new Size(165, 26);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click_1;
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(224, 26);
+            submenuverdetalleventa.Size = new Size(165, 26);
             submenuverdetalleventa.Text = "Ver Detalle";
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
@@ -223,14 +224,14 @@
             // productosToolStripMenuItem
             // 
             productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            productosToolStripMenuItem.Size = new Size(224, 26);
+            productosToolStripMenuItem.Size = new Size(215, 26);
             productosToolStripMenuItem.Text = "Productos";
             productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
             // 
             // agregarCategoriaToolStripMenuItem
             // 
             agregarCategoriaToolStripMenuItem.Name = "agregarCategoriaToolStripMenuItem";
-            agregarCategoriaToolStripMenuItem.Size = new Size(224, 26);
+            agregarCategoriaToolStripMenuItem.Size = new Size(215, 26);
             agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
             agregarCategoriaToolStripMenuItem.Click += agregarCategoriaToolStripMenuItem_Click;
             // 
@@ -331,6 +332,13 @@
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
             // 
+            // ReporteEstadistico
+            // 
+            ReporteEstadistico.Name = "ReporteEstadistico";
+            ReporteEstadistico.Size = new Size(224, 26);
+            ReporteEstadistico.Text = "Reporte Etadistico";
+            ReporteEstadistico.Click += ReporteEstadistico_Click;
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -383,5 +391,6 @@
         private ToolStripMenuItem productosToolStripMenuItem;
         private ToolStripMenuItem agregarCategoriaToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem menuBackup;
+        private ToolStripMenuItem ReporteEstadistico;
     }
 }

@@ -41,6 +41,8 @@ namespace CapaPresentacion
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
+            dgvdata.DefaultCellStyle.ForeColor = Color.Blue;
+            dgvdata.ColumnHeadersDefaultCellStyle.ForeColor = Color.Red;
             cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             cboestado.DisplayMember = "Texto";
             cboestado.ValueMember = "Valor";

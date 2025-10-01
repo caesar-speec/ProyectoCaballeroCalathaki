@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             DNI = new Label();
             txtdocumento = new TextBox();
@@ -79,7 +79,7 @@
             label1.Dock = DockStyle.Left;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(208, 620);
+            label1.Size = new Size(182, 465);
             label1.TabIndex = 0;
             // 
             // DNI
@@ -87,26 +87,24 @@
             DNI.AutoSize = true;
             DNI.BackColor = Color.DarkOliveGreen;
             DNI.ForeColor = SystemColors.ControlLightLight;
-            DNI.Location = new Point(14, 63);
+            DNI.Location = new Point(12, 47);
             DNI.Name = "DNI";
-            DNI.Size = new Size(38, 20);
+            DNI.Size = new Size(30, 15);
             DNI.TabIndex = 1;
             DNI.Text = "DNI:";
             // 
             // txtdocumento
             // 
-            txtdocumento.Location = new Point(14, 87);
-            txtdocumento.Margin = new Padding(3, 4, 3, 4);
+            txtdocumento.Location = new Point(12, 65);
             txtdocumento.Name = "txtdocumento";
-            txtdocumento.Size = new Size(170, 27);
+            txtdocumento.Size = new Size(149, 23);
             txtdocumento.TabIndex = 3;
             // 
             // txtnombrecompleto
             // 
-            txtnombrecompleto.Location = new Point(14, 145);
-            txtnombrecompleto.Margin = new Padding(3, 4, 3, 4);
+            txtnombrecompleto.Location = new Point(12, 109);
             txtnombrecompleto.Name = "txtnombrecompleto";
-            txtnombrecompleto.Size = new Size(170, 27);
+            txtnombrecompleto.Size = new Size(149, 23);
             txtnombrecompleto.TabIndex = 5;
             // 
             // label3
@@ -114,18 +112,17 @@
             label3.AutoSize = true;
             label3.BackColor = Color.DarkOliveGreen;
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(14, 121);
+            label3.Location = new Point(12, 91);
             label3.Name = "label3";
-            label3.Size = new Size(137, 20);
+            label3.Size = new Size(110, 15);
             label3.TabIndex = 4;
             label3.Text = "Nombre Completo:";
             // 
             // txtcorreo
             // 
-            txtcorreo.Location = new Point(14, 204);
-            txtcorreo.Margin = new Padding(3, 4, 3, 4);
+            txtcorreo.Location = new Point(12, 153);
             txtcorreo.Name = "txtcorreo";
-            txtcorreo.Size = new Size(170, 27);
+            txtcorreo.Size = new Size(149, 23);
             txtcorreo.TabIndex = 7;
             // 
             // label4
@@ -133,19 +130,18 @@
             label4.AutoSize = true;
             label4.BackColor = Color.DarkOliveGreen;
             label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(14, 180);
+            label4.Location = new Point(12, 135);
             label4.Name = "label4";
-            label4.Size = new Size(57, 20);
+            label4.Size = new Size(46, 15);
             label4.TabIndex = 6;
             label4.Text = "Correo:";
             // 
             // txtclave
             // 
-            txtclave.Location = new Point(14, 263);
-            txtclave.Margin = new Padding(3, 4, 3, 4);
+            txtclave.Location = new Point(12, 197);
             txtclave.Name = "txtclave";
             txtclave.PasswordChar = '*';
-            txtclave.Size = new Size(170, 27);
+            txtclave.Size = new Size(149, 23);
             txtclave.TabIndex = 9;
             // 
             // label5
@@ -153,19 +149,18 @@
             label5.AutoSize = true;
             label5.BackColor = Color.DarkOliveGreen;
             label5.ForeColor = SystemColors.ControlLightLight;
-            label5.Location = new Point(14, 239);
+            label5.Location = new Point(12, 179);
             label5.Name = "label5";
-            label5.Size = new Size(86, 20);
+            label5.Size = new Size(70, 15);
             label5.TabIndex = 8;
             label5.Text = "Contraseña:";
             // 
             // txtclave2
             // 
-            txtclave2.Location = new Point(14, 321);
-            txtclave2.Margin = new Padding(3, 4, 3, 4);
+            txtclave2.Location = new Point(12, 241);
             txtclave2.Name = "txtclave2";
             txtclave2.PasswordChar = '*';
-            txtclave2.Size = new Size(170, 27);
+            txtclave2.Size = new Size(149, 23);
             txtclave2.TabIndex = 11;
             // 
             // label6
@@ -173,9 +168,9 @@
             label6.AutoSize = true;
             label6.BackColor = Color.DarkOliveGreen;
             label6.ForeColor = SystemColors.ControlLightLight;
-            label6.Location = new Point(14, 297);
+            label6.Location = new Point(12, 223);
             label6.Name = "label6";
-            label6.Size = new Size(156, 20);
+            label6.Size = new Size(127, 15);
             label6.TabIndex = 10;
             label6.Text = "Confirmar Contraseña:";
             // 
@@ -184,9 +179,9 @@
             label2.AutoSize = true;
             label2.BackColor = Color.DarkOliveGreen;
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(14, 356);
+            label2.Location = new Point(12, 267);
             label2.Name = "label2";
-            label2.Size = new Size(34, 20);
+            label2.Size = new Size(27, 15);
             label2.TabIndex = 12;
             label2.Text = "Rol:";
             // 
@@ -194,20 +189,18 @@
             // 
             cborol.DropDownStyle = ComboBoxStyle.DropDownList;
             cborol.FormattingEnabled = true;
-            cborol.Location = new Point(14, 380);
-            cborol.Margin = new Padding(3, 4, 3, 4);
+            cborol.Location = new Point(12, 285);
             cborol.Name = "cborol";
-            cborol.Size = new Size(170, 28);
+            cborol.Size = new Size(149, 23);
             cborol.TabIndex = 13;
             // 
             // cboestado
             // 
             cboestado.DropDownStyle = ComboBoxStyle.DropDownList;
             cboestado.FormattingEnabled = true;
-            cboestado.Location = new Point(14, 439);
-            cboestado.Margin = new Padding(3, 4, 3, 4);
+            cboestado.Location = new Point(12, 329);
             cboestado.Name = "cboestado";
-            cboestado.Size = new Size(170, 28);
+            cboestado.Size = new Size(149, 23);
             cboestado.TabIndex = 15;
             cboestado.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
@@ -216,9 +209,9 @@
             label7.AutoSize = true;
             label7.BackColor = Color.DarkOliveGreen;
             label7.ForeColor = SystemColors.ControlLightLight;
-            label7.Location = new Point(14, 415);
+            label7.Location = new Point(12, 311);
             label7.Name = "label7";
-            label7.Size = new Size(57, 20);
+            label7.Size = new Size(45, 15);
             label7.TabIndex = 14;
             label7.Text = "Estado:";
             // 
@@ -231,10 +224,9 @@
             btnGuardar.IconColor = Color.LightYellow;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.IconSize = 16;
-            btnGuardar.Location = new Point(14, 496);
-            btnGuardar.Margin = new Padding(3, 4, 3, 4);
+            btnGuardar.Location = new Point(12, 372);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(170, 31);
+            btnGuardar.Size = new Size(149, 23);
             btnGuardar.TabIndex = 16;
             btnGuardar.Text = "Guardar";
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
@@ -251,10 +243,9 @@
             btnEditar.IconColor = Color.White;
             btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditar.IconSize = 16;
-            btnEditar.Location = new Point(14, 535);
-            btnEditar.Margin = new Padding(3, 4, 3, 4);
+            btnEditar.Location = new Point(12, 401);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(170, 31);
+            btnEditar.Size = new Size(149, 23);
             btnEditar.TabIndex = 17;
             btnEditar.Text = "Limpiar";
             btnEditar.TextAlign = ContentAlignment.MiddleRight;
@@ -271,10 +262,9 @@
             btnEliminar.IconColor = Color.White;
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminar.IconSize = 16;
-            btnEliminar.Location = new Point(14, 573);
-            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Location = new Point(12, 430);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(170, 31);
+            btnEliminar.Size = new Size(149, 23);
             btnEliminar.TabIndex = 18;
             btnEliminar.Text = "Eliminar";
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
@@ -288,9 +278,9 @@
             label8.BackColor = Color.DarkOliveGreen;
             label8.Font = new Font("Segoe UI", 15F);
             label8.ForeColor = SystemColors.ControlLightLight;
-            label8.Location = new Point(14, 12);
+            label8.Location = new Point(12, 9);
             label8.Name = "label8";
-            label8.Size = new Size(185, 35);
+            label8.Size = new Size(146, 28);
             label8.TabIndex = 19;
             label8.Text = "Nuevo Usuario:";
             label8.Click += label8_Click;
@@ -302,24 +292,23 @@
             dgvdata.AllowUserToResizeColumns = false;
             dgvdata.AllowUserToResizeRows = false;
             dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, IdUsuario, Documento, NombreCompleto, Correo, Clave, IdRol, Rol, EstadoValor, Estado });
-            dgvdata.Location = new Point(214, 135);
-            dgvdata.Margin = new Padding(3, 4, 3, 4);
+            dgvdata.Location = new Point(187, 101);
             dgvdata.MultiSelect = false;
             dgvdata.Name = "dgvdata";
             dgvdata.ReadOnly = true;
             dgvdata.RowHeadersWidth = 51;
-            dgvdata.Size = new Size(1040, 431);
+            dgvdata.Size = new Size(910, 323);
             dgvdata.TabIndex = 20;
             dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
@@ -413,29 +402,27 @@
             label9.BackColor = SystemColors.ControlLight;
             label9.BorderStyle = BorderStyle.FixedSingle;
             label9.Font = new Font("Segoe UI", 15F);
-            label9.Location = new Point(215, 39);
+            label9.Location = new Point(188, 29);
             label9.Name = "label9";
-            label9.Padding = new Padding(0, 3, 2, 0);
-            label9.Size = new Size(1040, 91);
+            label9.Padding = new Padding(0, 2, 2, 0);
+            label9.Size = new Size(910, 69);
             label9.TabIndex = 21;
             label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // txtid
             // 
-            txtid.Location = new Point(138, 52);
-            txtid.Margin = new Padding(3, 4, 3, 4);
+            txtid.Location = new Point(121, 39);
             txtid.Name = "txtid";
-            txtid.Size = new Size(20, 27);
+            txtid.Size = new Size(18, 23);
             txtid.TabIndex = 22;
             txtid.Text = "0";
             txtid.Visible = false;
             // 
             // txtindice
             // 
-            txtindice.Location = new Point(111, 52);
-            txtindice.Margin = new Padding(3, 4, 3, 4);
+            txtindice.Location = new Point(97, 39);
             txtindice.Name = "txtindice";
-            txtindice.Size = new Size(20, 27);
+            txtindice.Size = new Size(18, 23);
             txtindice.TabIndex = 23;
             txtindice.Text = "-1";
             txtindice.Visible = false;
@@ -445,9 +432,9 @@
             label10.AutoSize = true;
             label10.BackColor = SystemColors.ControlLight;
             label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(701, 67);
+            label10.Location = new Point(613, 50);
             label10.Name = "label10";
-            label10.Size = new Size(80, 20);
+            label10.Size = new Size(66, 15);
             label10.TabIndex = 24;
             label10.Text = "Buscar Por:";
             label10.Click += label10_Click;
@@ -456,18 +443,16 @@
             // 
             cbobusqueda.DropDownStyle = ComboBoxStyle.DropDownList;
             cbobusqueda.FormattingEnabled = true;
-            cbobusqueda.Location = new Point(795, 63);
-            cbobusqueda.Margin = new Padding(3, 4, 3, 4);
+            cbobusqueda.Location = new Point(696, 47);
             cbobusqueda.Name = "cbobusqueda";
-            cbobusqueda.Size = new Size(170, 28);
+            cbobusqueda.Size = new Size(149, 23);
             cbobusqueda.TabIndex = 25;
             // 
             // txtbusqueda
             // 
-            txtbusqueda.Location = new Point(973, 63);
-            txtbusqueda.Margin = new Padding(3, 4, 3, 4);
+            txtbusqueda.Location = new Point(851, 47);
             txtbusqueda.Name = "txtbusqueda";
-            txtbusqueda.Size = new Size(170, 27);
+            txtbusqueda.Size = new Size(149, 23);
             txtbusqueda.TabIndex = 26;
             // 
             // btnlimpiar
@@ -479,10 +464,9 @@
             btnlimpiar.IconColor = Color.White;
             btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnlimpiar.IconSize = 18;
-            btnlimpiar.Location = new Point(1199, 61);
-            btnlimpiar.Margin = new Padding(3, 4, 3, 4);
+            btnlimpiar.Location = new Point(1049, 46);
             btnlimpiar.Name = "btnlimpiar";
-            btnlimpiar.Size = new Size(40, 44);
+            btnlimpiar.Size = new Size(35, 33);
             btnlimpiar.TabIndex = 28;
             btnlimpiar.UseVisualStyleBackColor = false;
             btnlimpiar.Click += btnlimpiar_Click;
@@ -496,10 +480,9 @@
             btnbuscar.IconColor = Color.LightYellow;
             btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnbuscar.IconSize = 18;
-            btnbuscar.Location = new Point(1151, 61);
-            btnbuscar.Margin = new Padding(3, 4, 3, 4);
+            btnbuscar.Location = new Point(1007, 46);
             btnbuscar.Name = "btnbuscar";
-            btnbuscar.Size = new Size(40, 44);
+            btnbuscar.Size = new Size(35, 33);
             btnbuscar.TabIndex = 27;
             btnbuscar.UseVisualStyleBackColor = false;
             btnbuscar.Click += btnbuscar_Click;
@@ -510,27 +493,28 @@
             label11.BackColor = SystemColors.ControlLight;
             label11.Font = new Font("Segoe UI", 15F);
             label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(229, 67);
+            label11.Location = new Point(200, 50);
             label11.Name = "label11";
-            label11.Size = new Size(208, 35);
+            label11.Size = new Size(162, 28);
             label11.TabIndex = 70;
             label11.Text = "Lista de Usuarios:";
             // 
             // btnbackup
             // 
-            btnbackup.Location = new Point(1088, 579);
+            btnbackup.Location = new Point(952, 434);
+            btnbackup.Margin = new Padding(3, 2, 3, 2);
             btnbackup.Name = "btnbackup";
-            btnbackup.Size = new Size(167, 29);
+            btnbackup.Size = new Size(146, 22);
             btnbackup.TabIndex = 71;
             btnbackup.Text = "BACKUP DE DATOS";
             btnbackup.UseVisualStyleBackColor = true;
             // 
             // FrmUsuario
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1278, 620);
+            ClientSize = new Size(1118, 465);
             Controls.Add(btnbackup);
             Controls.Add(label11);
             Controls.Add(btnlimpiar);
@@ -562,7 +546,6 @@
             Controls.Add(DNI);
             Controls.Add(label1);
             ForeColor = SystemColors.ControlText;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmUsuario";
             Text = "Usuario";
             Load += FrmUsuario_Load;

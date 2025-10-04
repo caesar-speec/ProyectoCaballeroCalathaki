@@ -16,16 +16,11 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            // Llamar al método de validaciones antes de continuar
             if (!validacionesCampos())
             {
                 return;
             }
             MessageBox.Show("Datos guardados correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
 
             string mensaje = string.Empty;
             Proveedor obj = new Proveedor()
@@ -35,17 +30,25 @@ namespace CapaPresentacion
                 RazonSocial = txtrazonsocial.Text,
                 Correo = txtcorreo.Text,
                 Telefono = txttelefono.Text,
+                Domicilio = txtDomicilio.Text, // <-- agregado
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
+
             if (obj.IdProveedor == 0)
             {
                 int idgenerado = new CN_Proveedor().Registrar(obj, out mensaje);
                 if (idgenerado != 0)
                 {
-
-                    dgvdata.Rows.Add(new object[] {"",idgenerado,txtdocumento.Text, txtrazonsocial.Text, txtcorreo.Text, txttelefono.Text,
-            ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-            ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+                    dgvdata.Rows.Add(new object[] {
+                "",
+                idgenerado,
+                txtdocumento.Text,
+                txtrazonsocial.Text,
+                txtcorreo.Text,
+                txttelefono.Text,
+                txtDomicilio.Text, // <-- agregado
+                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
             });
                     Clear();
                 }
@@ -53,7 +56,6 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show(mensaje);
                 }
-
             }
             else
             {
@@ -66,17 +68,19 @@ namespace CapaPresentacion
                     row.Cells["RazonSocial"].Value = txtrazonsocial.Text;
                     row.Cells["Correo"].Value = txtcorreo.Text;
                     row.Cells["Telefono"].Value = txttelefono.Text;
+                    row.Cells["Domicilio"].Value = txtDomicilio.Text; // <-- agregado
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
 
                     Clear();
-
                 }
                 else
                 {
                     MessageBox.Show(mensaje);
                 }
             }
+        }
+
 
 
         }
@@ -324,6 +328,8 @@ namespace CapaPresentacion
                     txtrazonsocial.Text = dgvdata.Rows[indice].Cells["RazonSocial"].Value.ToString();
                     txtcorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                     txttelefono.Text = dgvdata.Rows[indice].Cells["Telefono"].Value.ToString();
+                    txtDomicilio.Text = dgvdata.Rows[indice].Cells["Domicilio"].Value.ToString();
+
                     foreach (OpcionCombo oc in cboestado.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
@@ -336,6 +342,7 @@ namespace CapaPresentacion
                 }
             }
         }
+
 
         private void txttelefono_TextChanged(object sender, EventArgs e)
         {

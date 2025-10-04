@@ -37,6 +37,7 @@
             MenuVentas = new FontAwesome.Sharp.IconMenuItem();
             submenuregistrarventa = new ToolStripMenuItem();
             submenuverdetalleventa = new ToolStripMenuItem();
+            verMisVentasToolStripMenuItem = new ToolStripMenuItem();
             MenuUsuarios = new FontAwesome.Sharp.IconMenuItem();
             MenuClientes = new FontAwesome.Sharp.IconMenuItem();
             menucompras = new FontAwesome.Sharp.IconMenuItem();
@@ -53,7 +54,7 @@
             label2 = new Label();
             lblusuario = new Label();
             MenuTitulo = new MenuStrip();
-            verMisVentasToolStripMenuItem = new ToolStripMenuItem();
+            verMisComprasToolStripMenuItem = new ToolStripMenuItem();
             Menu2.SuspendLayout();
             Contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -152,6 +153,13 @@
             submenuverdetalleventa.Text = "Ver Detalle";
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
+            // verMisVentasToolStripMenuItem
+            // 
+            verMisVentasToolStripMenuItem.Name = "verMisVentasToolStripMenuItem";
+            verMisVentasToolStripMenuItem.Size = new Size(180, 22);
+            verMisVentasToolStripMenuItem.Text = "Ver mis ventas";
+            verMisVentasToolStripMenuItem.Click += verMisVentasToolStripMenuItem_Click;
+            // 
             // MenuUsuarios
             // 
             MenuUsuarios.AutoSize = false;
@@ -185,7 +193,7 @@
             // menucompras
             // 
             menucompras.AutoSize = false;
-            menucompras.DropDownItems.AddRange(new ToolStripItem[] { registrarCompraToolStripMenuItem, verDetalleToolStripMenuItem });
+            menucompras.DropDownItems.AddRange(new ToolStripItem[] { registrarCompraToolStripMenuItem, verDetalleToolStripMenuItem, verMisComprasToolStripMenuItem });
             menucompras.ForeColor = SystemColors.ButtonHighlight;
             menucompras.IconChar = FontAwesome.Sharp.IconChar.DollyBox;
             menucompras.IconColor = Color.WhiteSmoke;
@@ -201,14 +209,14 @@
             // registrarCompraToolStripMenuItem
             // 
             registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
-            registrarCompraToolStripMenuItem.Size = new Size(166, 22);
+            registrarCompraToolStripMenuItem.Size = new Size(180, 22);
             registrarCompraToolStripMenuItem.Text = "Registrar Compra";
             registrarCompraToolStripMenuItem.Click += registrarCompraToolStripMenuItem_Click;
             // 
             // verDetalleToolStripMenuItem
             // 
             verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
-            verDetalleToolStripMenuItem.Size = new Size(166, 22);
+            verDetalleToolStripMenuItem.Size = new Size(180, 22);
             verDetalleToolStripMenuItem.Text = "Ver Detalle";
             verDetalleToolStripMenuItem.Click += verDetalleToolStripMenuItem_Click;
             // 
@@ -337,12 +345,12 @@
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
             // 
-            // verMisVentasToolStripMenuItem
+            // verMisComprasToolStripMenuItem
             // 
-            verMisVentasToolStripMenuItem.Name = "verMisVentasToolStripMenuItem";
-            verMisVentasToolStripMenuItem.Size = new Size(180, 22);
-            verMisVentasToolStripMenuItem.Text = "Ver mis ventas";
-            verMisVentasToolStripMenuItem.Click += verMisVentasToolStripMenuItem_Click;
+            verMisComprasToolStripMenuItem.Name = "verMisComprasToolStripMenuItem";
+            verMisComprasToolStripMenuItem.Size = new Size(180, 22);
+            verMisComprasToolStripMenuItem.Text = "Ver mis compras";
+            verMisComprasToolStripMenuItem.Click += verMisComprasToolStripMenuItem_Click;
             // 
             // Inicio
             // 
@@ -397,5 +405,6 @@
         private FontAwesome.Sharp.IconMenuItem menuBackup;
         private ToolStripMenuItem ReporteEstadistico;
         private ToolStripMenuItem verMisVentasToolStripMenuItem;
+        private ToolStripMenuItem verMisComprasToolStripMenuItem;
     }
 }

@@ -35,6 +35,10 @@
             Correo = new DataGridViewTextBoxColumn();
             DetalleVenta = new DataGridViewButtonColumn();
             label2 = new Label();
+            dtfin = new DateTimePicker();
+            label4 = new Label();
+            dtinicio = new DateTimePicker();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -98,11 +102,57 @@
             label2.TabIndex = 35;
             label2.Text = "Mis Ventas";
             // 
+            // dtfin
+            // 
+            dtfin.CustomFormat = "dd/MM/yyyy";
+            dtfin.Format = DateTimePickerFormat.Short;
+            dtfin.Location = new Point(425, 17);
+            dtfin.Margin = new Padding(3, 2, 3, 2);
+            dtfin.Name = "dtfin";
+            dtfin.Size = new Size(97, 23);
+            dtfin.TabIndex = 40;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.ControlLight;
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(358, 20);
+            label4.Name = "label4";
+            label4.Size = new Size(58, 15);
+            label4.TabIndex = 39;
+            label4.Text = "Fecha fin:";
+            // 
+            // dtinicio
+            // 
+            dtinicio.CustomFormat = "dd/MM/yyyy";
+            dtinicio.Format = DateTimePickerFormat.Short;
+            dtinicio.Location = new Point(248, 17);
+            dtinicio.Margin = new Padding(3, 2, 3, 2);
+            dtinicio.Name = "dtinicio";
+            dtinicio.Size = new Size(97, 23);
+            dtinicio.TabIndex = 38;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.ControlLight;
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(164, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 15);
+            label3.TabIndex = 37;
+            label3.Text = "Fecha inicio:";
+            // 
             // FrmVerMisVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dtfin);
+            Controls.Add(label4);
+            Controls.Add(dtinicio);
+            Controls.Add(label3);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
             Name = "FrmVerMisVentas";
@@ -121,5 +171,9 @@
         private DataGridViewTextBoxColumn Correo;
         private DataGridViewButtonColumn DetalleVenta;
         private Label label2;
+        private DateTimePicker dtfin;
+        private Label label4;
+        private DateTimePicker dtinicio;
+        private Label label3;
     }
 }

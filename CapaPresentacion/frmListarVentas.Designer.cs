@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            Nombre = new DataGridViewTextBoxColumn();
+            DNI = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            Correo = new DataGridViewTextBoxColumn();
+            DetalleVenta = new DataGridViewButtonColumn();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnbuscarventa = new FontAwesome.Sharp.IconButton();
             txtbusqueda = new TextBox();
             label6 = new Label();
             label2 = new Label();
             label1 = new Label();
-            Nombre = new DataGridViewTextBoxColumn();
-            DNI = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            Correo = new DataGridViewTextBoxColumn();
-            DetalleVenta = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -48,82 +48,12 @@
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, DNI, Telefono, Correo, DetalleVenta });
-            dataGridView1.Location = new Point(61, 92);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(70, 123);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(681, 332);
+            dataGridView1.Size = new Size(778, 443);
             dataGridView1.TabIndex = 32;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // btnlimpiar
-            // 
-            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            btnlimpiar.IconColor = Color.Black;
-            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnlimpiar.IconSize = 20;
-            btnlimpiar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnlimpiar.Location = new Point(279, 52);
-            btnlimpiar.Margin = new Padding(3, 2, 3, 2);
-            btnlimpiar.Name = "btnlimpiar";
-            btnlimpiar.Size = new Size(80, 21);
-            btnlimpiar.TabIndex = 30;
-            btnlimpiar.Text = "Limpiar";
-            btnlimpiar.TextAlign = ContentAlignment.MiddleRight;
-            btnlimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnbuscarventa
-            // 
-            btnbuscarventa.IconChar = FontAwesome.Sharp.IconChar.Search;
-            btnbuscarventa.IconColor = Color.Black;
-            btnbuscarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnbuscarventa.IconSize = 15;
-            btnbuscarventa.Location = new Point(217, 52);
-            btnbuscarventa.Margin = new Padding(3, 2, 3, 2);
-            btnbuscarventa.Name = "btnbuscarventa";
-            btnbuscarventa.Size = new Size(56, 21);
-            btnbuscarventa.TabIndex = 29;
-            btnbuscarventa.UseVisualStyleBackColor = true;
-            // 
-            // txtbusqueda
-            // 
-            txtbusqueda.Location = new Point(61, 52);
-            txtbusqueda.Margin = new Padding(3, 2, 3, 2);
-            txtbusqueda.Name = "txtbusqueda";
-            txtbusqueda.Size = new Size(139, 23);
-            txtbusqueda.TabIndex = 28;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = SystemColors.ControlLight;
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(61, 35);
-            label6.Name = "label6";
-            label6.Size = new Size(120, 15);
-            label6.TabIndex = 27;
-            label6.Text = "Numero Documento:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLight;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(61, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(318, 25);
-            label2.TabIndex = 25;
-            label2.Text = "Detalle de las ventas por vendedor";
-            label2.Click += label2_Click;
-            // 
-            // label1
-            // 
-            label1.BackColor = SystemColors.ControlLight;
-            label1.Location = new Point(26, -1);
-            label1.Name = "label1";
-            label1.Size = new Size(716, 451);
-            label1.TabIndex = 24;
             // 
             // Nombre
             // 
@@ -156,15 +86,82 @@
             // DetalleVenta
             // 
             DetalleVenta.HeaderText = "Detalle de Venta";
+            DetalleVenta.MinimumWidth = 6;
             DetalleVenta.Name = "DetalleVenta";
             DetalleVenta.Text = "[Ver más]";
             DetalleVenta.Width = 102;
             // 
+            // btnlimpiar
+            // 
+            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            btnlimpiar.IconColor = Color.Black;
+            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnlimpiar.IconSize = 20;
+            btnlimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnlimpiar.Location = new Point(319, 69);
+            btnlimpiar.Name = "btnlimpiar";
+            btnlimpiar.Size = new Size(91, 28);
+            btnlimpiar.TabIndex = 30;
+            btnlimpiar.Text = "Limpiar";
+            btnlimpiar.TextAlign = ContentAlignment.MiddleRight;
+            btnlimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnbuscarventa
+            // 
+            btnbuscarventa.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btnbuscarventa.IconColor = Color.Black;
+            btnbuscarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnbuscarventa.IconSize = 15;
+            btnbuscarventa.Location = new Point(248, 69);
+            btnbuscarventa.Name = "btnbuscarventa";
+            btnbuscarventa.Size = new Size(64, 28);
+            btnbuscarventa.TabIndex = 29;
+            btnbuscarventa.UseVisualStyleBackColor = true;
+            // 
+            // txtbusqueda
+            // 
+            txtbusqueda.Location = new Point(70, 69);
+            txtbusqueda.Name = "txtbusqueda";
+            txtbusqueda.Size = new Size(158, 27);
+            txtbusqueda.TabIndex = 28;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = SystemColors.ControlLight;
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(70, 47);
+            label6.Name = "label6";
+            label6.Size = new Size(148, 20);
+            label6.TabIndex = 27;
+            label6.Text = "Numero Documento:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.ControlLight;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(70, 12);
+            label2.Name = "label2";
+            label2.Size = new Size(382, 31);
+            label2.TabIndex = 25;
+            label2.Text = "Detalle de las ventas por vendedor";
+            label2.Click += label2_Click;
+            // 
+            // label1
+            // 
+            label1.BackColor = SystemColors.ControlLight;
+            label1.Location = new Point(30, -1);
+            label1.Name = "label1";
+            label1.Size = new Size(818, 601);
+            label1.TabIndex = 24;
+            // 
             // frmListarVentas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(955, 600);
             Controls.Add(dataGridView1);
             Controls.Add(btnlimpiar);
             Controls.Add(btnbuscarventa);
@@ -172,6 +169,7 @@
             Controls.Add(label6);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmListarVentas";
             Text = "frmListarVentas";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

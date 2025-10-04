@@ -204,6 +204,11 @@ namespace CapaPresentacion
         {
             AbrirFormulario(MenuReportes, new FrmReportesEstadisticos());
         }
+
+        private void verMisVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuReportes, new frmVentasporVendedorVendedor());
+        }
     }
 }
 

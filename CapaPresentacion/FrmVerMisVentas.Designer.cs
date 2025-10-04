@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmVentasporVendedorVendedor
+    partial class FrmVerMisVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -43,12 +43,12 @@
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, DNI, Telefono, Correo, DetalleVenta });
-            dataGridView1.Location = new Point(12, 48);
+            dataGridView1.Location = new Point(12, 50);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(698, 332);
-            dataGridView1.TabIndex = 34;
+            dataGridView1.TabIndex = 36;
             // 
             // Nombre
             // 
@@ -92,21 +92,21 @@
             label2.BackColor = SystemColors.ControlLight;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(12, 9);
+            label2.Location = new Point(12, 11);
             label2.Name = "label2";
             label2.Size = new Size(107, 25);
-            label2.TabIndex = 33;
+            label2.TabIndex = 35;
             label2.Text = "Mis Ventas";
             // 
-            // frmVentasporVendedorVendedor
+            // FrmVerMisVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
-            Name = "frmVentasporVendedorVendedor";
-            Text = "frmVentasporVendedorVendedor";
+            Name = "FrmVerMisVentas";
+            Text = "FrmVerMisVentas";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

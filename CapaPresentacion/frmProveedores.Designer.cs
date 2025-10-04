@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtid = new TextBox();
             label9 = new Label();
             label8 = new Label();
@@ -62,9 +62,9 @@
             Telefono = new DataGridViewTextBoxColumn();
             EstadoValor = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
-            textBox1 = new TextBox();
-            label6 = new Label();
             Domicilio = new DataGridViewTextBoxColumn();
+            txtDomicilio = new TextBox();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -343,15 +343,15 @@
             // 
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, RazonSocial, Correo, Telefono, EstadoValor, Estado, Domicilio });
             dgvdata.Location = new Point(198, 89);
@@ -430,12 +430,18 @@
             Estado.ReadOnly = true;
             Estado.Width = 125;
             // 
-            // textBox1
+            // Domicilio
             // 
-            textBox1.Location = new Point(16, 283);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(149, 23);
-            textBox1.TabIndex = 75;
+            Domicilio.HeaderText = "Domicilio";
+            Domicilio.Name = "Domicilio";
+            Domicilio.ReadOnly = true;
+            // 
+            // txtDomicilio
+            // 
+            txtDomicilio.Location = new Point(16, 283);
+            txtDomicilio.Name = "txtDomicilio";
+            txtDomicilio.Size = new Size(149, 23);
+            txtDomicilio.TabIndex = 75;
             // 
             // label6
             // 
@@ -448,19 +454,13 @@
             label6.TabIndex = 74;
             label6.Text = "Domicilio:";
             // 
-            // Domicilio
-            // 
-            Domicilio.HeaderText = "Domicilio";
-            Domicilio.Name = "Domicilio";
-            Domicilio.ReadOnly = true;
-            // 
             // frmProveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1118, 465);
-            Controls.Add(textBox1);
+            Controls.Add(txtDomicilio);
             Controls.Add(label6);
             Controls.Add(dgvdata);
             Controls.Add(txtindice);
@@ -530,7 +530,7 @@
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
-        private TextBox textBox1;
+        private TextBox txtDomicilio;
         private Label label6;
         private DataGridViewTextBoxColumn Domicilio;
     }

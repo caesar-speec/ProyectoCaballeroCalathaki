@@ -11,51 +11,50 @@ namespace CapaDatos
 {
     public class CD_Proveedor
     {
-            public List<Proveedor> Listar()
+        public List<Proveedor> Listar()
+        {
+            List<Proveedor> lista = new List<Proveedor>();
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
-                List<Proveedor> lista = new List<Proveedor>();
-                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                try
                 {
-                    try
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select IdProveedor, Documento, RazonSocial, Correo, Telefono, Estado, Domicilio from PROVEEDOR");
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.CommandType = CommandType.Text;
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        StringBuilder query = new StringBuilder();
-                        query.AppendLine("select IdProveedor, Documento, RazonSocial, Correo, Telefono, Estado from PROVEEDOR");
-                        SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                        cmd.CommandType = CommandType.Text;
-
-
-                        oconexion.Open();
-
-                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        while (dr.Read())
                         {
-                            while (dr.Read())
+                            lista.Add(new Proveedor()
                             {
-                                lista.Add(new Proveedor()
-                                {
-                                    IdProveedor = Convert.ToInt32(dr["IdProveedor"]),
-                                    Documento = dr["Documento"].ToString(),
-                                    RazonSocial = dr["RazonSocial"].ToString(),
-                                    Correo = dr["Correo"].ToString(),
-                                    Telefono = dr["Telefono"].ToString(),
-                                    Estado = Convert.ToBoolean(dr["Estado"]),
-                                });
-                            }
+                                IdProveedor = Convert.ToInt32(dr["IdProveedor"]),
+                                Documento = dr["Documento"].ToString(),
+                                RazonSocial = dr["RazonSocial"].ToString(),
+                                Correo = dr["Correo"].ToString(),
+                                Telefono = dr["Telefono"].ToString(),
+                                Estado = Convert.ToBoolean(dr["Estado"]),
+                                Domicilio = dr["Domicilio"].ToString() // ← agregado
+                            });
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-
-
-                        lista = new List<Proveedor>();
-                    }
                 }
-                return lista;
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    lista = new List<Proveedor>();
+                }
             }
+            return lista;
+        }
 
 
 
-            public int Registrar(Proveedor obj, out string Mensaje)
+
+        public int Registrar(Proveedor obj, out string Mensaje)
             {
                 int idusuariogenerado = 0;
                 Mensaje = string.Empty;

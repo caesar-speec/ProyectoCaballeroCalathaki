@@ -40,7 +40,9 @@
             label6 = new Label();
             label2 = new Label();
             label1 = new Label();
+            dataGridView2 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -48,10 +50,10 @@
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, DNI, Telefono, Correo, DetalleVenta });
-            dataGridView1.Location = new Point(70, 123);
+            dataGridView1.Location = new Point(29, 123);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(778, 443);
+            dataGridView1.Size = new Size(729, 443);
             dataGridView1.TabIndex = 32;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -152,16 +154,27 @@
             // label1
             // 
             label1.BackColor = SystemColors.ControlLight;
-            label1.Location = new Point(30, -1);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(818, 601);
+            label1.Size = new Size(1606, 582);
             label1.TabIndex = 24;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(832, 123);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.Size = new Size(767, 443);
+            dataGridView2.TabIndex = 33;
             // 
             // frmListarVentas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(955, 600);
+            BackColor = Color.LightGreen;
+            ClientSize = new Size(1630, 600);
+            Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Controls.Add(btnlimpiar);
             Controls.Add(btnbuscarventa);
@@ -173,6 +186,7 @@
             Name = "frmListarVentas";
             Text = "frmListarVentas";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -190,5 +204,6 @@
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn Correo;
         private DataGridViewButtonColumn DetalleVenta;
+        private DataGridView dataGridView2;
     }
 }

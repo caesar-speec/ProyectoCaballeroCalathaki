@@ -112,9 +112,9 @@
             label6.ForeColor = Color.Black;
             label6.Location = new Point(447, 28);
             label6.Name = "label6";
-            label6.Size = new Size(148, 20);
+            label6.Size = new Size(105, 20);
             label6.TabIndex = 11;
-            label6.Text = "Numero Documento:";
+            label6.Text = "ID de la Venta:";
             // 
             // groupBox1
             // 

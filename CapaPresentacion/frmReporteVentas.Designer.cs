@@ -37,19 +37,17 @@
             btnbuscarfecha = new FontAwesome.Sharp.IconButton();
             label6 = new Label();
             dataGridView1 = new DataGridView();
-            FechaRegistro = new DataGridViewTextBoxColumn();
+            idVenta = new DataGridViewTextBoxColumn();
+            UsuarioRegistro = new DataGridViewTextBoxColumn();
             TipoDocumento = new DataGridViewTextBoxColumn();
             NumeroDocumento = new DataGridViewTextBoxColumn();
-            MontoTotal = new DataGridViewTextBoxColumn();
-            UsuarioRegistro = new DataGridViewTextBoxColumn();
             DocumentoCliente = new DataGridViewTextBoxColumn();
             NombreCliente = new DataGridViewTextBoxColumn();
-            CodigoProducto = new DataGridViewTextBoxColumn();
-            NombreProducto = new DataGridViewTextBoxColumn();
-            Categoria = new DataGridViewTextBoxColumn();
-            PrecioVenta = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            SubTotal = new DataGridViewTextBoxColumn();
+            MontoPago = new DataGridViewTextBoxColumn();
+            MontoCambio = new DataGridViewTextBoxColumn();
+            MontoTotal = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
+            DetalleVenta = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -137,19 +135,27 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ControlLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { FechaRegistro, TipoDocumento, NumeroDocumento, MontoTotal, UsuarioRegistro, DocumentoCliente, NombreCliente, CodigoProducto, NombreProducto, Categoria, PrecioVenta, Cantidad, SubTotal });
-            dataGridView1.Location = new Point(31, 153);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idVenta, UsuarioRegistro, TipoDocumento, NumeroDocumento, DocumentoCliente, NombreCliente, MontoPago, MontoCambio, MontoTotal, FechaRegistro, DetalleVenta });
+            dataGridView1.Location = new Point(31, 154);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1123, 403);
+            dataGridView1.Size = new Size(1119, 403);
             dataGridView1.TabIndex = 19;
             // 
-            // FechaRegistro
+            // idVenta
             // 
-            FechaRegistro.HeaderText = "Fecha Registro";
-            FechaRegistro.MinimumWidth = 6;
-            FechaRegistro.Name = "FechaRegistro";
-            FechaRegistro.Width = 125;
+            idVenta.HeaderText = "Id Venta";
+            idVenta.MinimumWidth = 6;
+            idVenta.Name = "idVenta";
+            idVenta.Visible = false;
+            idVenta.Width = 125;
+            // 
+            // UsuarioRegistro
+            // 
+            UsuarioRegistro.HeaderText = "Usuario Registro";
+            UsuarioRegistro.MinimumWidth = 6;
+            UsuarioRegistro.Name = "UsuarioRegistro";
+            UsuarioRegistro.Width = 125;
             // 
             // TipoDocumento
             // 
@@ -165,20 +171,6 @@
             NumeroDocumento.Name = "NumeroDocumento";
             NumeroDocumento.Width = 125;
             // 
-            // MontoTotal
-            // 
-            MontoTotal.HeaderText = "Monto Total";
-            MontoTotal.MinimumWidth = 6;
-            MontoTotal.Name = "MontoTotal";
-            MontoTotal.Width = 125;
-            // 
-            // UsuarioRegistro
-            // 
-            UsuarioRegistro.HeaderText = "Usuario Registro";
-            UsuarioRegistro.MinimumWidth = 6;
-            UsuarioRegistro.Name = "UsuarioRegistro";
-            UsuarioRegistro.Width = 125;
-            // 
             // DocumentoCliente
             // 
             DocumentoCliente.HeaderText = "Documento Cliente";
@@ -193,47 +185,42 @@
             NombreCliente.Name = "NombreCliente";
             NombreCliente.Width = 125;
             // 
-            // CodigoProducto
+            // MontoPago
             // 
-            CodigoProducto.HeaderText = "Codigo Producto";
-            CodigoProducto.MinimumWidth = 6;
-            CodigoProducto.Name = "CodigoProducto";
-            CodigoProducto.Width = 125;
+            MontoPago.HeaderText = "MontoPago";
+            MontoPago.MinimumWidth = 6;
+            MontoPago.Name = "MontoPago";
+            MontoPago.Visible = false;
+            MontoPago.Width = 125;
             // 
-            // NombreProducto
+            // MontoCambio
             // 
-            NombreProducto.HeaderText = "Nombre Producto";
-            NombreProducto.MinimumWidth = 6;
-            NombreProducto.Name = "NombreProducto";
-            NombreProducto.Width = 125;
+            MontoCambio.HeaderText = "MontoCambio";
+            MontoCambio.MinimumWidth = 6;
+            MontoCambio.Name = "MontoCambio";
+            MontoCambio.Visible = false;
+            MontoCambio.Width = 125;
             // 
-            // Categoria
+            // MontoTotal
             // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.MinimumWidth = 6;
-            Categoria.Name = "Categoria";
-            Categoria.Width = 125;
+            MontoTotal.HeaderText = "Monto Total";
+            MontoTotal.MinimumWidth = 6;
+            MontoTotal.Name = "MontoTotal";
+            MontoTotal.Width = 125;
             // 
-            // PrecioVenta
+            // FechaRegistro
             // 
-            PrecioVenta.HeaderText = "Precio Venta";
-            PrecioVenta.MinimumWidth = 6;
-            PrecioVenta.Name = "PrecioVenta";
-            PrecioVenta.Width = 125;
+            FechaRegistro.HeaderText = "Fecha Registro";
+            FechaRegistro.MinimumWidth = 6;
+            FechaRegistro.Name = "FechaRegistro";
+            FechaRegistro.Width = 125;
             // 
-            // Cantidad
+            // DetalleVenta
             // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 125;
-            // 
-            // SubTotal
-            // 
-            SubTotal.HeaderText = "Sub-Total";
-            SubTotal.MinimumWidth = 6;
-            SubTotal.Name = "SubTotal";
-            SubTotal.Width = 125;
+            DetalleVenta.HeaderText = "Ver Detalle";
+            DetalleVenta.MinimumWidth = 6;
+            DetalleVenta.Name = "DetalleVenta";
+            DetalleVenta.Width = 125;
             // 
             // frmReporteVentas
             // 
@@ -268,18 +255,16 @@
         private FontAwesome.Sharp.IconButton btnbuscarfecha;
         private Label label6;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewTextBoxColumn idVenta;
+        private DataGridViewTextBoxColumn UsuarioRegistro;
         private DataGridViewTextBoxColumn TipoDocumento;
         private DataGridViewTextBoxColumn NumeroDocumento;
-        private DataGridViewTextBoxColumn MontoTotal;
-        private DataGridViewTextBoxColumn UsuarioRegistro;
         private DataGridViewTextBoxColumn DocumentoCliente;
         private DataGridViewTextBoxColumn NombreCliente;
-        private DataGridViewTextBoxColumn CodigoProducto;
-        private DataGridViewTextBoxColumn NombreProducto;
-        private DataGridViewTextBoxColumn Categoria;
-        private DataGridViewTextBoxColumn PrecioVenta;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn SubTotal;
+        private DataGridViewTextBoxColumn MontoPago;
+        private DataGridViewTextBoxColumn MontoCambio;
+        private DataGridViewTextBoxColumn MontoTotal;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewButtonColumn DetalleVenta;
     }
 }

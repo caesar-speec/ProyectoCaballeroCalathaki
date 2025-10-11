@@ -119,8 +119,8 @@
             // ReporteEstadistico
             // 
             ReporteEstadistico.Name = "ReporteEstadistico";
-            ReporteEstadistico.Size = new Size(171, 22);
-            ReporteEstadistico.Text = "Reporte Etadistico";
+            ReporteEstadistico.Size = new Size(180, 22);
+            ReporteEstadistico.Text = "Reporte Estadistico";
             ReporteEstadistico.Click += ReporteEstadistico_Click;
             // 
             // MenuVentas

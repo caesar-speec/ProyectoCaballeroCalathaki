@@ -42,7 +42,7 @@
             MenuClientes = new FontAwesome.Sharp.IconMenuItem();
             menucompras = new FontAwesome.Sharp.IconMenuItem();
             registrarCompraToolStripMenuItem = new ToolStripMenuItem();
-            verDetalleToolStripMenuItem = new ToolStripMenuItem();
+            verMisComprasToolStripMenuItem = new ToolStripMenuItem();
             MenuProductos = new FontAwesome.Sharp.IconMenuItem();
             productosToolStripMenuItem = new ToolStripMenuItem();
             agregarCategoriaToolStripMenuItem = new ToolStripMenuItem();
@@ -54,7 +54,7 @@
             label2 = new Label();
             lblusuario = new Label();
             MenuTitulo = new MenuStrip();
-            verMisComprasToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
             Menu2.SuspendLayout();
             Contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -142,21 +142,21 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(180, 22);
+            submenuregistrarventa.Size = new Size(149, 22);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click_1;
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(180, 22);
+            submenuverdetalleventa.Size = new Size(149, 22);
             submenuverdetalleventa.Text = "Ver Detalle";
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
             // verMisVentasToolStripMenuItem
             // 
             verMisVentasToolStripMenuItem.Name = "verMisVentasToolStripMenuItem";
-            verMisVentasToolStripMenuItem.Size = new Size(180, 22);
+            verMisVentasToolStripMenuItem.Size = new Size(149, 22);
             verMisVentasToolStripMenuItem.Text = "Ver mis ventas";
             verMisVentasToolStripMenuItem.Click += verMisVentasToolStripMenuItem_Click;
             // 
@@ -193,7 +193,7 @@
             // menucompras
             // 
             menucompras.AutoSize = false;
-            menucompras.DropDownItems.AddRange(new ToolStripItem[] { registrarCompraToolStripMenuItem, verDetalleToolStripMenuItem, verMisComprasToolStripMenuItem });
+            menucompras.DropDownItems.AddRange(new ToolStripItem[] { registrarCompraToolStripMenuItem, verMisComprasToolStripMenuItem, toolStripMenuItem1 });
             menucompras.ForeColor = SystemColors.ButtonHighlight;
             menucompras.IconChar = FontAwesome.Sharp.IconChar.DollyBox;
             menucompras.IconColor = Color.WhiteSmoke;
@@ -213,12 +213,12 @@
             registrarCompraToolStripMenuItem.Text = "Registrar Compra";
             registrarCompraToolStripMenuItem.Click += registrarCompraToolStripMenuItem_Click;
             // 
-            // verDetalleToolStripMenuItem
+            // verMisComprasToolStripMenuItem
             // 
-            verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
-            verDetalleToolStripMenuItem.Size = new Size(180, 22);
-            verDetalleToolStripMenuItem.Text = "Ver Detalle";
-            verDetalleToolStripMenuItem.Click += verDetalleToolStripMenuItem_Click;
+            verMisComprasToolStripMenuItem.Name = "verMisComprasToolStripMenuItem";
+            verMisComprasToolStripMenuItem.Size = new Size(180, 22);
+            verMisComprasToolStripMenuItem.Text = "Ver mis compras";
+            verMisComprasToolStripMenuItem.Click += verMisComprasToolStripMenuItem_Click;
             // 
             // MenuProductos
             // 
@@ -345,12 +345,13 @@
             MenuTitulo.Text = "menuStrip2";
             MenuTitulo.ItemClicked += MenuTitulo_ItemClicked;
             // 
-            // verMisComprasToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            verMisComprasToolStripMenuItem.Name = "verMisComprasToolStripMenuItem";
-            verMisComprasToolStripMenuItem.Size = new Size(180, 22);
-            verMisComprasToolStripMenuItem.Text = "Ver mis compras";
-            verMisComprasToolStripMenuItem.Click += verMisComprasToolStripMenuItem_Click;
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(180, 22);
+            toolStripMenuItem1.Text = "Compras";
+            toolStripMenuItem1.Visible = false;
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // Inicio
             // 
@@ -395,7 +396,6 @@
         private ToolStripMenuItem ReportesCompras;
         private FontAwesome.Sharp.IconMenuItem menucompras;
         private ToolStripMenuItem registrarCompraToolStripMenuItem;
-        private ToolStripMenuItem verDetalleToolStripMenuItem;
         private MenuStrip MenuTitulo;
         private PictureBox pictureBox1;
         private Label label2;
@@ -406,5 +406,6 @@
         private ToolStripMenuItem ReporteEstadistico;
         private ToolStripMenuItem verMisVentasToolStripMenuItem;
         private ToolStripMenuItem verMisComprasToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

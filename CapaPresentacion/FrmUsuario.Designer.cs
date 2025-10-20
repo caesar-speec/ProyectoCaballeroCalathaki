@@ -49,16 +49,6 @@
             btnEliminar = new FontAwesome.Sharp.IconButton();
             label8 = new Label();
             dgvdata = new DataGridView();
-            label9 = new Label();
-            txtid = new TextBox();
-            txtindice = new TextBox();
-            label10 = new Label();
-            cbobusqueda = new ComboBox();
-            txtbusqueda = new TextBox();
-            btnlimpiar = new FontAwesome.Sharp.IconButton();
-            btnbuscar = new FontAwesome.Sharp.IconButton();
-            label11 = new Label();
-            btnbackup = new Button();
             btnseleccionar = new DataGridViewButtonColumn();
             IdUsuario = new DataGridViewTextBoxColumn();
             Documento = new DataGridViewTextBoxColumn();
@@ -69,6 +59,16 @@
             Rol = new DataGridViewTextBoxColumn();
             EstadoValor = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
+            label9 = new Label();
+            txtid = new TextBox();
+            txtindice = new TextBox();
+            label10 = new Label();
+            cbobusqueda = new ComboBox();
+            txtbusqueda = new TextBox();
+            btnlimpiar = new FontAwesome.Sharp.IconButton();
+            btnbuscar = new FontAwesome.Sharp.IconButton();
+            label11 = new Label();
+            btnbackup = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -209,7 +209,6 @@
             cboestado.Name = "cboestado";
             cboestado.Size = new Size(170, 28);
             cboestado.TabIndex = 15;
-            cboestado.Visible = false;
             cboestado.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label7
@@ -222,7 +221,6 @@
             label7.Size = new Size(57, 20);
             label7.TabIndex = 14;
             label7.Text = "Estado:";
-            label7.Visible = false;
             // 
             // btnGuardar
             // 
@@ -325,6 +323,90 @@
             dgvdata.TabIndex = 20;
             dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
+            // 
+            // btnseleccionar
+            // 
+            btnseleccionar.HeaderText = "";
+            btnseleccionar.MinimumWidth = 6;
+            btnseleccionar.Name = "btnseleccionar";
+            btnseleccionar.ReadOnly = true;
+            btnseleccionar.Width = 30;
+            // 
+            // IdUsuario
+            // 
+            IdUsuario.HeaderText = "IdUsuario";
+            IdUsuario.MinimumWidth = 6;
+            IdUsuario.Name = "IdUsuario";
+            IdUsuario.ReadOnly = true;
+            IdUsuario.Visible = false;
+            IdUsuario.Width = 125;
+            // 
+            // Documento
+            // 
+            Documento.HeaderText = "Nro Documento";
+            Documento.MinimumWidth = 6;
+            Documento.Name = "Documento";
+            Documento.ReadOnly = true;
+            Documento.Width = 150;
+            // 
+            // NombreCompleto
+            // 
+            NombreCompleto.HeaderText = "Nombre Completo";
+            NombreCompleto.MinimumWidth = 6;
+            NombreCompleto.Name = "NombreCompleto";
+            NombreCompleto.ReadOnly = true;
+            NombreCompleto.Width = 180;
+            // 
+            // Correo
+            // 
+            Correo.HeaderText = "Correo";
+            Correo.MinimumWidth = 6;
+            Correo.Name = "Correo";
+            Correo.ReadOnly = true;
+            Correo.Width = 125;
+            // 
+            // Clave
+            // 
+            Clave.HeaderText = "Clave";
+            Clave.MinimumWidth = 6;
+            Clave.Name = "Clave";
+            Clave.ReadOnly = true;
+            Clave.Visible = false;
+            Clave.Width = 125;
+            // 
+            // IdRol
+            // 
+            IdRol.HeaderText = "IdRol";
+            IdRol.MinimumWidth = 6;
+            IdRol.Name = "IdRol";
+            IdRol.ReadOnly = true;
+            IdRol.Visible = false;
+            IdRol.Width = 125;
+            // 
+            // Rol
+            // 
+            Rol.HeaderText = "Rol";
+            Rol.MinimumWidth = 6;
+            Rol.Name = "Rol";
+            Rol.ReadOnly = true;
+            Rol.Width = 125;
+            // 
+            // EstadoValor
+            // 
+            EstadoValor.HeaderText = "EstadoValor";
+            EstadoValor.MinimumWidth = 6;
+            EstadoValor.Name = "EstadoValor";
+            EstadoValor.ReadOnly = true;
+            EstadoValor.Visible = false;
+            EstadoValor.Width = 125;
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 6;
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            Estado.Width = 125;
             // 
             // label9
             // 
@@ -443,91 +525,6 @@
             btnbackup.Text = "BACKUP DE DATOS";
             btnbackup.UseVisualStyleBackColor = true;
             // 
-            // btnseleccionar
-            // 
-            btnseleccionar.HeaderText = "";
-            btnseleccionar.MinimumWidth = 6;
-            btnseleccionar.Name = "btnseleccionar";
-            btnseleccionar.ReadOnly = true;
-            btnseleccionar.Width = 30;
-            // 
-            // IdUsuario
-            // 
-            IdUsuario.HeaderText = "IdUsuario";
-            IdUsuario.MinimumWidth = 6;
-            IdUsuario.Name = "IdUsuario";
-            IdUsuario.ReadOnly = true;
-            IdUsuario.Visible = false;
-            IdUsuario.Width = 125;
-            // 
-            // Documento
-            // 
-            Documento.HeaderText = "Nro Documento";
-            Documento.MinimumWidth = 6;
-            Documento.Name = "Documento";
-            Documento.ReadOnly = true;
-            Documento.Width = 150;
-            // 
-            // NombreCompleto
-            // 
-            NombreCompleto.HeaderText = "Nombre Completo";
-            NombreCompleto.MinimumWidth = 6;
-            NombreCompleto.Name = "NombreCompleto";
-            NombreCompleto.ReadOnly = true;
-            NombreCompleto.Width = 180;
-            // 
-            // Correo
-            // 
-            Correo.HeaderText = "Correo";
-            Correo.MinimumWidth = 6;
-            Correo.Name = "Correo";
-            Correo.ReadOnly = true;
-            Correo.Width = 125;
-            // 
-            // Clave
-            // 
-            Clave.HeaderText = "Clave";
-            Clave.MinimumWidth = 6;
-            Clave.Name = "Clave";
-            Clave.ReadOnly = true;
-            Clave.Visible = false;
-            Clave.Width = 125;
-            // 
-            // IdRol
-            // 
-            IdRol.HeaderText = "IdRol";
-            IdRol.MinimumWidth = 6;
-            IdRol.Name = "IdRol";
-            IdRol.ReadOnly = true;
-            IdRol.Visible = false;
-            IdRol.Width = 125;
-            // 
-            // Rol
-            // 
-            Rol.HeaderText = "Rol";
-            Rol.MinimumWidth = 6;
-            Rol.Name = "Rol";
-            Rol.ReadOnly = true;
-            Rol.Width = 125;
-            // 
-            // EstadoValor
-            // 
-            EstadoValor.HeaderText = "EstadoValor";
-            EstadoValor.MinimumWidth = 6;
-            EstadoValor.Name = "EstadoValor";
-            EstadoValor.ReadOnly = true;
-            EstadoValor.Visible = false;
-            EstadoValor.Width = 125;
-            // 
-            // Estado
-            // 
-            Estado.HeaderText = "Estado";
-            Estado.MinimumWidth = 6;
-            Estado.Name = "Estado";
-            Estado.ReadOnly = true;
-            Estado.Visible = false;
-            Estado.Width = 125;
-            // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -598,14 +595,6 @@
         private DataGridView dgvdata;
         private Label label9;
         private TextBox txtid;
-        private TextBox txtindice;
-        private Label label10;
-        private ComboBox cbobusqueda;
-        private TextBox txtbusqueda;
-        private FontAwesome.Sharp.IconButton btnlimpiar;
-        private FontAwesome.Sharp.IconButton btnbuscar;
-        private Label label11;
-        private Button btnbackup;
         private DataGridViewButtonColumn btnseleccionar;
         private DataGridViewTextBoxColumn IdUsuario;
         private DataGridViewTextBoxColumn Documento;
@@ -616,5 +605,13 @@
         private DataGridViewTextBoxColumn Rol;
         private DataGridViewTextBoxColumn EstadoValor;
         private DataGridViewTextBoxColumn Estado;
+        private TextBox txtindice;
+        private Label label10;
+        private ComboBox cbobusqueda;
+        private TextBox txtbusqueda;
+        private FontAwesome.Sharp.IconButton btnlimpiar;
+        private FontAwesome.Sharp.IconButton btnbuscar;
+        private Label label11;
+        private Button btnbackup;
     }
 }

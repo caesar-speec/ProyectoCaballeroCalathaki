@@ -33,44 +33,43 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            // Llamar al método de validaciones antes de continuar
-            if (!validacionesCampos())
-            {
-                return;
-            }
+            // Mensaje de confirmación
             MessageBox.Show("Datos guardados correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-
-
             string mensaje = string.Empty;
+
             Cliente obj = new Cliente()
             {
                 IdCliente = Convert.ToInt32(txtid.Text),
-                Documento = txtcorreo.Text,
+                Documento = txtdocumento.Text,
                 NombreCompleto = txtnombrecompleto.Text,
                 Correo = txtcorreo.Text,
                 Telefono = txttelefono.Text,
-                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
+                Estado = true // Siempre activo por defecto
             };
+
             if (obj.IdCliente == 0)
             {
                 int idgenerado = new CN_Cliente().Registrar(obj, out mensaje);
                 if (idgenerado != 0)
                 {
-
-                    dgvdata.Rows.Add(new object[] {"",idgenerado,txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txttelefono.Text,
-            ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-            ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
+                    dgvdata.Rows.Add(new object[] {
+                "",
+                idgenerado,
+                txtdocumento.Text,
+                txtnombrecompleto.Text,
+                txtcorreo.Text,
+                txttelefono.Text,
+                1,              // EstadoValor = 1 (activo)
+                "Activo"        // Estado texto fijo
             });
+
                     Clear();
                 }
                 else
                 {
                     MessageBox.Show(mensaje);
                 }
-
             }
             else
             {
@@ -83,20 +82,18 @@ namespace CapaPresentacion
                     row.Cells["NombreCompleto"].Value = txtnombrecompleto.Text;
                     row.Cells["Correo"].Value = txtcorreo.Text;
                     row.Cells["Telefono"].Value = txttelefono.Text;
-                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
-                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
+                    row.Cells["EstadoValor"].Value = 1;       // Activo
+                    row.Cells["Estado"].Value = "Activo";     // Texto
 
                     Clear();
-
                 }
                 else
                 {
                     MessageBox.Show(mensaje);
                 }
             }
-
-
         }
+
 
 
         private bool validacionesCampos()
@@ -130,14 +127,6 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("El teléfono debe contener solo números y no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txttelefono.Focus();
-                return false;
-            }
-
-
-            if (cboestado.SelectedIndex == -1)
-            {
-                MessageBox.Show("Por favor, selecciona un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboestado.Focus();
                 return false;
             }
 

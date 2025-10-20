@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacion.Modales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,10 +36,19 @@ namespace CapaPresentacion
         private void btnbuscarcliente_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtdocumentocliente.Text) || !txtdocumentocliente.Text.All(char.IsDigit))
+            using (var modal = new mdCliente())
             {
-                MessageBox.Show("El campo Documento Cliente es obligatorio y solo debe contener números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                var result = modal.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    txtidcliente.Text = modal._Cliente.IdCliente.ToString();
+                    txtdocumentocliente.Text = modal._Cliente.Documento;
+                    txtnombrecliente.Text = modal._Cliente.NombreCompleto;
+                }
+                else
+                {
+                    txtdocumentocliente.Select();
+                }
             }
         }
 
@@ -48,13 +58,12 @@ namespace CapaPresentacion
             listarProductos.ShowDialog();
 
         }
+
+        private void btnregistrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-
-
-
-
-
-
 
 
 

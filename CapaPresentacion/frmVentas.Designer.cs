@@ -30,7 +30,7 @@
         {
             label1 = new Label();
             groupBox2 = new GroupBox();
-            txtidproveedor = new TextBox();
+            txtidcliente = new TextBox();
             btnbuscarcliente = new FontAwesome.Sharp.IconButton();
             txtnombrecliente = new TextBox();
             txtdocumentocliente = new TextBox();
@@ -90,7 +90,7 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ControlLight;
-            groupBox2.Controls.Add(txtidproveedor);
+            groupBox2.Controls.Add(txtidcliente);
             groupBox2.Controls.Add(btnbuscarcliente);
             groupBox2.Controls.Add(txtnombrecliente);
             groupBox2.Controls.Add(txtdocumentocliente);
@@ -103,13 +103,13 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Informacion Cliente";
             // 
-            // txtidproveedor
+            // txtidcliente
             // 
-            txtidproveedor.Location = new Point(389, 17);
-            txtidproveedor.Name = "txtidproveedor";
-            txtidproveedor.Size = new Size(34, 27);
-            txtidproveedor.TabIndex = 4;
-            txtidproveedor.Visible = false;
+            txtidcliente.Location = new Point(389, 17);
+            txtidcliente.Name = "txtidcliente";
+            txtidcliente.Size = new Size(34, 27);
+            txtidcliente.TabIndex = 4;
+            txtidcliente.Visible = false;
             // 
             // btnbuscarcliente
             // 
@@ -494,6 +494,7 @@
             btnregistrar.TextAlign = ContentAlignment.MiddleRight;
             btnregistrar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnregistrar.UseVisualStyleBackColor = true;
+            btnregistrar.Click += btnregistrar_Click;
             // 
             // frmVentas
             // 
@@ -534,7 +535,7 @@
 
         private Label label1;
         private GroupBox groupBox2;
-        private TextBox txtidproveedor;
+        private TextBox txtidcliente;
         private FontAwesome.Sharp.IconButton btnbuscarcliente;
         private TextBox txtnombrecliente;
         private TextBox txtdocumentocliente;

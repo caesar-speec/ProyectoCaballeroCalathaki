@@ -93,7 +93,7 @@
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = SystemColors.ActiveCaptionText;
             dataGridViewCellStyle1.Padding = new Padding(2);
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -472,6 +472,7 @@
             Controls.Add(txtdocumento);
             Controls.Add(DNI);
             Controls.Add(label1);
+            ForeColor = Color.Black;
             Name = "frmClientes";
             Text = "frmClientes";
             Load += frmClientes_Load;

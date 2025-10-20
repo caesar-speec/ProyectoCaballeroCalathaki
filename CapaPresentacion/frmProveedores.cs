@@ -30,8 +30,8 @@ namespace CapaPresentacion
                 RazonSocial = txtrazonsocial.Text,
                 Correo = txtcorreo.Text,
                 Telefono = txttelefono.Text,
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false,
                 Domicilio = txtDomicilio.Text, // <-- agregado
-                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
 
             if (obj.IdProveedor == 0)
@@ -40,16 +40,16 @@ namespace CapaPresentacion
                 if (idgenerado != 0)
                 {
                     dgvdata.Rows.Add(new object[] {
-                "",
-                idgenerado,
-                txtdocumento.Text,
-                txtrazonsocial.Text,
-                txtcorreo.Text,
-                txttelefono.Text,
-                txtDomicilio.Text, // <-- agregado
-                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
-            });
+                    "",
+                    idgenerado,
+                    txtdocumento.Text,
+                    txtrazonsocial.Text,
+                    txtcorreo.Text,
+                    txttelefono.Text,
+                    ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+                    ((OpcionCombo)cboestado.SelectedItem).Texto.ToString(),
+                    txtDomicilio.Text // <-- domicilio va al final, igual que en frmProveedores_Load
+                        });
                     Clear();
                 }
                 else
@@ -67,10 +67,10 @@ namespace CapaPresentacion
                     row.Cells["Documento"].Value = txtdocumento.Text;
                     row.Cells["RazonSocial"].Value = txtrazonsocial.Text;
                     row.Cells["Correo"].Value = txtcorreo.Text;
-                    row.Cells["Telefono"].Value = txttelefono.Text;
-                    row.Cells["Domicilio"].Value = txtDomicilio.Text; // <-- agregado
+                    row.Cells["Telefono"].Value = txttelefono.Text;                    
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
+                    row.Cells["Domicilio"].Value = txtDomicilio.Text; // <-- agregado
 
                     Clear();
                 }
@@ -83,7 +83,7 @@ namespace CapaPresentacion
 
 
 
-        }
+        
         private void Clear()
         {
             txtindice.Text = "-1";
@@ -171,7 +171,8 @@ namespace CapaPresentacion
             {
                 dgvdata.Rows.Add(new object[] {"",item.IdProveedor,item.Documento, item.RazonSocial, item.Correo, item.Telefono,
                  item.Estado == true ? 1 : 0,
-                 item.Estado == true ? "Activo" : "Inactivo"
+                 item.Estado == true ? "Activo" : "Inactivo",
+                 item.Domicilio
              });
             }
 

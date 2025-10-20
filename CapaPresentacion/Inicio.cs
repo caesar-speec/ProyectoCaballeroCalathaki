@@ -219,11 +219,6 @@ namespace CapaPresentacion
         {
 
         }
-
-        private void listarClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(MenuReportes, new FrmListarClientes());
-        }
     }
 }
 

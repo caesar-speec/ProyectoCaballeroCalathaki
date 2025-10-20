@@ -67,11 +67,6 @@ namespace CapaPresentacion
         {
 
         }
-
-        private void btnagregarproducto_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 

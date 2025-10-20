@@ -88,17 +88,18 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             // Llamar al método de validaciones antes de continuar
             if (!Validaciones())
             {
-                return;
+                return; 
             }
-
             MessageBox.Show("Datos guardados correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            string mensaje = string.Empty;
 
-            // 🔹 Crear el objeto usuario, forzando el Estado = true
+
+
+            string mensaje = string.Empty;
             Usuario objusuario = new Usuario()
             {
                 IdUsuario = Convert.ToInt32(txtid.Text),
@@ -107,25 +108,19 @@ namespace CapaPresentacion
                 Correo = txtcorreo.Text,
                 Clave = txtclave.Text,
                 oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) },
-                Estado = true // 🔹 Siempre activo, sin importar el cboestado
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
-
             if (objusuario.IdUsuario == 0)
             {
                 int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
                 if (idusuariogenerado != 0)
                 {
-                    dgvdata.Rows.Add(new object[] {
-                "",
-                idusuariogenerado,
-                txtdocumento.Text,
-                txtnombrecompleto.Text,
-                txtcorreo.Text,
-                txtclave.Text,
-                ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
-                1,              // 🔹 EstadoValor = 1 (Activo)
-                "Activo"        // 🔹 Estado = "Activo"
+
+                    dgvdata.Rows.Add(new object[] {"",idusuariogenerado,txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
+            ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
+            ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
+            ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
+            ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
             });
                     Clear();
                 }
@@ -133,6 +128,7 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show(mensaje);
                 }
+
             }
             else
             {
@@ -147,20 +143,20 @@ namespace CapaPresentacion
                     row.Cells["Clave"].Value = txtclave.Text;
                     row.Cells["IdRol"].Value = ((OpcionCombo)cborol.SelectedItem).Valor.ToString();
                     row.Cells["Rol"].Value = ((OpcionCombo)cborol.SelectedItem).Texto.ToString();
-
-                    // 🔹 Siempre activo sin importar el combo
-                    row.Cells["EstadoValor"].Value = 1;
-                    row.Cells["Estado"].Value = "Activo";
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).Texto.ToString();
 
                     Clear();
+
                 }
                 else
                 {
                     MessageBox.Show(mensaje);
                 }
             }
-        }
 
+
+        }
 
         private void Clear()
         {
@@ -222,6 +218,8 @@ namespace CapaPresentacion
                     txtcorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                     txtclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
                     txtclave2.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+
+                    // Seleccionar el rol correspondiente
                     foreach (OpcionCombo oc in cborol.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
@@ -231,19 +229,10 @@ namespace CapaPresentacion
                             break;
                         }
                     }
-                    foreach (OpcionCombo oc in cboestado.Items)
-                    {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
-                        {
-                            int indice_combo = cboestado.Items.IndexOf(oc);
-                            cboestado.SelectedIndex = indice_combo;
-                            break;
-                        }
-                    }
+                    cboestado.SelectedIndex = 0;
                 }
             }
         }
-
 
 
 

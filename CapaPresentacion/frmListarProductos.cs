@@ -22,34 +22,27 @@ namespace CapaPresentacion
 
         private void frmListarProductos_Load(object sender, EventArgs e)
         {
-            // Obtener todos los productos
+            //Mostrar usuarios
             List<Producto> listaProducto = new CN_Producto().Listar();
-
-            // 🔹 Filtrar solo los productos activos y con stock disponible
-            var productosFiltrados = listaProducto
-                .Where(p => p.Estado == true && p.Stock > 0)
-                .ToList();
-
-            // 🔹 Mostrar productos filtrados en el DataGridView
-            foreach (Producto item in productosFiltrados)
+            foreach (Producto item in listaProducto)
             {
                 dgvdata.Rows.Add(new object[] {
-            "",
-            item.IdProducto,
-            item.Codigo,
-            item.Nombre,
-            item.Descripcion,
-            item.oCategoria.IdCategoria,
-            item.oCategoria.Descripcion,
-            item.Stock,
-            item.PrecioCompra,
-            item.PrecioVenta,
-            item.Estado == true ? 1 : 0,
-            item.Estado == true ? "Activo" : "Inactivo"
-        });
+                 "",
+                 item.IdProducto,
+                 item.Codigo,
+                 item.Nombre,
+
+                 item.Descripcion,
+                 item.oCategoria.IdCategoria,
+                 item.oCategoria.Descripcion,
+                 item.Stock,
+                 item.PrecioCompra,
+                 item.PrecioVenta,
+                 item.Estado == true ? 1 : 0,
+                 item.Estado == true ? "Activo" : "Inactivo"
+             });
             }
 
-            // 🔹 Cargar opciones de búsqueda
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
                 if (columna.Visible == true && columna.Name != "btnseleccionar")
@@ -57,12 +50,10 @@ namespace CapaPresentacion
                     cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
                 }
             }
-
             cbobusqueda.DisplayMember = "Texto";
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
         }
-
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

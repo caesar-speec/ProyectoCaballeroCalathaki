@@ -297,5 +297,10 @@ namespace CapaPresentacion
                 row.Visible = true;
             }
         }
+
+        private void cboestado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

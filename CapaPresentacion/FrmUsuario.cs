@@ -218,6 +218,8 @@ namespace CapaPresentacion
                     txtcorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
                     txtclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
                     txtclave2.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+
+                    // Seleccionar el rol correspondiente
                     foreach (OpcionCombo oc in cborol.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
@@ -227,15 +229,7 @@ namespace CapaPresentacion
                             break;
                         }
                     }
-                    foreach (OpcionCombo oc in cboestado.Items)
-                    {
-                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
-                        {
-                            int indice_combo = cboestado.Items.IndexOf(oc);
-                            cboestado.SelectedIndex = indice_combo;
-                            break;
-                        }
-                    }
+                    cboestado.SelectedIndex = 0;
                 }
             }
         }

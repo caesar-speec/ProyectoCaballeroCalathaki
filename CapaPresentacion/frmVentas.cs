@@ -36,7 +36,7 @@ namespace CapaPresentacion
 
         private void frmVentas_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void btnbuscarcliente_Click(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace CapaPresentacion
 
             foreach (DataGridViewRow fila in dgvdata.Rows)
             {
-                if (fila.Cells["IdProducto"].Value.ToString() == txtidproducto.Text)
+                if (fila.Cells["idProducto"].Value.ToString() == txtidproducto.Text)
                 {
                     producto_existe = true;
                     break;

@@ -128,6 +128,7 @@
             // 
             txtnombrecliente.Location = new Point(239, 51);
             txtnombrecliente.Name = "txtnombrecliente";
+            txtnombrecliente.ReadOnly = true;
             txtnombrecliente.Size = new Size(183, 27);
             txtnombrecliente.TabIndex = 3;
             // 
@@ -186,6 +187,7 @@
             // 
             txtfecha.Location = new Point(7, 49);
             txtfecha.Name = "txtfecha";
+            txtfecha.ReadOnly = true;
             txtfecha.Size = new Size(158, 27);
             txtfecha.TabIndex = 2;
             // 
@@ -251,7 +253,6 @@
             txtidproducto.Name = "txtidproducto";
             txtidproducto.Size = new Size(34, 27);
             txtidproducto.TabIndex = 10;
-            txtidproducto.Visible = false;
             // 
             // txtcantidad
             // 
@@ -297,6 +298,7 @@
             // 
             txtstock.Location = new Point(639, 49);
             txtstock.Name = "txtstock";
+            txtstock.ReadOnly = true;
             txtstock.Size = new Size(116, 27);
             txtstock.TabIndex = 5;
             // 
@@ -304,6 +306,7 @@
             // 
             txtprecio.Location = new Point(501, 49);
             txtprecio.Name = "txtprecio";
+            txtprecio.ReadOnly = true;
             txtprecio.Size = new Size(122, 27);
             txtprecio.TabIndex = 4;
             // 
@@ -324,6 +327,7 @@
             // 
             txtproducto.Location = new Point(293, 48);
             txtproducto.Name = "txtproducto";
+            txtproducto.ReadOnly = true;
             txtproducto.Size = new Size(183, 27);
             txtproducto.TabIndex = 3;
             // 
@@ -456,7 +460,7 @@
             // 
             // idProducto
             // 
-            idProducto.HeaderText = "idProducto";
+            idProducto.HeaderText = "IdProducto";
             idProducto.MinimumWidth = 6;
             idProducto.Name = "idProducto";
             idProducto.Visible = false;

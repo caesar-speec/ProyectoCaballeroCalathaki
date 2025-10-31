@@ -37,7 +37,6 @@
             label10 = new Label();
             label9 = new Label();
             dgvdata = new DataGridView();
-            btnseleccionar = new DataGridViewButtonColumn();
             Documento = new DataGridViewTextBoxColumn();
             NombreCompleto = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
@@ -143,7 +142,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Documento, NombreCompleto });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { Documento, NombreCompleto });
             dgvdata.Location = new Point(12, 104);
             dgvdata.Margin = new Padding(3, 4, 3, 4);
             dgvdata.MultiSelect = false;
@@ -153,14 +152,6 @@
             dgvdata.Size = new Size(788, 431);
             dgvdata.TabIndex = 71;
             dgvdata.CellDoubleClick += dgvdata_CellDoubleClick;
-            // 
-            // btnseleccionar
-            // 
-            btnseleccionar.HeaderText = "";
-            btnseleccionar.MinimumWidth = 6;
-            btnseleccionar.Name = "btnseleccionar";
-            btnseleccionar.ReadOnly = true;
-            btnseleccionar.Width = 30;
             // 
             // Documento
             // 
@@ -212,7 +203,6 @@
         private Label label10;
         private Label label9;
         private DataGridView dgvdata;
-        private DataGridViewButtonColumn btnseleccionar;
         private DataGridViewTextBoxColumn Documento;
         private DataGridViewTextBoxColumn NombreCompleto;
     }

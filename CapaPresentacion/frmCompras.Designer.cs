@@ -476,7 +476,7 @@
             AutoSize = true;
             BackColor = Color.DarkSeaGreen;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1262, 673);
+            ClientSize = new Size(1135, 673);
             Controls.Add(btnregistrar);
             Controls.Add(label12);
             Controls.Add(txttotalpagar);

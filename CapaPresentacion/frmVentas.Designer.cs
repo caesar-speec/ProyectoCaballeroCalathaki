@@ -57,12 +57,6 @@
             label8 = new Label();
             btnagregarproducto = new FontAwesome.Sharp.IconButton();
             dataGridView1 = new DataGridView();
-            idProducto = new DataGridViewTextBoxColumn();
-            Producto = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            SubTotal = new DataGridViewTextBoxColumn();
-            btneliminar = new DataGridViewButtonColumn();
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
@@ -70,6 +64,12 @@
             txtpagacon = new TextBox();
             txtcambio = new TextBox();
             btnregistrar = new FontAwesome.Sharp.IconButton();
+            idProducto = new DataGridViewTextBoxColumn();
+            Producto = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
+            SubTotal = new DataGridViewTextBoxColumn();
+            btneliminar = new DataGridViewButtonColumn();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -369,6 +369,7 @@
             btnagregarproducto.Text = "Agregar";
             btnagregarproducto.TextImageRelation = TextImageRelation.ImageAboveText;
             btnagregarproducto.UseVisualStyleBackColor = true;
+            btnagregarproducto.Click += btnagregarproducto_Click;
             // 
             // dataGridView1
             // 
@@ -380,49 +381,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(883, 287);
             dataGridView1.TabIndex = 9;
-            // 
-            // idProducto
-            // 
-            idProducto.HeaderText = "idProducto";
-            idProducto.MinimumWidth = 6;
-            idProducto.Name = "idProducto";
-            idProducto.Visible = false;
-            idProducto.Width = 35;
-            // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.MinimumWidth = 6;
-            Producto.Name = "Producto";
-            Producto.Width = 125;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio:";
-            Precio.MinimumWidth = 6;
-            Precio.Name = "Precio";
-            Precio.Width = 125;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad:";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 125;
-            // 
-            // SubTotal
-            // 
-            SubTotal.HeaderText = "Sub-Total:";
-            SubTotal.MinimumWidth = 6;
-            SubTotal.Name = "SubTotal";
-            SubTotal.Width = 125;
-            // 
-            // btneliminar
-            // 
-            btneliminar.HeaderText = "";
-            btneliminar.MinimumWidth = 6;
-            btneliminar.Name = "btneliminar";
-            btneliminar.Width = 125;
             // 
             // label12
             // 
@@ -496,6 +454,49 @@
             btnregistrar.UseVisualStyleBackColor = true;
             btnregistrar.Click += btnregistrar_Click;
             // 
+            // idProducto
+            // 
+            idProducto.HeaderText = "idProducto";
+            idProducto.MinimumWidth = 6;
+            idProducto.Name = "idProducto";
+            idProducto.Visible = false;
+            idProducto.Width = 35;
+            // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.MinimumWidth = 6;
+            Producto.Name = "Producto";
+            Producto.Width = 125;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio";
+            Precio.MinimumWidth = 6;
+            Precio.Name = "Precio";
+            Precio.Width = 125;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.MinimumWidth = 6;
+            Cantidad.Name = "Cantidad";
+            Cantidad.Width = 125;
+            // 
+            // SubTotal
+            // 
+            SubTotal.HeaderText = "Sub-Total";
+            SubTotal.MinimumWidth = 6;
+            SubTotal.Name = "SubTotal";
+            SubTotal.Width = 125;
+            // 
+            // btneliminar
+            // 
+            btneliminar.HeaderText = "";
+            btneliminar.MinimumWidth = 6;
+            btneliminar.Name = "btneliminar";
+            btneliminar.Width = 125;
+            // 
             // frmVentas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -562,12 +563,6 @@
         private Label label8;
         private FontAwesome.Sharp.IconButton btnagregarproducto;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idProducto;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn SubTotal;
-        private DataGridViewButtonColumn btneliminar;
         private Label label12;
         private Label label13;
         private Label label14;
@@ -575,5 +570,11 @@
         private TextBox txtpagacon;
         private TextBox txtcambio;
         private FontAwesome.Sharp.IconButton btnregistrar;
+        private DataGridViewTextBoxColumn idProducto;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn SubTotal;
+        private DataGridViewButtonColumn btneliminar;
     }
 }

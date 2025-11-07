@@ -327,6 +327,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(label1);
+            ForeColor = Color.Black;
             Name = "frmDetalleCompra";
             Text = "Detalle de Compra";
             groupBox1.ResumeLayout(false);

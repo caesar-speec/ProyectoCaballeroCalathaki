@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,7 @@ namespace CapaPresentacion
     {
 
         private Usuario _Usuario;
-        private DataGridView dgvdata;
+        //private DataGridView dataGridView1;
 
         public frmVentas(Usuario oUsuario = null)
         {
@@ -36,7 +37,7 @@ namespace CapaPresentacion
 
         private void frmVentas_Load(object sender, EventArgs e)
         {
-         
+
         }
 
         private void btnbuscarcliente_Click(object sender, EventArgs e)
@@ -117,18 +118,19 @@ namespace CapaPresentacion
                 return;
             }
 
-            foreach (DataGridViewRow fila in dgvdata.Rows)
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
             {
-                if (fila.Cells["idProducto"].Value.ToString() == txtidproducto.Text)
+
+                if (fila.Cells["idProducto"].Value.Equals(Convert.ToInt32(txtidproducto.Text)))
                 {
                     producto_existe = true;
                     break;
                 }
             }
-            
+
             if (!producto_existe)
             {
-                dgvdata.Rows.Add(new object[]
+                dataGridView1.Rows.Add(new object[]
                 {
                     txtidproducto.Text,
                     txtproducto.Text,
@@ -156,7 +158,7 @@ namespace CapaPresentacion
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                   total += Convert.ToDecimal(row.Cells["SubTotal"].Value);
+                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value);
                 }
             }
             txttotalpagar.Text = total.ToString("0.00");
@@ -172,11 +174,94 @@ namespace CapaPresentacion
             txtcantidad.Value = 1;
         }
 
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 5)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                // Cast deleteicon to Image to access Width and Height properties
+                var deleteIcon = Properties.Resources.deleteicon as Image;
+                if (deleteIcon != null)
+                {
+                    var w = deleteIcon.Width;
+                    var h = deleteIcon.Height;
+                    var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                    var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                    // Draw the icon
+                    e.Graphics.DrawImage(deleteIcon, new Rectangle(x, y, w, h));
+                }
+
+                e.Handled = true;
+            }
+        }
 
 
+
+        private void txtpagacon_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtpagacon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                decimal pagacon = 0;
+                decimal totalpagar = 0;
+                decimal vuelto = 0;
+                if (decimal.TryParse(txtpagacon.Text, out pagacon))
+                {
+                    totalpagar = Convert.ToDecimal(txttotalpagar.Text);
+                    if (pagacon >= totalpagar)
+                    {
+                        vuelto = pagacon - totalpagar;
+                        txtcambio.Text = vuelto.ToString("0.00");
+                    }
+                    else
+                    {
+                        MessageBox.Show("El monto pagado es menor al total a pagar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtpagacon.Select();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Formato de moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtpagacon.Select();
+                }
+
+            }
+        }
+
+        private void txtcantidad_ValueChanged(object sender, EventArgs e)
+        {
+            NumericUpDown txt = sender as NumericUpDown;
+            if (txt == null) return;
+
+            if (txt.Value < 1)
+            {
+                MessageBox.Show("La cantidad debe ser como mínimo 1.", "Cantidad inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt.Value = 1;
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "btneliminar")
+            {
+                int index = e.RowIndex;
+                if (index < 0) {
+                    dataGridView1.Rows.RemoveAt(e.RowIndex);
+                    calcularTotal();
+                } 
+            }
+
+
+
+        }
     }
-
-
-
 }
 

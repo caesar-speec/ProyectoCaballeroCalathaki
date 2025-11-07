@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             groupBox2 = new GroupBox();
             txtidcliente = new TextBox();
@@ -57,6 +58,12 @@
             label8 = new Label();
             btnagregarproducto = new FontAwesome.Sharp.IconButton();
             dataGridView1 = new DataGridView();
+            idProducto = new DataGridViewTextBoxColumn();
+            Producto = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
+            SubTotal = new DataGridViewTextBoxColumn();
+            btneliminar = new DataGridViewButtonColumn();
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
@@ -64,12 +71,6 @@
             txtpagacon = new TextBox();
             txtcambio = new TextBox();
             btnregistrar = new FontAwesome.Sharp.IconButton();
-            idProducto = new DataGridViewTextBoxColumn();
-            Producto = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            SubTotal = new DataGridViewTextBoxColumn();
-            btneliminar = new DataGridViewButtonColumn();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -260,6 +261,7 @@
             txtcantidad.Name = "txtcantidad";
             txtcantidad.Size = new Size(85, 27);
             txtcantidad.TabIndex = 9;
+            txtcantidad.ValueChanged += txtcantidad_ValueChanged;
             // 
             // label10
             // 
@@ -377,6 +379,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idProducto, Producto, Precio, Cantidad, SubTotal, btneliminar });
@@ -385,6 +388,60 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(883, 287);
             dataGridView1.TabIndex = 9;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellPainting += dataGridView1_CellPainting;
+            // 
+            // idProducto
+            // 
+            idProducto.HeaderText = "idProducto";
+            idProducto.MinimumWidth = 6;
+            idProducto.Name = "idProducto";
+            idProducto.Visible = false;
+            idProducto.Width = 35;
+            // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.MinimumWidth = 6;
+            Producto.Name = "Producto";
+            Producto.Width = 125;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio";
+            Precio.MinimumWidth = 6;
+            Precio.Name = "Precio";
+            Precio.Width = 125;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.MinimumWidth = 6;
+            Cantidad.Name = "Cantidad";
+            Cantidad.Width = 125;
+            // 
+            // SubTotal
+            // 
+            SubTotal.HeaderText = "Sub-Total";
+            SubTotal.MinimumWidth = 6;
+            SubTotal.Name = "SubTotal";
+            SubTotal.Width = 125;
+            // 
+            // btneliminar
+            // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            btneliminar.DefaultCellStyle = dataGridViewCellStyle1;
+            btneliminar.FlatStyle = FlatStyle.Popup;
+            btneliminar.HeaderText = "Elim.";
+            btneliminar.MinimumWidth = 6;
+            btneliminar.Name = "btneliminar";
+            btneliminar.Text = "Elim.";
+            btneliminar.Width = 50;
             // 
             // label12
             // 
@@ -433,6 +490,8 @@
             txtpagacon.Name = "txtpagacon";
             txtpagacon.Size = new Size(98, 27);
             txtpagacon.TabIndex = 16;
+            txtpagacon.TextChanged += txtpagacon_TextChanged;
+            txtpagacon.KeyPress += txtpagacon_KeyPress;
             // 
             // txtcambio
             // 
@@ -458,49 +517,6 @@
             btnregistrar.UseVisualStyleBackColor = true;
             btnregistrar.Click += btnregistrar_Click;
             // 
-            // idProducto
-            // 
-            idProducto.HeaderText = "IdProducto";
-            idProducto.MinimumWidth = 6;
-            idProducto.Name = "idProducto";
-            idProducto.Visible = false;
-            idProducto.Width = 35;
-            // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.MinimumWidth = 6;
-            Producto.Name = "Producto";
-            Producto.Width = 125;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.MinimumWidth = 6;
-            Precio.Name = "Precio";
-            Precio.Width = 125;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 125;
-            // 
-            // SubTotal
-            // 
-            SubTotal.HeaderText = "Sub-Total";
-            SubTotal.MinimumWidth = 6;
-            SubTotal.Name = "SubTotal";
-            SubTotal.Width = 125;
-            // 
-            // btneliminar
-            // 
-            btneliminar.HeaderText = "";
-            btneliminar.MinimumWidth = 6;
-            btneliminar.Name = "btneliminar";
-            btneliminar.Width = 125;
-            // 
             // frmVentas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -521,6 +537,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label1);
+            ForeColor = Color.Black;
             Name = "frmVentas";
             Text = "frmVentas";
             Load += frmVentas_Load;

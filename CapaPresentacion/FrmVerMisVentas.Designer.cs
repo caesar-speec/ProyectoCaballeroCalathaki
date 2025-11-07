@@ -51,17 +51,17 @@
             Cantidad = new DataGridViewTextBoxColumn();
             Subtotal = new DataGridViewTextBoxColumn();
             dataGridView3 = new DataGridView();
+            Cliente = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            FechaVenta = new DataGridViewTextBoxColumn();
+            MontoTotal = new DataGridViewTextBoxColumn();
+            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnbuscarventa = new FontAwesome.Sharp.IconButton();
             txtbusqueda = new TextBox();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            Cliente = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            FechaVenta = new DataGridViewTextBoxColumn();
-            MontoTotal = new DataGridViewTextBoxColumn();
-            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
             textBox1 = new TextBox();
             label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -192,6 +192,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.ControlLight;
             label1.Location = new Point(723, 55);
             label1.Name = "label1";
             label1.Size = new Size(50, 20);
@@ -201,6 +202,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = SystemColors.ControlLight;
             label5.Location = new Point(453, 55);
             label5.Name = "label5";
             label5.Size = new Size(54, 20);
@@ -270,6 +272,42 @@
             dataGridView3.Size = new Size(742, 443);
             dataGridView3.TabIndex = 47;
             // 
+            // Cliente
+            // 
+            Cliente.HeaderText = "Cliente";
+            Cliente.MinimumWidth = 6;
+            Cliente.Name = "Cliente";
+            Cliente.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "DNI";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // FechaVenta
+            // 
+            FechaVenta.HeaderText = "Fecha venta";
+            FechaVenta.MinimumWidth = 6;
+            FechaVenta.Name = "FechaVenta";
+            FechaVenta.Width = 125;
+            // 
+            // MontoTotal
+            // 
+            MontoTotal.HeaderText = "Monto Total";
+            MontoTotal.MinimumWidth = 6;
+            MontoTotal.Name = "MontoTotal";
+            MontoTotal.Width = 125;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewButtonColumn1.HeaderText = "Detalle de Venta";
+            dataGridViewButtonColumn1.MinimumWidth = 6;
+            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            dataGridViewButtonColumn1.Text = "[Ver más]";
+            dataGridViewButtonColumn1.Width = 102;
+            // 
             // btnlimpiar
             // 
             btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
@@ -335,42 +373,6 @@
             label8.Size = new Size(1606, 582);
             label8.TabIndex = 41;
             // 
-            // Cliente
-            // 
-            Cliente.HeaderText = "Cliente";
-            Cliente.MinimumWidth = 6;
-            Cliente.Name = "Cliente";
-            Cliente.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "DNI";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // FechaVenta
-            // 
-            FechaVenta.HeaderText = "Fecha venta";
-            FechaVenta.MinimumWidth = 6;
-            FechaVenta.Name = "FechaVenta";
-            FechaVenta.Width = 125;
-            // 
-            // MontoTotal
-            // 
-            MontoTotal.HeaderText = "Monto Total";
-            MontoTotal.MinimumWidth = 6;
-            MontoTotal.Name = "MontoTotal";
-            MontoTotal.Width = 125;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            dataGridViewButtonColumn1.HeaderText = "Detalle de Venta";
-            dataGridViewButtonColumn1.MinimumWidth = 6;
-            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            dataGridViewButtonColumn1.Text = "[Ver más]";
-            dataGridViewButtonColumn1.Width = 102;
-            // 
             // textBox1
             // 
             textBox1.Location = new Point(47, 81);
@@ -381,6 +383,7 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = SystemColors.ControlLight;
             label9.Location = new Point(47, 58);
             label9.Name = "label9";
             label9.Size = new Size(88, 20);
@@ -391,6 +394,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1634, 600);
             Controls.Add(label9);
             Controls.Add(textBox1);
@@ -414,9 +418,10 @@
             Controls.Add(label3);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
+            ForeColor = Color.Black;
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmVerMisVentas";
-            Text = "FrmVerMisVentas";
+            Text = "Ver Mis Ventas";
             Load += FrmVerMisVentas_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();

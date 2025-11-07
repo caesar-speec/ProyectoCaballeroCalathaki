@@ -3,6 +3,10 @@ using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using System.Reflection;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+
+
 
 namespace CapaPresentacion
 {
@@ -286,5 +290,108 @@ namespace CapaPresentacion
                 row.Visible = true;
             }
         }
+
+        private void txtdocumento_TextChanged(object sender, EventArgs e)
+        {
+            // Permitir solo números y hasta 8 caracteres
+            TextBox txt = sender as TextBox;
+            if (txt == null) return;
+
+            // Eliminar cualquier caracter no numérico
+            string textoLimpio = new string(txt.Text.Where(char.IsDigit).ToArray());
+
+            // Limitar a 8 caracteres
+            if (textoLimpio.Length > 8)
+                textoLimpio = textoLimpio.Substring(0, 8);
+
+            // Si cambió el texto, lo actualiza sin mover el cursor
+            if (txt.Text != textoLimpio)
+            {
+                int pos = txt.SelectionStart;
+                txt.Text = textoLimpio;
+                txt.SelectionStart = Math.Min(pos, txt.Text.Length);
+            }
+        }
+
+
+
+        private void txtcorreo_TextChanged(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            if (txt == null) return;
+
+            // Validar formato de correo mientras se escribe
+            string patronCorreo = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (Regex.IsMatch(txt.Text, patronCorreo))
+            {
+                txt.BackColor = Color.LightGreen; // formato correcto
+            }
+            else
+            {
+                txt.BackColor = Color.LightCoral; // formato incorrecto
+            }
+        }
+
+        private void txttelefono_TextChanged(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            if (txt == null) return;
+
+            // Remove non-digit characters
+            string textoLimpio = new string(txt.Text.Where(char.IsDigit).ToArray());
+
+            // Limit to 10 characters
+            if (textoLimpio.Length > 10)
+                textoLimpio = textoLimpio.Substring(0, 10);
+
+            // Update text without moving cursor unexpectedly
+            if (txt.Text != textoLimpio)
+            {
+                int pos = txt.SelectionStart;
+                txt.Text = textoLimpio;
+                txt.SelectionStart = Math.Min(pos, txt.Text.Length);
+            }
+
+            // Visual feedback: valid only when exactly 10 digits
+            if (textoLimpio.Length == 10)
+                txt.BackColor = Color.LightGreen;
+            else
+                txt.BackColor = Color.LightCoral;
+        }
+
+
+        private void txtnombrecompleto_TextChanged(object sender, EventArgs e)
+        {
+           
+            TextBox txt = sender as TextBox;
+            if (txt == null) return;
+
+            int selStart = txt.SelectionStart;
+
+            // Keep only letters and space characters
+            string cleaned = new string(txt.Text.Where(c => char.IsLetter(c) || c == ' ').ToArray());
+
+            // Replace multiple spaces with a single space to normalize internal spacing
+            cleaned = Regex.Replace(cleaned, @"\s{2,}", " ");
+
+            // If text changed, update and adjust caret
+            if (txt.Text != cleaned)
+            {
+                // Compute new selection start to avoid jumping too far left when characters removed
+                int diff = txt.Text.Length - cleaned.Length;
+                int newSel = Math.Max(0, selStart - Math.Max(0, diff));
+                txt.Text = cleaned;
+                txt.SelectionStart = Math.Min(newSel, txt.Text.Length);
+            }
+
+            // Validate: one or more letter groups separated by single spaces, no leading/trailing spaces
+            bool isValid = Regex.IsMatch(cleaned, @"^[\p{L}]+(?: [\p{L}]+)*$");
+
+            // Visual feedback: valid -> LightGreen, invalid/empty -> LightCoral
+            txt.BackColor = isValid ? Color.LightGreen : Color.LightCoral;
+        }
+
+
+
     }
 }

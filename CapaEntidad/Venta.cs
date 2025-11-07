@@ -4,7 +4,7 @@
     {
         public int ID_venta { get; set; }
         public Usuario oUsuario { get; set; }
-        public string tipo_documento { get; set; }
+        public string TipoDocumento { get; set; }
         public string NumeroDocumento { get; set; }
         public string DocumentoCliente { get; set; }
         public string NombreCliente { get; set; }

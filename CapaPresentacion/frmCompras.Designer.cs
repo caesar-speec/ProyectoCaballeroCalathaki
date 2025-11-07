@@ -487,6 +487,7 @@
             Controls.Add(groupBox1);
             Controls.Add(label2);
             Controls.Add(label1);
+            ForeColor = Color.Black;
             Name = "frmCompras";
             Text = "Registro de Compra";
             Load += frmCompras_Load;

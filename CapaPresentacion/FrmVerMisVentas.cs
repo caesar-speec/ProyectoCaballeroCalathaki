@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CapaEntidad;
+using CapaNegocio;
+
 using CapaEntidad;
 using CapaNegocio;
 
@@ -14,31 +18,35 @@ namespace CapaPresentacion
 {
     public partial class FrmVerMisVentas : Form
     {
-        public FrmVerMisVentas()
+        private Usuario usuarioActual;
+
+        public FrmVerMisVentas(Usuario usuario)
         {
             InitializeComponent();
+            usuarioActual = usuario; // 🔥 GUARDA el usuario logueado
         }
 
         private void FrmVerMisVentas_Load(object sender, EventArgs e)
         {
-        
+            CargarMisVentas();
         }
-    }
 
-private void CargarGridVentas()
+        private void CargarMisVentas()
         {
-            // Limpia las filas actuales
+            if (usuarioActual == null)
+            {
+                MessageBox.Show("No hay usuario en sesión.");
+                return;
+            }
+
             dataGridView3.Rows.Clear();
 
-            // Obtiene todas las ventas (tu capa de negocio)
             List<Venta> listaVentas = new CN_Venta().Listar();
 
-            // Filtra por usuario logueado
             var ventasFiltradas = listaVentas
-                .Where(v => v.oUsuario.IdUsuario == UsuarioLogueado.IdUsuario)
+                .Where(v => v.oUsuario.IdUsuario == usuarioActual.IdUsuario)
                 .ToList();
 
-            // Insertar cada venta en el grid
             foreach (var venta in ventasFiltradas)
             {
                 dataGridView3.Rows.Add(
@@ -50,5 +58,5 @@ private void CargarGridVentas()
                 );
             }
         }
-
     }
+}

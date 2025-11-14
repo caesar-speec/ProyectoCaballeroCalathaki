@@ -46,11 +46,6 @@
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
             dataGridView3 = new DataGridView();
-            Cliente = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            FechaVenta = new DataGridViewTextBoxColumn();
-            MontoTotal = new DataGridViewTextBoxColumn();
-            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnbuscarventa = new FontAwesome.Sharp.IconButton();
             txtbusqueda = new TextBox();
@@ -59,6 +54,11 @@
             label8 = new Label();
             textBox1 = new TextBox();
             label9 = new Label();
+            NombreCliente = new DataGridViewTextBoxColumn();
+            DocumentoCliente = new DataGridViewTextBoxColumn();
+            fecha_creacion = new DataGridViewTextBoxColumn();
+            MontoTotal = new DataGridViewTextBoxColumn();
+            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
@@ -228,49 +228,13 @@
             // 
             dataGridView3.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { Cliente, dataGridViewTextBoxColumn1, FechaVenta, MontoTotal, dataGridViewButtonColumn1 });
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { NombreCliente, DocumentoCliente, fecha_creacion, MontoTotal, dataGridViewButtonColumn1 });
             dataGridView3.Location = new Point(18, 100);
             dataGridView3.Margin = new Padding(3, 2, 3, 2);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.Size = new Size(722, 332);
             dataGridView3.TabIndex = 47;
-            // 
-            // Cliente
-            // 
-            Cliente.HeaderText = "Cliente";
-            Cliente.MinimumWidth = 6;
-            Cliente.Name = "Cliente";
-            Cliente.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "DNI";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // FechaVenta
-            // 
-            FechaVenta.HeaderText = "Fecha venta";
-            FechaVenta.MinimumWidth = 6;
-            FechaVenta.Name = "FechaVenta";
-            FechaVenta.Width = 125;
-            // 
-            // MontoTotal
-            // 
-            MontoTotal.HeaderText = "Monto Total";
-            MontoTotal.MinimumWidth = 6;
-            MontoTotal.Name = "MontoTotal";
-            MontoTotal.Width = 125;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            dataGridViewButtonColumn1.HeaderText = "Detalle de Venta";
-            dataGridViewButtonColumn1.MinimumWidth = 6;
-            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            dataGridViewButtonColumn1.Text = "[Ver más]";
-            dataGridViewButtonColumn1.Width = 102;
             // 
             // btnlimpiar
             // 
@@ -358,6 +322,42 @@
             label9.TabIndex = 56;
             label9.Text = "DNI Cliente:";
             // 
+            // NombreCliente
+            // 
+            NombreCliente.HeaderText = "Cliente";
+            NombreCliente.MinimumWidth = 6;
+            NombreCliente.Name = "NombreCliente";
+            NombreCliente.Width = 125;
+            // 
+            // DocumentoCliente
+            // 
+            DocumentoCliente.HeaderText = "DNI";
+            DocumentoCliente.MinimumWidth = 6;
+            DocumentoCliente.Name = "DocumentoCliente";
+            DocumentoCliente.Width = 125;
+            // 
+            // fecha_creacion
+            // 
+            fecha_creacion.HeaderText = "Fecha venta";
+            fecha_creacion.MinimumWidth = 6;
+            fecha_creacion.Name = "fecha_creacion";
+            fecha_creacion.Width = 125;
+            // 
+            // MontoTotal
+            // 
+            MontoTotal.HeaderText = "Monto Total";
+            MontoTotal.MinimumWidth = 6;
+            MontoTotal.Name = "MontoTotal";
+            MontoTotal.Width = 125;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewButtonColumn1.HeaderText = "Detalle de Venta";
+            dataGridViewButtonColumn1.MinimumWidth = 6;
+            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            dataGridViewButtonColumn1.Text = "[Ver más]";
+            dataGridViewButtonColumn1.Width = 102;
+            // 
             // FrmVerMisVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -415,11 +415,6 @@
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
         private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn Cliente;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn FechaVenta;
-        private DataGridViewTextBoxColumn MontoTotal;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
         private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btnbuscarventa;
         private TextBox txtbusqueda;
@@ -428,5 +423,10 @@
         private Label label8;
         private TextBox textBox1;
         private Label label9;
+        private DataGridViewTextBoxColumn NombreCliente;
+        private DataGridViewTextBoxColumn DocumentoCliente;
+        private DataGridViewTextBoxColumn fecha_creacion;
+        private DataGridViewTextBoxColumn MontoTotal;
+        private DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }

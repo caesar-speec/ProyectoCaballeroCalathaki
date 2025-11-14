@@ -15,7 +15,9 @@ using CapaEntidad;
 using CapaNegocio;
 
 namespace CapaPresentacion
+
 {
+
     public partial class FrmVerMisVentas : Form
     {
         private Usuario usuarioActual;
@@ -29,6 +31,7 @@ namespace CapaPresentacion
         private void FrmVerMisVentas_Load(object sender, EventArgs e)
         {
             CargarMisVentas();
+            textBox1.Text = usuarioActual.NombreCompleto;
         }
 
         private void CargarMisVentas()
@@ -58,5 +61,6 @@ namespace CapaPresentacion
                 );
             }
         }
+
     }
 }

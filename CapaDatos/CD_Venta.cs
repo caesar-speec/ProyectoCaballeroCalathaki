@@ -131,6 +131,70 @@ namespace CapaDatos
 
             return Respuesta;
         }
+        public List<Venta> Listar()
+        {
+            List<Venta> lista = new List<Venta>();
+
+            using (SqlConnection oConexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT");
+                    query.AppendLine(" v.ID_venta,");
+                    query.AppendLine(" v.IdUsuario,");
+                    query.AppendLine(" u.NombreCompleto AS UsuarioNombre,");
+                    query.AppendLine(" v.TipoDocumento,");
+                    query.AppendLine(" v.NumeroDocumento,");
+                    query.AppendLine(" v.DocumentoCliente,");
+                    query.AppendLine(" v.NombreCliente,");
+                    query.AppendLine(" v.MontoPago,");
+                    query.AppendLine(" v.MontoCambio,");
+                    query.AppendLine(" v.MontoTotal,");
+                    query.AppendLine(" v.fecha_creacion");
+                    query.AppendLine("FROM VENTA v");
+                    query.AppendLine("INNER JOIN USUARIO u ON u.IdUsuario = v.IdUsuario");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
+                    cmd.CommandType = CommandType.Text;
+
+                    oConexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Venta()
+                            {
+                                ID_venta = Convert.ToInt32(dr["ID_venta"]),
+                                TipoDocumento = dr["TipoDocumento"].ToString(),
+                                NumeroDocumento = dr["NumeroDocumento"].ToString(),
+                                DocumentoCliente = dr["DocumentoCliente"].ToString(),
+                                NombreCliente = dr["NombreCliente"].ToString(),
+                                MontoPago = Convert.ToDecimal(dr["MontoPago"]),
+                                MontoCambio = Convert.ToDecimal(dr["MontoCambio"]),
+                                MontoTotal = Convert.ToDecimal(dr["MontoTotal"]),
+                                fecha_creacion = dr["fecha_creacion"].ToString(),
+
+                                oUsuario = new Usuario()
+                                {
+                                    IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
+                                    NombreCompleto = dr["UsuarioNombre"].ToString()
+                                },
+
+                                oDetalle_Venta = new List<Detalle_Venta>() // si después querés agregarlo, me avisás
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lista = new List<Venta>();
+                }
+            }
+
+            return lista;
+        }
 
 
 

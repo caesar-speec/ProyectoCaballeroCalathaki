@@ -15,9 +15,7 @@ using CapaEntidad;
 using CapaNegocio;
 
 namespace CapaPresentacion
-
 {
-
     public partial class FrmVerMisVentas : Form
     {
         private Usuario usuarioActual;
@@ -25,22 +23,32 @@ namespace CapaPresentacion
         public FrmVerMisVentas(Usuario usuario)
         {
             InitializeComponent();
-            CargarMisVentas();
+
+            // 👉 PRIMERO guardamos el usuario
+            usuarioActual = usuario;
+
+            // 👉 recién ahora se puede usar
             textBox1.Text = usuarioActual.NombreCompleto;
-            usuarioActual = usuario; // 🔥 GUARDA el usuario logueado
         }
 
         private void FrmVerMisVentas_Load(object sender, EventArgs e)
         {
-            CargarMisVentas();
+            // Seguridad: evitar null
+            if (usuarioActual == null)
+            {
+                MessageBox.Show("Error: No se recibió usuario en sesión.");
+                return;
+            }
+
             textBox1.Text = usuarioActual.NombreCompleto;
+            CargarMisVentas();
         }
 
         private void CargarMisVentas()
         {
             if (usuarioActual == null)
             {
-                MessageBox.Show("No hay usuario en sesión.");
+                MessageBox.Show("Error: No hay usuario en sesión.");
                 return;
             }
 
@@ -48,8 +56,10 @@ namespace CapaPresentacion
 
             List<Venta> listaVentas = new CN_Venta().Listar();
 
+            // Protección contra NullReference en oUsuario
             var ventasFiltradas = listaVentas
-                .Where(v => v.oUsuario.IdUsuario == usuarioActual.IdUsuario)
+                .Where(v => v.oUsuario != null &&
+                            v.oUsuario.IdUsuario == usuarioActual.IdUsuario)
                 .ToList();
 
             foreach (var venta in ventasFiltradas)
@@ -63,6 +73,5 @@ namespace CapaPresentacion
                 );
             }
         }
-
     }
 }

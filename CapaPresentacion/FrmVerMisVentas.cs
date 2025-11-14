@@ -24,31 +24,27 @@ namespace CapaPresentacion
         {
             InitializeComponent();
 
-            // 👉 PRIMERO guardamos el usuario
+            // 1️⃣ Guardar usuario primero
             usuarioActual = usuario;
 
-            // 👉 recién ahora se puede usar
+            // 2️⃣ Mostrar el nombre del usuario
             textBox1.Text = usuarioActual.NombreCompleto;
+
+            // 3️⃣ Cargar ventas del usuario
+            CargarMisVentas();
         }
 
         private void FrmVerMisVentas_Load(object sender, EventArgs e)
         {
-            // Seguridad: evitar null
-            if (usuarioActual == null)
-            {
-                MessageBox.Show("Error: No se recibió usuario en sesión.");
-                return;
-            }
-
-            textBox1.Text = usuarioActual.NombreCompleto;
-            CargarMisVentas();
+            // ❗ NO LLAMES DE NUEVO A CargarMisVentas()
+            // Eso duplicaba y además se ejecutaba antes del usuario en muchos casos
         }
 
         private void CargarMisVentas()
         {
             if (usuarioActual == null)
             {
-                MessageBox.Show("Error: No hay usuario en sesión.");
+                MessageBox.Show("No hay usuario en sesión.");
                 return;
             }
 
@@ -56,10 +52,9 @@ namespace CapaPresentacion
 
             List<Venta> listaVentas = new CN_Venta().Listar();
 
-            // Protección contra NullReference en oUsuario
+            // Filtrar ventas del usuario logueado
             var ventasFiltradas = listaVentas
-                .Where(v => v.oUsuario != null &&
-                            v.oUsuario.IdUsuario == usuarioActual.IdUsuario)
+                .Where(v => v.oUsuario.IdUsuario == usuarioActual.IdUsuario)
                 .ToList();
 
             foreach (var venta in ventasFiltradas)
@@ -67,7 +62,7 @@ namespace CapaPresentacion
                 dataGridView3.Rows.Add(
                     venta.NombreCliente,
                     venta.DocumentoCliente,
-                    venta.fecha_creacion,
+                    venta.fecha_creacion,   // ahora DateTime
                     venta.MontoTotal,
                     "Ver detalle"
                 );

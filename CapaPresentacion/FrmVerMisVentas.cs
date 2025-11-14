@@ -26,12 +26,14 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             CargarMisVentas();
+            textBox1.Text = usuarioActual.NombreCompleto;
             usuarioActual = usuario; // 🔥 GUARDA el usuario logueado
         }
 
         private void FrmVerMisVentas_Load(object sender, EventArgs e)
         {
             CargarMisVentas();
+            textBox1.Text = usuarioActual.NombreCompleto;
         }
 
         private void CargarMisVentas()

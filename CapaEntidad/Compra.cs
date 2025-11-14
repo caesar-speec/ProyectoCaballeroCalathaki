@@ -1,4 +1,6 @@
-﻿namespace CapaEntidad
+﻿using System.Data;
+
+namespace CapaEntidad
 {
     public class Compra
     {
@@ -8,6 +10,9 @@
         public string TipoDocumento { get; set; }
         public string NumeroDocumento { get; set; }
         public decimal MontoTotal { get; set; }
+        public List<Detalle_Compra> oDetalleCompra { get; set; }
         public DateTime FechaRegistro { get; set; }
+       
     }
 }
+ 

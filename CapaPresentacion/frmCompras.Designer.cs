@@ -56,6 +56,10 @@
             label7 = new Label();
             label8 = new Label();
             dataGridView1 = new DataGridView();
+            btnagregarproducto = new FontAwesome.Sharp.IconButton();
+            label12 = new Label();
+            txttotalpagar = new TextBox();
+            btnregistrar = new FontAwesome.Sharp.IconButton();
             IdProducto = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
             PrecioCompra = new DataGridViewTextBoxColumn();
@@ -63,10 +67,6 @@
             Cantidad = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
             btneliminar = new DataGridViewButtonColumn();
-            btnagregarproducto = new FontAwesome.Sharp.IconButton();
-            label12 = new Label();
-            txttotalpagar = new TextBox();
-            btnregistrar = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -252,6 +252,7 @@
             txtcantidad.Name = "txtcantidad";
             txtcantidad.Size = new Size(85, 27);
             txtcantidad.TabIndex = 9;
+            txtcantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label10
             // 
@@ -364,6 +365,55 @@
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
             // 
+            // btnagregarproducto
+            // 
+            btnagregarproducto.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            btnagregarproducto.IconColor = Color.Green;
+            btnagregarproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnagregarproducto.IconSize = 40;
+            btnagregarproducto.Location = new Point(983, 221);
+            btnagregarproducto.Name = "btnagregarproducto";
+            btnagregarproducto.Size = new Size(94, 75);
+            btnagregarproducto.TabIndex = 6;
+            btnagregarproducto.Text = "Agregar";
+            btnagregarproducto.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnagregarproducto.UseVisualStyleBackColor = true;
+            btnagregarproducto.Click += btnagregarproducto_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = SystemColors.ControlLight;
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(992, 432);
+            label12.Name = "label12";
+            label12.Size = new Size(98, 20);
+            label12.TabIndex = 9;
+            label12.Text = "Total a Pagar:";
+            // 
+            // txttotalpagar
+            // 
+            txttotalpagar.Location = new Point(985, 456);
+            txttotalpagar.Name = "txttotalpagar";
+            txttotalpagar.Size = new Size(116, 27);
+            txttotalpagar.TabIndex = 8;
+            // 
+            // btnregistrar
+            // 
+            btnregistrar.IconChar = FontAwesome.Sharp.IconChar.Tag;
+            btnregistrar.IconColor = Color.ForestGreen;
+            btnregistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnregistrar.IconSize = 30;
+            btnregistrar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnregistrar.Location = new Point(983, 535);
+            btnregistrar.Name = "btnregistrar";
+            btnregistrar.Size = new Size(107, 41);
+            btnregistrar.TabIndex = 10;
+            btnregistrar.Text = "Registrar";
+            btnregistrar.TextAlign = ContentAlignment.MiddleRight;
+            btnregistrar.UseVisualStyleBackColor = true;
+            btnregistrar.Click += btnregistrar_Click;
+            // 
             // IdProducto
             // 
             IdProducto.HeaderText = "id_Producto";
@@ -414,60 +464,12 @@
             // 
             // btneliminar
             // 
+            btneliminar.FillWeight = 60F;
             btneliminar.HeaderText = "";
             btneliminar.MinimumWidth = 6;
             btneliminar.Name = "btneliminar";
             btneliminar.ReadOnly = true;
-            btneliminar.Width = 125;
-            // 
-            // btnagregarproducto
-            // 
-            btnagregarproducto.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            btnagregarproducto.IconColor = Color.Green;
-            btnagregarproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnagregarproducto.IconSize = 40;
-            btnagregarproducto.Location = new Point(983, 221);
-            btnagregarproducto.Name = "btnagregarproducto";
-            btnagregarproducto.Size = new Size(94, 75);
-            btnagregarproducto.TabIndex = 6;
-            btnagregarproducto.Text = "Agregar";
-            btnagregarproducto.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnagregarproducto.UseVisualStyleBackColor = true;
-            btnagregarproducto.Click += btnagregarproducto_Click;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = SystemColors.ControlLight;
-            label12.ForeColor = Color.Black;
-            label12.Location = new Point(992, 432);
-            label12.Name = "label12";
-            label12.Size = new Size(98, 20);
-            label12.TabIndex = 9;
-            label12.Text = "Total a Pagar:";
-            // 
-            // txttotalpagar
-            // 
-            txttotalpagar.Location = new Point(985, 456);
-            txttotalpagar.Name = "txttotalpagar";
-            txttotalpagar.Size = new Size(116, 27);
-            txttotalpagar.TabIndex = 8;
-            // 
-            // btnregistrar
-            // 
-            btnregistrar.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            btnregistrar.IconColor = Color.ForestGreen;
-            btnregistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnregistrar.IconSize = 30;
-            btnregistrar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnregistrar.Location = new Point(983, 535);
-            btnregistrar.Name = "btnregistrar";
-            btnregistrar.Size = new Size(107, 41);
-            btnregistrar.TabIndex = 10;
-            btnregistrar.Text = "Registrar";
-            btnregistrar.TextAlign = ContentAlignment.MiddleRight;
-            btnregistrar.UseVisualStyleBackColor = true;
-            btnregistrar.Click += btnregistrar_Click;
+            btneliminar.Width = 60;
             // 
             // frmCompras
             // 

@@ -60,7 +60,7 @@
             dataGridView1 = new DataGridView();
             idProducto = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
+            PrecioVenta = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
             btneliminar = new DataGridViewButtonColumn();
@@ -70,7 +70,7 @@
             txttotalpagar = new TextBox();
             txtpagacon = new TextBox();
             txtcambio = new TextBox();
-            btnregistrar = new FontAwesome.Sharp.IconButton();
+            btncrearventa = new FontAwesome.Sharp.IconButton();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -254,6 +254,7 @@
             txtidproducto.Name = "txtidproducto";
             txtidproducto.Size = new Size(34, 27);
             txtidproducto.TabIndex = 10;
+            txtidproducto.Visible = false;
             // 
             // txtcantidad
             // 
@@ -261,6 +262,7 @@
             txtcantidad.Name = "txtcantidad";
             txtcantidad.Size = new Size(85, 27);
             txtcantidad.TabIndex = 9;
+            txtcantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
             txtcantidad.ValueChanged += txtcantidad_ValueChanged;
             // 
             // label10
@@ -382,7 +384,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idProducto, Producto, Precio, Cantidad, SubTotal, btneliminar });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idProducto, Producto, PrecioVenta, Cantidad, SubTotal, btneliminar });
             dataGridView1.Location = new Point(63, 273);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -406,12 +408,12 @@
             Producto.Name = "Producto";
             Producto.Width = 125;
             // 
-            // Precio
+            // PrecioVenta
             // 
-            Precio.HeaderText = "Precio";
-            Precio.MinimumWidth = 6;
-            Precio.Name = "Precio";
-            Precio.Width = 125;
+            PrecioVenta.HeaderText = "Precio";
+            PrecioVenta.MinimumWidth = 6;
+            PrecioVenta.Name = "PrecioVenta";
+            PrecioVenta.Width = 125;
             // 
             // Cantidad
             // 
@@ -430,11 +432,11 @@
             // btneliminar
             // 
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.Firebrick;
+            dataGridViewCellStyle1.BackColor = Color.Transparent;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             btneliminar.DefaultCellStyle = dataGridViewCellStyle1;
             btneliminar.FlatStyle = FlatStyle.Popup;
             btneliminar.HeaderText = "Elim.";
@@ -500,30 +502,30 @@
             txtcambio.Size = new Size(98, 27);
             txtcambio.TabIndex = 17;
             // 
-            // btnregistrar
+            // btncrearventa
             // 
-            btnregistrar.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
-            btnregistrar.IconColor = Color.ForestGreen;
-            btnregistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnregistrar.IconSize = 40;
-            btnregistrar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnregistrar.Location = new Point(953, 507);
-            btnregistrar.Name = "btnregistrar";
-            btnregistrar.Size = new Size(127, 53);
-            btnregistrar.TabIndex = 18;
-            btnregistrar.Text = "Realizar Venta";
-            btnregistrar.TextAlign = ContentAlignment.MiddleRight;
-            btnregistrar.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnregistrar.UseVisualStyleBackColor = true;
-            btnregistrar.Click += btnregistrar_Click;
+            btncrearventa.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
+            btncrearventa.IconColor = Color.ForestGreen;
+            btncrearventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btncrearventa.IconSize = 40;
+            btncrearventa.ImageAlign = ContentAlignment.MiddleLeft;
+            btncrearventa.Location = new Point(953, 507);
+            btncrearventa.Name = "btncrearventa";
+            btncrearventa.Size = new Size(127, 53);
+            btncrearventa.TabIndex = 18;
+            btncrearventa.Text = "Realizar Venta";
+            btncrearventa.TextAlign = ContentAlignment.MiddleRight;
+            btncrearventa.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btncrearventa.UseVisualStyleBackColor = true;
+            btncrearventa.Click += btnregistrar_Click;
             // 
             // frmVentas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1141, 581);
-            Controls.Add(btnregistrar);
+            ClientSize = new Size(1141, 591);
+            Controls.Add(btncrearventa);
             Controls.Add(txtcambio);
             Controls.Add(txtpagacon);
             Controls.Add(txttotalpagar);
@@ -590,10 +592,10 @@
         private TextBox txttotalpagar;
         private TextBox txtpagacon;
         private TextBox txtcambio;
-        private FontAwesome.Sharp.IconButton btnregistrar;
+        private FontAwesome.Sharp.IconButton btncrearventa;
         private DataGridViewTextBoxColumn idProducto;
         private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn SubTotal;
         private DataGridViewButtonColumn btneliminar;

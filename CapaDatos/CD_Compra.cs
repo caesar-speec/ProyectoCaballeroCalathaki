@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     public class CD_Compra
     {
-        // El método ObtenerCorrelativo está bien, lo dejamos como estaba.
+       
         public int ObtenerCorrelativo()
         {
             int idcorrelativo = 0;
@@ -50,14 +50,9 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("TipoDocumento", obj.TipoDocumento);
                     cmd.Parameters.AddWithValue("NumeroDocumento", obj.NumeroDocumento);
                     cmd.Parameters.AddWithValue("MontoTotal", obj.MontoTotal);
+                    cmd.Parameters.AddWithValue("DetalleCompra", DetalleCompra);
 
-
-                    // Indicamos que el parámetro DetalleCompra es de tipo estructurado.
-                    // El nombre 'dbo.DetalleCompraType' debe coincidir con el tipo creado en SQL.
-                    SqlParameter detalleParam = cmd.Parameters.AddWithValue("DetalleCompra", DetalleCompra);
-                    detalleParam.SqlDbType = SqlDbType.Structured;
-
-                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output; // Usar Bit para booleano
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output; 
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 

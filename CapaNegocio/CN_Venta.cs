@@ -37,6 +37,11 @@ namespace CapaNegocio
 
         }
 
+        public List<Venta> Listar()
+        {
+            return objcd_Venta.Listar();
+        }
+
 
 
 

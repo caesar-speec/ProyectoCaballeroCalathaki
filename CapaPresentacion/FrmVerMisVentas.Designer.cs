@@ -181,7 +181,7 @@
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 15;
-            iconButton1.Location = new Point(684, 100);
+            iconButton1.Location = new Point(684, 75);
             iconButton1.Margin = new Padding(3, 2, 3, 2);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(56, 21);
@@ -192,7 +192,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ControlLight;
-            label1.Location = new Point(549, 40);
+            label1.Location = new Point(543, 27);
             label1.Name = "label1";
             label1.Size = new Size(40, 15);
             label1.TabIndex = 52;
@@ -202,7 +202,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = SystemColors.ControlLight;
-            label5.Location = new Point(318, 42);
+            label5.Location = new Point(318, 26);
             label5.Name = "label5";
             label5.Size = new Size(42, 15);
             label5.TabIndex = 51;
@@ -210,15 +210,15 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(543, 57);
+            dateTimePicker2.Location = new Point(543, 45);
             dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(219, 23);
+            dateTimePicker2.Size = new Size(197, 23);
             dateTimePicker2.TabIndex = 50;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(318, 58);
+            dateTimePicker1.Location = new Point(318, 47);
             dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(219, 23);
@@ -233,7 +233,7 @@
             dataGridView3.Margin = new Padding(3, 2, 3, 2);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(660, 332);
+            dataGridView3.Size = new Size(722, 332);
             dataGridView3.TabIndex = 47;
             // 
             // Cliente
@@ -363,7 +363,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(765, 434);
+            ClientSize = new Size(753, 434);
             Controls.Add(label9);
             Controls.Add(textBox1);
             Controls.Add(button1);

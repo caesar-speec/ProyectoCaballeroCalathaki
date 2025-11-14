@@ -2,6 +2,9 @@
 using System.Data.SqlClient;
 using System;
 using System.Collections.Generic; // Necesario para Dictionary
+using Microsoft.Data.SqlClient;
+using CapaEntidad;
+
 
 namespace CapaDatos
 {

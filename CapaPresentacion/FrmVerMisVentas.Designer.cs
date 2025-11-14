@@ -39,7 +39,6 @@
             label4 = new Label();
             dtinicio = new DateTimePicker();
             label3 = new Label();
-            button1 = new Button();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
             label5 = new Label();
@@ -59,6 +58,7 @@
             fecha_creacion = new DataGridViewTextBoxColumn();
             MontoTotal = new DataGridViewTextBoxColumn();
             dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
@@ -164,16 +164,6 @@
             label3.Size = new Size(73, 15);
             label3.TabIndex = 37;
             label3.Text = "Fecha inicio:";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(1205, 57);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 22);
-            button1.TabIndex = 54;
-            button1.Text = "Imprimir Detalle";
-            button1.UseVisualStyleBackColor = true;
             // 
             // iconButton1
             // 
@@ -299,7 +289,7 @@
             // label8
             // 
             label8.BackColor = SystemColors.ControlLight;
-            label8.Location = new Point(0, 9);
+            label8.Location = new Point(-24, 9);
             label8.Name = "label8";
             label8.Size = new Size(1405, 434);
             label8.TabIndex = 41;
@@ -358,12 +348,22 @@
             dataGridViewButtonColumn1.Text = "[Ver más]";
             dataGridViewButtonColumn1.Width = 102;
             // 
+            // button1
+            // 
+            button1.Location = new Point(589, 19);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(177, 22);
+            button1.TabIndex = 54;
+            button1.Text = "Imprimir Detalle";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // FrmVerMisVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(753, 434);
+            ClientSize = new Size(767, 434);
             Controls.Add(label9);
             Controls.Add(textBox1);
             Controls.Add(button1);
@@ -408,7 +408,6 @@
         private Label label4;
         private DateTimePicker dtinicio;
         private Label label3;
-        private Button button1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label1;
         private Label label5;
@@ -428,5 +427,6 @@
         private DataGridViewTextBoxColumn fecha_creacion;
         private DataGridViewTextBoxColumn MontoTotal;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private Button button1;
     }
 }

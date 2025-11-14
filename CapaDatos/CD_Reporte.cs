@@ -10,8 +10,8 @@ namespace CapaDatos
 {
     public class CD_Reporte
     {
-        // Método para obtener KPIs (Ventas y Clientes)
-        public Dictionary<string, object> ObtenerKPIsDashboard()
+        // Método para obtener KPIs (ahora con fechas)
+        public Dictionary<string, object> ObtenerKPIsDashboard(DateTime fechaInicio, DateTime fechaFin)
         {
             var kpis = new Dictionary<string, object>();
 
@@ -21,28 +21,26 @@ namespace CapaDatos
                 {
                     oconexion.Open();
 
-                    // 1. Obtener Ventas de Hoy
+                    // 1. Obtener Ventas
                     using (SqlCommand cmdVentas = new SqlCommand("sp_ReporteDashboard_VentasHoy", oconexion))
                     {
                         cmdVentas.CommandType = CommandType.StoredProcedure;
+                        cmdVentas.Parameters.AddWithValue("@FechaInicio", fechaInicio.Date);
+                        cmdVentas.Parameters.AddWithValue("@FechaFin", fechaFin.Date);
                         kpis["TotalVentasHoy"] = Convert.ToDecimal(cmdVentas.ExecuteScalar());
                     }
 
-                    // 2. Obtener Clientes Nuevos de Hoy
+                    // 2. Obtener Clientes Nuevos
                     using (SqlCommand cmdClientes = new SqlCommand("sp_ReporteDashboard_ClientesNuevosHoy", oconexion))
                     {
                         cmdClientes.CommandType = CommandType.StoredProcedure;
+                        cmdClientes.Parameters.AddWithValue("@FechaInicio", fechaInicio.Date);
+                        cmdClientes.Parameters.AddWithValue("@FechaFin", fechaFin.Date);
                         kpis["ClientesNuevosHoy"] = Convert.ToInt32(cmdClientes.ExecuteScalar());
                     }
-
-                    // Podrías agregar más KPIs aquí (ej. Total Productos)
-                    // ...
-
                 }
                 catch (Exception ex)
                 {
-                    // Manejar la excepción, quizás registrarla
-                    // Devolvemos 0 por seguridad
                     kpis["TotalVentasHoy"] = 0m;
                     kpis["ClientesNuevosHoy"] = 0;
                 }
@@ -50,8 +48,8 @@ namespace CapaDatos
             return kpis;
         }
 
-        // Método para obtener Top 5 Productos
-        public DataTable ObtenerTop5Productos()
+        // Método para obtener Top 5 Productos (ahora con fechas)
+        public DataTable ObtenerTop5Productos(DateTime fechaInicio, DateTime fechaFin)
         {
             DataTable dt = new DataTable();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
@@ -61,21 +59,22 @@ namespace CapaDatos
                     using (SqlCommand cmd = new SqlCommand("sp_ReporteDashboard_Top5Productos", oconexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio.Date);
+                        cmd.Parameters.AddWithValue("@FechaFin", fechaFin.Date);
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         da.Fill(dt);
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Manejar la excepción
-                    dt = new DataTable(); // Devolver un DataTable vacío en caso de error
+                    dt = new DataTable();
                 }
             }
             return dt;
         }
 
-        // Método para obtener Ventas por Categoría
-        public DataTable ObtenerVentasPorCategoria()
+        // Método para obtener Ventas por Categoría (ahora con fechas)
+        public DataTable ObtenerVentasPorCategoria(DateTime fechaInicio, DateTime fechaFin)
         {
             DataTable dt = new DataTable();
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
@@ -85,14 +84,15 @@ namespace CapaDatos
                     using (SqlCommand cmd = new SqlCommand("sp_ReporteDashboard_VentasPorCategoria", oconexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio.Date);
+                        cmd.Parameters.AddWithValue("@FechaFin", fechaFin.Date);
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         da.Fill(dt);
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Manejar la excepción
-                    dt = new DataTable(); // Devolver un DataTable vacío en caso de error
+                    dt = new DataTable();
                 }
             }
             return dt;

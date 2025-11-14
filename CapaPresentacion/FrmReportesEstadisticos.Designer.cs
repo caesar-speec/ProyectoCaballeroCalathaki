@@ -3,15 +3,8 @@ namespace CapaPresentacion
 {
     partial class FrmReportesEstadisticos
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,20 +16,16 @@ namespace CapaPresentacion
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             chartProductosVendidos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             lblTituloPrincipal = new Label();
             panelVentasHoy = new Panel();
@@ -46,6 +35,11 @@ namespace CapaPresentacion
             lblTituloClientesNuevos = new Label();
             lblValorClientesNuevos = new Label();
             panelClientesNuevos = new Panel();
+            lblFechaInicio = new Label();
+            dtpFechaInicio = new DateTimePicker();
+            lblFechaFin = new Label();
+            dtpFechaFin = new DateTimePicker();
+            btnFiltrar = new Button();
             ((System.ComponentModel.ISupportInitialize)chartProductosVendidos).BeginInit();
             panelVentasHoy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartVentasCategoria).BeginInit();
@@ -58,25 +52,25 @@ namespace CapaPresentacion
             chartProductosVendidos.BackColor = Color.FromArgb(250, 250, 250);
             chartProductosVendidos.BorderlineColor = Color.Gainsboro;
             chartProductosVendidos.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea3.BackColor = Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            chartProductosVendidos.ChartAreas.Add(chartArea3);
-            legend3.BackColor = Color.Transparent;
-            legend3.Name = "Legend1";
-            chartProductosVendidos.Legends.Add(legend3);
-            chartProductosVendidos.Location = new Point(28, 180);
+            chartArea1.BackColor = Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            chartProductosVendidos.ChartAreas.Add(chartArea1);
+            legend1.BackColor = Color.Transparent;
+            legend1.Name = "Legend1";
+            chartProductosVendidos.Legends.Add(legend1);
+            chartProductosVendidos.Location = new Point(28, 240);
             chartProductosVendidos.Name = "chartProductosVendidos";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            chartProductosVendidos.Series.Add(series3);
-            chartProductosVendidos.Size = new Size(650, 450);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartProductosVendidos.Series.Add(series1);
+            chartProductosVendidos.Size = new Size(650, 390);
             chartProductosVendidos.TabIndex = 0;
-            chartProductosVendidos.Text = "chart1";
-            title3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            title3.Name = "Title1";
-            title3.Text = "Top 5 Productos Más Vendidos";
-            chartProductosVendidos.Titles.Add(title3);
+            title1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            title1.Name = "Title1";
+            title1.Text = "Top 5 Productos Más Vendidos";
+            chartProductosVendidos.Titles.Add(title1);
+            chartProductosVendidos.Click += chartProductosVendidos_Click;
             // 
             // lblTituloPrincipal
             // 
@@ -95,7 +89,7 @@ namespace CapaPresentacion
             panelVentasHoy.BorderStyle = BorderStyle.FixedSingle;
             panelVentasHoy.Controls.Add(lblValorVentasHoy);
             panelVentasHoy.Controls.Add(lblTituloVentasHoy);
-            panelVentasHoy.Location = new Point(28, 80);
+            panelVentasHoy.Location = new Point(28, 140);
             panelVentasHoy.Name = "panelVentasHoy";
             panelVentasHoy.Size = new Size(250, 80);
             panelVentasHoy.TabIndex = 2;
@@ -118,9 +112,9 @@ namespace CapaPresentacion
             lblTituloVentasHoy.ForeColor = Color.FromArgb(67, 160, 71);
             lblTituloVentasHoy.Location = new Point(14, 10);
             lblTituloVentasHoy.Name = "lblTituloVentasHoy";
-            lblTituloVentasHoy.Size = new Size(119, 23);
+            lblTituloVentasHoy.Size = new Size(102, 23);
             lblTituloVentasHoy.TabIndex = 0;
-            lblTituloVentasHoy.Text = "Ventas del Día";
+            lblTituloVentasHoy.Text = "Total Ventas";
             // 
             // chartVentasCategoria
             // 
@@ -128,25 +122,24 @@ namespace CapaPresentacion
             chartVentasCategoria.BackColor = Color.FromArgb(250, 250, 250);
             chartVentasCategoria.BorderlineColor = Color.Gainsboro;
             chartVentasCategoria.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.BackColor = Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            chartVentasCategoria.ChartAreas.Add(chartArea4);
-            legend4.BackColor = Color.Transparent;
-            legend4.Name = "Legend1";
-            chartVentasCategoria.Legends.Add(legend4);
-            chartVentasCategoria.Location = new Point(700, 180);
+            chartArea2.BackColor = Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            chartVentasCategoria.ChartAreas.Add(chartArea2);
+            legend2.BackColor = Color.Transparent;
+            legend2.Name = "Legend1";
+            chartVentasCategoria.Legends.Add(legend2);
+            chartVentasCategoria.Location = new Point(700, 240);
             chartVentasCategoria.Name = "chartVentasCategoria";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            chartVentasCategoria.Series.Add(series4);
-            chartVentasCategoria.Size = new Size(450, 450);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chartVentasCategoria.Series.Add(series2);
+            chartVentasCategoria.Size = new Size(450, 390);
             chartVentasCategoria.TabIndex = 5;
-            chartVentasCategoria.Text = "chart2";
-            title4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            title4.Name = "Title1";
-            title4.Text = "Ventas por Categoría";
-            chartVentasCategoria.Titles.Add(title4);
+            title2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            title2.Name = "Title1";
+            title2.Text = "Ventas por Categoría";
+            chartVentasCategoria.Titles.Add(title2);
             // 
             // lblTituloClientesNuevos
             // 
@@ -176,10 +169,61 @@ namespace CapaPresentacion
             panelClientesNuevos.BorderStyle = BorderStyle.FixedSingle;
             panelClientesNuevos.Controls.Add(lblValorClientesNuevos);
             panelClientesNuevos.Controls.Add(lblTituloClientesNuevos);
-            panelClientesNuevos.Location = new Point(300, 80);
+            panelClientesNuevos.Location = new Point(300, 140);
             panelClientesNuevos.Name = "panelClientesNuevos";
             panelClientesNuevos.Size = new Size(250, 80);
             panelClientesNuevos.TabIndex = 3;
+            // 
+            // lblFechaInicio
+            // 
+            lblFechaInicio.AutoSize = true;
+            lblFechaInicio.Font = new Font("Segoe UI", 10F);
+            lblFechaInicio.Location = new Point(24, 80);
+            lblFechaInicio.Name = "lblFechaInicio";
+            lblFechaInicio.Size = new Size(61, 23);
+            lblFechaInicio.TabIndex = 6;
+            lblFechaInicio.Text = "Desde:";
+            // 
+            // dtpFechaInicio
+            // 
+            dtpFechaInicio.Font = new Font("Segoe UI", 10F);
+            dtpFechaInicio.Location = new Point(92, 77);
+            dtpFechaInicio.Name = "dtpFechaInicio";
+            dtpFechaInicio.Size = new Size(300, 30);
+            dtpFechaInicio.TabIndex = 7;
+            // 
+            // lblFechaFin
+            // 
+            lblFechaFin.AutoSize = true;
+            lblFechaFin.Font = new Font("Segoe UI", 10F);
+            lblFechaFin.Location = new Point(410, 80);
+            lblFechaFin.Name = "lblFechaFin";
+            lblFechaFin.Size = new Size(57, 23);
+            lblFechaFin.TabIndex = 8;
+            lblFechaFin.Text = "Hasta:";
+            // 
+            // dtpFechaFin
+            // 
+            dtpFechaFin.Font = new Font("Segoe UI", 10F);
+            dtpFechaFin.Location = new Point(474, 77);
+            dtpFechaFin.Name = "dtpFechaFin";
+            dtpFechaFin.Size = new Size(300, 30);
+            dtpFechaFin.TabIndex = 9;
+            // 
+            // btnFiltrar
+            // 
+            btnFiltrar.BackColor = Color.FromArgb(76, 175, 80);
+            btnFiltrar.FlatAppearance.BorderSize = 0;
+            btnFiltrar.FlatStyle = FlatStyle.Flat;
+            btnFiltrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnFiltrar.ForeColor = Color.White;
+            btnFiltrar.Location = new Point(790, 77);
+            btnFiltrar.Name = "btnFiltrar";
+            btnFiltrar.Size = new Size(120, 30);
+            btnFiltrar.TabIndex = 10;
+            btnFiltrar.Text = "Filtrar";
+            btnFiltrar.UseVisualStyleBackColor = false;
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // FrmReportesEstadisticos
             // 
@@ -187,6 +231,11 @@ namespace CapaPresentacion
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1182, 653);
+            Controls.Add(btnFiltrar);
+            Controls.Add(dtpFechaFin);
+            Controls.Add(lblFechaFin);
+            Controls.Add(dtpFechaInicio);
+            Controls.Add(lblFechaInicio);
             Controls.Add(chartVentasCategoria);
             Controls.Add(panelClientesNuevos);
             Controls.Add(panelVentasHoy);
@@ -206,11 +255,6 @@ namespace CapaPresentacion
 
         }
 
-        // Remove the following method from the Designer file to avoid duplicate method definitions.
-        // The event handler should only be defined in the code-behind (.cs) file, not in the Designer file.
-
-
-
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartProductosVendidos;
@@ -219,8 +263,14 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label lblValorVentasHoy;
         private System.Windows.Forms.Label lblTituloVentasHoy;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVentasCategoria;
-        private Label lblTituloClientesNuevos;
-        private Label lblValorClientesNuevos;
-        private Panel panelClientesNuevos;
+        private System.Windows.Forms.Label lblTituloClientesNuevos;
+        private System.Windows.Forms.Label lblValorClientesNuevos;
+        private System.Windows.Forms.Panel panelClientesNuevos;
+        // --- NUEVOS CONTROLES ---
+        private System.Windows.Forms.Label lblFechaInicio;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.Label lblFechaFin;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
+        private System.Windows.Forms.Button btnFiltrar;
     }
 }

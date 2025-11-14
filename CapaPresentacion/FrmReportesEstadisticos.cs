@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using CapaNegocio; // Importante: Usar la capa de negocio
-using System.Data;    // Importante: Usar para DataTable
-using System.Collections.Generic; // Importante: Usar para Dictionary
+using CapaNegocio;
+using System.Data;
+using System.Collections.Generic;
 
 namespace CapaPresentacion
 {
@@ -17,27 +17,56 @@ namespace CapaPresentacion
 
         private void FrmReportesEstadisticos_Load(object sender, EventArgs e)
         {
-            // --- Cargar Datos Reales ---
-            CargarDatosKPIs();
-            CargarGraficoProductosMasVendidos();
-            CargarGraficoVentasPorCategoria();
+            // Establecer fechas por defecto al cargar
+            // Por ejemplo, el primer día del mes actual hasta hoy
+            dtpFechaInicio.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            dtpFechaFin.Value = DateTime.Now;
+
+            // Cargar los datos iniciales con el rango por defecto
+            CargarDatosDashboard();
+        }
+
+        // --- ESTE ES EL MÉTODO QUE SOLUCIONA TU ERROR ---
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            // El botón "Filtrar" simplemente vuelve a cargar todo con las nuevas fechas
+            CargarDatosDashboard();
+        }
+
+        /// <summary>
+        /// Método central que carga todos los componentes del dashboard
+        /// </summary>
+        private void CargarDatosDashboard()
+        {
+            DateTime fechaInicio = dtpFechaInicio.Value;
+            DateTime fechaFin = dtpFechaFin.Value;
+
+            // Validación de fechas
+            if (fechaInicio > fechaFin)
+            {
+                MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha de fin.", "Error de Fechas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // --- Cargar Datos Reales con el rango de fechas ---
+            CargarDatosKPIs(fechaInicio, fechaFin);
+            CargarGraficoProductosMasVendidos(fechaInicio, fechaFin);
+            CargarGraficoVentasPorCategoria(fechaInicio, fechaFin);
         }
 
         /// <summary>
         /// Carga los datos reales en las tarjetas de indicadores (KPIs).
         /// </summary>
-        private void CargarDatosKPIs()
+        private void CargarDatosKPIs(DateTime fechaInicio, DateTime fechaFin)
         {
             try
             {
                 CN_Reporte cnReporte = new CN_Reporte();
-                Dictionary<string, object> kpis = cnReporte.ObtenerKPIsDashboard();
+                // Pasa las fechas a la capa de negocio
+                Dictionary<string, object> kpis = cnReporte.ObtenerKPIsDashboard(fechaInicio, fechaFin);
 
-                // Asignar valores a los labels
-                lblValorVentasHoy.Text = Convert.ToDecimal(kpis["TotalVentasHoy"]).ToString("C2"); // "C2" = Formato Moneda
+                lblValorVentasHoy.Text = Convert.ToDecimal(kpis["TotalVentasHoy"]).ToString("C2");
                 lblValorClientesNuevos.Text = kpis["ClientesNuevosHoy"].ToString();
-
-                // lblValorTotalProductos.Text = ... (Si decides añadirlo)
             }
             catch (Exception ex)
             {
@@ -50,9 +79,10 @@ namespace CapaPresentacion
         /// <summary>
         /// Carga y configura el gráfico de barras con datos reales.
         /// </summary>
-        private void CargarGraficoProductosMasVendidos()
+        private void CargarGraficoProductosMasVendidos(DateTime fechaInicio, DateTime fechaFin)
         {
             chartProductosVendidos.Series.Clear();
+            chartProductosVendidos.Titles[0].Text = "Producto Más Vendido"; // Resetear título
 
             Series seriesProductos = new Series("Unidades Vendidas")
             {
@@ -62,16 +92,15 @@ namespace CapaPresentacion
             try
             {
                 CN_Reporte cnReporte = new CN_Reporte();
-                DataTable dtProductos = cnReporte.ObtenerTop5Productos();
+                // Pasa las fechas a la capa de negocio
+                DataTable dtProductos = cnReporte.ObtenerTop5Productos(fechaInicio, fechaFin);
 
                 if (dtProductos.Rows.Count == 0)
                 {
-                    // No hay datos, mostrar un mensaje en el gráfico
                     chartProductosVendidos.Titles[0].Text = "Top Productos (No hay datos)";
                     return;
                 }
 
-                // Agregar los datos reales a la serie
                 foreach (DataRow row in dtProductos.Rows)
                 {
                     string nombreProducto = row["NombreProducto"].ToString();
@@ -87,22 +116,18 @@ namespace CapaPresentacion
 
             chartProductosVendidos.Series.Add(seriesProductos);
 
-            // --- Estilos del Gráfico (Tu código de estilos) ---
+            // Estilos del Gráfico
             chartProductosVendidos.Titles[0].ForeColor = Color.FromArgb(46, 125, 50);
-
             chartProductosVendidos.Palette = ChartColorPalette.None;
             chartProductosVendidos.PaletteCustomColors = new Color[] {
                 Color.FromArgb(129, 199, 132), Color.FromArgb(165, 214, 167),
                 Color.FromArgb(197, 225, 165), Color.FromArgb(220, 231, 117),
                 Color.FromArgb(212, 225, 87)
             };
-
             seriesProductos.IsValueShownAsLabel = true;
             seriesProductos.LabelForeColor = Color.FromArgb(27, 94, 32);
             seriesProductos.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-
             chartProductosVendidos.Legends[0].Enabled = false;
-
             chartProductosVendidos.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             chartProductosVendidos.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
             chartProductosVendidos.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Segoe UI", 8F);
@@ -112,9 +137,10 @@ namespace CapaPresentacion
         /// <summary>
         /// Carga y configura el gráfico de pastel con datos reales.
         /// </summary>
-        private void CargarGraficoVentasPorCategoria()
+        private void CargarGraficoVentasPorCategoria(DateTime fechaInicio, DateTime fechaFin)
         {
             chartVentasCategoria.Series.Clear();
+            chartVentasCategoria.Titles[0].Text = "Ventas por Categoría"; // Resetear título
 
             Series seriesCategorias = new Series("Ventas")
             {
@@ -124,16 +150,15 @@ namespace CapaPresentacion
             try
             {
                 CN_Reporte cnReporte = new CN_Reporte();
-                DataTable dtCategorias = cnReporte.ObtenerVentasPorCategoria();
+                // Pasa las fechas a la capa de negocio
+                DataTable dtCategorias = cnReporte.ObtenerVentasPorCategoria(fechaInicio, fechaFin);
 
                 if (dtCategorias.Rows.Count == 0)
                 {
-                    // No hay datos, mostrar un mensaje
                     chartVentasCategoria.Titles[0].Text = "Ventas por Categoría (No hay datos)";
                     return;
                 }
 
-                // Agregar datos reales a la serie
                 foreach (DataRow row in dtCategorias.Rows)
                 {
                     string nombreCategoria = row["NombreCategoria"].ToString();
@@ -149,18 +174,21 @@ namespace CapaPresentacion
 
             chartVentasCategoria.Series.Add(seriesCategorias);
 
-            // --- Estilos del Gráfico (Tu código de estilos) ---
+            // Estilos del Gráfico
             chartVentasCategoria.Titles[0].ForeColor = Color.FromArgb(46, 125, 50);
             chartVentasCategoria.Palette = ChartColorPalette.Pastel;
-
             seriesCategorias["PieLabelStyle"] = "Outside";
             seriesCategorias.Label = "#VALX (#PERCENT{P0})";
             seriesCategorias.Font = new Font("Segoe UI", 9F);
             seriesCategorias.LegendText = "#VALX";
-
             chartVentasCategoria.Legends[0].Alignment = StringAlignment.Center;
             chartVentasCategoria.Legends[0].Docking = Docking.Bottom;
             chartVentasCategoria.Legends[0].Font = new Font("Segoe UI", 9F);
+        }
+
+        private void chartProductosVendidos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -131,7 +131,7 @@ namespace CapaPresentacion
             // Paleta de colores
             chartVentasCategoria.Palette = ChartColorPalette.Pastel;
 
-            // Estilo de las etiquetas
+            // Estilo de las etiquetass
             seriesCategorias["PieLabelStyle"] = "Outside";
             seriesCategorias.Label = "#VALX (#PERCENT{P0})"; // Muestra "Nombre (Porcentaje%)"
             seriesCategorias.Font = new Font("Segoe UI", 9F);

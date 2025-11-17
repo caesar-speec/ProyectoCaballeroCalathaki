@@ -336,6 +336,7 @@
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(170, 27);
             txtnombre.TabIndex = 27;
+            txtnombre.TextChanged += txtnombre_TextChanged;
             // 
             // label3
             // 

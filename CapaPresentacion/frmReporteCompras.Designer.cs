@@ -34,29 +34,22 @@
             dtinicio = new DateTimePicker();
             dtfin = new DateTimePicker();
             label4 = new Label();
-            cboproveedor = new ComboBox();
+            cboProveedor = new ComboBox();
             label5 = new Label();
-            btnbuscarproveedor = new FontAwesome.Sharp.IconButton();
             label6 = new Label();
             dataGridView1 = new DataGridView();
-            FechaRegistro = new DataGridViewTextBoxColumn();
+            IdCompra = new DataGridViewTextBoxColumn();
             TipoDocumento = new DataGridViewTextBoxColumn();
             NumeroDocumento = new DataGridViewTextBoxColumn();
-            MontoTotal = new DataGridViewTextBoxColumn();
-            UsuarioRegistro = new DataGridViewTextBoxColumn();
-            DocumentoProveedor = new DataGridViewTextBoxColumn();
             RazonSocial = new DataGridViewTextBoxColumn();
-            CodigoProducto = new DataGridViewTextBoxColumn();
-            NombreProducto = new DataGridViewTextBoxColumn();
-            Categoria = new DataGridViewTextBoxColumn();
-            PrecioCompra = new DataGridViewTextBoxColumn();
-            PrecioVenta = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            SubTotal = new DataGridViewTextBoxColumn();
+            UsuarioRegistro = new DataGridViewTextBoxColumn();
+            MontoTotal = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
+            DetalleCompra = new DataGridViewButtonColumn();
             label7 = new Label();
-            cbobusqueda = new ComboBox();
-            txtbusqueda = new TextBox();
+            cboRepositor = new ComboBox();
             btnbuscar = new FontAwesome.Sharp.IconButton();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -73,7 +66,7 @@
             label3.AutoSize = true;
             label3.BackColor = SystemColors.ControlLight;
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(29, 65);
+            label3.Location = new Point(29, 61);
             label3.Name = "label3";
             label3.Size = new Size(90, 20);
             label3.TabIndex = 3;
@@ -104,7 +97,7 @@
             // 
             dtfin.CustomFormat = "dd/MM/yyyy";
             dtfin.Format = DateTimePickerFormat.Short;
-            dtfin.Location = new Point(327, 63);
+            dtfin.Location = new Point(327, 62);
             dtfin.Name = "dtfin";
             dtfin.Size = new Size(110, 27);
             dtfin.TabIndex = 13;
@@ -114,43 +107,30 @@
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ControlLight;
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(250, 67);
+            label4.Location = new Point(250, 62);
             label4.Name = "label4";
             label4.Size = new Size(71, 20);
             label4.TabIndex = 12;
             label4.Text = "Fecha fin:";
             // 
-            // cboproveedor
+            // cboProveedor
             // 
-            cboproveedor.FormattingEnabled = true;
-            cboproveedor.Location = new Point(578, 65);
-            cboproveedor.Name = "cboproveedor";
-            cboproveedor.Size = new Size(191, 28);
-            cboproveedor.TabIndex = 14;
+            cboProveedor.FormattingEnabled = true;
+            cboProveedor.Location = new Point(446, 62);
+            cboProveedor.Name = "cboProveedor";
+            cboProveedor.Size = new Size(191, 28);
+            cboProveedor.TabIndex = 14;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.BackColor = SystemColors.ControlLight;
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(491, 68);
+            label5.Location = new Point(446, 39);
             label5.Name = "label5";
             label5.Size = new Size(80, 20);
             label5.TabIndex = 15;
             label5.Text = "Proveedor:";
-            // 
-            // btnbuscarproveedor
-            // 
-            btnbuscarproveedor.IconChar = FontAwesome.Sharp.IconChar.Search;
-            btnbuscarproveedor.IconColor = Color.Black;
-            btnbuscarproveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnbuscarproveedor.IconSize = 15;
-            btnbuscarproveedor.Location = new Point(786, 65);
-            btnbuscarproveedor.Name = "btnbuscarproveedor";
-            btnbuscarproveedor.Size = new Size(53, 28);
-            btnbuscarproveedor.TabIndex = 16;
-            btnbuscarproveedor.UseVisualStyleBackColor = true;
-            btnbuscarproveedor.Click += btnbuscarproveedor_Click;
             // 
             // label6
             // 
@@ -166,19 +146,20 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { FechaRegistro, TipoDocumento, NumeroDocumento, MontoTotal, UsuarioRegistro, DocumentoProveedor, RazonSocial, CodigoProducto, NombreProducto, Categoria, PrecioCompra, PrecioVenta, Cantidad, SubTotal });
-            dataGridView1.Location = new Point(21, 199);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IdCompra, TipoDocumento, NumeroDocumento, RazonSocial, UsuarioRegistro, MontoTotal, FechaRegistro, DetalleCompra });
+            dataGridView1.Location = new Point(21, 184);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1141, 357);
+            dataGridView1.Size = new Size(1141, 368);
             dataGridView1.TabIndex = 18;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // FechaRegistro
+            // IdCompra
             // 
-            FechaRegistro.HeaderText = "Fecha Registro";
-            FechaRegistro.MinimumWidth = 6;
-            FechaRegistro.Name = "FechaRegistro";
-            FechaRegistro.Width = 125;
+            IdCompra.HeaderText = "ID de Compra";
+            IdCompra.MinimumWidth = 6;
+            IdCompra.Name = "IdCompra";
+            IdCompra.Width = 125;
             // 
             // TipoDocumento
             // 
@@ -194,12 +175,12 @@
             NumeroDocumento.Name = "NumeroDocumento";
             NumeroDocumento.Width = 125;
             // 
-            // MontoTotal
+            // RazonSocial
             // 
-            MontoTotal.HeaderText = "Monto Total";
-            MontoTotal.MinimumWidth = 6;
-            MontoTotal.Name = "MontoTotal";
-            MontoTotal.Width = 125;
+            RazonSocial.HeaderText = "Razon Social";
+            RazonSocial.MinimumWidth = 6;
+            RazonSocial.Name = "RazonSocial";
+            RazonSocial.Width = 125;
             // 
             // UsuarioRegistro
             // 
@@ -208,94 +189,46 @@
             UsuarioRegistro.Name = "UsuarioRegistro";
             UsuarioRegistro.Width = 125;
             // 
-            // DocumentoProveedor
+            // MontoTotal
             // 
-            DocumentoProveedor.HeaderText = "Documento Proveedor";
-            DocumentoProveedor.MinimumWidth = 6;
-            DocumentoProveedor.Name = "DocumentoProveedor";
-            DocumentoProveedor.Width = 125;
+            MontoTotal.HeaderText = "Monto Total";
+            MontoTotal.MinimumWidth = 6;
+            MontoTotal.Name = "MontoTotal";
+            MontoTotal.Width = 125;
             // 
-            // RazonSocial
+            // FechaRegistro
             // 
-            RazonSocial.HeaderText = "Razon Social";
-            RazonSocial.MinimumWidth = 6;
-            RazonSocial.Name = "RazonSocial";
-            RazonSocial.Width = 125;
+            FechaRegistro.HeaderText = "Fecha Registro";
+            FechaRegistro.MinimumWidth = 6;
+            FechaRegistro.Name = "FechaRegistro";
+            FechaRegistro.Width = 125;
             // 
-            // CodigoProducto
+            // DetalleCompra
             // 
-            CodigoProducto.HeaderText = "Codigo Producto";
-            CodigoProducto.MinimumWidth = 6;
-            CodigoProducto.Name = "CodigoProducto";
-            CodigoProducto.Width = 125;
-            // 
-            // NombreProducto
-            // 
-            NombreProducto.HeaderText = "Nombre Producto";
-            NombreProducto.MinimumWidth = 6;
-            NombreProducto.Name = "NombreProducto";
-            NombreProducto.Width = 125;
-            // 
-            // Categoria
-            // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.MinimumWidth = 6;
-            Categoria.Name = "Categoria";
-            Categoria.Width = 125;
-            // 
-            // PrecioCompra
-            // 
-            PrecioCompra.HeaderText = "Precio Compra";
-            PrecioCompra.MinimumWidth = 6;
-            PrecioCompra.Name = "PrecioCompra";
-            PrecioCompra.Width = 125;
-            // 
-            // PrecioVenta
-            // 
-            PrecioVenta.HeaderText = "Precio Venta";
-            PrecioVenta.MinimumWidth = 6;
-            PrecioVenta.Name = "PrecioVenta";
-            PrecioVenta.Width = 125;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 125;
-            // 
-            // SubTotal
-            // 
-            SubTotal.HeaderText = "Sub-Total";
-            SubTotal.MinimumWidth = 6;
-            SubTotal.Name = "SubTotal";
-            SubTotal.Width = 125;
+            DetalleCompra.HeaderText = "Detalle de la Compra";
+            DetalleCompra.MinimumWidth = 6;
+            DetalleCompra.Name = "DetalleCompra";
+            DetalleCompra.Text = "[Ver Detalle]";
+            DetalleCompra.Width = 125;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = SystemColors.ControlLight;
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(457, 153);
+            label7.Location = new Point(643, 39);
             label7.Name = "label7";
-            label7.Size = new Size(82, 20);
+            label7.Size = new Size(76, 20);
             label7.TabIndex = 22;
-            label7.Text = "Buscar por:";
+            label7.Text = "Repositor:";
             // 
-            // cbobusqueda
+            // cboRepositor
             // 
-            cbobusqueda.FormattingEnabled = true;
-            cbobusqueda.Location = new Point(543, 149);
-            cbobusqueda.Name = "cbobusqueda";
-            cbobusqueda.Size = new Size(191, 28);
-            cbobusqueda.TabIndex = 21;
-            // 
-            // txtbusqueda
-            // 
-            txtbusqueda.Location = new Point(757, 151);
-            txtbusqueda.Name = "txtbusqueda";
-            txtbusqueda.Size = new Size(149, 27);
-            txtbusqueda.TabIndex = 23;
+            cboRepositor.FormattingEnabled = true;
+            cboRepositor.Location = new Point(643, 62);
+            cboRepositor.Name = "cboRepositor";
+            cboRepositor.Size = new Size(191, 28);
+            cboRepositor.TabIndex = 21;
             // 
             // btnbuscar
             // 
@@ -303,12 +236,24 @@
             btnbuscar.IconColor = Color.Black;
             btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnbuscar.IconSize = 15;
-            btnbuscar.Location = new Point(911, 151);
+            btnbuscar.Location = new Point(840, 61);
             btnbuscar.Name = "btnbuscar";
             btnbuscar.Size = new Size(53, 28);
             btnbuscar.TabIndex = 24;
             btnbuscar.UseVisualStyleBackColor = true;
             btnbuscar.Click += btnbuscar_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = SystemColors.ControlLight;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(21, 143);
+            label8.Name = "label8";
+            label8.Size = new Size(234, 28);
+            label8.TabIndex = 25;
+            label8.Text = "Listado de las Compras:";
             // 
             // frmReporteCompras
             // 
@@ -316,21 +261,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1187, 579);
+            Controls.Add(label8);
             Controls.Add(btnbuscar);
-            Controls.Add(txtbusqueda);
             Controls.Add(label7);
-            Controls.Add(cbobusqueda);
+            Controls.Add(cboRepositor);
             Controls.Add(dataGridView1);
             Controls.Add(label6);
-            Controls.Add(btnbuscarproveedor);
             Controls.Add(label5);
-            Controls.Add(cboproveedor);
+            Controls.Add(cboProveedor);
             Controls.Add(dtfin);
             Controls.Add(label4);
             Controls.Add(dtinicio);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(label1);
+            ForeColor = Color.Black;
             Name = "frmReporteCompras";
             Text = "Reporte de Compras";
             Load += frmReporteCompras_Load;
@@ -346,28 +291,21 @@
         private DateTimePicker dtinicio;
         private DateTimePicker dtfin;
         private Label label4;
-        private ComboBox cboproveedor;
+        private ComboBox cboProveedor;
         private Label label5;
-        private FontAwesome.Sharp.IconButton btnbuscarproveedor;
         private Label label6;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn FechaRegistro;
+        private Label label7;
+        private ComboBox cboRepositor;
+        private FontAwesome.Sharp.IconButton btnbuscar;
+        private DataGridViewTextBoxColumn IdCompra;
         private DataGridViewTextBoxColumn TipoDocumento;
         private DataGridViewTextBoxColumn NumeroDocumento;
-        private DataGridViewTextBoxColumn MontoTotal;
-        private DataGridViewTextBoxColumn UsuarioRegistro;
-        private DataGridViewTextBoxColumn DocumentoProveedor;
         private DataGridViewTextBoxColumn RazonSocial;
-        private DataGridViewTextBoxColumn CodigoProducto;
-        private DataGridViewTextBoxColumn NombreProducto;
-        private DataGridViewTextBoxColumn Categoria;
-        private DataGridViewTextBoxColumn PrecioCompra;
-        private DataGridViewTextBoxColumn PrecioVenta;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn SubTotal;
-        private Label label7;
-        private ComboBox cbobusqueda;
-        private TextBox txtbusqueda;
-        private FontAwesome.Sharp.IconButton btnbuscar;
+        private DataGridViewTextBoxColumn UsuarioRegistro;
+        private DataGridViewTextBoxColumn MontoTotal;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewButtonColumn DetalleCompra;
+        private Label label8;
     }
 }

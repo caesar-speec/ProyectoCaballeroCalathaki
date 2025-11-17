@@ -218,6 +218,11 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuVentas, new frmListadoProductos());
+        }
     }
 }
 

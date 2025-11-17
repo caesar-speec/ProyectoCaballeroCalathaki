@@ -44,6 +44,7 @@
             dtinicio = new DateTimePicker();
             label3 = new Label();
             label2 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -52,11 +53,10 @@
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { FechaRegistro, NumeroDocumento, MontoTotal, CodigoProducto, NombreProducto, Categoria, PrecioCompra, PrecioVenta, Cantidad, SubTotal });
-            dataGridView1.Location = new Point(-2, 71);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(-2, 95);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1292, 268);
+            dataGridView1.Size = new Size(1477, 357);
             dataGridView1.TabIndex = 19;
             // 
             // FechaRegistro
@@ -133,20 +133,19 @@
             // 
             dtfin.CustomFormat = "dd/MM/yyyy";
             dtfin.Format = DateTimePickerFormat.Short;
-            dtfin.Location = new Point(411, 27);
-            dtfin.Margin = new Padding(3, 2, 3, 2);
+            dtfin.Location = new Point(470, 36);
             dtfin.Name = "dtfin";
-            dtfin.Size = new Size(97, 23);
+            dtfin.Size = new Size(110, 27);
             dtfin.TabIndex = 45;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = SystemColors.ControlLight;
+            label4.BackColor = Color.DarkSeaGreen;
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(344, 30);
+            label4.Location = new Point(393, 40);
             label4.Name = "label4";
-            label4.Size = new Size(58, 15);
+            label4.Size = new Size(71, 20);
             label4.TabIndex = 44;
             label4.Text = "Fecha fin:";
             // 
@@ -154,46 +153,57 @@
             // 
             dtinicio.CustomFormat = "dd/MM/yyyy";
             dtinicio.Format = DateTimePickerFormat.Short;
-            dtinicio.Location = new Point(234, 27);
-            dtinicio.Margin = new Padding(3, 2, 3, 2);
+            dtinicio.Location = new Point(267, 36);
             dtinicio.Name = "dtinicio";
-            dtinicio.Size = new Size(97, 23);
+            dtinicio.Size = new Size(110, 27);
             dtinicio.TabIndex = 43;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = SystemColors.ControlLight;
+            label3.BackColor = Color.DarkSeaGreen;
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(150, 29);
+            label3.Location = new Point(171, 39);
             label3.Name = "label3";
-            label3.Size = new Size(73, 15);
+            label3.Size = new Size(90, 20);
             label3.TabIndex = 42;
             label3.Text = "Fecha inicio:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLight;
+            label2.BackColor = Color.DarkSeaGreen;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(-2, 21);
+            label2.Location = new Point(12, 32);
             label2.Name = "label2";
-            label2.Size = new Size(127, 25);
+            label2.Size = new Size(153, 31);
             label2.TabIndex = 41;
             label2.Text = "Mis Compras";
             // 
+            // button1
+            // 
+            button1.Location = new Point(586, 36);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 46;
+            button1.Text = "Filtrar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // frmVerMisCompras
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1292, 450);
+            BackColor = Color.DarkSeaGreen;
+            ClientSize = new Size(1301, 541);
+            Controls.Add(button1);
             Controls.Add(dtfin);
             Controls.Add(label4);
             Controls.Add(dtinicio);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmVerMisCompras";
             Text = "frmVerMisCompras";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -219,5 +229,6 @@
         private DateTimePicker dtinicio;
         private Label label3;
         private Label label2;
+        private Button button1;
     }
 }

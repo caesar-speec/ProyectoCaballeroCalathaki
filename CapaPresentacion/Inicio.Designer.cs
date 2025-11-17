@@ -38,6 +38,7 @@
             submenuregistrarventa = new ToolStripMenuItem();
             submenuverdetalleventa = new ToolStripMenuItem();
             verMisVentasToolStripMenuItem = new ToolStripMenuItem();
+            submenuVerProductos = new ToolStripMenuItem();
             MenuUsuarios = new FontAwesome.Sharp.IconMenuItem();
             MenuClientes = new FontAwesome.Sharp.IconMenuItem();
             menucompras = new FontAwesome.Sharp.IconMenuItem();
@@ -127,7 +128,7 @@
             // MenuVentas
             // 
             MenuVentas.AutoSize = false;
-            MenuVentas.DropDownItems.AddRange(new ToolStripItem[] { submenuregistrarventa, submenuverdetalleventa, verMisVentasToolStripMenuItem });
+            MenuVentas.DropDownItems.AddRange(new ToolStripItem[] { submenuregistrarventa, submenuverdetalleventa, verMisVentasToolStripMenuItem, submenuVerProductos });
             MenuVentas.ForeColor = Color.Black;
             MenuVentas.IconChar = FontAwesome.Sharp.IconChar.Shopify;
             MenuVentas.IconColor = Color.Black;
@@ -143,23 +144,31 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(186, 26);
+            submenuregistrarventa.Size = new Size(224, 26);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click_1;
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(186, 26);
+            submenuverdetalleventa.Size = new Size(224, 26);
             submenuverdetalleventa.Text = "Ver Detalle";
+            submenuverdetalleventa.Visible = false;
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
             // verMisVentasToolStripMenuItem
             // 
             verMisVentasToolStripMenuItem.Name = "verMisVentasToolStripMenuItem";
-            verMisVentasToolStripMenuItem.Size = new Size(186, 26);
+            verMisVentasToolStripMenuItem.Size = new Size(224, 26);
             verMisVentasToolStripMenuItem.Text = "Ver mis ventas";
             verMisVentasToolStripMenuItem.Click += verMisVentasToolStripMenuItem_Click;
+            // 
+            // submenuVerProductos
+            // 
+            submenuVerProductos.Name = "submenuVerProductos";
+            submenuVerProductos.Size = new Size(224, 26);
+            submenuVerProductos.Text = "Ver Productos";
+            submenuVerProductos.Click += verProductosToolStripMenuItem_Click;
             // 
             // MenuUsuarios
             // 
@@ -210,21 +219,21 @@
             // registrarCompraToolStripMenuItem
             // 
             registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
-            registrarCompraToolStripMenuItem.Size = new Size(208, 26);
+            registrarCompraToolStripMenuItem.Size = new Size(224, 26);
             registrarCompraToolStripMenuItem.Text = "Registrar Compra";
             registrarCompraToolStripMenuItem.Click += registrarCompraToolStripMenuItem_Click;
             // 
             // verMisComprasToolStripMenuItem
             // 
             verMisComprasToolStripMenuItem.Name = "verMisComprasToolStripMenuItem";
-            verMisComprasToolStripMenuItem.Size = new Size(208, 26);
+            verMisComprasToolStripMenuItem.Size = new Size(224, 26);
             verMisComprasToolStripMenuItem.Text = "Ver mis compras";
             verMisComprasToolStripMenuItem.Click += verMisComprasToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(208, 26);
+            toolStripMenuItem1.Size = new Size(224, 26);
             toolStripMenuItem1.Text = "Compras";
             toolStripMenuItem1.Visible = false;
             toolStripMenuItem1.Click += toolStripMenuItem1_Click;
@@ -413,5 +422,6 @@
         private ToolStripMenuItem verMisVentasToolStripMenuItem;
         private ToolStripMenuItem verMisComprasToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem submenuVerProductos;
     }
 }

@@ -42,7 +42,19 @@ namespace CapaNegocio
             return objcd_Venta.Listar();
         }
 
+        // +++ INICIO: MÉTODO AGREGADO +++
+        public Venta ObtenerVenta(int idVenta)
+        {
+            Venta oVenta = objcd_Venta.ObtenerVenta(idVenta);
 
+            if (oVenta != null && oVenta.ID_venta != 0)
+            {
+                // Una vez que tenemos la venta, buscamos sus detalles (productos)
+                oVenta.oDetalle_Venta = objcd_Venta.ObtenerDetalleVenta(idVenta);
+            }
+            return oVenta;
+        }
+        // +++ FIN: MÉTODO AGREGADO +++
 
 
     }

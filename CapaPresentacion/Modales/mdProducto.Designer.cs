@@ -128,7 +128,7 @@
             label9.Font = new Font("Segoe UI", 15F);
             label9.Location = new Point(12, 18);
             label9.Name = "label9";
-            label9.Size = new Size(755, 61);
+            label9.Size = new Size(764, 61);
             label9.TabIndex = 73;
             label9.TextAlign = ContentAlignment.MiddleLeft;
             // 
@@ -152,7 +152,7 @@
             dgvdata.Name = "dgvdata";
             dgvdata.ReadOnly = true;
             dgvdata.RowHeadersWidth = 51;
-            dgvdata.Size = new Size(755, 295);
+            dgvdata.Size = new Size(764, 295);
             dgvdata.TabIndex = 81;
             dgvdata.CellContentDoubleClick += dgvdata_CellContentDoubleClick_1;
             // 
@@ -180,7 +180,7 @@
             Nombre.MinimumWidth = 6;
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
-            Nombre.Width = 125;
+            Nombre.Width = 175;
             // 
             // Categoria
             // 
@@ -196,7 +196,6 @@
             Stock.MinimumWidth = 6;
             Stock.Name = "Stock";
             Stock.ReadOnly = true;
-            Stock.Visible = false;
             Stock.Width = 125;
             // 
             // PrecioCompra
@@ -214,14 +213,14 @@
             PrecioVenta.MinimumWidth = 6;
             PrecioVenta.Name = "PrecioVenta";
             PrecioVenta.ReadOnly = true;
-            PrecioVenta.Visible = false;
             PrecioVenta.Width = 125;
             // 
             // mdProducto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(771, 410);
+            BackColor = Color.DarkSeaGreen;
+            ClientSize = new Size(787, 410);
             Controls.Add(dgvdata);
             Controls.Add(label5);
             Controls.Add(btnlimpiar);
@@ -230,6 +229,7 @@
             Controls.Add(cbobusqueda);
             Controls.Add(label10);
             Controls.Add(label9);
+            ForeColor = Color.Black;
             Name = "mdProducto";
             Text = "mdProducto";
             Load += mdProducto_Load;

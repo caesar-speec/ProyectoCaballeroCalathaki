@@ -26,5 +26,21 @@ namespace CapaNegocio
 
             return objcd_usuario.Eliminar(obj, out Mensaje);
         }
+
+       
+        public List<Usuario> ListarVendedores()
+        {
+         
+            return objcd_usuario.ListarVendedores();
+        }
+
+
+        public List<CapaEntidad.Usuario> ListarReponedores()
+        {
+          
+
+            return objcd_usuario.ListarReponedores();
+        }
+
     }
 }

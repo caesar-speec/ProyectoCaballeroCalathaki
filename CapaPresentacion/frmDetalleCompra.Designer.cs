@@ -37,12 +37,9 @@
             txtfecha = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            btnbuscarproveedor = new FontAwesome.Sharp.IconButton();
-            txtbusqueda = new TextBox();
+            txtidcompra = new TextBox();
             label6 = new Label();
-            btnlimpiar = new FontAwesome.Sharp.IconButton();
             groupBox2 = new GroupBox();
-            txtnumerodocumento = new TextBox();
             label10 = new Label();
             txtnombreproveedor = new TextBox();
             txtdocproveedor = new TextBox();
@@ -99,6 +96,7 @@
             // 
             txttipodocumento.Location = new Point(210, 51);
             txttipodocumento.Name = "txttipodocumento";
+            txttipodocumento.ReadOnly = true;
             txttipodocumento.Size = new Size(190, 27);
             txttipodocumento.TabIndex = 6;
             // 
@@ -106,6 +104,7 @@
             // 
             txtusuario.Location = new Point(446, 51);
             txtusuario.Name = "txtusuario";
+            txtusuario.ReadOnly = true;
             txtusuario.Size = new Size(205, 27);
             txtusuario.TabIndex = 5;
             // 
@@ -124,6 +123,7 @@
             // 
             txtfecha.Location = new Point(7, 49);
             txtfecha.Name = "txtfecha";
+            txtfecha.ReadOnly = true;
             txtfecha.Size = new Size(158, 27);
             txtfecha.TabIndex = 2;
             // 
@@ -149,55 +149,28 @@
             label3.TabIndex = 0;
             label3.Text = "Fecha:";
             // 
-            // btnbuscarproveedor
+            // txtidcompra
             // 
-            btnbuscarproveedor.IconChar = FontAwesome.Sharp.IconChar.Search;
-            btnbuscarproveedor.IconColor = Color.Black;
-            btnbuscarproveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnbuscarproveedor.IconSize = 15;
-            btnbuscarproveedor.Location = new Point(606, 57);
-            btnbuscarproveedor.Name = "btnbuscarproveedor";
-            btnbuscarproveedor.Size = new Size(64, 28);
-            btnbuscarproveedor.TabIndex = 7;
-            btnbuscarproveedor.UseVisualStyleBackColor = true;
-            // 
-            // txtbusqueda
-            // 
-            txtbusqueda.Location = new Point(442, 59);
-            txtbusqueda.Name = "txtbusqueda";
-            txtbusqueda.Size = new Size(158, 27);
-            txtbusqueda.TabIndex = 6;
+            txtidcompra.Location = new Point(609, 58);
+            txtidcompra.Name = "txtidcompra";
+            txtidcompra.ReadOnly = true;
+            txtidcompra.Size = new Size(158, 27);
+            txtidcompra.TabIndex = 6;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = SystemColors.ControlLight;
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(442, 35);
+            label6.Location = new Point(609, 35);
             label6.Name = "label6";
-            label6.Size = new Size(148, 20);
+            label6.Size = new Size(119, 20);
             label6.TabIndex = 5;
-            label6.Text = "Numero Documento:";
-            // 
-            // btnlimpiar
-            // 
-            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            btnlimpiar.IconColor = Color.Black;
-            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnlimpiar.IconSize = 20;
-            btnlimpiar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnlimpiar.Location = new Point(677, 57);
-            btnlimpiar.Name = "btnlimpiar";
-            btnlimpiar.Size = new Size(91, 28);
-            btnlimpiar.TabIndex = 8;
-            btnlimpiar.Text = "Limpiar";
-            btnlimpiar.TextAlign = ContentAlignment.MiddleRight;
-            btnlimpiar.UseVisualStyleBackColor = true;
+            label6.Text = "ID de la compra:";
             // 
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ControlLight;
-            groupBox2.Controls.Add(txtnumerodocumento);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(txtnombreproveedor);
             groupBox2.Controls.Add(txtdocproveedor);
@@ -208,14 +181,6 @@
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             groupBox2.Text = "Informacion Proveedor";
-            // 
-            // txtnumerodocumento
-            // 
-            txtnumerodocumento.Location = new Point(590, 51);
-            txtnumerodocumento.Name = "txtnumerodocumento";
-            txtnumerodocumento.Size = new Size(98, 27);
-            txtnumerodocumento.TabIndex = 10;
-            txtnumerodocumento.Visible = false;
             // 
             // label10
             // 
@@ -232,6 +197,7 @@
             // 
             txtnombreproveedor.Location = new Point(210, 51);
             txtnombreproveedor.Name = "txtnombreproveedor";
+            txtnombreproveedor.ReadOnly = true;
             txtnombreproveedor.Size = new Size(190, 27);
             txtnombreproveedor.TabIndex = 6;
             // 
@@ -239,6 +205,7 @@
             // 
             txtdocproveedor.Location = new Point(7, 49);
             txtdocproveedor.Name = "txtdocproveedor";
+            txtdocproveedor.ReadOnly = true;
             txtdocproveedor.Size = new Size(158, 27);
             txtdocproveedor.TabIndex = 2;
             // 
@@ -263,6 +230,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(714, 241);
             dataGridView1.TabIndex = 10;
+
             // 
             // Producto
             // 
@@ -307,6 +275,7 @@
             // 
             txtmontototal.Location = new Point(185, 581);
             txtmontototal.Name = "txtmontototal";
+            txtmontototal.ReadOnly = true;
             txtmontototal.Size = new Size(116, 27);
             txtmontototal.TabIndex = 11;
             // 
@@ -320,9 +289,7 @@
             Controls.Add(txtmontototal);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox2);
-            Controls.Add(btnlimpiar);
-            Controls.Add(btnbuscarproveedor);
-            Controls.Add(txtbusqueda);
+            Controls.Add(txtidcompra);
             Controls.Add(label6);
             Controls.Add(groupBox1);
             Controls.Add(label2);
@@ -330,6 +297,7 @@
             ForeColor = Color.Black;
             Name = "frmDetalleCompra";
             Text = "Detalle de Compra";
+            Load += frmDetalleCompra_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -350,16 +318,13 @@
         private TextBox txtfecha;
         private Label label4;
         private Label label3;
-        private FontAwesome.Sharp.IconButton btnbuscarproveedor;
-        private TextBox txtbusqueda;
+        private TextBox txtidcompra;
         private Label label6;
-        private FontAwesome.Sharp.IconButton btnlimpiar;
         private GroupBox groupBox2;
         private Label label10;
         private TextBox txtnombreproveedor;
         private TextBox txtdocproveedor;
         private Label label8;
-        private TextBox txtnumerodocumento;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn PrecioCompra;

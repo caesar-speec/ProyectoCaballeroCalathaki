@@ -200,7 +200,100 @@ namespace CapaDatos
 
 
 
+        // +++ INICIO: MÉTODOS AGREGADOS +++
 
+        public Venta ObtenerVenta(int idVenta)
+        {
+            Venta oVenta = null;
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    // Usamos el Stored Procedure que te pasé en el .sql
+                    string query = "SP_OBTENERVENTA";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("IdVenta", idVenta);
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            oVenta = new Venta()
+                            {
+                                // Asignamos IdVenta (asumiendo que tu entidad Venta tiene 'IdVenta')
+                                ID_venta = Convert.ToInt32(dr["IdVenta"]),
+                                fecha_creacion = dr["FechaRegistro"].ToString(),
+                                TipoDocumento = dr["TipoDocumento"].ToString(),
+                                MontoTotal = Convert.ToDecimal(dr["MontoTotal"]),
+                                MontoPago = Convert.ToDecimal(dr["MontoPago"]),
+                                MontoCambio = Convert.ToDecimal(dr["MontoCambio"]),
+                                oUsuario = new Usuario() { NombreCompleto = dr["UsuarioVendedor"].ToString() },
+                                oCliente = new Cliente()
+                                {
+                                    Documento = dr["DocumentoCliente"].ToString(),
+                                    NombreCompleto = dr["NombreCliente"].ToString()
+                                }
+                                // NOTA: Tu método Listar() usa 'ID_venta' y tu método
+                                // Registrar() usa 'DocumentoCliente' como propiedad directa.
+                                // Este método asume la estructura que 'frmDetalleVenta' espera
+                                // (con 'IdVenta' y 'oCliente').
+                            };
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al obtener venta: " + ex.Message);
+                    oVenta = null;
+                }
+            }
+            return oVenta;
+        }
+
+        public List<Detalle_Venta> ObtenerDetalleVenta(int idVenta)
+        {
+            List<Detalle_Venta> listaDetalle = new List<Detalle_Venta>();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    // Usamos el Stored Procedure que te pasé en el .sql
+                    string query = "SP_OBTENERDETALLEVENTA";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("IdVenta", idVenta);
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            listaDetalle.Add(new Detalle_Venta()
+                            {
+                                NombreProducto = dr["NombreProducto"].ToString(),
+                                precio_venta = Convert.ToDecimal(dr["PrecioVenta"]),
+                                cantidad = Convert.ToInt32(dr["Cantidad"]),
+                                subtotal = Convert.ToDecimal(dr["SubTotal"])
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al obtener detalle venta: " + ex.Message);
+                    listaDetalle = new List<Detalle_Venta>();
+                }
+            }
+            return listaDetalle;
+        }
+
+        // +++ FIN: MÉTODOS AGREGADOS +++
 
     }
 

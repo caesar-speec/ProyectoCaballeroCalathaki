@@ -7,6 +7,7 @@
         public string TipoDocumento { get; set; }
         public string NumeroDocumento { get; set; }
         public string DocumentoCliente { get; set; }
+        public Cliente oCliente { get; set; }
         public string NombreCliente { get; set; }
         public decimal MontoPago { get; set; }
         public decimal MontoCambio { get; set; }

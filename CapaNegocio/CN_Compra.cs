@@ -26,6 +26,23 @@ namespace CapaNegocio
 
             return objcd_compra.Registrar(obj, DetalleCompra, out Mensaje);
         }
+
+        // +++ AGREGA ESTE MÉTODO AL FINAL DE LA CLASE +++
+        public Compra ObtenerCompra(int idCompra)
+        {
+            // Asumo que ya tienes la instancia:
+            // private CD_Compra objcd_compra = new CD_Compra();
+
+            Compra oCompra = objcd_compra.ObtenerCompra(idCompra);
+
+            if (oCompra != null && oCompra.IdCompra != 0)
+            {
+                // Si encontramos la compra, buscamos sus detalles (productos)
+                oCompra.oDetalleCompra = objcd_compra.ObtenerDetalleCompra(idCompra);
+            }
+            return oCompra;
+        }
+
     }
 }
 

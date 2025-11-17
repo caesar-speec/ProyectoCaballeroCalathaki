@@ -4,7 +4,6 @@ using System.Data;
 using System.Text;
 
 
-
 namespace CapaDatos
 {
     public class CD_Usuario
@@ -170,6 +169,88 @@ namespace CapaDatos
             return respuesta;
 
         }
+
+
+        // +++ INICIO: MÉTODO AGREGADO +++
+        public List<Usuario> ListarVendedores()
+        {
+            List<Usuario> lista = new List<Usuario>();
+
+            // Usamos 'Microsoft.Data.SqlClient' como el resto de tu clase
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    // Ejecutamos el Stored Procedure que lista solo vendedores
+                    string query = "SP_LISTARVENDEDORES";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            // Solo necesitamos el Id y el Nombre para el ComboBox
+                            lista.Add(new Usuario()
+                            {
+                                IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
+                                NombreCompleto = dr["NombreCompleto"].ToString()
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de error
+                    Console.WriteLine("Error al listar vendedores: " + ex.Message);
+                    lista = new List<Usuario>(); // Devuelve lista vacía
+                }
+            }
+            return lista;
+        }
+        // +++ FIN: MÉTODO AGREGADO +++
+
+
+
+        public List<CapaEntidad.Usuario> ListarReponedores()
+        {
+            List<CapaEntidad.Usuario> lista = new List<CapaEntidad.Usuario>();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    // Corregido: SP_LISTARREPONEDORES
+                    string query = "SP_LISTARREPONEDORES";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new CapaEntidad.Usuario()
+                            {
+                                IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
+                                NombreCompleto = dr["NombreCompleto"].ToString()
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Corregido: "Error al listar reponedores"
+                    Console.WriteLine("Error al listar reponedores: " + ex.Message);
+                    lista = new List<CapaEntidad.Usuario>();
+                }
+            }
+            return lista;
+        }
+
 
     }
 }

@@ -3,6 +3,11 @@ using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using System.Reflection;
 using System.Windows.Forms;
+using System.IO; // Asegúrate de tener este 'using' para 'Stream'
+using System.Linq; // Asegúrate de tener este 'using' para 'All()'
+using System.Collections.Generic; // Asegúrate de tener este 'using' para 'List<T>'
+using System; // Asegúrate de tener este 'using' para 'EventArgs', 'Convert', etc.
+using System.Drawing; // Asegúrate de tener este 'using' para 'Color', 'Rectangle', 'Image'
 
 namespace CapaPresentacion
 {
@@ -13,30 +18,13 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+        private void label2_Click(object sender, EventArgs e) { }
+        private void label4_Click(object sender, EventArgs e) { }
+        private void DNI_Click(object sender, EventArgs e) { }
+        private void label8_Click(object sender, EventArgs e) { }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void label10_Click(object sender, EventArgs e) { }
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DNI_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
@@ -69,9 +57,11 @@ namespace CapaPresentacion
                  item.Estado == true ? "Activo" : "Inactivo"
              });
             }
-            cborol.DisplayMember = "Texto";
-            cborol.ValueMember = "Valor";
-            cborol.SelectedIndex = 0;
+
+            // Esta parte estaba repetida, la quité.
+            // cborol.DisplayMember = "Texto";
+            // cborol.ValueMember = "Valor";
+            // cborol.SelectedIndex = 0;
 
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
@@ -92,7 +82,7 @@ namespace CapaPresentacion
             // Llamar al método de validaciones antes de continuar
             if (!Validaciones())
             {
-                return; 
+                return;
             }
             MessageBox.Show("Datos guardados correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -240,42 +230,42 @@ namespace CapaPresentacion
 
         private bool Validaciones()
         {
-          
+
             if (string.IsNullOrWhiteSpace(txtdocumento.Text) || !txtdocumento.Text.All(char.IsDigit))
             {
                 MessageBox.Show("El campo Documento es obligatorio y solo debe contener números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-           
+
             if (string.IsNullOrWhiteSpace(txtnombrecompleto.Text))
             {
                 MessageBox.Show("El campo Nombre Completo es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            
+
             if (string.IsNullOrWhiteSpace(txtcorreo.Text) || !txtcorreo.Text.Contains("@"))
             {
                 MessageBox.Show("El campo Correo es obligatorio y debe tener un formato válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-           
+
             if (string.IsNullOrWhiteSpace(txtclave.Text) || txtclave.Text.Length < 6)
             {
                 MessageBox.Show("El campo Clave es obligatorio y debe tener al menos 6 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            
+
             if (txtclave.Text != txtclave2.Text)
             {
                 MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-         
+
             if (cborol.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar un rol.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -289,12 +279,12 @@ namespace CapaPresentacion
                 return false;
             }
 
-            
+
             return true;
         }
 
 
-   
+
 
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -312,7 +302,7 @@ namespace CapaPresentacion
                     if (respuesta)
                     {
                         dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
-
+                        Clear(); // Agregado para limpiar los campos después de eliminar
                     }
                     else
                     {
@@ -350,11 +340,6 @@ namespace CapaPresentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Clear();
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

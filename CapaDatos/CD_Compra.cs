@@ -72,5 +72,92 @@ namespace CapaDatos
 
             return Respuesta;
         }
+
+
+        public Compra ObtenerCompra(int idCompra)
+        {
+            Compra oCompra = null;
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    string query = "SP_OBTENERCOMPRA";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("IdCompra", idCompra);
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            oCompra = new Compra()
+                            {
+                                IdCompra = Convert.ToInt32(dr["IdCompra"]),
+                                TipoDocumento = dr["TipoDocumento"].ToString(),
+                                NumeroDocumento = dr["NumeroDocumento"].ToString(),
+                                MontoTotal = Convert.ToDecimal(dr["MontoTotal"]),
+                                FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"]),
+                                oUsuario = new Usuario() { NombreCompleto = dr["UsuarioReponedor"].ToString() }, // Corregido
+                                oProveedor = new Proveedor()
+                                {
+                                    Documento = dr["DocumentoProveedor"].ToString(),
+                                    RazonSocial = dr["RazonSocialProveedor"].ToString()
+                                }
+                            };
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al obtener compra: " + ex.Message);
+                    oCompra = null;
+                }
+            }
+            return oCompra;
+        }
+
+        public List<Detalle_Compra> ObtenerDetalleCompra(int idCompra)
+        {
+            List<Detalle_Compra> listaDetalle = new List<Detalle_Compra>();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    string query = "SP_OBTENERDETALLECOMPRA";
+                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("IdCompra", idCompra);
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            listaDetalle.Add(new Detalle_Compra()
+                            {
+                                // *** CORRECCIÓN AQUÍ ***
+                                // Ya no rellenamos 'oProducto', rellenamos la propiedad plana
+                                NombreProducto = dr["NombreProducto"].ToString(),
+                                PrecioCompra = Convert.ToDecimal(dr["PrecioCompra"]),
+                                Cantidad = Convert.ToInt32(dr["Cantidad"]),
+                                MontoTotal = Convert.ToDecimal(dr["MontoTotal"])
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al obtener detalle compra: " + ex.Message);
+                    listaDetalle = new List<Detalle_Compra>();
+                }
+            }
+            return listaDetalle;
+        }
+
     }
 }

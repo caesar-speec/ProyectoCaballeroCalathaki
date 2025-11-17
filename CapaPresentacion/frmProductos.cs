@@ -111,47 +111,52 @@ namespace CapaPresentacion
 
         private bool validacionesCampos()
         {
-
+            // CODIGO → solo números
             if (string.IsNullOrWhiteSpace(txtcodigo.Text) || !txtcodigo.Text.All(char.IsDigit))
             {
-                MessageBox.Show("El código debe contener solo números y no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El código debe contener solo números y no puede estar vacío.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtcodigo.Focus();
                 return false;
             }
 
-
-            if (string.IsNullOrWhiteSpace(txtnombre.Text) || !txtnombre.Text.All(char.IsLetter))
+            // NOMBRE → letras (con acentos) + ñ + espacios
+            if (string.IsNullOrWhiteSpace(txtnombre.Text) ||
+                !txtnombre.Text.All(c => char.IsLetter(c) || c == ' ' || c == 'ñ' || c == 'Ñ'))
             {
-                MessageBox.Show("El nombre debe contener solo letras y no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El nombre debe contener solo letras y espacios, y no puede estar vacío.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtnombre.Focus();
                 return false;
             }
 
-
+            // DESCRIPCION → puede tener cualquier texto (solo validar vacío)
             if (string.IsNullOrWhiteSpace(txtdescripcion.Text))
             {
-                MessageBox.Show("La descripción no puede estar vacía.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La descripción no puede estar vacía.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtdescripcion.Focus();
                 return false;
             }
 
-
+            // CATEGORIA
             if (cbocategoria.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor, selecciona una categoría.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, selecciona una categoría.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbocategoria.Focus();
                 return false;
             }
 
-
+            // ESTADO
             if (cboestado.SelectedIndex == -1)
             {
-                MessageBox.Show("Por favor, selecciona un estado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, selecciona un estado.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboestado.Focus();
                 return false;
             }
 
-            // Si todas las validaciones pasan
             return true;
         }
 
@@ -404,9 +409,9 @@ namespace CapaPresentacion
             }
         }
 
+        private void txtnombre_TextChanged(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

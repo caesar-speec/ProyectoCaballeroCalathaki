@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            btnlimpiar = new FontAwesome.Sharp.IconButton();
-            btnbuscarventa = new FontAwesome.Sharp.IconButton();
             txtbusqueda = new TextBox();
             label6 = new Label();
             groupBox1 = new GroupBox();
@@ -42,7 +40,6 @@
             label3 = new Label();
             label2 = new Label();
             groupBox2 = new GroupBox();
-            txtnumerodocumento = new TextBox();
             label10 = new Label();
             txtnombrecliente = new TextBox();
             txtdoccliente = new TextBox();
@@ -50,6 +47,7 @@
             label12 = new Label();
             txtmontototal = new TextBox();
             dataGridView1 = new DataGridView();
+            IdVenta = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
@@ -71,37 +69,11 @@
             label1.Size = new Size(818, 601);
             label1.TabIndex = 1;
             // 
-            // btnlimpiar
-            // 
-            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            btnlimpiar.IconColor = Color.Black;
-            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnlimpiar.IconSize = 20;
-            btnlimpiar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnlimpiar.Location = new Point(681, 51);
-            btnlimpiar.Name = "btnlimpiar";
-            btnlimpiar.Size = new Size(91, 28);
-            btnlimpiar.TabIndex = 14;
-            btnlimpiar.Text = "Limpiar";
-            btnlimpiar.TextAlign = ContentAlignment.MiddleRight;
-            btnlimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnbuscarventa
-            // 
-            btnbuscarventa.IconChar = FontAwesome.Sharp.IconChar.Search;
-            btnbuscarventa.IconColor = Color.Black;
-            btnbuscarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnbuscarventa.IconSize = 15;
-            btnbuscarventa.Location = new Point(611, 51);
-            btnbuscarventa.Name = "btnbuscarventa";
-            btnbuscarventa.Size = new Size(64, 28);
-            btnbuscarventa.TabIndex = 13;
-            btnbuscarventa.UseVisualStyleBackColor = true;
-            // 
             // txtbusqueda
             // 
-            txtbusqueda.Location = new Point(447, 51);
+            txtbusqueda.Location = new Point(664, 46);
             txtbusqueda.Name = "txtbusqueda";
+            txtbusqueda.ReadOnly = true;
             txtbusqueda.Size = new Size(158, 27);
             txtbusqueda.TabIndex = 12;
             // 
@@ -110,7 +82,7 @@
             label6.AutoSize = true;
             label6.BackColor = SystemColors.ControlLight;
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(447, 28);
+            label6.Location = new Point(664, 23);
             label6.Name = "label6";
             label6.Size = new Size(105, 20);
             label6.TabIndex = 11;
@@ -136,6 +108,7 @@
             // 
             txttipodocumento.Location = new Point(210, 51);
             txttipodocumento.Name = "txttipodocumento";
+            txttipodocumento.ReadOnly = true;
             txttipodocumento.Size = new Size(190, 27);
             txttipodocumento.TabIndex = 6;
             // 
@@ -143,6 +116,7 @@
             // 
             txtusuario.Location = new Point(446, 51);
             txtusuario.Name = "txtusuario";
+            txtusuario.ReadOnly = true;
             txtusuario.Size = new Size(205, 27);
             txtusuario.TabIndex = 5;
             // 
@@ -160,6 +134,7 @@
             // 
             txtfecha.Location = new Point(7, 49);
             txtfecha.Name = "txtfecha";
+            txtfecha.ReadOnly = true;
             txtfecha.Size = new Size(158, 27);
             txtfecha.TabIndex = 2;
             // 
@@ -198,7 +173,6 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ControlLight;
-            groupBox2.Controls.Add(txtnumerodocumento);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(txtnombrecliente);
             groupBox2.Controls.Add(txtdoccliente);
@@ -209,14 +183,6 @@
             groupBox2.TabIndex = 15;
             groupBox2.TabStop = false;
             groupBox2.Text = "Informacion Cliente";
-            // 
-            // txtnumerodocumento
-            // 
-            txtnumerodocumento.Location = new Point(590, 51);
-            txtnumerodocumento.Name = "txtnumerodocumento";
-            txtnumerodocumento.Size = new Size(98, 27);
-            txtnumerodocumento.TabIndex = 10;
-            txtnumerodocumento.Visible = false;
             // 
             // label10
             // 
@@ -233,6 +199,7 @@
             // 
             txtnombrecliente.Location = new Point(210, 51);
             txtnombrecliente.Name = "txtnombrecliente";
+            txtnombrecliente.ReadOnly = true;
             txtnombrecliente.Size = new Size(190, 27);
             txtnombrecliente.TabIndex = 6;
             // 
@@ -240,6 +207,7 @@
             // 
             txtdoccliente.Location = new Point(7, 49);
             txtdoccliente.Name = "txtdoccliente";
+            txtdoccliente.ReadOnly = true;
             txtdoccliente.Size = new Size(158, 27);
             txtdoccliente.TabIndex = 2;
             // 
@@ -268,6 +236,7 @@
             // 
             txtmontototal.Location = new Point(160, 581);
             txtmontototal.Name = "txtmontototal";
+            txtmontototal.ReadOnly = true;
             txtmontototal.Size = new Size(74, 27);
             txtmontototal.TabIndex = 17;
             // 
@@ -275,16 +244,23 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad, SubTotal });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IdVenta, Producto, Precio, Cantidad, SubTotal });
             dataGridView1.Location = new Point(61, 313);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(778, 241);
             dataGridView1.TabIndex = 16;
             // 
+            // IdVenta
+            // 
+            IdVenta.HeaderText = "ID de la Venta:";
+            IdVenta.MinimumWidth = 6;
+            IdVenta.Name = "IdVenta";
+            IdVenta.Width = 125;
+            // 
             // Producto
             // 
-            Producto.HeaderText = "Producto";
+            Producto.HeaderText = "Producto:";
             Producto.MinimumWidth = 6;
             Producto.Name = "Producto";
             Producto.Width = 125;
@@ -314,6 +290,7 @@
             // 
             txtmontocambio.Location = new Point(567, 581);
             txtmontocambio.Name = "txtmontocambio";
+            txtmontocambio.ReadOnly = true;
             txtmontocambio.Size = new Size(74, 27);
             txtmontocambio.TabIndex = 23;
             txtmontocambio.TextChanged += txtcambio_TextChanged;
@@ -322,6 +299,7 @@
             // 
             txtmontopago.Location = new Point(352, 581);
             txtmontopago.Name = "txtmontopago";
+            txtmontopago.ReadOnly = true;
             txtmontopago.Size = new Size(74, 27);
             txtmontopago.TabIndex = 22;
             txtmontopago.TextChanged += txtpagacon_TextChanged;
@@ -362,8 +340,6 @@
             Controls.Add(txtmontototal);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox2);
-            Controls.Add(btnlimpiar);
-            Controls.Add(btnbuscarventa);
             Controls.Add(txtbusqueda);
             Controls.Add(label6);
             Controls.Add(groupBox1);
@@ -372,6 +348,7 @@
             ForeColor = Color.Black;
             Name = "frmDetalleVenta";
             Text = "frmDetalleVenta";
+            Load += frmDetalleVenta_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -384,8 +361,6 @@
         #endregion
 
         private Label label1;
-        private FontAwesome.Sharp.IconButton btnlimpiar;
-        private FontAwesome.Sharp.IconButton btnbuscarventa;
         private TextBox txtbusqueda;
         private Label label6;
         private GroupBox groupBox1;
@@ -397,7 +372,6 @@
         private Label label3;
         private Label label2;
         private GroupBox groupBox2;
-        private TextBox txtnumerodocumento;
         private Label label10;
         private TextBox txtnombrecliente;
         private TextBox txtdoccliente;
@@ -405,13 +379,14 @@
         private Label label12;
         private TextBox txtmontototal;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn SubTotal;
         private TextBox txtmontocambio;
         private TextBox txtmontopago;
         private Label label14;
         private Label label13;
+        private DataGridViewTextBoxColumn IdVenta;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn SubTotal;
     }
 }

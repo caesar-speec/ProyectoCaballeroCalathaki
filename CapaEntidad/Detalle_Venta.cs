@@ -3,6 +3,7 @@
     public class Detalle_Venta
     {
         public int ID_detalle_venta { get; set; }
+        public string NombreProducto { get; set; }
         public Producto oProducto { get; set; }
         public decimal precio_venta { get; set; }
         public int cantidad { get; set; }

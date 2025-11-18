@@ -3,9 +3,7 @@ using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -19,10 +17,10 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select IdCliente,Documento,NombreCompleto,Correo,Telefono,Estado From Cliente");
+                    // AGREGADO: Domicilio en la consulta SELECT
+                    query.AppendLine("select IdCliente,Documento,NombreCompleto,Correo,Telefono,Domicilio,Estado From Cliente");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
-
 
                     oconexion.Open();
 
@@ -37,6 +35,7 @@ namespace CapaDatos
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
                                 Correo = dr["Correo"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),
+                                Domicilio = dr["Domicilio"].ToString(), // <--- LECTURA AGREGADA
                                 Estado = Convert.ToBoolean(dr["Estado"]),
                             });
                         }
@@ -45,15 +44,11 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-
-
                     lista = new List<Cliente>();
                 }
             }
             return lista;
         }
-
-
 
         public int Registrar(Cliente obj, out string Mensaje)
         {
@@ -68,30 +63,25 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
+                    cmd.Parameters.AddWithValue("Domicilio", obj.Domicilio); // <--- PARAMETRO AGREGADO
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     idusuariogenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-
-
                 }
-
             }
             catch (Exception ex)
             {
                 idusuariogenerado = 0;
                 Mensaje = ex.Message;
             }
-
             return idusuariogenerado;
-
         }
 
         public bool Editar(Cliente obj, out string Mensaje)
@@ -108,30 +98,25 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
+                    cmd.Parameters.AddWithValue("Domicilio", obj.Domicilio); // <--- PARAMETRO AGREGADO
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-
-
                 }
-
             }
             catch (Exception ex)
             {
                 respuesta = false;
                 Mensaje = ex.Message;
             }
-
             return respuesta;
-
         }
 
         public bool Eliminar(Cliente obj, out string Mensaje)
@@ -155,10 +140,7 @@ namespace CapaDatos
                 respuesta = false;
                 Mensaje = ex.Message;
             }
-
             return respuesta;
         }
-
     }
 }
-

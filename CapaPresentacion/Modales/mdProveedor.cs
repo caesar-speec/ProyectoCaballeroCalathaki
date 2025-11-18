@@ -1,7 +1,9 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
-using DocumentFormat.OpenXml.Office.CustomUI;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace CapaPresentacion.Modales
 {
@@ -35,15 +37,16 @@ namespace CapaPresentacion.Modales
             // Obtener la lista de proveedores
             List<Proveedor> lista = new CN_Proveedor().Listar();
 
-            // Cargar filas respetando el orden de columnas
+            // Cargar filas incluyendo Domicilio
             foreach (Proveedor item in lista)
             {
                 dgvdata.Rows.Add(new object[]
                 {
-                "",                     // btnseleccionar (vacío)
-                item.IdProveedor,      // Id
-                item.Documento,        // Documento
-                item.RazonSocial       // RazonSocial
+                    "",                     // btnseleccionar
+                    item.IdProveedor,      // Id
+                    item.Documento,        // Documento
+                    item.RazonSocial,      // RazonSocial
+                    item.Domicilio         // Domicilio
                 });
             }
         }
@@ -59,7 +62,9 @@ namespace CapaPresentacion.Modales
                 {
                     IdProveedor = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Id"].Value.ToString()),
                     Documento = dgvdata.Rows[iRow].Cells["Documento"].Value.ToString(),
-                    RazonSocial = dgvdata.Rows[iRow].Cells["RazonSocial"].Value.ToString()
+                    RazonSocial = dgvdata.Rows[iRow].Cells["RazonSocial"].Value.ToString(),
+                    // Capturar Domicilio
+                    Domicilio = dgvdata.Rows[iRow].Cells["Domicilio"].Value.ToString()
                 };
 
                 this.DialogResult = DialogResult.OK;
@@ -97,4 +102,3 @@ namespace CapaPresentacion.Modales
         }
     }
 }
-

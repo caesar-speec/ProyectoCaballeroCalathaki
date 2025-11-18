@@ -2,15 +2,8 @@
 {
     partial class frmDetalleCompra
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,315 +15,339 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            groupBox1 = new GroupBox();
-            txttipodocumento = new TextBox();
-            txtusuario = new TextBox();
-            label5 = new Label();
-            txtfecha = new TextBox();
-            label4 = new Label();
-            label3 = new Label();
-            txtidcompra = new TextBox();
-            label6 = new Label();
-            groupBox2 = new GroupBox();
-            label10 = new Label();
-            txtnombreproveedor = new TextBox();
-            txtdocproveedor = new TextBox();
-            label8 = new Label();
-            dataGridView1 = new DataGridView();
-            Producto = new DataGridViewTextBoxColumn();
-            PrecioCompra = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            SubTotal = new DataGridViewTextBoxColumn();
-            label12 = new Label();
-            txtmontototal = new TextBox();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txttipodocumento = new System.Windows.Forms.TextBox();
+            this.txtusuario = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtfecha = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtidcompra = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtnombreproveedor = new System.Windows.Forms.TextBox();
+            this.txtdocproveedor = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtmontototal = new System.Windows.Forms.TextBox();
+            this.btnDescargarPDF = new FontAwesome.Sharp.IconButton(); // BOTÓN NUEVO
+
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.BackColor = SystemColors.ControlLight;
-            label1.Location = new Point(65, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(759, 601);
-            label1.TabIndex = 0;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(65, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(759, 601);
+            this.label1.TabIndex = 0;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLight;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(79, 29);
-            label2.Name = "label2";
-            label2.Size = new Size(237, 31);
-            label2.TabIndex = 1;
-            label2.Text = "Detalle de la Compra";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(79, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Detalle de la Compra";
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.ControlLight;
-            groupBox1.Controls.Add(txttipodocumento);
-            groupBox1.Controls.Add(txtusuario);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(txtfecha);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(79, 91);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(721, 117);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Informacion Compra";
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.txttipodocumento);
+            this.groupBox1.Controls.Add(this.txtusuario);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtfecha);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(79, 91);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(721, 117);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informacion Compra";
             // 
             // txttipodocumento
             // 
-            txttipodocumento.Location = new Point(210, 51);
-            txttipodocumento.Name = "txttipodocumento";
-            txttipodocumento.ReadOnly = true;
-            txttipodocumento.Size = new Size(190, 27);
-            txttipodocumento.TabIndex = 6;
+            this.txttipodocumento.Location = new System.Drawing.Point(210, 51);
+            this.txttipodocumento.Name = "txttipodocumento";
+            this.txttipodocumento.ReadOnly = true;
+            this.txttipodocumento.Size = new System.Drawing.Size(190, 27);
+            this.txttipodocumento.TabIndex = 6;
             // 
             // txtusuario
             // 
-            txtusuario.Location = new Point(446, 51);
-            txtusuario.Name = "txtusuario";
-            txtusuario.ReadOnly = true;
-            txtusuario.Size = new Size(205, 27);
-            txtusuario.TabIndex = 5;
+            this.txtusuario.Location = new System.Drawing.Point(446, 51);
+            this.txtusuario.Name = "txtusuario";
+            this.txtusuario.ReadOnly = true;
+            this.txtusuario.Size = new System.Drawing.Size(205, 27);
+            this.txtusuario.TabIndex = 5;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.ControlLight;
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(446, 27);
-            label5.Name = "label5";
-            label5.Size = new Size(62, 20);
-            label5.TabIndex = 4;
-            label5.Text = "Usuario:";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(446, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Usuario:";
             // 
             // txtfecha
             // 
-            txtfecha.Location = new Point(7, 49);
-            txtfecha.Name = "txtfecha";
-            txtfecha.ReadOnly = true;
-            txtfecha.Size = new Size(158, 27);
-            txtfecha.TabIndex = 2;
+            this.txtfecha.Location = new System.Drawing.Point(7, 49);
+            this.txtfecha.Name = "txtfecha";
+            this.txtfecha.ReadOnly = true;
+            this.txtfecha.Size = new System.Drawing.Size(158, 27);
+            this.txtfecha.TabIndex = 2;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.ControlLight;
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(210, 27);
-            label4.Name = "label4";
-            label4.Size = new Size(124, 20);
-            label4.TabIndex = 1;
-            label4.Text = "Tipo Documento:";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(210, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Tipo Documento:";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = SystemColors.ControlLight;
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(7, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Fecha:";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(7, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Fecha:";
             // 
             // txtidcompra
             // 
-            txtidcompra.Location = new Point(609, 58);
-            txtidcompra.Name = "txtidcompra";
-            txtidcompra.ReadOnly = true;
-            txtidcompra.Size = new Size(158, 27);
-            txtidcompra.TabIndex = 6;
+            this.txtidcompra.Location = new System.Drawing.Point(609, 58);
+            this.txtidcompra.Name = "txtidcompra";
+            this.txtidcompra.ReadOnly = true;
+            this.txtidcompra.Size = new System.Drawing.Size(158, 27);
+            this.txtidcompra.TabIndex = 6;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.BackColor = SystemColors.ControlLight;
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(609, 35);
-            label6.Name = "label6";
-            label6.Size = new Size(119, 20);
-            label6.TabIndex = 5;
-            label6.Text = "ID de la compra:";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(609, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "ID de la compra:";
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = SystemColors.ControlLight;
-            groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(txtnombreproveedor);
-            groupBox2.Controls.Add(txtdocproveedor);
-            groupBox2.Controls.Add(label8);
-            groupBox2.Location = new Point(79, 213);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(721, 117);
-            groupBox2.TabIndex = 9;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Informacion Proveedor";
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtnombreproveedor);
+            this.groupBox2.Controls.Add(this.txtdocproveedor);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Location = new System.Drawing.Point(79, 213);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(721, 117);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Informacion Proveedor";
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.BackColor = SystemColors.ControlLight;
-            label10.ForeColor = Color.Black;
-            label10.Location = new Point(7, 27);
-            label10.Name = "label10";
-            label10.Size = new Size(148, 20);
-            label10.TabIndex = 7;
-            label10.Text = "Numero Documento:";
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label10.ForeColor = Color.Black;
+            this.label10.Location = new System.Drawing.Point(7, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(148, 20);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Numero Documento:";
             // 
             // txtnombreproveedor
             // 
-            txtnombreproveedor.Location = new Point(210, 51);
-            txtnombreproveedor.Name = "txtnombreproveedor";
-            txtnombreproveedor.ReadOnly = true;
-            txtnombreproveedor.Size = new Size(190, 27);
-            txtnombreproveedor.TabIndex = 6;
+            this.txtnombreproveedor.Location = new System.Drawing.Point(210, 51);
+            this.txtnombreproveedor.Name = "txtnombreproveedor";
+            this.txtnombreproveedor.ReadOnly = true;
+            this.txtnombreproveedor.Size = new System.Drawing.Size(190, 27);
+            this.txtnombreproveedor.TabIndex = 6;
             // 
             // txtdocproveedor
             // 
-            txtdocproveedor.Location = new Point(7, 49);
-            txtdocproveedor.Name = "txtdocproveedor";
-            txtdocproveedor.ReadOnly = true;
-            txtdocproveedor.Size = new Size(158, 27);
-            txtdocproveedor.TabIndex = 2;
+            this.txtdocproveedor.Location = new System.Drawing.Point(7, 49);
+            this.txtdocproveedor.Name = "txtdocproveedor";
+            this.txtdocproveedor.ReadOnly = true;
+            this.txtdocproveedor.Size = new System.Drawing.Size(158, 27);
+            this.txtdocproveedor.TabIndex = 2;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.BackColor = SystemColors.ControlLight;
-            label8.ForeColor = Color.Black;
-            label8.Location = new Point(210, 27);
-            label8.Name = "label8";
-            label8.Size = new Size(97, 20);
-            label8.TabIndex = 1;
-            label8.Text = "Razon Social:";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(210, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 20);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Razon Social:";
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Producto, PrecioCompra, Cantidad, SubTotal });
-            dataGridView1.Location = new Point(86, 336);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(714, 241);
-            dataGridView1.TabIndex = 10;
-
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Producto,
+            this.PrecioCompra,
+            this.Cantidad,
+            this.SubTotal});
+            this.dataGridView1.Location = new System.Drawing.Point(86, 336);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(714, 241);
+            this.dataGridView1.TabIndex = 10;
             // 
             // Producto
             // 
-            Producto.HeaderText = "Producto";
-            Producto.MinimumWidth = 6;
-            Producto.Name = "Producto";
-            Producto.Width = 125;
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 6;
+            this.Producto.Name = "Producto";
+            this.Producto.Width = 125;
             // 
             // PrecioCompra
             // 
-            PrecioCompra.HeaderText = "Precio Compra:";
-            PrecioCompra.MinimumWidth = 6;
-            PrecioCompra.Name = "PrecioCompra";
-            PrecioCompra.Width = 125;
+            this.PrecioCompra.HeaderText = "Precio Compra:";
+            this.PrecioCompra.MinimumWidth = 6;
+            this.PrecioCompra.Name = "PrecioCompra";
+            this.PrecioCompra.Width = 125;
             // 
             // Cantidad
             // 
-            Cantidad.HeaderText = "Cantidad:";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 125;
+            this.Cantidad.HeaderText = "Cantidad:";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 125;
             // 
             // SubTotal
             // 
-            SubTotal.HeaderText = "Sub-Total:";
-            SubTotal.MinimumWidth = 6;
-            SubTotal.Name = "SubTotal";
-            SubTotal.Width = 125;
+            this.SubTotal.HeaderText = "Sub-Total:";
+            this.SubTotal.MinimumWidth = 6;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.Width = 125;
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.BackColor = SystemColors.ControlLight;
-            label12.ForeColor = Color.Black;
-            label12.Location = new Point(86, 585);
-            label12.Name = "label12";
-            label12.Size = new Size(93, 20);
-            label12.TabIndex = 12;
-            label12.Text = "Monto Total:";
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(86, 585);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 20);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Monto Total:";
             // 
             // txtmontototal
             // 
-            txtmontototal.Location = new Point(185, 581);
-            txtmontototal.Name = "txtmontototal";
-            txtmontototal.ReadOnly = true;
-            txtmontototal.Size = new Size(116, 27);
-            txtmontototal.TabIndex = 11;
+            this.txtmontototal.Location = new System.Drawing.Point(185, 581);
+            this.txtmontototal.Name = "txtmontototal";
+            this.txtmontototal.ReadOnly = true;
+            this.txtmontototal.Size = new System.Drawing.Size(116, 27);
+            this.txtmontototal.TabIndex = 11;
+            // 
+            // btnDescargarPDF
+            // 
+            this.btnDescargarPDF.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDescargarPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDescargarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescargarPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescargarPDF.ForeColor = System.Drawing.Color.White;
+            this.btnDescargarPDF.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            this.btnDescargarPDF.IconColor = System.Drawing.Color.White;
+            this.btnDescargarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDescargarPDF.IconSize = 18;
+            this.btnDescargarPDF.Location = new System.Drawing.Point(662, 579);
+            this.btnDescargarPDF.Name = "btnDescargarPDF";
+            this.btnDescargarPDF.Size = new System.Drawing.Size(138, 33);
+            this.btnDescargarPDF.TabIndex = 24;
+            this.btnDescargarPDF.Text = "Descargar PDF";
+            this.btnDescargarPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDescargarPDF.UseVisualStyleBackColor = false;
+            this.btnDescargarPDF.Click += new System.EventHandler(this.btnDescargarPDF_Click);
             // 
             // frmDetalleCompra
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(894, 629);
-            Controls.Add(label12);
-            Controls.Add(txtmontototal);
-            Controls.Add(dataGridView1);
-            Controls.Add(groupBox2);
-            Controls.Add(txtidcompra);
-            Controls.Add(label6);
-            Controls.Add(groupBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            ForeColor = Color.Black;
-            Name = "frmDetalleCompra";
-            Text = "Detalle de Compra";
-            Load += frmDetalleCompra_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.ClientSize = new System.Drawing.Size(894, 629);
+            this.Controls.Add(this.btnDescargarPDF);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtmontototal);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.txtidcompra);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.Name = "frmDetalleCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Detalle de Compra";
+            this.Load += new System.EventHandler(this.frmDetalleCompra_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private GroupBox groupBox1;
-        private TextBox txttipodocumento;
-        private TextBox txtusuario;
-        private Label label5;
-        private TextBox txtfecha;
-        private Label label4;
-        private Label label3;
-        private TextBox txtidcompra;
-        private Label label6;
-        private GroupBox groupBox2;
-        private Label label10;
-        private TextBox txtnombreproveedor;
-        private TextBox txtdocproveedor;
-        private Label label8;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn PrecioCompra;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn SubTotal;
-        private Label label12;
-        private TextBox txtmontototal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txttipodocumento;
+        private System.Windows.Forms.TextBox txtusuario;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtfecha;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtidcompra;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtnombreproveedor;
+        private System.Windows.Forms.TextBox txtdocproveedor;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtmontototal;
+        private FontAwesome.Sharp.IconButton btnDescargarPDF;
     }
 }

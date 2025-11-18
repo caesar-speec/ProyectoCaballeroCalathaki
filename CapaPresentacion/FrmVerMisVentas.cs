@@ -7,10 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using CapaEntidad;
-using CapaNegocio;
-
 using CapaEntidad;
 using CapaNegocio;
 
@@ -23,49 +19,80 @@ namespace CapaPresentacion
         public FrmVerMisVentas(Usuario usuario)
         {
             InitializeComponent();
-
-            // 1️⃣ Guardar usuario primero
             usuarioActual = usuario;
-
-            // 2️⃣ Mostrar el nombre del usuario
-            textBox1.Text = usuarioActual.NombreCompleto;
-
-            // 3️⃣ Cargar ventas del usuario
-            CargarMisVentas();
         }
 
         private void FrmVerMisVentas_Load(object sender, EventArgs e)
         {
-            // ❗ NO LLAMES DE NUEVO A CargarMisVentas()
-            // Eso duplicaba y además se ejecutaba antes del usuario en muchos casos
+            // Establecer fechas por defecto (inicio de mes y hoy)
+            dtinicio.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            dtfin.Value = DateTime.Now;
+
+            CargarMisVentas();
         }
 
         private void CargarMisVentas()
         {
-            if (usuarioActual == null)
-            {
-                MessageBox.Show("No hay usuario en sesión.");
-                return;
-            }
+            if (usuarioActual == null) return;
+
+            DateTime fechaInicio = dtinicio.Value.Date;
+            DateTime fechaFin = dtfin.Value.Date;
+
+            // 1. Obtener reporte filtrado por fechas y por el ID del usuario actual
+            // Usamos CN_ReporteVentas que ya tiene la lógica de SQL optimizada
+            DataTable dt = new CN_ReporteVentas().ReporteVentas(fechaInicio, fechaFin, usuarioActual.IdUsuario);
 
             dataGridView3.Rows.Clear();
 
-            List<Venta> listaVentas = new CN_Venta().Listar();
+            // 2. Aplicar filtro adicional por DNI Cliente (textBox1) si se escribió algo
+            string filtroDni = textBox1.Text.Trim();
 
-            // Filtrar ventas del usuario logueado
-            var ventasFiltradas = listaVentas
-                .Where(v => v.oUsuario.IdUsuario == usuarioActual.IdUsuario)
-                .ToList();
-
-            foreach (var venta in ventasFiltradas)
+            foreach (DataRow row in dt.Rows)
             {
+                string docCliente = row["DocumentoCliente"].ToString();
+
+                // Si hay filtro de DNI y no coincide, saltamos esta fila
+                if (!string.IsNullOrEmpty(filtroDni) && !docCliente.Contains(filtroDni))
+                {
+                    continue;
+                }
+
                 dataGridView3.Rows.Add(
-                    venta.NombreCliente,
-                    venta.DocumentoCliente,
-                    venta.fecha_creacion,   // ahora DateTime
-                    venta.MontoTotal,
-                    "Ver detalle"
+                    row["IdVenta"],          // Columna oculta para el ID
+                    row["Cliente"],          // NombreCliente
+                    docCliente,              // DocumentoCliente
+                    row["FechaRegistro"],    // Fecha
+                    row["MontoTotal"]        // Monto
+                                             // El botón se dibuja solo
                 );
+            }
+        }
+
+        private void btnbuscarventa_Click(object sender, EventArgs e)
+        {
+            CargarMisVentas();
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            dtinicio.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            dtfin.Value = DateTime.Now;
+            textBox1.Text = "";
+            CargarMisVentas();
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar si se hizo clic en el botón "Ver detalle"
+            if (e.RowIndex >= 0 && dataGridView3.Columns[e.ColumnIndex].Name == "dataGridViewButtonColumn1")
+            {
+                // Obtener el ID de la venta de la columna oculta "IdVenta"
+                // Asegúrate de que "IdVenta" sea el nombre correcto de la columna en el designer (indice 0)
+                int idVenta = Convert.ToInt32(dataGridView3.Rows[e.RowIndex].Cells["IdVenta"].Value);
+
+                // Abrir el modal de detalle
+                frmDetalleVenta modal = new frmDetalleVenta(idVenta);
+                modal.ShowDialog();
             }
         }
     }

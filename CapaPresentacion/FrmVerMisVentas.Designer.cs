@@ -2,15 +2,8 @@
 {
     partial class FrmVerMisVentas
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
@@ -39,12 +28,17 @@
             label4 = new Label();
             dtinicio = new DateTimePicker();
             label3 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
             label5 = new Label();
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
             dataGridView3 = new DataGridView();
+            IdVenta = new DataGridViewTextBoxColumn();
+            NombreCliente = new DataGridViewTextBoxColumn();
+            DocumentoCliente = new DataGridViewTextBoxColumn();
+            fecha_creacion = new DataGridViewTextBoxColumn();
+            MontoTotal = new DataGridViewTextBoxColumn();
+            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnbuscarventa = new FontAwesome.Sharp.IconButton();
             txtbusqueda = new TextBox();
@@ -53,178 +47,186 @@
             label8 = new Label();
             textBox1 = new TextBox();
             label9 = new Label();
-            NombreCliente = new DataGridViewTextBoxColumn();
-            DocumentoCliente = new DataGridViewTextBoxColumn();
-            fecha_creacion = new DataGridViewTextBoxColumn();
-            MontoTotal = new DataGridViewTextBoxColumn();
-            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nombre, DNI, Telefono, Correo, DetalleVenta });
-            dataGridView1.Location = new Point(318, 58);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.ColumnHeadersHeight = 29;
+            dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(698, 332);
-            dataGridView1.TabIndex = 36;
+            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.TabIndex = 0;
             // 
             // Nombre
             // 
-            Nombre.HeaderText = "Nombre";
             Nombre.MinimumWidth = 6;
             Nombre.Name = "Nombre";
             Nombre.Width = 125;
             // 
             // DNI
             // 
-            DNI.HeaderText = "DNI";
             DNI.MinimumWidth = 6;
             DNI.Name = "DNI";
             DNI.Width = 125;
             // 
             // Telefono
             // 
-            Telefono.HeaderText = "Telefono";
             Telefono.MinimumWidth = 6;
             Telefono.Name = "Telefono";
             Telefono.Width = 125;
             // 
             // Correo
             // 
-            Correo.HeaderText = "Correo";
             Correo.MinimumWidth = 6;
             Correo.Name = "Correo";
             Correo.Width = 125;
             // 
             // DetalleVenta
             // 
-            DetalleVenta.HeaderText = "Detalle de Venta";
             DetalleVenta.MinimumWidth = 6;
             DetalleVenta.Name = "DetalleVenta";
-            DetalleVenta.Text = "[Ver más]";
-            DetalleVenta.Width = 102;
+            DetalleVenta.Width = 125;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLight;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(318, 20);
+            label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(107, 25);
-            label2.TabIndex = 35;
-            label2.Text = "Mis Ventas";
+            label2.Size = new Size(100, 23);
+            label2.TabIndex = 0;
             // 
             // dtfin
             // 
             dtfin.CustomFormat = "dd/MM/yyyy";
             dtfin.Format = DateTimePickerFormat.Short;
-            dtfin.Location = new Point(732, 26);
-            dtfin.Margin = new Padding(3, 2, 3, 2);
+            dtfin.Location = new Point(659, 73);
             dtfin.Name = "dtfin";
-            dtfin.Size = new Size(97, 23);
+            dtfin.Size = new Size(110, 27);
             dtfin.TabIndex = 40;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ControlLight;
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(664, 28);
+            label4.Location = new Point(582, 73);
             label4.Name = "label4";
-            label4.Size = new Size(58, 15);
-            label4.TabIndex = 39;
+            label4.Size = new Size(71, 20);
+            label4.TabIndex = 58;
             label4.Text = "Fecha fin:";
             // 
             // dtinicio
             // 
             dtinicio.CustomFormat = "dd/MM/yyyy";
             dtinicio.Format = DateTimePickerFormat.Short;
-            dtinicio.Location = new Point(554, 26);
-            dtinicio.Margin = new Padding(3, 2, 3, 2);
+            dtinicio.Location = new Point(452, 73);
             dtinicio.Name = "dtinicio";
-            dtinicio.Size = new Size(97, 23);
+            dtinicio.Size = new Size(110, 27);
             dtinicio.TabIndex = 38;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.ControlLight;
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(470, 27);
+            label3.Location = new Point(356, 73);
             label3.Name = "label3";
-            label3.Size = new Size(73, 15);
-            label3.TabIndex = 37;
+            label3.Size = new Size(90, 20);
+            label3.TabIndex = 59;
             label3.Text = "Fecha inicio:";
-            // 
-            // iconButton1
-            // 
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 15;
-            iconButton1.Location = new Point(684, 75);
-            iconButton1.Margin = new Padding(3, 2, 3, 2);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(56, 21);
-            iconButton1.TabIndex = 53;
-            iconButton1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ControlLight;
-            label1.Location = new Point(543, 27);
+            label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(40, 15);
-            label1.TabIndex = 52;
-            label1.Text = "Hasta:";
+            label1.Size = new Size(100, 23);
+            label1.TabIndex = 0;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.ControlLight;
-            label5.Location = new Point(318, 26);
+            label5.Location = new Point(0, 0);
             label5.Name = "label5";
-            label5.Size = new Size(42, 15);
-            label5.TabIndex = 51;
-            label5.Text = "Desde:";
+            label5.Size = new Size(100, 23);
+            label5.TabIndex = 0;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(543, 45);
-            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker2.Location = new Point(0, 0);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(197, 23);
-            dateTimePicker2.TabIndex = 50;
+            dateTimePicker2.Size = new Size(200, 27);
+            dateTimePicker2.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(318, 47);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker1.Location = new Point(0, 0);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(219, 23);
-            dateTimePicker1.TabIndex = 49;
+            dateTimePicker1.Size = new Size(200, 27);
+            dateTimePicker1.TabIndex = 0;
             // 
             // dataGridView3
             // 
+            dataGridView3.AllowUserToAddRows = false;
             dataGridView3.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { NombreCliente, DocumentoCliente, fecha_creacion, MontoTotal, dataGridViewButtonColumn1 });
-            dataGridView3.Location = new Point(18, 100);
-            dataGridView3.Margin = new Padding(3, 2, 3, 2);
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { IdVenta, NombreCliente, DocumentoCliente, fecha_creacion, MontoTotal, dataGridViewButtonColumn1 });
+            dataGridView3.Location = new Point(21, 133);
             dataGridView3.Name = "dataGridView3";
+            dataGridView3.ReadOnly = true;
             dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(722, 332);
+            dataGridView3.Size = new Size(825, 443);
             dataGridView3.TabIndex = 47;
+            dataGridView3.CellContentClick += dataGridView3_CellContentClick;
+            // 
+            // IdVenta
+            // 
+            IdVenta.HeaderText = "IdVenta";
+            IdVenta.MinimumWidth = 6;
+            IdVenta.Name = "IdVenta";
+            IdVenta.ReadOnly = true;
+            IdVenta.Visible = false;
+            IdVenta.Width = 125;
+            // 
+            // NombreCliente
+            // 
+            NombreCliente.HeaderText = "Cliente";
+            NombreCliente.MinimumWidth = 6;
+            NombreCliente.Name = "NombreCliente";
+            NombreCliente.ReadOnly = true;
+            NombreCliente.Width = 180;
+            // 
+            // DocumentoCliente
+            // 
+            DocumentoCliente.HeaderText = "DNI";
+            DocumentoCliente.MinimumWidth = 6;
+            DocumentoCliente.Name = "DocumentoCliente";
+            DocumentoCliente.ReadOnly = true;
+            DocumentoCliente.Width = 125;
+            // 
+            // fecha_creacion
+            // 
+            fecha_creacion.HeaderText = "Fecha venta";
+            fecha_creacion.MinimumWidth = 6;
+            fecha_creacion.Name = "fecha_creacion";
+            fecha_creacion.ReadOnly = true;
+            fecha_creacion.Width = 125;
+            // 
+            // MontoTotal
+            // 
+            MontoTotal.HeaderText = "Monto Total";
+            MontoTotal.MinimumWidth = 6;
+            MontoTotal.Name = "MontoTotal";
+            MontoTotal.ReadOnly = true;
+            MontoTotal.Width = 125;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewButtonColumn1.HeaderText = "Detalle de Venta";
+            dataGridViewButtonColumn1.MinimumWidth = 6;
+            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            dataGridViewButtonColumn1.ReadOnly = true;
+            dataGridViewButtonColumn1.Text = "[Ver más]";
+            dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            dataGridViewButtonColumn1.Width = 102;
             // 
             // btnlimpiar
             // 
@@ -233,14 +235,14 @@
             btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnlimpiar.IconSize = 20;
             btnlimpiar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnlimpiar.Location = new Point(233, 60);
-            btnlimpiar.Margin = new Padding(3, 2, 3, 2);
+            btnlimpiar.Location = new Point(21, 98);
             btnlimpiar.Name = "btnlimpiar";
-            btnlimpiar.Size = new Size(80, 21);
+            btnlimpiar.Size = new Size(91, 28);
             btnlimpiar.TabIndex = 46;
             btnlimpiar.Text = "Limpiar";
             btnlimpiar.TextAlign = ContentAlignment.MiddleRight;
             btnlimpiar.UseVisualStyleBackColor = true;
+            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btnbuscarventa
             // 
@@ -248,31 +250,26 @@
             btnbuscarventa.IconColor = Color.Black;
             btnbuscarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnbuscarventa.IconSize = 15;
-            btnbuscarventa.Location = new Point(171, 62);
-            btnbuscarventa.Margin = new Padding(3, 2, 3, 2);
+            btnbuscarventa.Location = new Point(194, 65);
             btnbuscarventa.Name = "btnbuscarventa";
-            btnbuscarventa.Size = new Size(56, 21);
+            btnbuscarventa.Size = new Size(64, 28);
             btnbuscarventa.TabIndex = 45;
             btnbuscarventa.UseVisualStyleBackColor = true;
+            btnbuscarventa.Click += btnbuscarventa_Click;
             // 
             // txtbusqueda
             // 
-            txtbusqueda.Location = new Point(-252, 52);
-            txtbusqueda.Margin = new Padding(3, 2, 3, 2);
+            txtbusqueda.Location = new Point(0, 0);
             txtbusqueda.Name = "txtbusqueda";
-            txtbusqueda.Size = new Size(139, 23);
-            txtbusqueda.TabIndex = 44;
+            txtbusqueda.Size = new Size(100, 27);
+            txtbusqueda.TabIndex = 0;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.BackColor = SystemColors.ControlLight;
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(-288, 34);
+            label6.Location = new Point(0, 0);
             label6.Name = "label6";
-            label6.Size = new Size(173, 15);
-            label6.TabIndex = 43;
-            label6.Text = "Numero Documento vendedor:";
+            label6.Size = new Size(100, 23);
+            label6.TabIndex = 0;
             // 
             // label7
             // 
@@ -280,111 +277,54 @@
             label7.BackColor = SystemColors.ControlLight;
             label7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(18, 9);
+            label7.Location = new Point(21, 12);
             label7.Name = "label7";
-            label7.Size = new Size(197, 25);
+            label7.Size = new Size(128, 31);
             label7.TabIndex = 42;
-            label7.Text = "Detalle de mis ventas";
+            label7.Text = "Mis ventas";
             // 
             // label8
             // 
             label8.BackColor = SystemColors.ControlLight;
-            label8.Location = new Point(-24, 9);
+            label8.Location = new Point(-39, 9);
             label8.Name = "label8";
-            label8.Size = new Size(1405, 434);
+            label8.Size = new Size(1606, 579);
             label8.TabIndex = 41;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(18, 63);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Location = new Point(21, 65);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(147, 23);
+            textBox1.Size = new Size(167, 27);
             textBox1.TabIndex = 55;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.BackColor = SystemColors.ControlLight;
-            label9.Location = new Point(18, 42);
+            label9.Location = new Point(21, 43);
             label9.Name = "label9";
-            label9.Size = new Size(70, 15);
+            label9.Size = new Size(88, 20);
             label9.TabIndex = 56;
             label9.Text = "DNI Cliente:";
             // 
-            // NombreCliente
-            // 
-            NombreCliente.HeaderText = "Cliente";
-            NombreCliente.MinimumWidth = 6;
-            NombreCliente.Name = "NombreCliente";
-            NombreCliente.Width = 125;
-            // 
-            // DocumentoCliente
-            // 
-            DocumentoCliente.HeaderText = "DNI";
-            DocumentoCliente.MinimumWidth = 6;
-            DocumentoCliente.Name = "DocumentoCliente";
-            DocumentoCliente.Width = 125;
-            // 
-            // fecha_creacion
-            // 
-            fecha_creacion.HeaderText = "Fecha venta";
-            fecha_creacion.MinimumWidth = 6;
-            fecha_creacion.Name = "fecha_creacion";
-            fecha_creacion.Width = 125;
-            // 
-            // MontoTotal
-            // 
-            MontoTotal.HeaderText = "Monto Total";
-            MontoTotal.MinimumWidth = 6;
-            MontoTotal.Name = "MontoTotal";
-            MontoTotal.Width = 125;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            dataGridViewButtonColumn1.HeaderText = "Detalle de Venta";
-            dataGridViewButtonColumn1.MinimumWidth = 6;
-            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            dataGridViewButtonColumn1.Text = "[Ver más]";
-            dataGridViewButtonColumn1.Width = 102;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(589, 19);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 22);
-            button1.TabIndex = 54;
-            button1.Text = "Imprimir Detalle";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // FrmVerMisVentas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(767, 434);
+            ClientSize = new Size(877, 579);
             Controls.Add(label9);
             Controls.Add(textBox1);
-            Controls.Add(button1);
-            Controls.Add(iconButton1);
-            Controls.Add(label1);
-            Controls.Add(label5);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
             Controls.Add(dataGridView3);
             Controls.Add(btnlimpiar);
             Controls.Add(btnbuscarventa);
-            Controls.Add(txtbusqueda);
-            Controls.Add(label6);
             Controls.Add(label7);
-            Controls.Add(label8);
             Controls.Add(dtfin);
             Controls.Add(label4);
             Controls.Add(dtinicio);
             Controls.Add(label3);
-            Controls.Add(dataGridView1);
-            Controls.Add(label2);
+            Controls.Add(label8);
             ForeColor = Color.Black;
             Name = "FrmVerMisVentas";
             Text = "Ver Mis Ventas";
@@ -396,37 +336,36 @@
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn DNI;
-        private DataGridViewTextBoxColumn Telefono;
-        private DataGridViewTextBoxColumn Correo;
-        private DataGridViewButtonColumn DetalleVenta;
-        private Label label2;
-        private DateTimePicker dtfin;
-        private Label label4;
-        private DateTimePicker dtinicio;
-        private Label label3;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Label label1;
-        private Label label5;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
-        private DataGridView dataGridView3;
+        // ... Declaraciones ...
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewButtonColumn DetalleVenta;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtfin;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtinicio;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dataGridView3;
         private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btnbuscarventa;
-        private TextBox txtbusqueda;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private TextBox textBox1;
-        private Label label9;
-        private DataGridViewTextBoxColumn NombreCliente;
-        private DataGridViewTextBoxColumn DocumentoCliente;
-        private DataGridViewTextBoxColumn fecha_creacion;
-        private DataGridViewTextBoxColumn MontoTotal;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private Button button1;
+        private System.Windows.Forms.TextBox txtbusqueda;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DocumentoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_creacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MontoTotal;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }

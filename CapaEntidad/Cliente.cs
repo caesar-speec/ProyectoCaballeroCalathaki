@@ -7,6 +7,7 @@
         public string NombreCompleto { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
+        public string Domicilio { get; set; }
         public bool Estado { get; set; }
         public string FechaRegistro { get; set; }
     }

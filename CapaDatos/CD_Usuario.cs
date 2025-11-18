@@ -1,8 +1,9 @@
 ﻿using CapaEntidad;
 using Microsoft.Data.SqlClient;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Text;
-
 
 namespace CapaDatos
 {
@@ -16,11 +17,11 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT u.IdUsuario, u.Documento, u.NombreCompleto, u.Correo, u.Clave, u.Estado, r.IdRol, r.Descripcion FROM usuario u");
+                    // AGREGADO: u.Domicilio en la consulta SELECT
+                    query.AppendLine("SELECT u.IdUsuario, u.Documento, u.NombreCompleto, u.Correo, u.Clave, u.Estado, u.Domicilio, r.IdRol, r.Descripcion FROM usuario u");
                     query.AppendLine("inner join rol r on r.IdRol = u.IdRol");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
-
 
                     oconexion.Open();
 
@@ -35,6 +36,7 @@ namespace CapaDatos
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
                                 Correo = dr["Correo"].ToString(),
                                 Clave = dr["Clave"].ToString(),
+                                Domicilio = dr["Domicilio"].ToString(), // <--- LECTURA AGREGADA
                                 Estado = Convert.ToBoolean(dr["Estado"]),
                                 oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]), Descripcion = dr["Descripcion"].ToString() }
                             });
@@ -44,15 +46,11 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-
-
                     lista = new List<Usuario>();
                 }
             }
             return lista;
         }
-
-
 
         public int Registrar(Usuario obj, out string Mensaje)
         {
@@ -68,30 +66,25 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Clave", obj.Clave);
                     cmd.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
+                    cmd.Parameters.AddWithValue("Domicilio", obj.Domicilio); // <--- PARAMETRO AGREGADO
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("IdUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     idusuariogenerado = Convert.ToInt32(cmd.Parameters["IdUsuarioResultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-
-
                 }
-
             }
             catch (Exception ex)
             {
                 idusuariogenerado = 0;
                 Mensaje = ex.Message;
             }
-
             return idusuariogenerado;
-
         }
 
         public bool Editar(Usuario obj, out string Mensaje)
@@ -109,30 +102,25 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Correo", obj.Correo);
                     cmd.Parameters.AddWithValue("Clave", obj.Clave);
                     cmd.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
+                    cmd.Parameters.AddWithValue("Domicilio", obj.Domicilio); // <--- PARAMETRO AGREGADO
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-
-
                 }
-
             }
             catch (Exception ex)
             {
                 respuesta = false;
                 Mensaje = ex.Message;
             }
-
             return respuesta;
-
         }
 
         public bool Eliminar(Usuario obj, out string Mensaje)
@@ -146,36 +134,28 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("SP_ELIMINARUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("IdUsuario", obj.IdUsuario);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
-                    
+
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-
-
                 }
-
             }
             catch (Exception ex)
             {
                 respuesta = false;
                 Mensaje = ex.Message;
             }
-
             return respuesta;
-
         }
-
 
         // +++ INICIO: MÉTODO AGREGADO +++
         public List<Usuario> ListarVendedores()
         {
             List<Usuario> lista = new List<Usuario>();
-
             // Usamos 'Microsoft.Data.SqlClient' como el resto de tu clase
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
@@ -187,7 +167,6 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
@@ -213,11 +192,9 @@ namespace CapaDatos
         // +++ FIN: MÉTODO AGREGADO +++
 
 
-
         public List<CapaEntidad.Usuario> ListarReponedores()
         {
             List<CapaEntidad.Usuario> lista = new List<CapaEntidad.Usuario>();
-
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
@@ -228,7 +205,6 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
-
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
@@ -250,7 +226,5 @@ namespace CapaDatos
             }
             return lista;
         }
-
-
     }
 }

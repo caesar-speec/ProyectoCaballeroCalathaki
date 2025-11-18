@@ -2,15 +2,8 @@
 {
     partial class mdProveedor
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,19 +15,16 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvdata = new DataGridView();
             btnseleccionar = new DataGridViewButtonColumn();
             Id = new DataGridViewTextBoxColumn();
             Documento = new DataGridViewTextBoxColumn();
             RazonSocial = new DataGridViewTextBoxColumn();
+            Domicilio = new DataGridViewTextBoxColumn();
             label2 = new Label();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnbuscar = new FontAwesome.Sharp.IconButton();
@@ -49,25 +39,24 @@
             // 
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, RazonSocial });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, Id, Documento, RazonSocial, Domicilio });
             dgvdata.Location = new Point(42, 106);
-            dgvdata.Margin = new Padding(3, 4, 3, 4);
             dgvdata.MultiSelect = false;
             dgvdata.Name = "dgvdata";
             dgvdata.ReadOnly = true;
             dgvdata.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(128, 128, 255);
-            dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(128, 128, 255);
+            dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvdata.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvdata.Size = new Size(780, 374);
             dgvdata.TabIndex = 62;
@@ -108,6 +97,14 @@
             RazonSocial.ReadOnly = true;
             RazonSocial.Width = 180;
             // 
+            // Domicilio
+            // 
+            Domicilio.HeaderText = "Domicilio";
+            Domicilio.MinimumWidth = 6;
+            Domicilio.Name = "Domicilio";
+            Domicilio.ReadOnly = true;
+            Domicilio.Width = 125;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -130,7 +127,6 @@
             btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnlimpiar.IconSize = 18;
             btnlimpiar.Location = new Point(802, 45);
-            btnlimpiar.Margin = new Padding(3, 4, 3, 4);
             btnlimpiar.Name = "btnlimpiar";
             btnlimpiar.Size = new Size(48, 44);
             btnlimpiar.TabIndex = 75;
@@ -147,7 +143,6 @@
             btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnbuscar.IconSize = 18;
             btnbuscar.Location = new Point(748, 45);
-            btnbuscar.Margin = new Padding(3, 4, 3, 4);
             btnbuscar.Name = "btnbuscar";
             btnbuscar.Size = new Size(48, 44);
             btnbuscar.TabIndex = 74;
@@ -157,7 +152,6 @@
             // txtbusqueda
             // 
             txtbusqueda.Location = new Point(564, 55);
-            txtbusqueda.Margin = new Padding(3, 4, 3, 4);
             txtbusqueda.Name = "txtbusqueda";
             txtbusqueda.Size = new Size(178, 27);
             txtbusqueda.TabIndex = 73;
@@ -167,7 +161,6 @@
             cbobusqueda.DropDownStyle = ComboBoxStyle.DropDownList;
             cbobusqueda.FormattingEnabled = true;
             cbobusqueda.Location = new Point(380, 54);
-            cbobusqueda.Margin = new Padding(3, 4, 3, 4);
             cbobusqueda.Name = "cbobusqueda";
             cbobusqueda.Size = new Size(178, 28);
             cbobusqueda.TabIndex = 72;
@@ -207,6 +200,7 @@
             Controls.Add(label10);
             Controls.Add(label1);
             Controls.Add(dgvdata);
+            ForeColor = Color.Black;
             Name = "mdProveedor";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "mdProveedor";
@@ -217,17 +211,18 @@
         }
 
         #endregion
-        private DataGridView dgvdata;
-        private Label label2;
+        private System.Windows.Forms.DataGridView dgvdata;
+        private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btnbuscar;
-        private TextBox txtbusqueda;
-        private ComboBox cbobusqueda;
-        private Label label10;
-        private Label label1;
+        private System.Windows.Forms.TextBox txtbusqueda;
+        private System.Windows.Forms.ComboBox cbobusqueda;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label1;
         private DataGridViewButtonColumn btnseleccionar;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Documento;
         private DataGridViewTextBoxColumn RazonSocial;
+        private DataGridViewTextBoxColumn Domicilio;
     }
 }

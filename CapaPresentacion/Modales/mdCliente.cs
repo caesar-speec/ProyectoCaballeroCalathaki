@@ -16,8 +16,8 @@ namespace CapaPresentacion.Modales
 {
     public partial class mdCliente : Form
     {
-
         public Cliente _Cliente { get; set; }
+
         public mdCliente()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace CapaPresentacion.Modales
         {
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
-                if (columna.Visible == true && columna.Name != "btnseleccionar")
+                if (columna.Visible == true)
                 {
                     cbobusqueda.Items.Add(new OpcionCombo()
                     {
@@ -36,24 +36,26 @@ namespace CapaPresentacion.Modales
                     });
                 }
             }
-
             cbobusqueda.DisplayMember = "Texto";
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-            // Obtener la lista de proveedores
+            
             List<Cliente> lista = new CN_Cliente().Listar();
 
-            // Cargar filas respetando el orden de columnas
+           
             foreach (Cliente item in lista)
             {
-                dgvdata.Rows.Add(new object[] { item.Documento, item.NombreCompleto });
+                if (item.Estado) 
+                {
+                    dgvdata.Rows.Add(new object[] {
+                        item.Documento,
+                        item.NombreCompleto,
+                        item.Domicilio, 
+                        item.IdCliente  
+                    });
+                }
             }
-        }
-
-        private void txtid_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -61,13 +63,15 @@ namespace CapaPresentacion.Modales
             int iRow = e.RowIndex;
             int iColumn = e.ColumnIndex;
 
-            if (iRow >= 0 && iColumn > 0)
+            if (iRow >= 0)
             {
                 _Cliente = new Cliente()
                 {
-
+                    // Capturamos los datos correctos de la fila seleccionada
+                    IdCliente = Convert.ToInt32(dgvdata.Rows[iRow].Cells["IdCliente"].Value.ToString()),
                     Documento = dgvdata.Rows[iRow].Cells["Documento"].Value.ToString(),
-                    NombreCompleto = dgvdata.Rows[iRow].Cells["NombreCompleto"].Value.ToString()
+                    NombreCompleto = dgvdata.Rows[iRow].Cells["NombreCompleto"].Value.ToString(),
+                    Domicilio = dgvdata.Rows[iRow].Cells["Domicilio"].Value.ToString() 
                 };
 
                 this.DialogResult = DialogResult.OK;
@@ -98,5 +102,8 @@ namespace CapaPresentacion.Modales
                 row.Visible = true;
             }
         }
+
+        // Eventos vacíos
+        private void txtid_TextChanged(object sender, EventArgs e) { }
     }
 }

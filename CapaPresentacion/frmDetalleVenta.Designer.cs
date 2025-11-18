@@ -2,15 +2,8 @@
 {
     partial class frmDetalleVenta
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             label1 = new Label();
@@ -56,6 +45,7 @@
             txtmontopago = new TextBox();
             label14 = new Label();
             label13 = new Label();
+            btnDescargarPDF = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -226,7 +216,7 @@
             label12.AutoSize = true;
             label12.BackColor = SystemColors.ControlLight;
             label12.ForeColor = Color.Black;
-            label12.Location = new Point(61, 584);
+            label12.Location = new Point(41, 573);
             label12.Name = "label12";
             label12.Size = new Size(93, 20);
             label12.TabIndex = 18;
@@ -234,10 +224,10 @@
             // 
             // txtmontototal
             // 
-            txtmontototal.Location = new Point(160, 581);
+            txtmontototal.Location = new Point(134, 570);
             txtmontototal.Name = "txtmontototal";
             txtmontototal.ReadOnly = true;
-            txtmontototal.Size = new Size(74, 27);
+            txtmontototal.Size = new Size(116, 27);
             txtmontototal.TabIndex = 17;
             // 
             // dataGridView1
@@ -288,28 +278,26 @@
             // 
             // txtmontocambio
             // 
-            txtmontocambio.Location = new Point(567, 581);
+            txtmontocambio.Location = new Point(568, 570);
             txtmontocambio.Name = "txtmontocambio";
             txtmontocambio.ReadOnly = true;
             txtmontocambio.Size = new Size(74, 27);
             txtmontocambio.TabIndex = 23;
-            txtmontocambio.TextChanged += txtcambio_TextChanged;
             // 
             // txtmontopago
             // 
-            txtmontopago.Location = new Point(352, 581);
+            txtmontopago.Location = new Point(358, 570);
             txtmontopago.Name = "txtmontopago";
             txtmontopago.ReadOnly = true;
             txtmontopago.Size = new Size(74, 27);
             txtmontopago.TabIndex = 22;
-            txtmontopago.TextChanged += txtpagacon_TextChanged;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.BackColor = SystemColors.ControlLight;
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(449, 584);
+            label14.Location = new Point(450, 573);
             label14.Name = "label14";
             label14.Size = new Size(112, 20);
             label14.TabIndex = 21;
@@ -320,11 +308,31 @@
             label13.AutoSize = true;
             label13.BackColor = SystemColors.ControlLight;
             label13.ForeColor = Color.Black;
-            label13.Location = new Point(253, 585);
+            label13.Location = new Point(259, 573);
             label13.Name = "label13";
             label13.Size = new Size(93, 20);
             label13.TabIndex = 20;
             label13.Text = "Monto Pago:";
+            // 
+            // btnDescargarPDF
+            // 
+            btnDescargarPDF.BackColor = Color.Firebrick;
+            btnDescargarPDF.Cursor = Cursors.Hand;
+            btnDescargarPDF.FlatStyle = FlatStyle.Flat;
+            btnDescargarPDF.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDescargarPDF.ForeColor = Color.White;
+            btnDescargarPDF.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            btnDescargarPDF.IconColor = Color.White;
+            btnDescargarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDescargarPDF.IconSize = 18;
+            btnDescargarPDF.Location = new Point(701, 567);
+            btnDescargarPDF.Name = "btnDescargarPDF";
+            btnDescargarPDF.Size = new Size(138, 33);
+            btnDescargarPDF.TabIndex = 24;
+            btnDescargarPDF.Text = "Descargar PDF";
+            btnDescargarPDF.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDescargarPDF.UseVisualStyleBackColor = false;
+            btnDescargarPDF.Click += btnDescargarPDF_Click;
             // 
             // frmDetalleVenta
             // 
@@ -332,6 +340,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(894, 629);
+            Controls.Add(btnDescargarPDF);
             Controls.Add(txtmontocambio);
             Controls.Add(txtmontopago);
             Controls.Add(label14);
@@ -347,7 +356,8 @@
             Controls.Add(label1);
             ForeColor = Color.Black;
             Name = "frmDetalleVenta";
-            Text = "frmDetalleVenta";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Detalle de Venta";
             Load += frmDetalleVenta_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -356,37 +366,39 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion
 
-        private Label label1;
-        private TextBox txtbusqueda;
-        private Label label6;
-        private GroupBox groupBox1;
-        private TextBox txttipodocumento;
-        private TextBox txtusuario;
-        private Label label5;
-        private TextBox txtfecha;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private GroupBox groupBox2;
-        private Label label10;
-        private TextBox txtnombrecliente;
-        private TextBox txtdoccliente;
-        private Label label8;
-        private Label label12;
-        private TextBox txtmontototal;
-        private DataGridView dataGridView1;
-        private TextBox txtmontocambio;
-        private TextBox txtmontopago;
-        private Label label14;
-        private Label label13;
-        private DataGridViewTextBoxColumn IdVenta;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtbusqueda;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txttipodocumento;
+        private System.Windows.Forms.TextBox txtusuario;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtfecha;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtnombrecliente;
+        private System.Windows.Forms.TextBox txtdoccliente;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtmontototal;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtmontocambio;
+        private System.Windows.Forms.TextBox txtmontopago;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private FontAwesome.Sharp.IconButton btnDescargarPDF;
     }
 }

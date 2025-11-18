@@ -483,6 +483,7 @@
             // 
             txttotalpagar.Location = new Point(971, 321);
             txttotalpagar.Name = "txttotalpagar";
+            txttotalpagar.ReadOnly = true;
             txttotalpagar.Size = new Size(98, 27);
             txttotalpagar.TabIndex = 15;
             // 
@@ -499,6 +500,7 @@
             // 
             txtcambio.Location = new Point(971, 467);
             txtcambio.Name = "txtcambio";
+            txtcambio.ReadOnly = true;
             txtcambio.Size = new Size(98, 27);
             txtcambio.TabIndex = 17;
             // 

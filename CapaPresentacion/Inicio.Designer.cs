@@ -48,6 +48,7 @@
             MenuProductos = new FontAwesome.Sharp.IconMenuItem();
             productosToolStripMenuItem = new ToolStripMenuItem();
             agregarCategoriaToolStripMenuItem = new ToolStripMenuItem();
+            clientesAdmin = new FontAwesome.Sharp.IconMenuItem();
             menuBackup = new FontAwesome.Sharp.IconMenuItem();
             label1 = new Label();
             panel1 = new Panel();
@@ -65,7 +66,7 @@
             // 
             Menu2.BackColor = Color.Silver;
             Menu2.ImageScalingSize = new Size(20, 20);
-            Menu2.Items.AddRange(new ToolStripItem[] { MenuProvedores, MenuReportes, MenuVentas, MenuUsuarios, MenuClientes, menucompras, MenuProductos, menuBackup });
+            Menu2.Items.AddRange(new ToolStripItem[] { MenuProvedores, MenuReportes, MenuVentas, MenuUsuarios, MenuClientes, menucompras, MenuProductos, clientesAdmin, menuBackup });
             Menu2.Location = new Point(0, 76);
             Menu2.Name = "Menu2";
             Menu2.Padding = new Padding(7, 3, 0, 3);
@@ -144,14 +145,14 @@
             // submenuregistrarventa
             // 
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(224, 26);
+            submenuregistrarventa.Size = new Size(186, 26);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click_1;
             // 
             // submenuverdetalleventa
             // 
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(224, 26);
+            submenuverdetalleventa.Size = new Size(186, 26);
             submenuverdetalleventa.Text = "Ver Detalle";
             submenuverdetalleventa.Visible = false;
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
@@ -159,14 +160,14 @@
             // verMisVentasToolStripMenuItem
             // 
             verMisVentasToolStripMenuItem.Name = "verMisVentasToolStripMenuItem";
-            verMisVentasToolStripMenuItem.Size = new Size(224, 26);
+            verMisVentasToolStripMenuItem.Size = new Size(186, 26);
             verMisVentasToolStripMenuItem.Text = "Ver mis ventas";
             verMisVentasToolStripMenuItem.Click += verMisVentasToolStripMenuItem_Click;
             // 
             // submenuVerProductos
             // 
             submenuVerProductos.Name = "submenuVerProductos";
-            submenuVerProductos.Size = new Size(224, 26);
+            submenuVerProductos.Size = new Size(186, 26);
             submenuVerProductos.Text = "Ver Productos";
             submenuVerProductos.Click += verProductosToolStripMenuItem_Click;
             // 
@@ -219,21 +220,21 @@
             // registrarCompraToolStripMenuItem
             // 
             registrarCompraToolStripMenuItem.Name = "registrarCompraToolStripMenuItem";
-            registrarCompraToolStripMenuItem.Size = new Size(224, 26);
+            registrarCompraToolStripMenuItem.Size = new Size(208, 26);
             registrarCompraToolStripMenuItem.Text = "Registrar Compra";
             registrarCompraToolStripMenuItem.Click += registrarCompraToolStripMenuItem_Click;
             // 
             // verMisComprasToolStripMenuItem
             // 
             verMisComprasToolStripMenuItem.Name = "verMisComprasToolStripMenuItem";
-            verMisComprasToolStripMenuItem.Size = new Size(224, 26);
+            verMisComprasToolStripMenuItem.Size = new Size(208, 26);
             verMisComprasToolStripMenuItem.Text = "Ver mis compras";
             verMisComprasToolStripMenuItem.Click += verMisComprasToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(224, 26);
+            toolStripMenuItem1.Size = new Size(208, 26);
             toolStripMenuItem1.Text = "Compras";
             toolStripMenuItem1.Visible = false;
             toolStripMenuItem1.Click += toolStripMenuItem1_Click;
@@ -267,6 +268,21 @@
             agregarCategoriaToolStripMenuItem.Size = new Size(215, 26);
             agregarCategoriaToolStripMenuItem.Text = "Agregar Categoria";
             agregarCategoriaToolStripMenuItem.Click += agregarCategoriaToolStripMenuItem_Click;
+            // 
+            // clientesAdmin
+            // 
+            clientesAdmin.AutoSize = false;
+            clientesAdmin.ForeColor = Color.Black;
+            clientesAdmin.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            clientesAdmin.IconColor = Color.Black;
+            clientesAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            clientesAdmin.IconSize = 50;
+            clientesAdmin.ImageScaling = ToolStripItemImageScaling.None;
+            clientesAdmin.Name = "clientesAdmin";
+            clientesAdmin.Size = new Size(100, 74);
+            clientesAdmin.Text = "Clientes";
+            clientesAdmin.TextImageRelation = TextImageRelation.ImageAboveText;
+            clientesAdmin.Click += clientesAdmin_Click;
             // 
             // menuBackup
             // 
@@ -315,7 +331,7 @@
             Contenedor.Location = new Point(0, 156);
             Contenedor.Margin = new Padding(3, 4, 3, 4);
             Contenedor.Name = "Contenedor";
-            Contenedor.Size = new Size(1347, 614);
+            Contenedor.Size = new Size(1347, 624);
             Contenedor.TabIndex = 4;
             Contenedor.Paint += Contenedor_Paint;
             // 
@@ -371,7 +387,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1347, 770);
+            ClientSize = new Size(1347, 780);
             Controls.Add(Contenedor);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -423,5 +439,6 @@
         private ToolStripMenuItem verMisComprasToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem submenuVerProductos;
+        private FontAwesome.Sharp.IconMenuItem clientesAdmin;
     }
 }

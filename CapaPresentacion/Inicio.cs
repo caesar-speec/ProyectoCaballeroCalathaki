@@ -35,6 +35,7 @@ namespace CapaPresentacion
             }
 
             menuBackup.Visible = (usuarioActual.IdUsuario == 1);
+            clientesAdmin.Visible = (usuarioActual.oRol.IdRol == 1);
         }
 
 
@@ -222,6 +223,13 @@ namespace CapaPresentacion
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuVentas, new frmListadoProductos());
+        }
+
+       
+
+        private void clientesAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmListarClientes());
         }
     }
 }

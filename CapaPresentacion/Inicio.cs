@@ -16,7 +16,7 @@ namespace CapaPresentacion
         private static IconMenuItem MenuActivo = null;
         private static Form formularioActivo = null;
 
-        // CONSTRUCTOR
+        
         public Inicio(Usuario objusuario)
         {
             usuarioActual = objusuario;

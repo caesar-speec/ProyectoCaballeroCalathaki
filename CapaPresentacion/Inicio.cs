@@ -1,29 +1,38 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
 using FontAwesome.Sharp;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
 namespace CapaPresentacion
 {
     public partial class Inicio : Form
     {
+        // CAMPOS
         private static Usuario usuarioActual;
         private static IconMenuItem MenuActivo = null;
         private static Form formularioActivo = null;
+
+        // CONSTRUCTOR
         public Inicio(Usuario objusuario)
         {
             usuarioActual = objusuario;
-
             InitializeComponent();
         }
 
-        private void MenuTitulo_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
+        // CARGA DEL FORMULARIO Y PERMISOS
         private void Inicio_Load(object sender, EventArgs e)
         {
+            // 1. Mostrar Usuario
+            lblusuario.Text = usuarioActual.NombreCompleto;
 
+            // 2. Obtener Permisos
             List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.IdUsuario);
+
+            // 3. Filtrar Menús por Permisos
             foreach (IconMenuItem iconmenu in Menu2.Items)
             {
                 bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
@@ -31,206 +40,131 @@ namespace CapaPresentacion
                 {
                     iconmenu.Visible = false;
                 }
-                lblusuario.Text = usuarioActual.NombreCompleto;
             }
 
+            // 4. Seguridad Extra (Hardcoded para Admin)
+            // Backup solo para ID 1
             menuBackup.Visible = (usuarioActual.IdUsuario == 1);
+            // Gestión Clientes solo para Rol Admin (1)
             clientesAdmin.Visible = (usuarioActual.oRol.IdRol == 1);
         }
 
-
+        // METODO PRINCIPAL PARA ABRIR FORMULARIOS
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
+            // Resaltar menú activo
             if (MenuActivo != null)
             {
                 MenuActivo.BackColor = Color.White;
             }
-            menu.BackColor = Color.Silver;
-            MenuActivo = menu;
+            if (menu != null)
+            {
+                menu.BackColor = Color.Silver;
+                MenuActivo = menu;
+            }
 
+            // Cerrar formulario anterior
             if (formularioActivo != null)
             {
                 formularioActivo.Close();
             }
 
+            // Configurar y mostrar nuevo formulario
             formularioActivo = formulario;
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
             formulario.BackColor = Color.DarkSeaGreen;
-            // Limpia el contenedor y agrega el formulario
-            //Contenedor.Controls.Clear();
+
+            // IMPORTANTE: Esto agrega el formulario al panel contenedor
+            // El pictureBox1 quedará detrás del formulario, lo cual es correcto
             Contenedor.Controls.Add(formulario);
             formulario.BringToFront();
             formulario.Show();
         }
 
+        // --------------------------------------
+        // EVENTOS DE MENÚS
+        // --------------------------------------
 
+        // --- USUARIOS ---
+        private void MenuReponedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new FrmUsuario());
+        }
 
-
-
+        // --- PROVEEDORES ---
         private void MenuProvedores_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmProveedores());
         }
 
-
-
-        private void MenuReportes_Click(object sender, EventArgs e)
+        // --- PRODUCTOS ---
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario(MenuProductos, new frmProductos());
+        }
+        private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuProductos, new frmCategoria());
         }
 
+        // --- CLIENTES ---
+        private void MenuClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmClientes()); // Clientes vista estándar
+        }
+        private void clientesAdmin_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmListarClientes()); // Clientes vista admin (baja lógica)
+        }
 
+        // --- COMPRAS ---
+        private void registrarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menucompras, new frmCompras(usuarioActual));
+        }
+        private void verMisComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menucompras, new frmVerMisCompras(usuarioActual));
+        }
 
+        // --- VENTAS ---
         private void submenuregistrarventa_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario(MenuVentas, new frmVentas(usuarioActual));
+        }
+        private void verMisVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuVentas, new FrmVerMisVentas(usuarioActual));
+        }
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MenuVentas, new frmListadoProductos());
         }
         private void submenuverdetalleventa_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuVentas, new frmDetalleVenta());
         }
 
-
-
-        private void MenuReponedor_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new FrmUsuario());
-
-        }
-
-
-
-        private void submenuAgregarClientes_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void SubmenuModificarClientes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void submenucategoria_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        private void submenuproducto_Click(object sender, EventArgs e)
-        {
-            //AbrirFormulario(menumantenedor, new frmProductos());
-        }
-
-
-
-        private void menumantenedor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuClientes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmClientes());
-        }
-
+        // --- REPORTES ---
         private void ReportesCompras_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuReportes, new frmReporteCompras());
         }
-
-        private void MenuVentas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void registrarCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menucompras, new frmCompras(usuarioActual));
-        }
-
-        private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menucompras, new frmDetalleCompra());
-        }
-
-        private void menucompras_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuReportes_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Contenedor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void reportesVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menucompras, new frmListarVentas());
+            AbrirFormulario(MenuReportes, new frmListarVentas());
         }
-
-        private void agregarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menucompras, new frmCategoria());
-        }
-
-        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menucompras, new frmProductos());
-        }
-
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-            // AbrirFormulario(null, new frmBackup());
-        }
-
-        private void menuBackup_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmBackup());
-        }
-
         private void ReporteEstadistico_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MenuReportes, new FrmReportesEstadisticos());
         }
 
-        private void verMisVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        // --- BACKUP ---
+        private void menuBackup_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(MenuReportes, new FrmVerMisVentas(usuarioActual));
-        }
-        private void verMisComprasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(MenuReportes, new frmVerMisCompras(usuarioActual));
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(MenuVentas, new frmListadoProductos());
-        }
-
-       
-
-        private void clientesAdmin_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmListarClientes());
+            AbrirFormulario((IconMenuItem)sender, new frmBackup());
         }
     }
 }
-
